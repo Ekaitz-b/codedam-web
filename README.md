@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CodeDAM - Plataforma Educativa para Estudiantes de DAM
 
 Una web completa de apuntes para estudiantes de DAM (Desarrollo de Aplicaciones Multiplataforma) en España.
@@ -205,3 +206,7 @@ Para preguntas o sugerencias sobre CodeDAM, contacta a través de los canales ha
 **CodeDAM** - Desarrollado con dedicación para estudiantes de DAM 🚀
 
 ¡Buena suerte con tus estudios!
+=======
+# codecam-web
+Web de apuntes DAM
+>>>>>>> 5dbc5407a93fab19e7df584be239201293a17a72
