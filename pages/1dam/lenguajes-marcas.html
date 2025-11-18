@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apuntes de Lenguajes de Marcas para 1º DAM - HTML5, CSS3, XML, JSON y tecnologías web.">
+    <meta name="keywords" content="HTML, CSS, XML, JSON, lenguajes de marcas, DAM, web, responsive">
+    <title>Lenguajes de Marcas - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="programacion.html">Programación (Java)</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="../2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="../2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="../2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="../2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#1dam">1º DAM</a><span>→</span><span>Lenguajes de Marcas</span>
+            </div>
+            <h1 class="page-title">Lenguajes de Marcas</h1>
+            <p class="page-subtitle">HTML5, CSS3, XML, JSON y Tecnologías Web</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>HTML5 - Estructura Web</h2>
+                <p>HTML (HyperText Markup Language) es el lenguaje estándar para crear páginas web. Define la estructura y el contenido.</p>
+
+                <h3>Estructura Básica</h3>
+                <div class="code-block"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi Primera Página&lt;/title&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Bienvenido a CodeDAM&lt;/h1&gt;
+        &lt;nav&gt;
+            &lt;a href="#inicio"&gt;Inicio&lt;/a&gt;
+            &lt;a href="#cursos"&gt;Cursos&lt;/a&gt;
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        &lt;section&gt;
+            &lt;h2&gt;Contenido Principal&lt;/h2&gt;
+            &lt;p&gt;Este es un párrafo de ejemplo.&lt;/p&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;&copy; 2025 CodeDAM&lt;/p&gt;
+    &lt;/footer&gt;
+
+    &lt;script src="script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></div>
+
+                <h3>Etiquetas Semánticas HTML5</h3>
+                <ul>
+                    <li><code>&lt;header&gt;</code> - Cabecera de página o sección</li>
+                    <li><code>&lt;nav&gt;</code> - Navegación</li>
+                    <li><code>&lt;main&gt;</code> - Contenido principal</li>
+                    <li><code>&lt;section&gt;</code> - Sección temática</li>
+                    <li><code>&lt;article&gt;</code> - Contenido independiente</li>
+                    <li><code>&lt;aside&gt;</code> - Contenido relacionado lateral</li>
+                    <li><code>&lt;footer&gt;</code> - Pie de página</li>
+                </ul>
+
+                <h3>Formularios HTML</h3>
+                <div class="code-block"><code>&lt;form action="/enviar" method="POST"&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" name="nombre" required&gt;
+
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="edad"&gt;Edad:&lt;/label&gt;
+    &lt;input type="number" id="edad" name="edad" min="18" max="100"&gt;
+
+    &lt;label for="curso"&gt;Curso:&lt;/label&gt;
+    &lt;select id="curso" name="curso"&gt;
+        &lt;option value="1dam"&gt;1º DAM&lt;/option&gt;
+        &lt;option value="2dam"&gt;2º DAM&lt;/option&gt;
+    &lt;/select&gt;
+
+    &lt;textarea name="comentarios" rows="4"&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>CSS3 - Estilos y Diseño</h2>
+                <p>CSS (Cascading Style Sheets) controla la presentación visual de las páginas web.</p>
+
+                <h3>Selectores CSS</h3>
+                <div class="code-block"><code>/* Selector de elemento */
+p {
+    color: #333;
+    font-size: 16px;
+}
+
+/* Selector de clase */
+.destacado {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* Selector de ID */
+#header {
+    background-color: #667eea;
+    padding: 20px;
+}
+
+/* Selectores combinados */
+.container p {
+    margin-bottom: 15px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Pseudoclases */
+a:hover {
+    color: #764ba2;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+li:nth-child(odd) {
+    background-color: #f5f5f5;
+}</code></div>
+
+                <h3>Flexbox - Diseño Flexible</h3>
+                <div class="code-block"><code>.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.sidebar {
+    flex: 0 0 300px;  /* No crece, no encoge, 300px base */
+}
+
+.main-content {
+    flex: 1;  /* Crece para llenar espacio disponible */
+}
+
+/* Responsive con flex-wrap */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    flex: 0 0 calc(33.333% - 20px);
+}</code></div>
+
+                <h3>Grid - Diseño en Cuadrícula</h3>
+                <div class="code-block"><code>.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+/* Grid con áreas nombradas */
+.layout {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-columns: 250px 1fr 1fr;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.main { grid-area: main; }
+.footer { grid-area: footer; }</code></div>
+
+                <h3>Responsive Design</h3>
+                <div class="code-block"><code>/* Mobile First */
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 960px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>XML - Lenguaje de Marcado Extensible</h2>
+                <p>XML se usa para almacenar y transportar datos de forma estructurada y legible.</p>
+
+                <h3>Estructura XML</h3>
+                <div class="code-block"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;biblioteca&gt;
+    &lt;libro isbn="978-0134685991"&gt;
+        &lt;titulo&gt;Effective Java&lt;/titulo&gt;
+        &lt;autor&gt;Joshua Bloch&lt;/autor&gt;
+        &lt;editorial&gt;Addison-Wesley&lt;/editorial&gt;
+        &lt;año&gt;2018&lt;/año&gt;
+        &lt;precio moneda="EUR"&gt;45.50&lt;/precio&gt;
+    &lt;/libro&gt;
+    &lt;libro isbn="978-0596009205"&gt;
+        &lt;titulo&gt;Head First Java&lt;/titulo&gt;
+        &lt;autor&gt;Kathy Sierra&lt;/autor&gt;
+        &lt;editorial&gt;O'Reilly&lt;/editorial&gt;
+        &lt;año&gt;2005&lt;/año&gt;
+        &lt;precio moneda="EUR"&gt;39.99&lt;/precio&gt;
+    &lt;/libro&gt;
+&lt;/biblioteca&gt;</code></div>
+
+                <h3>DTD - Definición de Tipo de Documento</h3>
+                <div class="code-block"><code>&lt;!DOCTYPE biblioteca [
+    &lt;!ELEMENT biblioteca (libro+)&gt;
+    &lt;!ELEMENT libro (titulo, autor, editorial, año, precio)&gt;
+    &lt;!ATTLIST libro isbn CDATA #REQUIRED&gt;
+    &lt;!ELEMENT titulo (#PCDATA)&gt;
+    &lt;!ELEMENT autor (#PCDATA)&gt;
+    &lt;!ELEMENT editorial (#PCDATA)&gt;
+    &lt;!ELEMENT año (#PCDATA)&gt;
+    &lt;!ELEMENT precio (#PCDATA)&gt;
+    &lt;!ATTLIST precio moneda CDATA #IMPLIED&gt;
+]&gt;</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>JSON - Intercambio de Datos</h2>
+                <p>JSON (JavaScript Object Notation) es el formato más popular para APIs y almacenamiento de datos.</p>
+
+                <h3>Sintaxis JSON</h3>
+                <div class="code-block"><code>{
+    "nombre": "Ana García",
+    "edad": 20,
+    "estudiante": true,
+    "curso": "2º DAM",
+    "asignaturas": [
+        "Acceso a Datos",
+        "Desarrollo de Interfaces",
+        "Programación de Servicios"
+    ],
+    "direccion": {
+        "calle": "Calle Principal",
+        "numero": 123,
+        "ciudad": "Madrid",
+        "codigoPostal": "28001"
+    },
+    "notas": {
+        "accesoADatos": 8.5,
+        "desarrolloInterfaces": 9.0,
+        "programacionServicios": 8.0
+    }
+}</code></div>
+
+                <h3>Comparación XML vs JSON</h3>
+                <div class="code-block"><code>// XML
+&lt;persona&gt;
+    &lt;nombre&gt;Ana&lt;/nombre&gt;
+    &lt;edad&gt;20&lt;/edad&gt;
+&lt;/persona&gt;
+
+// JSON (más compacto)
+{
+    "nombre": "Ana",
+    "edad": 20
+}</code></div>
+
+                <div class="note-box">
+                    <p><strong>Cuándo usar cada uno:</strong> XML para documentos complejos y configuración. JSON para APIs y datos simples.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Mejores Prácticas Web</h2>
+                <ul>
+                    <li>Usa HTML semántico para mejor SEO y accesibilidad</li>
+                    <li>Separa contenido (HTML), presentación (CSS) y comportamiento (JS)</li>
+                    <li>Diseña primero para móvil (Mobile First)</li>
+                    <li>Optimiza imágenes y recursos</li>
+                    <li>Valida tu código HTML y CSS</li>
+                    <li>Usa nombres descriptivos para clases e IDs</li>
+                    <li>Indenta correctamente tu código</li>
+                    <li>Comenta secciones complejas</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Errores comunes:</strong> Olvidar etiquetas de cierre, usar IDs duplicados, no cerrar etiquetas en XML.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p class="footer-description">Apuntes completos para estudiantes de DAM.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Inicio</a></li>
+                        <li><a href="../buscar.html">Buscador</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apuntes completos de Bases de Datos para 1º DAM - SQL, MySQL, diseño de BD, normalización y consultas.">
+    <meta name="keywords" content="SQL, MySQL, bases de datos, DAM, consultas, normalización, joins">
+    <title>Bases de Datos - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+                </a>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="programacion.html">Programación (Java)</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="../2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="../2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="../2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="../2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Inicio</a>
+                <span>→</span>
+                <a href="../../index.html#1dam">1º DAM</a>
+                <span>→</span>
+                <span>Bases de Datos</span>
+            </div>
+            <h1 class="page-title">Bases de Datos</h1>
+            <p class="page-subtitle">SQL, MySQL y Diseño de Bases de Datos</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul></ul>
+            </nav>
+
+            <section class="content-section">
+                <h2>Introducción a Bases de Datos</h2>
+                <p>Una <strong>base de datos</strong> es un conjunto organizado de información estructurada que se almacena electrónicamente en un sistema informático. Las bases de datos relacionales organizan los datos en tablas con filas y columnas.</p>
+
+                <h3>Conceptos Fundamentales</h3>
+                <ul>
+                    <li><strong>Tabla:</strong> Conjunto de datos organizados en filas y columnas</li>
+                    <li><strong>Fila (Registro):</strong> Una entrada individual en una tabla</li>
+                    <li><strong>Columna (Campo):</strong> Un atributo de los datos</li>
+                    <li><strong>Clave Primaria (Primary Key):</strong> Identifica únicamente cada registro</li>
+                    <li><strong>Clave Foránea (Foreign Key):</strong> Referencia a la clave primaria de otra tabla</li>
+                </ul>
+
+                <h3>Sistemas Gestores de Bases de Datos (SGBD)</h3>
+                <p>Los más utilizados en DAM son:</p>
+                <ul>
+                    <li><strong>MySQL:</strong> Popular, código abierto, ideal para aplicaciones web</li>
+                    <li><strong>PostgreSQL:</strong> Robusto, con características avanzadas</li>
+                    <li><strong>Oracle:</strong> Potente, usado en entornos empresariales</li>
+                    <li><strong>SQL Server:</strong> De Microsoft, integrado con .NET</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>SQL Básico</h2>
+                <p>SQL (Structured Query Language) es el lenguaje estándar para gestionar bases de datos relacionales.</p>
+
+                <h3>CREATE - Crear Tablas</h3>
+                <div class="code-block">
+                    <code>CREATE DATABASE tienda_online;
+
+USE tienda_online;
+
+CREATE TABLE clientes (
+    id_cliente INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE,
+    telefono VARCHAR(15),
+    fecha_registro DATE DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE productos (
+    id_producto INT PRIMARY KEY AUTO_INCREMENT,
+    nombre VARCHAR(200) NOT NULL,
+    precio DECIMAL(10, 2) NOT NULL,
+    stock INT DEFAULT 0,
+    categoria VARCHAR(50)
+);
+
+CREATE TABLE pedidos (
+    id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+    id_cliente INT,
+    fecha_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
+    total DECIMAL(10, 2),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente)
+);</code>
+                </div>
+
+                <h3>INSERT - Insertar Datos</h3>
+                <div class="code-block">
+                    <code>-- Insertar un registro
+INSERT INTO clientes (nombre, email, telefono)
+VALUES ('Ana García', 'ana@email.com', '600123456');
+
+-- Insertar múltiples registros
+INSERT INTO productos (nombre, precio, stock, categoria)
+VALUES
+    ('Portátil HP', 599.99, 15, 'Informática'),
+    ('Mouse Logitech', 25.50, 50, 'Accesorios'),
+    ('Teclado Mecánico', 89.99, 30, 'Accesorios');</code>
+                </div>
+
+                <h3>SELECT - Consultar Datos</h3>
+                <div class="code-block">
+                    <code>-- Seleccionar todos los campos
+SELECT * FROM clientes;
+
+-- Seleccionar campos específicos
+SELECT nombre, email FROM clientes;
+
+-- Con condiciones (WHERE)
+SELECT * FROM productos
+WHERE precio > 50 AND stock > 0;
+
+-- Ordenar resultados (ORDER BY)
+SELECT * FROM productos
+ORDER BY precio DESC;
+
+-- Limitar resultados
+SELECT * FROM productos
+LIMIT 10;
+
+-- Búsqueda con patrón (LIKE)
+SELECT * FROM clientes
+WHERE nombre LIKE 'Ana%';
+
+-- Valores únicos (DISTINCT)
+SELECT DISTINCT categoria FROM productos;</code>
+                </div>
+
+                <h3>UPDATE - Actualizar Datos</h3>
+                <div class="code-block">
+                    <code>-- Actualizar un registro
+UPDATE productos
+SET precio = 549.99, stock = 20
+WHERE id_producto = 1;
+
+-- Actualizar múltiples registros
+UPDATE productos
+SET categoria = 'Hardware'
+WHERE categoria = 'Informática';
+
+-- Incrementar valores
+UPDATE productos
+SET precio = precio * 1.10
+WHERE categoria = 'Accesorios';</code>
+                </div>
+
+                <h3>DELETE - Eliminar Datos</h3>
+                <div class="code-block">
+                    <code>-- Eliminar registros específicos
+DELETE FROM productos
+WHERE stock = 0;
+
+-- CUIDADO: Esto elimina TODOS los registros
+DELETE FROM productos;
+
+-- Mejor usar TRUNCATE para vaciar tabla
+TRUNCATE TABLE productos;</code>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>SQL Avanzado</h2>
+
+                <h3>JOINs - Unir Tablas</h3>
+                <p>Los JOINs permiten combinar datos de múltiples tablas relacionadas.</p>
+
+                <div class="code-block">
+                    <code>-- INNER JOIN: Solo registros que coinciden en ambas tablas
+SELECT clientes.nombre, pedidos.fecha_pedido, pedidos.total
+FROM pedidos
+INNER JOIN clientes ON pedidos.id_cliente = clientes.id_cliente;
+
+-- LEFT JOIN: Todos los de la izquierda + coincidentes de la derecha
+SELECT clientes.nombre, pedidos.total
+FROM clientes
+LEFT JOIN pedidos ON clientes.id_cliente = pedidos.id_cliente;
+
+-- RIGHT JOIN: Todos los de la derecha + coincidentes de la izquierda
+SELECT productos.nombre, detalle_pedido.cantidad
+FROM productos
+RIGHT JOIN detalle_pedido ON productos.id_producto = detalle_pedido.id_producto;
+
+-- JOIN de múltiples tablas
+SELECT
+    clientes.nombre AS cliente,
+    productos.nombre AS producto,
+    detalle_pedido.cantidad,
+    pedidos.fecha_pedido
+FROM pedidos
+INNER JOIN clientes ON pedidos.id_cliente = clientes.id_cliente
+INNER JOIN detalle_pedido ON pedidos.id_pedido = detalle_pedido.id_pedido
+INNER JOIN productos ON detalle_pedido.id_producto = productos.id_producto;</code>
+                </div>
+
+                <h3>Funciones de Agregación</h3>
+                <div class="code-block">
+                    <code>-- COUNT: Contar registros
+SELECT COUNT(*) AS total_clientes FROM clientes;
+
+-- SUM: Sumar valores
+SELECT SUM(total) AS ventas_totales FROM pedidos;
+
+-- AVG: Promedio
+SELECT AVG(precio) AS precio_medio FROM productos;
+
+-- MAX y MIN
+SELECT MAX(precio) AS mas_caro, MIN(precio) AS mas_barato
+FROM productos;
+
+-- GROUP BY: Agrupar resultados
+SELECT categoria, COUNT(*) AS cantidad, AVG(precio) AS precio_medio
+FROM productos
+GROUP BY categoria;
+
+-- HAVING: Filtrar grupos (como WHERE pero para GROUP BY)
+SELECT categoria, AVG(precio) AS precio_medio
+FROM productos
+GROUP BY categoria
+HAVING AVG(precio) > 50;</code>
+                </div>
+
+                <h3>Subconsultas</h3>
+                <div class="code-block">
+                    <code>-- Subconsulta en WHERE
+SELECT nombre, precio
+FROM productos
+WHERE precio > (SELECT AVG(precio) FROM productos);
+
+-- Subconsulta con IN
+SELECT nombre
+FROM clientes
+WHERE id_cliente IN (
+    SELECT id_cliente FROM pedidos WHERE total > 100
+);
+
+-- Subconsulta en FROM
+SELECT categoria, AVG(precio) AS promedio
+FROM (
+    SELECT * FROM productos WHERE stock > 0
+) AS productos_disponibles
+GROUP BY categoria;</code>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Diseño de Bases de Datos</h2>
+
+                <h3>Modelo Entidad-Relación (E-R)</h3>
+                <p>El modelo E-R es una herramienta para diseñar bases de datos de forma visual antes de implementarlas.</p>
+
+                <ul>
+                    <li><strong>Entidades:</strong> Objetos del mundo real (Cliente, Producto, Pedido)</li>
+                    <li><strong>Atributos:</strong> Características de las entidades (nombre, precio, fecha)</li>
+                    <li><strong>Relaciones:</strong> Vínculos entre entidades</li>
+                </ul>
+
+                <h3>Tipos de Relaciones</h3>
+                <ul>
+                    <li><strong>1:1 (Uno a Uno):</strong> Un registro de A se relaciona con un registro de B</li>
+                    <li><strong>1:N (Uno a Muchos):</strong> Un registro de A se relaciona con varios de B</li>
+                    <li><strong>N:M (Muchos a Muchos):</strong> Varios de A se relacionan con varios de B (requiere tabla intermedia)</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Ejemplo 1:N:</strong> Un cliente puede tener muchos pedidos, pero cada pedido pertenece a un solo cliente.</p>
+                </div>
+
+                <h3>Normalización</h3>
+                <p>Proceso de organizar datos para reducir redundancia y mejorar la integridad.</p>
+
+                <h4>Primera Forma Normal (1FN)</h4>
+                <ul>
+                    <li>Cada columna debe contener valores atómicos (indivisibles)</li>
+                    <li>No debe haber grupos repetitivos</li>
+                    <li>Debe existir una clave primaria</li>
+                </ul>
+
+                <h4>Segunda Forma Normal (2FN)</h4>
+                <ul>
+                    <li>Debe cumplir 1FN</li>
+                    <li>Todos los atributos no clave deben depender completamente de la clave primaria</li>
+                </ul>
+
+                <h4>Tercera Forma Normal (3FN)</h4>
+                <ul>
+                    <li>Debe cumplir 2FN</li>
+                    <li>No debe haber dependencias transitivas (atributos que dependan de otros atributos no clave)</li>
+                </ul>
+
+                <div class="code-block">
+                    <code>-- Ejemplo de normalización
+
+-- SIN NORMALIZAR (1 tabla con redundancia)
+CREATE TABLE pedidos_malo (
+    id_pedido INT PRIMARY KEY,
+    cliente_nombre VARCHAR(100),
+    cliente_email VARCHAR(100),
+    producto_nombre VARCHAR(100),
+    producto_precio DECIMAL(10,2)
+);
+
+-- NORMALIZADO (3 tablas relacionadas)
+CREATE TABLE clientes (
+    id_cliente INT PRIMARY KEY,
+    nombre VARCHAR(100),
+    email VARCHAR(100)
+);
+
+CREATE TABLE productos (
+    id_producto INT PRIMARY KEY,
+    nombre VARCHAR(100),
+    precio DECIMAL(10,2)
+);
+
+CREATE TABLE pedidos (
+    id_pedido INT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id_cliente),
+    FOREIGN KEY (id_producto) REFERENCES productos(id_producto)
+);</code>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Optimización y Buenas Prácticas</h2>
+
+                <h3>Índices</h3>
+                <p>Los índices mejoran la velocidad de las consultas, especialmente en tablas grandes.</p>
+                <div class="code-block">
+                    <code>-- Crear índice
+CREATE INDEX idx_email ON clientes(email);
+
+-- Índice compuesto
+CREATE INDEX idx_nombre_categoria ON productos(nombre, categoria);
+
+-- Ver índices de una tabla
+SHOW INDEX FROM clientes;</code>
+                </div>
+
+                <h3>Transacciones</h3>
+                <p>Garantizan que un conjunto de operaciones se ejecuten completamente o no se ejecuten.</p>
+                <div class="code-block">
+                    <code>START TRANSACTION;
+
+UPDATE cuentas SET saldo = saldo - 100 WHERE id_cuenta = 1;
+UPDATE cuentas SET saldo = saldo + 100 WHERE id_cuenta = 2;
+
+-- Si todo está bien:
+COMMIT;
+
+-- Si hay error:
+ROLLBACK;</code>
+                </div>
+
+                <h3>Consejos y Mejores Prácticas</h3>
+                <ul>
+                    <li>Usa nombres descriptivos para tablas y columnas</li>
+                    <li>Siempre define claves primarias</li>
+                    <li>Evita NULL cuando sea posible (usa DEFAULT)</li>
+                    <li>Usa tipos de datos apropiados (no VARCHAR(255) para todo)</li>
+                    <li>Normaliza pero no en exceso (denormalización controlada)</li>
+                    <li>Crea índices en columnas de búsqueda frecuente</li>
+                    <li>Usa transacciones para operaciones críticas</li>
+                    <li>Haz backups regulares de tus bases de datos</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Error común:</strong> No usar WHERE en UPDATE o DELETE puede actualizar/eliminar TODOS los registros. Siempre verifica tus condiciones.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p class="footer-description">Apuntes completos y gratuitos para estudiantes de DAM.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">1º DAM</h4>
+                    <ul class="footer-links">
+                        <li><a href="programacion.html">Programación</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Inicio</a></li>
+                        <li><a href="../buscar.html">Buscador</a></li>
+                        <li><a href="../ingles/index.html">Inglés Técnico</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Contenido educativo gratuito.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

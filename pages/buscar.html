@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Busca apuntes de DAM - Encuentra contenido de programación, bases de datos, Android y más.">
+    <meta name="keywords" content="buscar, DAM, apuntes, programación, búsqueda">
+    <title>Buscar en CodeDAM</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .search-page {
+            min-height: 60vh;
+        }
+
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl) var(--spacing-md);
+        }
+
+        .search-box-large {
+            display: flex;
+            background-color: white;
+            border-radius: 50px;
+            padding: 8px;
+            box-shadow: var(--shadow-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .search-box-large input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: var(--spacing-md) var(--spacing-lg);
+            font-size: var(--font-lg);
+            color: var(--text-primary);
+        }
+
+        .search-box-large button {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            color: white;
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: var(--font-base);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .search-box-large button:hover {
+            transform: scale(1.05);
+        }
+
+        .search-info {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-secondary);
+        }
+
+        .results-container {
+            margin-top: var(--spacing-2xl);
+        }
+
+        .result-card {
+            background-color: var(--bg-card);
+            border-radius: 12px;
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .result-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .result-category {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: var(--font-xs);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .result-title {
+            font-size: var(--font-xl);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .result-title a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .result-title a:hover {
+            color: var(--primary-color);
+        }
+
+        .result-description {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-sm);
+            line-height: 1.6;
+        }
+
+        .result-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .keyword-tag {
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: var(--font-xs);
+        }
+
+        .result-link {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .result-link:hover {
+            gap: 8px;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: var(--spacing-2xl);
+            color: var(--text-secondary);
+        }
+
+        .no-results svg {
+            color: var(--text-light);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .no-results h3 {
+            font-size: var(--font-2xl);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .suggestions {
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+        }
+
+        .suggestions h3 {
+            font-size: var(--font-lg);
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .suggestions ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .suggestions li {
+            padding: var(--spacing-xs) 0;
+        }
+
+        .suggestions a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .suggestions a:hover {
+            color: var(--primary-dark);
+            padding-left: 4px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="1dam/programacion.html">Programación (Java)</a></li>
+                        <li><a href="1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="buscar.html" class="nav-link search-btn active">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="search-page">
+        <div class="search-container">
+            <h1 style="text-align: center; margin-bottom: var(--spacing-lg); color: var(--text-primary);">Buscar en CodeDAM</h1>
+
+            <div class="search-box-large">
+                <input type="text" id="search-input" placeholder="Busca conceptos, temas, lenguajes..." autofocus>
+                <button onclick="performSearchFromPage()">Buscar</button>
+            </div>
+
+            <div class="search-info">
+                <p id="results-count">Introduce un término de búsqueda para empezar</p>
+                <p id="search-query" style="font-weight: 600; color: var(--primary-color);"></p>
+            </div>
+
+            <div id="results-container" class="results-container"></div>
+
+            <div class="suggestions">
+                <h3>Búsquedas populares:</h3>
+                <ul>
+                    <li><a href="?q=java">Java y POO</a></li>
+                    <li><a href="?q=sql">SQL y Bases de Datos</a></li>
+                    <li><a href="?q=html+css">HTML y CSS</a></li>
+                    <li><a href="?q=android">Desarrollo Android</a></li>
+                    <li><a href="?q=spring+boot">Spring Boot</a></li>
+                    <li><a href="?q=git">Control de versiones Git</a></li>
+                    <li><a href="?q=rest+api">APIs REST</a></li>
+                    <li><a href="?q=hibernate">Hibernate y JPA</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p class="footer-description">Tu buscador de apuntes de DAM.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="ingles/index.html">Inglés Técnico</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

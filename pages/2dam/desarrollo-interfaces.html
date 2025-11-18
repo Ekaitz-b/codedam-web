@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desarrollo de Interfaces 2º DAM - JavaFX, Swing, UI/UX y diseño de aplicaciones.">
+    <title>Desarrollo de Interfaces - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../1dam/programacion.html">Programación (Java)</a></li>
+                        <li><a href="../1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="../1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="../1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="../1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Desarrollo de Interfaces</span></div>
+            <h1 class="page-title">Desarrollo de Interfaces</h1>
+            <p class="page-subtitle">JavaFX, Swing y Diseño UI/UX</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>JavaFX - Interfaz Gráfica Moderna</h2>
+                <p>JavaFX es el framework moderno de Java para crear interfaces gráficas ricas y atractivas.</p>
+
+                <h3>Aplicación JavaFX Básica</h3>
+                <div class="code-block"><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+public class MiAplicacion extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("CodeDAM App");
+
+        // Crear componentes
+        Label etiqueta = new Label("Bienvenido a JavaFX");
+        TextField campoTexto = new TextField();
+        campoTexto.setPromptText("Introduce tu nombre");
+
+        Button boton = new Button("Saludar");
+        boton.setOnAction(e -> {
+            String nombre = campoTexto.getText();
+            etiqueta.setText("Hola, " + nombre + "!");
+        });
+
+        // Layout
+        VBox root = new VBox(10);
+        root.getChildren().addAll(etiqueta, campoTexto, boton);
+        root.setStyle("-fx-padding: 20; -fx-alignment: center;");
+
+        // Escena y mostrar
+        Scene scene = new Scene(root, 400, 300);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}</code></div>
+
+                <h3>Layouts JavaFX</h3>
+                <ul>
+                    <li><strong>VBox:</strong> Componentes en vertical</li>
+                    <li><strong>HBox:</strong> Componentes en horizontal</li>
+                    <li><strong>BorderPane:</strong> Top, Bottom, Left, Right, Center</li>
+                    <li><strong>GridPane:</strong> Cuadrícula de filas y columnas</li>
+                    <li><strong>StackPane:</strong> Componentes apilados</li>
+                    <li><strong>FlowPane:</strong> Flujo automático con wrap</li>
+                </ul>
+
+                <h3>FXML - Diseño con XML</h3>
+                <div class="code-block"><code>&lt;!-- vista.fxml --&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;?import javafx.scene.control.*?&gt;
+&lt;?import javafx.scene.layout.*?&gt;
+
+&lt;VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.codedam.MiControlador"
+      spacing="10" alignment="CENTER" style="-fx-padding: 20;"&gt;
+
+    &lt;Label fx:id="etiqueta" text="Bienvenido"/&gt;
+    &lt;TextField fx:id="campoNombre" promptText="Nombre"/&gt;
+    &lt;Button text="Saludar" onAction="#handleSaludar"/&gt;
+
+&lt;/VBox&gt;</code></div>
+
+                <div class="code-block"><code>// MiControlador.java
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+
+public class MiControlador {
+
+    @FXML
+    private Label etiqueta;
+
+    @FXML
+    private TextField campoNombre;
+
+    @FXML
+    private void handleSaludar() {
+        String nombre = campoNombre.getText();
+        etiqueta.setText("Hola, " + nombre + "!");
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>CSS en JavaFX</h2>
+                <p>JavaFX permite estilizar interfaces con CSS, similar a desarrollo web.</p>
+
+                <h3>Estilos CSS JavaFX</h3>
+                <div class="code-block"><code>/* estilos.css */
+.root {
+    -fx-background-color: #f0f0f0;
+}
+
+.button {
+    -fx-background-color: #667eea;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 5;
+}
+
+.button:hover {
+    -fx-background-color: #5568d3;
+    -fx-cursor: hand;
+}
+
+.text-field {
+    -fx-font-size: 14px;
+    -fx-padding: 8;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 4;
+}
+
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}</code></div>
+
+                <div class="code-block"><code>// Aplicar CSS
+scene.getStylesheets().add(getClass()
+    .getResource("estilos.css").toExternalForm());
+
+// Aplicar clase CSS a componente
+boton.getStyleClass().add("mi-boton-especial");</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Componentes JavaFX Avanzados</h2>
+
+                <h3>TableView</h3>
+                <div class="code-block"><code>import javafx.collections.*;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+public class Persona {
+    private String nombre;
+    private int edad;
+
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public String getNombre() { return nombre; }
+    public int getEdad() { return edad; }
+}
+
+// Crear TableView
+TableView&lt;Persona&gt; tabla = new TableView&lt;&gt;();
+
+TableColumn&lt;Persona, String&gt; colNombre = new TableColumn&lt;&gt;("Nombre");
+colNombre.setCellValueFactory(new PropertyValueFactory&lt;&gt;("nombre"));
+
+TableColumn&lt;Persona, Integer&gt; colEdad = new TableColumn&lt;&gt;("Edad");
+colEdad.setCellValueFactory(new PropertyValueFactory&lt;&gt;("edad"));
+
+tabla.getColumns().addAll(colNombre, colEdad);
+
+// Datos
+ObservableList&lt;Persona&gt; datos = FXCollections.observableArrayList(
+    new Persona("Ana", 20),
+    new Persona("Juan", 22),
+    new Persona("María", 21)
+);
+tabla.setItems(datos);</code></div>
+
+                <h3>ListView</h3>
+                <div class="code-block"><code>ListView&lt;String&gt; lista = new ListView&lt;&gt;();
+ObservableList&lt;String&gt; items = FXCollections.observableArrayList(
+    "Java", "Python", "JavaScript", "C++"
+);
+lista.setItems(items);
+
+// Eventos
+lista.getSelectionModel().selectedItemProperty()
+    .addListener((obs, oldVal, newVal) -> {
+        System.out.println("Seleccionado: " + newVal);
+    });</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Diseño UI/UX</h2>
+
+                <h3>Principios de Diseño</h3>
+                <ul>
+                    <li><strong>Simplicidad:</strong> Interfaces limpias y fáciles de usar</li>
+                    <li><strong>Consistencia:</strong> Mantener patrones visuales</li>
+                    <li><strong>Feedback:</strong> Responder a acciones del usuario</li>
+                    <li><strong>Jerarquía Visual:</strong> Destacar elementos importantes</li>
+                    <li><strong>Accesibilidad:</strong> Usar able para todos los usuarios</li>
+                </ul>
+
+                <h3>Colores y Tipografía</h3>
+                <ul>
+                    <li>Usar esquemas de color coherentes</li>
+                    <li>Contraste adecuado para legibilidad</li>
+                    <li>Máximo 3 fuentes diferentes</li>
+                    <li>Tamaños de fuente jerárquicos</li>
+                </ul>
+
+                <h3>Espaciado y Alineación</h3>
+                <ul>
+                    <li>Padding y margin consistentes</li>
+                    <li>Alinear elementos correctamente</li>
+                    <li>Usar grids para organización</li>
+                    <li>Espacios en blanco (whitespace) apropiados</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Regla de los 3 clics:</strong> El usuario debe poder acceder a cualquier función en máximo 3 clics.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Eventos y Manejo de Interacciones</h2>
+
+                <div class="code-block"><code>// Eventos de botón
+Button btn = new Button("Click");
+btn.setOnAction(e -> System.out.println("Click!"));
+
+// Eventos de teclado
+textField.setOnKeyPressed(e -> {
+    if (e.getCode() == KeyCode.ENTER) {
+        System.out.println("Enter presionado");
+    }
+});
+
+// Eventos de ratón
+label.setOnMouseEntered(e -> label.setStyle("-fx-text-fill: blue;"));
+label.setOnMouseExited(e -> label.setStyle("-fx-text-fill: black;"));
+
+// Listener de cambios
+slider.valueProperty().addListener((obs, oldVal, newVal) -> {
+    System.out.println("Nuevo valor: " + newVal);
+});</code></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

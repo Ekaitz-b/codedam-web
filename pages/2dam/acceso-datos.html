@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acceso a Datos 2º DAM - JDBC, Hibernate, MongoDB, persistencia y gestión de datos.">
+    <title>Acceso a Datos - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../1dam/programacion.html">Programación (Java)</a></li>
+                        <li><a href="../1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="../1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="../1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="../1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Acceso a Datos</span></div>
+            <h1 class="page-title">Acceso a Datos</h1>
+            <p class="page-subtitle">JDBC, Hibernate, MongoDB y Persistencia</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>JDBC - Java Database Connectivity</h2>
+                <p>JDBC es la API estándar de Java para conectarse a bases de datos relacionales.</p>
+
+                <h3>Conexión a Base de Datos</h3>
+                <div class="code-block"><code>import java.sql.*;
+
+public class ConexionBD {
+    private static final String URL = "jdbc:mysql://localhost:3306/mi_bd";
+    private static final String USER = "root";
+    private static final String PASS = "password";
+
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASS);
+    }
+
+    public static void main(String[] args) {
+        try (Connection conn = getConnection()) {
+            System.out.println("Conexión exitosa!");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+
+                <h3>Operaciones CRUD con JDBC</h3>
+                <div class="code-block"><code>// CREATE - Insertar
+public void insertarCliente(String nombre, String email) {
+    String sql = "INSERT INTO clientes (nombre, email) VALUES (?, ?)";
+
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, nombre);
+        stmt.setString(2, email);
+        int rows = stmt.executeUpdate();
+        System.out.println("Filas insertadas: " + rows);
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+// READ - Consultar
+public List&lt;Cliente&gt; obtenerClientes() {
+    List&lt;Cliente&gt; clientes = new ArrayList&lt;&gt;();
+    String sql = "SELECT * FROM clientes";
+
+    try (Connection conn = getConnection();
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+
+        while (rs.next()) {
+            Cliente c = new Cliente();
+            c.setId(rs.getInt("id"));
+            c.setNombre(rs.getString("nombre"));
+            c.setEmail(rs.getString("email"));
+            clientes.add(c);
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return clientes;
+}
+
+// UPDATE - Actualizar
+public void actualizarEmail(int id, String nuevoEmail) {
+    String sql = "UPDATE clientes SET email = ? WHERE id = ?";
+
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setString(1, nuevoEmail);
+        stmt.setInt(2, id);
+        stmt.executeUpdate();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+// DELETE - Eliminar
+public void eliminarCliente(int id) {
+    String sql = "DELETE FROM clientes WHERE id = ?";
+
+    try (Connection conn = getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setInt(1, id);
+        stmt.executeUpdate();
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Hibernate - ORM (Object-Relational Mapping)</h2>
+                <p>Hibernate mapea objetos Java a tablas de bases de datos, simplificando el acceso a datos.</p>
+
+                <h3>Entidad Hibernate</h3>
+                <div class="code-block"><code>import javax.persistence.*;
+
+@Entity
+@Table(name = "productos")
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nombre", nullable = false)
+    private String nombre;
+
+    @Column(name = "precio")
+    private Double precio;
+
+    @Column(name = "stock")
+    private Integer stock;
+
+    // Relación Many-to-One
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
+    // Getters y Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    // ...
+}</code></div>
+
+                <h3>Operaciones con Hibernate</h3>
+                <div class="code-block"><code>import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class ProductoDAO {
+    private SessionFactory factory;
+
+    public ProductoDAO() {
+        factory = new Configuration()
+            .configure("hibernate.cfg.xml")
+            .addAnnotatedClass(Producto.class)
+            .buildSessionFactory();
+    }
+
+    // CREATE
+    public void guardar(Producto producto) {
+        Session session = factory.getCurrentSession();
+        try {
+            session.beginTransaction();
+            session.save(producto);
+            session.getTransaction().commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    // READ
+    public Producto obtener(Long id) {
+        Session session = factory.getCurrentSession();
+        try {
+            session.beginTransaction();
+            Producto p = session.get(Producto.class, id);
+            session.getTransaction().commit();
+            return p;
+        } finally {
+            session.close();
+        }
+    }
+
+    // UPDATE
+    public void actualizar(Producto producto) {
+        Session session = factory.getCurrentSession();
+        try {
+            session.beginTransaction();
+            session.update(producto);
+            session.getTransaction().commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    // DELETE
+    public void eliminar(Long id) {
+        Session session = factory.getCurrentSession();
+        try {
+            session.beginTransaction();
+            Producto p = session.get(Producto.class, id);
+            session.delete(p);
+            session.getTransaction().commit();
+        } finally {
+            session.close();
+        }
+    }
+
+    // Query HQL
+    public List&lt;Producto&gt; buscarPorNombre(String nombre) {
+        Session session = factory.getCurrentSession();
+        try {
+            session.beginTransaction();
+            List&lt;Producto&gt; productos = session
+                .createQuery("from Producto where nombre like :nombre")
+                .setParameter("nombre", "%" + nombre + "%")
+                .getResultList();
+            session.getTransaction().commit();
+            return productos;
+        } finally {
+            session.close();
+        }
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>JPA - Java Persistence API</h2>
+                <p>JPA es el estándar de Java para ORM. Hibernate es su implementación más popular.</p>
+
+                <h3>EntityManager</h3>
+                <div class="code-block"><code>import javax.persistence.*;
+
+public class ProductoRepository {
+    private EntityManagerFactory emf;
+
+    public ProductoRepository() {
+        emf = Persistence.createEntityManagerFactory("mi-unidad");
+    }
+
+    public void guardar(Producto producto) {
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        em.persist(producto);
+        em.getTransaction().commit();
+        em.close();
+    }
+
+    public Producto buscarPorId(Long id) {
+        EntityManager em = emf.createEntityManager();
+        Producto p = em.find(Producto.class, id);
+        em.close();
+        return p;
+    }
+
+    public List&lt;Producto&gt; buscarTodos() {
+        EntityManager em = emf.createEntityManager();
+        TypedQuery&lt;Producto&gt; query =
+            em.createQuery("SELECT p FROM Producto p", Producto.class);
+        List&lt;Producto&gt; productos = query.getResultList();
+        em.close();
+        return productos;
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>MongoDB - Base de Datos NoSQL</h2>
+                <p>MongoDB es una base de datos orientada a documentos JSON, ideal para datos no estructurados.</p>
+
+                <h3>Conexión y Operaciones MongoDB en Java</h3>
+                <div class="code-block"><code>import com.mongodb.client.*;
+import org.bson.Document;
+
+public class MongoDBExample {
+    private MongoClient mongoClient;
+    private MongoDatabase database;
+    private MongoCollection&lt;Document&gt; collection;
+
+    public MongoDBExample() {
+        mongoClient = MongoClients.create("mongodb://localhost:27017");
+        database = mongoClient.getDatabase("tienda");
+        collection = database.getCollection("productos");
+    }
+
+    // Insertar documento
+    public void insertar() {
+        Document doc = new Document("nombre", "Laptop")
+            .append("precio", 899.99)
+            .append("stock", 15)
+            .append("categoria", "Informática");
+        collection.insertOne(doc);
+    }
+
+    // Buscar documentos
+    public void buscar() {
+        Document query = new Document("categoria", "Informática");
+        FindIterable&lt;Document&gt; docs = collection.find(query);
+
+        for (Document doc : docs) {
+            System.out.println(doc.toJson());
+        }
+    }
+
+    // Actualizar
+    public void actualizar() {
+        Document query = new Document("nombre", "Laptop");
+        Document update = new Document("$set",
+            new Document("precio", 849.99));
+        collection.updateOne(query, update);
+    }
+
+    // Eliminar
+    public void eliminar() {
+        Document query = new Document("stock", 0);
+        collection.deleteMany(query);
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Ficheros - Manejo de Archivos</h2>
+
+                <h3>Lectura y Escritura de Ficheros</h3>
+                <div class="code-block"><code>import java.io.*;
+import java.nio.file.*;
+
+// Escribir archivo de texto
+public void escribirTexto(String ruta, String contenido) {
+    try {
+        Files.writeString(Paths.get(ruta), contenido);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+// Leer archivo de texto
+public String leerTexto(String ruta) {
+    try {
+        return Files.readString(Paths.get(ruta));
+    } catch (IOException e) {
+        e.printStackTrace();
+        return null;
+    }
+}
+
+// Serialización de objetos
+public void guardarObjeto(Producto p, String archivo) {
+    try (ObjectOutputStream oos =
+         new ObjectOutputStream(new FileOutputStream(archivo))) {
+        oos.writeObject(p);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+// Deserialización
+public Producto leerObjeto(String archivo) {
+    try (ObjectInputStream ois =
+         new ObjectInputStream(new FileInputStream(archivo))) {
+        return (Producto) ois.readObject();
+    } catch (IOException | ClassNotFoundException e) {
+        e.printStackTrace();
+        return null;
+    }
+}</code></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

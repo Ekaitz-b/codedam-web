@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programación de Servicios 2º DAM - REST APIs, Spring Boot, microservicios y programación concurrente.">
+    <title>Programación de Servicios - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../1dam/programacion.html">Programación (Java)</a></li>
+                        <li><a href="../1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="../1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="../1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="../1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Programación de Servicios</span></div>
+            <h1 class="page-title">Programación de Servicios</h1>
+            <p class="page-subtitle">REST APIs, Spring Boot y Microservicios</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>Spring Boot - Framework Java</h2>
+                <p>Spring Boot simplifica la creación de aplicaciones Java empresariales con configuración mínima.</p>
+
+                <h3>Aplicación Spring Boot Básica</h3>
+                <div class="code-block"><code>// Application.java
+@SpringBootApplication
+public class MiAplicacion {
+    public static void main(String[] args) {
+        SpringApplication.run(MiAplicacion.class, args);
+    }
+}
+
+// Controlador REST
+@RestController
+@RequestMapping("/api/productos")
+public class ProductoController {
+
+    @Autowired
+    private ProductoService productoService;
+
+    @GetMapping
+    public List&lt;Producto&gt; obtenerTodos() {
+        return productoService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Producto obtenerPorId(@PathVariable Long id) {
+        return productoService.findById(id);
+    }
+
+    @PostMapping
+    public Producto crear(@RequestBody Producto producto) {
+        return productoService.save(producto);
+    }
+
+    @PutMapping("/{id}")
+    public Producto actualizar(@PathVariable Long id, @RequestBody Producto producto) {
+        producto.setId(id);
+        return productoService.save(producto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        productoService.deleteById(id);
+    }
+}</code></div>
+
+                <h3>Entidad JPA</h3>
+                <div class="code-block"><code>@Entity
+@Table(name = "productos")
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String nombre;
+
+    private Double precio;
+    private Integer stock;
+
+    // Constructores, Getters y Setters
+}</code></div>
+
+                <h3>Repository Spring Data JPA</h3>
+                <div class="code-block"><code>@Repository
+public interface ProductoRepository extends JpaRepository&lt;Producto, Long&gt; {
+
+    // Métodos personalizados
+    List&lt;Producto&gt; findByNombreContaining(String nombre);
+
+    List&lt;Producto&gt; findByPrecioBetween(Double min, Double max);
+
+    @Query("SELECT p FROM Producto p WHERE p.stock > 0")
+    List&lt;Producto&gt; findProductosDisponibles();
+}</code></div>
+
+                <h3>Service Layer</h3>
+                <div class="code-block"><code>@Service
+public class ProductoService {
+
+    @Autowired
+    private ProductoRepository repository;
+
+    public List&lt;Producto&gt; findAll() {
+        return repository.findAll();
+    }
+
+    public Producto findById(Long id) {
+        return repository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("Producto no encontrado"));
+    }
+
+    public Producto save(Producto producto) {
+        return repository.save(producto);
+    }
+
+    public void deleteById(Long id) {
+        repository.deleteById(id);
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>REST API - Arquitectura</h2>
+                <p>REST (Representational State Transfer) es un estilo arquitectónico para servicios web.</p>
+
+                <h3>Principios REST</h3>
+                <ul>
+                    <li><strong>Sin estado:</strong> Cada petición es independiente</li>
+                    <li><strong>Cacheable:</strong> Las respuestas pueden ser cacheadas</li>
+                    <li><strong>Interfaz uniforme:</strong> URIs consistentes</li>
+                    <li><strong>Sistema en capas:</strong> Arquitectura modular</li>
+                </ul>
+
+                <h3>Métodos HTTP</h3>
+                <ul>
+                    <li><strong>GET:</strong> Obtener recursos</li>
+                    <li><strong>POST:</strong> Crear nuevo recurso</li>
+                    <li><strong>PUT:</strong> Actualizar recurso completo</li>
+                    <li><strong>PATCH:</strong> Actualizar parcialmente</li>
+                    <li><strong>DELETE:</strong> Eliminar recurso</li>
+                </ul>
+
+                <h3>Códigos de Estado HTTP</h3>
+                <ul>
+                    <li><strong>200 OK:</strong> Petición exitosa</li>
+                    <li><strong>201 Created:</strong> Recurso creado</li>
+                    <li><strong>400 Bad Request:</strong> Error en la petición</li>
+                    <li><strong>401 Unauthorized:</strong> No autenticado</li>
+                    <li><strong>404 Not Found:</strong> Recurso no encontrado</li>
+                    <li><strong>500 Internal Server Error:</strong> Error del servidor</li>
+                </ul>
+
+                <h3>Manejo de Excepciones</h3>
+                <div class="code-block"><code>@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleNotFound(ResourceNotFoundException ex) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.NOT_FOUND.value(),
+            ex.getMessage(),
+            LocalDateTime.now()
+        );
+        return new ResponseEntity&lt;&gt;(error, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity&lt;ErrorResponse&gt; handleGeneral(Exception ex) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            "Error interno del servidor",
+            LocalDateTime.now()
+        );
+        return new ResponseEntity&lt;&gt;(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Programación Concurrente</h2>
+                <p>La concurrencia permite ejecutar múltiples tareas simultáneamente.</p>
+
+                <h3>Threads (Hilos)</h3>
+                <div class="code-block"><code>// Extender Thread
+public class MiThread extends Thread {
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Hilo: " + i);
+            try {
+                Thread.sleep(1000);  // Pausa de 1 segundo
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+// Usar
+MiThread hilo = new MiThread();
+hilo.start();
+
+// Implementar Runnable
+public class MiRunnable implements Runnable {
+    @Override
+    public void run() {
+        System.out.println("Ejecutando en " + Thread.currentThread().getName());
+    }
+}
+
+// Usar
+Thread hilo2 = new Thread(new MiRunnable());
+hilo2.start();
+
+// Lambda
+Thread hilo3 = new Thread(() -> {
+    System.out.println("Lambda thread");
+});
+hilo3.start();</code></div>
+
+                <h3>ExecutorService - Pool de Hilos</h3>
+                <div class="code-block"><code>import java.util.concurrent.*;
+
+// Pool de 5 hilos
+ExecutorService executor = Executors.newFixedThreadPool(5);
+
+// Enviar tareas
+for (int i = 0; i < 10; i++) {
+    int taskId = i;
+    executor.submit(() -> {
+        System.out.println("Tarea " + taskId +
+            " ejecutada por " + Thread.currentThread().getName());
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    });
+}
+
+// Cerrar executor
+executor.shutdown();
+
+// Future - Resultado asíncrono
+ExecutorService executor2 = Executors.newSingleThreadExecutor();
+Future&lt;Integer&gt; future = executor2.submit(() -> {
+    Thread.sleep(2000);
+    return 42;
+});
+
+try {
+    Integer resultado = future.get();  // Espera el resultado
+    System.out.println("Resultado: " + resultado);
+} catch (InterruptedException | ExecutionException e) {
+    e.printStackTrace();
+}
+
+executor2.shutdown();</code></div>
+
+                <h3>Sincronización</h3>
+                <div class="code-block"><code>public class Contador {
+    private int count = 0;
+
+    // Método sincronizado
+    public synchronized void incrementar() {
+        count++;
+    }
+
+    public synchronized int getCount() {
+        return count;
+    }
+}
+
+// Bloque sincronizado
+public void metodo() {
+    synchronized(this) {
+        // Código sincronizado
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Sockets - Comunicación en Red</h2>
+
+                <h3>Socket Server</h3>
+                <div class="code-block"><code>import java.net.*;
+import java.io.*;
+
+public class SocketServer {
+    public static void main(String[] args) {
+        try (ServerSocket serverSocket = new ServerSocket(8080)) {
+            System.out.println("Servidor escuchando en puerto 8080...");
+
+            while (true) {
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("Cliente conectado");
+
+                // Manejo en nuevo hilo
+                new Thread(() -> handleClient(clientSocket)).start();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void handleClient(Socket socket) {
+        try (
+            BufferedReader in = new BufferedReader(
+                new InputStreamReader(socket.getInputStream()));
+            PrintWriter out = new PrintWriter(
+                socket.getOutputStream(), true)
+        ) {
+            String mensaje;
+            while ((mensaje = in.readLine()) != null) {
+                System.out.println("Recibido: " + mensaje);
+                out.println("Echo: " + mensaje);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+
+                <h3>Socket Client</h3>
+                <div class="code-block"><code>import java.net.*;
+import java.io.*;
+
+public class SocketClient {
+    public static void main(String[] args) {
+        try (
+            Socket socket = new Socket("localhost", 8080);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            BufferedReader in = new BufferedReader(
+                new InputStreamReader(socket.getInputStream()));
+            BufferedReader stdIn = new BufferedReader(
+                new InputStreamReader(System.in))
+        ) {
+            String userInput;
+            while ((userInput = stdIn.readLine()) != null) {
+                out.println(userInput);
+                System.out.println("Servidor responde: " + in.readLine());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Microservicios</h2>
+                <p>Arquitectura donde una aplicación se divide en servicios pequeños e independientes.</p>
+
+                <h3>Características de Microservicios</h3>
+                <ul>
+                    <li>Servicios pequeños y enfocados</li>
+                    <li>Despliegue independiente</li>
+                    <li>Base de datos por servicio</li>
+                    <li>Comunicación vía APIs REST</li>
+                    <li>Escalabilidad horizontal</li>
+                </ul>
+
+                <h3>Spring Cloud</h3>
+                <p>Herramientas para construir microservicios con Spring Boot:</p>
+                <ul>
+                    <li><strong>Eureka:</strong> Registro y descubrimiento de servicios</li>
+                    <li><strong>Zuul/Gateway:</strong> API Gateway</li>
+                    <li><strong>Config Server:</strong> Configuración centralizada</li>
+                    <li><strong>Feign:</strong> Cliente HTTP declarativo</li>
+                    <li><strong>Ribbon:</strong> Balanceo de carga</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Ventajas:</strong> Escalabilidad, flexibilidad tecnológica, despliegue independiente. <strong>Desventajas:</strong> Complejidad, gestión distribuida.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

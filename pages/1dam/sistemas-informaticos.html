@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistemas Informáticos 1º DAM - Linux, Windows, redes, arquitectura y administración.">
+    <title>Sistemas Informáticos - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="programacion.html">Programación (Java)</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="../2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="../2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="../2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="../2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#1dam">1º DAM</a><span>→</span><span>Sistemas Informáticos</span></div>
+            <h1 class="page-title">Sistemas Informáticos</h1>
+            <p class="page-subtitle">Linux, Windows, Redes y Arquitectura de Computadores</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>Arquitectura de Computadores</h2>
+
+                <h3>Componentes Principales</h3>
+                <ul>
+                    <li><strong>CPU (Procesador):</strong> Cerebro del ordenador, ejecuta instrucciones</li>
+                    <li><strong>RAM (Memoria):</strong> Almacenamiento temporal de datos en uso</li>
+                    <li><strong>Disco Duro/SSD:</strong> Almacenamiento permanente</li>
+                    <li><strong>Placa Base:</strong> Conecta todos los componentes</li>
+                    <li><strong>Fuente de Alimentación:</strong> Suministra energía</li>
+                    <li><strong>GPU (Tarjeta Gráfica):</strong> Procesamiento de gráficos</li>
+                </ul>
+
+                <h3>Arquitectura von Neumann</h3>
+                <p>Modelo básico de arquitectura de computadoras:</p>
+                <ul>
+                    <li>Unidad Central de Procesamiento (CPU)</li>
+                    <li>Memoria (almacena datos e instrucciones)</li>
+                    <li>Dispositivos de Entrada/Salida</li>
+                    <li>Bus de datos (conexión entre componentes)</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Sistemas Operativos Linux</h2>
+                <p>Linux es fundamental para desarrolladores. Sistema operativo de código abierto basado en Unix.</p>
+
+                <h3>Distribuciones Populares</h3>
+                <ul>
+                    <li><strong>Ubuntu:</strong> Más popular, fácil para principiantes</li>
+                    <li><strong>Debian:</strong> Estable, base de Ubuntu</li>
+                    <li><strong>Fedora:</strong> Tecnologías de vanguardia</li>
+                    <li><strong>CentOS/Rocky Linux:</strong> Para servidores empresariales</li>
+                    <li><strong>Arch Linux:</strong> Personalizable, para usuarios avanzados</li>
+                </ul>
+
+                <h3>Comandos Básicos Linux</h3>
+                <div class="code-block"><code># Navegación
+pwd                      # Directorio actual
+ls                       # Listar archivos
+ls -la                   # Listar con detalles y ocultos
+cd /home/usuario        # Cambiar directorio
+cd ..                    # Directorio padre
+
+# Archivos y Directorios
+mkdir carpeta           # Crear directorio
+touch archivo.txt       # Crear archivo vacío
+cp origen destino       # Copiar
+mv origen destino       # Mover/Renombrar
+rm archivo.txt          # Eliminar archivo
+rm -r carpeta          # Eliminar directorio recursivo
+cat archivo.txt         # Ver contenido
+nano archivo.txt        # Editar con nano
+vim archivo.txt         # Editar con vim
+
+# Permisos
+chmod 755 script.sh     # Cambiar permisos
+chmod +x script.sh      # Hacer ejecutable
+chown usuario archivo   # Cambiar propietario
+ls -l                   # Ver permisos
+
+# Procesos
+ps aux                  # Ver procesos
+top                     # Monitor de procesos
+htop                    # Monitor mejorado
+kill PID                # Matar proceso
+killall nombre          # Matar por nombre
+
+# Sistema
+df -h                   # Espacio en disco
+free -h                 # Memoria RAM
+uname -a                # Info del sistema
+whoami                  # Usuario actual
+sudo comando            # Ejecutar como admin</code></div>
+
+                <h3>Gestión de Paquetes</h3>
+                <div class="code-block"><code># Ubuntu/Debian (APT)
+sudo apt update                  # Actualizar lista
+sudo apt upgrade                 # Actualizar paquetes
+sudo apt install paquete        # Instalar
+sudo apt remove paquete         # Desinstalar
+sudo apt search nombre          # Buscar
+
+# Fedora/CentOS (DNF/YUM)
+sudo dnf install paquete
+sudo dnf update
+
+# Arch Linux (Pacman)
+sudo pacman -S paquete
+sudo pacman -Syu               # Actualizar sistema</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Redes de Computadores</h2>
+
+                <h3>Modelo OSI (7 Capas)</h3>
+                <ol>
+                    <li><strong>Física:</strong> Transmisión de bits por medios físicos</li>
+                    <li><strong>Enlace:</strong> Comunicación entre nodos adyacentes (MAC)</li>
+                    <li><strong>Red:</strong> Enrutamiento de paquetes (IP)</li>
+                    <li><strong>Transporte:</strong> Transmisión extremo a extremo (TCP/UDP)</li>
+                    <li><strong>Sesión:</strong> Gestión de sesiones</li>
+                    <li><strong>Presentación:</strong> Formato de datos</li>
+                    <li><strong>Aplicación:</strong> Servicios de red (HTTP, FTP, SMTP)</li>
+                </ol>
+
+                <h3>Modelo TCP/IP (4 Capas)</h3>
+                <ul>
+                    <li><strong>Acceso a Red:</strong> Hardware y enlace</li>
+                    <li><strong>Internet:</strong> Direccionamiento IP</li>
+                    <li><strong>Transporte:</strong> TCP y UDP</li>
+                    <li><strong>Aplicación:</strong> Protocolos de alto nivel</li>
+                </ul>
+
+                <h3>Direcciones IP</h3>
+                <div class="code-block"><code># IPv4 (32 bits)
+192.168.1.100        # IP privada
+10.0.0.1             # IP privada
+8.8.8.8              # IP pública (Google DNS)
+
+# Máscara de subred
+255.255.255.0        # /24 (256 IPs)
+255.255.0.0          # /16 (65,536 IPs)
+
+# IPv6 (128 bits)
+2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+# Comandos de red
+ip addr              # Ver IPs (Linux)
+ipconfig             # Ver IPs (Windows)
+ping google.com      # Probar conectividad
+traceroute google.com # Ruta de paquetes
+netstat -tuln        # Puertos abiertos
+nslookup google.com  # Resolver DNS
+curl ifconfig.me     # Ver IP pública</code></div>
+
+                <h3>Protocolos Importantes</h3>
+                <ul>
+                    <li><strong>HTTP/HTTPS:</strong> Navegación web (puerto 80/443)</li>
+                    <li><strong>FTP:</strong> Transferencia de archivos (puerto 21)</li>
+                    <li><strong>SSH:</strong> Conexión segura remota (puerto 22)</li>
+                    <li><strong>SMTP:</strong> Envío de correo (puerto 25)</li>
+                    <li><strong>DNS:</strong> Resolución de nombres (puerto 53)</li>
+                    <li><strong>DHCP:</strong> Asignación automática de IPs</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Windows - Administración</h2>
+
+                <h3>PowerShell Básico</h3>
+                <div class="code-block"><code># Navegación
+Get-Location         # Directorio actual
+Set-Location C:\     # Cambiar directorio
+Get-ChildItem        # Listar (equivalente a ls)
+
+# Archivos
+Copy-Item origen destino
+Move-Item origen destino
+Remove-Item archivo.txt
+New-Item -ItemType Directory -Name "carpeta"
+
+# Sistema
+Get-Process          # Ver procesos
+Stop-Process -Name notepad
+Get-Service          # Ver servicios
+Get-NetIPAddress     # Ver IPs
+Test-Connection google.com  # Ping</code></div>
+
+                <h3>Administración Windows</h3>
+                <ul>
+                    <li><strong>Administrador de Tareas:</strong> Ctrl+Shift+Esc</li>
+                    <li><strong>Servicios:</strong> services.msc</li>
+                    <li><strong>Registro:</strong> regedit</li>
+                    <li><strong>Eventos:</strong> eventvwr</li>
+                    <li><strong>Usuarios:</strong> lusrmgr.msc</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Virtualización</h2>
+
+                <h3>Tecnologías de Virtualización</h3>
+                <ul>
+                    <li><strong>VirtualBox:</strong> Gratuito, fácil de usar</li>
+                    <li><strong>VMware:</strong> Profesional, muy potente</li>
+                    <li><strong>Hyper-V:</strong> Integrado en Windows Pro</li>
+                    <li><strong>Docker:</strong> Contenedores ligeros</li>
+                    <li><strong>KVM:</strong> Virtualización en Linux</li>
+                </ul>
+
+                <h3>Conceptos de Virtualización</h3>
+                <ul>
+                    <li><strong>Hipervisor:</strong> Software que gestiona máquinas virtuales</li>
+                    <li><strong>VM (Máquina Virtual):</strong> Sistema operativo virtualizado</li>
+                    <li><strong>Snapshot:</strong> Captura del estado de la VM</li>
+                    <li><strong>Contenedor:</strong> Virtualización a nivel de aplicación</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Ventajas de Virtualización:</strong> Ahorro de costes, facilidad de pruebas, aislamiento, recuperación rápida.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Seguridad Básica</h2>
+
+                <h3>Buenas Prácticas</h3>
+                <ul>
+                    <li>Usar contraseñas fuertes y únicas</li>
+                    <li>Mantener sistema y software actualizados</li>
+                    <li>Usar firewall activado</li>
+                    <li>Antivirus/antimalware actualizado</li>
+                    <li>Hacer backups regularmente</li>
+                    <li>No ejecutar software de fuentes desconocidas</li>
+                    <li>Usar VPN en redes públicas</li>
+                    <li>Autenticación de dos factores (2FA)</li>
+                </ul>
+
+                <h3>Tipos de Amenazas</h3>
+                <ul>
+                    <li><strong>Malware:</strong> Software malicioso (virus, troyanos)</li>
+                    <li><strong>Phishing:</strong> Suplantación de identidad</li>
+                    <li><strong>Ransomware:</strong> Secuestro de datos</li>
+                    <li><strong>DDoS:</strong> Ataque de denegación de servicio</li>
+                    <li><strong>Man in the Middle:</strong> Interceptación de comunicaciones</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

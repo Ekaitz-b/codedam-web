@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programación Multimedia 2º DAM - Android, Kotlin, desarrollo móvil y aplicaciones nativas.">
+    <title>Programación Multimedia - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../1dam/programacion.html">Programación (Java)</a></li>
+                        <li><a href="../1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="../1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="../1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="../1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Programación Multimedia</span></div>
+            <h1 class="page-title">Programación Multimedia</h1>
+            <p class="page-subtitle">Android, Kotlin y Desarrollo Móvil</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>Desarrollo Android con Kotlin</h2>
+                <p>Kotlin es el lenguaje oficial para desarrollo Android, moderno y conciso.</p>
+
+                <h3>Estructura de un Proyecto Android</h3>
+                <ul>
+                    <li><strong>app/manifests/:</strong> AndroidManifest.xml (configuración de la app)</li>
+                    <li><strong>app/java/:</strong> Código fuente Kotlin/Java</li>
+                    <li><strong>app/res/:</strong> Recursos (layouts, imágenes, strings)</li>
+                    <li><strong>build.gradle:</strong> Configuración de compilación</li>
+                </ul>
+
+                <h3>Activity Principal</h3>
+                <div class="code-block"><code>// MainActivity.kt
+package com.codedam.miapp
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var textView: TextView
+    private lateinit var button: Button
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Inicializar vistas
+        textView = findViewById(R.id.textView)
+        button = findViewById(R.id.button)
+
+        // Evento click
+        button.setOnClickListener {
+            textView.text = "¡Hola CodeDAM!"
+            Toast.makeText(this, "Botón pulsado", Toast.LENGTH_SHORT).show()
+        }
+    }
+}</code></div>
+
+                <h3>Layout XML</h3>
+                <div class="code-block"><code>&lt;!-- activity_main.xml --&gt;
+&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+
+    &lt;TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="100dp"/&gt;
+
+    &lt;Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Saludar"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Layouts Android</h2>
+
+                <h3>LinearLayout</h3>
+                <div class="code-block"><code>&lt;LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"&gt;
+
+    &lt;TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elemento 1"/&gt;
+
+    &lt;TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elemento 2"/&gt;
+
+&lt;/LinearLayout&gt;</code></div>
+
+                <h3>ConstraintLayout</h3>
+                <p>Layout más flexible y potente, similar a diseño web responsive.</p>
+
+                <h3>RecyclerView - Listas</h3>
+                <div class="code-block"><code>// Adapter para RecyclerView
+class ProductoAdapter(private val productos: List&lt;Producto&gt;) :
+    RecyclerView.Adapter&lt;ProductoAdapter.ViewHolder&gt;() {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val nombre: TextView = view.findViewById(R.id.tvNombre)
+        val precio: TextView = view.findViewById(R.id.tvPrecio)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_producto, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val producto = productos[position]
+        holder.nombre.text = producto.nombre
+        holder.precio.text = "${producto.precio}€"
+    }
+
+    override fun getItemCount() = productos.size
+}
+
+// Uso en Activity
+val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+recyclerView.layoutManager = LinearLayoutManager(this)
+recyclerView.adapter = ProductoAdapter(listaProductos)</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Navegación entre Activities</h2>
+
+                <h3>Intents</h3>
+                <div class="code-block"><code>// Intent explícito - navegar a otra Activity
+val intent = Intent(this, DetalleActivity::class.java)
+intent.putExtra("ID_PRODUCTO", producto.id)
+intent.putExtra("NOMBRE", producto.nombre)
+startActivity(intent)
+
+// Recibir datos en la nueva Activity
+class DetalleActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_detalle)
+
+        val id = intent.getIntExtra("ID_PRODUCTO", 0)
+        val nombre = intent.getStringExtra("NOMBRE")
+
+        Toast.makeText(this, "Producto: $nombre", Toast.LENGTH_SHORT).show()
+    }
+}
+
+// Intent implícito - abrir aplicación externa
+val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://codedam.com"))
+startActivity(browserIntent)</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Almacenamiento de Datos</h2>
+
+                <h3>SharedPreferences</h3>
+                <div class="code-block"><code>// Guardar datos
+val sharedPref = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE)
+with(sharedPref.edit()) {
+    putString("nombre", "Ana")
+    putInt("edad", 20)
+    putBoolean("premium", true)
+    apply()
+}
+
+// Leer datos
+val nombre = sharedPref.getString("nombre", "")
+val edad = sharedPref.getInt("edad", 0)
+val premium = sharedPref.getBoolean("premium", false)</code></div>
+
+                <h3>Room Database</h3>
+                <div class="code-block"><code>// Entidad
+@Entity(tableName = "productos")
+data class Producto(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name = "nombre") val nombre: String,
+    @ColumnInfo(name = "precio") val precio: Double
+)
+
+// DAO
+@Dao
+interface ProductoDao {
+    @Query("SELECT * FROM productos")
+    fun getAll(): List&lt;Producto&gt;
+
+    @Insert
+    fun insert(producto: Producto)
+
+    @Delete
+    fun delete(producto: Producto)
+}
+
+// Database
+@Database(entities = [Producto::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun productoDao(): ProductoDao
+}
+
+// Uso
+val db = Room.databaseBuilder(
+    applicationContext,
+    AppDatabase::class.java, "mi-database"
+).build()
+
+val productos = db.productoDao().getAll()</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Conectividad y APIs</h2>
+
+                <h3>Retrofit - Consumir APIs REST</h3>
+                <div class="code-block"><code>// Interfaz API
+interface ApiService {
+    @GET("productos")
+    suspend fun getProductos(): List&lt;Producto&gt;
+
+    @GET("productos/{id}")
+    suspend fun getProducto(@Path("id") id: Int): Producto
+
+    @POST("productos")
+    suspend fun crearProducto(@Body producto: Producto): Producto
+}
+
+// Cliente Retrofit
+val retrofit = Retrofit.Builder()
+    .baseUrl("https://api.ejemplo.com/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .build()
+
+val apiService = retrofit.create(ApiService::class.java)
+
+// Uso con Coroutines
+lifecycleScope.launch {
+    try {
+        val productos = apiService.getProductos()
+        // Actualizar UI
+    } catch (e: Exception) {
+        Toast.makeText(this@MainActivity,
+            "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+    }
+}</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>Material Design</h2>
+                <p>Guía de diseño de Google para crear interfaces hermosas y consistentes.</p>
+
+                <h3>Componentes Material</h3>
+                <ul>
+                    <li><strong>FloatingActionButton:</strong> Botón de acción flotante</li>
+                    <li><strong>CardView:</strong> Tarjetas con elevación</li>
+                    <li><strong>Snackbar:</strong> Mensajes temporales</li>
+                    <li><strong>BottomNavigationView:</strong> Navegación inferior</li>
+                    <li><strong>Toolbar:</strong> Barra de herramientas</li>
+                </ul>
+
+                <div class="code-block"><code>&lt;com.google.android.material.floatingactionbutton.FloatingActionButton
+    android:id="@+id/fab"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_add"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_margin="16dp"/&gt;</code></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

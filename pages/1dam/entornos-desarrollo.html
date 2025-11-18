@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entornos de Desarrollo 1º DAM - Git, IDEs, testing, debugging y metodologías ágiles.">
+    <title>Entornos de Desarrollo - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="programacion.html">Programación (Java)</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="../2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="../2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="../2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="../2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#1dam">1º DAM</a><span>→</span><span>Entornos de Desarrollo</span></div>
+            <h1 class="page-title">Entornos de Desarrollo</h1>
+            <p class="page-subtitle">Git, IDEs, Testing y Metodologías Ágiles</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>Entornos de Desarrollo Integrado (IDEs)</h2>
+                <p>Un IDE es una aplicación que proporciona herramientas completas para el desarrollo de software.</p>
+
+                <h3>IDEs más Populares para Java</h3>
+                <ul>
+                    <li><strong>IntelliJ IDEA:</strong> El más popular y potente. Community Edition gratuita</li>
+                    <li><strong>Eclipse:</strong> Código abierto, muy configurable, ampliamente usado</li>
+                    <li><strong>NetBeans:</strong> Oficial de Oracle, excelente para principiantes</li>
+                    <li><strong>Visual Studio Code:</strong> Ligero, con extensiones para Java</li>
+                </ul>
+
+                <h3>Características Clave de un IDE</h3>
+                <ul>
+                    <li>Editor de código con syntax highlighting</li>
+                    <li>Autocompletado inteligente (IntelliSense)</li>
+                    <li>Depurador (debugger) integrado</li>
+                    <li>Refactorización automática</li>
+                    <li>Integración con sistemas de control de versiones</li>
+                    <li>Gestión de dependencias (Maven, Gradle)</li>
+                    <li>Análisis estático de código</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Control de Versiones con Git</h2>
+                <p>Git es el sistema de control de versiones más utilizado en el mundo del desarrollo.</p>
+
+                <h3>Conceptos Básicos</h3>
+                <ul>
+                    <li><strong>Repositorio:</strong> Carpeta que contiene tu proyecto y su historial</li>
+                    <li><strong>Commit:</strong> Instantánea del proyecto en un momento dado</li>
+                    <li><strong>Branch:</strong> Rama paralela de desarrollo</li>
+                    <li><strong>Merge:</strong> Fusionar cambios de una rama a otra</li>
+                    <li><strong>Remote:</strong> Repositorio remoto (GitHub, GitLab)</li>
+                </ul>
+
+                <h3>Comandos Esenciales Git</h3>
+                <div class="code-block"><code># Configuración inicial
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"
+
+# Crear repositorio
+git init
+git clone https://github.com/usuario/repo.git
+
+# Estados y commits
+git status                    # Ver estado
+git add archivo.java         # Añadir archivo al staging
+git add .                    # Añadir todos los archivos
+git commit -m "Mensaje"      # Hacer commit
+
+# Historial
+git log                      # Ver historial
+git log --oneline           # Historial resumido
+git diff                     # Ver cambios
+
+# Ramas (branches)
+git branch                   # Listar ramas
+git branch nueva-feature    # Crear rama
+git checkout nueva-feature  # Cambiar a rama
+git checkout -b bug-fix     # Crear y cambiar
+git merge nueva-feature     # Fusionar rama
+
+# Repositorio remoto
+git remote add origin URL
+git push -u origin main     # Subir cambios
+git pull                     # Descargar cambios
+git fetch                    # Descargar sin fusionar</code></div>
+
+                <h3>Flujo de Trabajo Git</h3>
+                <div class="code-block"><code># 1. Clonar repositorio
+git clone https://github.com/equipo/proyecto.git
+
+# 2. Crear rama para nueva funcionalidad
+git checkout -b feature/login
+
+# 3. Hacer cambios y commits
+git add .
+git commit -m "Añadir formulario de login"
+
+# 4. Subir rama al remoto
+git push -u origin feature/login
+
+# 5. Crear Pull Request en GitHub
+
+# 6. Después de aprobar, fusionar con main
+git checkout main
+git merge feature/login
+git push</code></div>
+
+                <div class="note-box">
+                    <p><strong>Buenas prácticas:</strong> Commits pequeños y frecuentes, mensajes descriptivos, nunca hacer commit de contraseñas o secretos.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Testing y Pruebas</h2>
+                <p>Las pruebas aseguran que el código funciona correctamente y facilitan el mantenimiento.</p>
+
+                <h3>Tipos de Pruebas</h3>
+                <ul>
+                    <li><strong>Pruebas Unitarias:</strong> Prueban unidades individuales (métodos, funciones)</li>
+                    <li><strong>Pruebas de Integración:</strong> Prueban la interacción entre componentes</li>
+                    <li><strong>Pruebas de Sistema:</strong> Prueban el sistema completo</li>
+                    <li><strong>Pruebas de Aceptación:</strong> Verifican requisitos del cliente</li>
+                </ul>
+
+                <h3>JUnit - Testing en Java</h3>
+                <div class="code-block"><code>import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculadoraTest {
+
+    @Test
+    public void testSumar() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.sumar(5, 3);
+        assertEquals(8, resultado, "5 + 3 debe ser 8");
+    }
+
+    @Test
+    public void testDividir() {
+        Calculadora calc = new Calculadora();
+        double resultado = calc.dividir(10, 2);
+        assertEquals(5.0, resultado, 0.001);
+    }
+
+    @Test
+    public void testDividirPorCero() {
+        Calculadora calc = new Calculadora();
+        assertThrows(ArithmeticException.class, () -> {
+            calc.dividir(10, 0);
+        });
+    }
+
+    @Test
+    public void testMultiplicarNegativo() {
+        Calculadora calc = new Calculadora();
+        assertTrue(calc.multiplicar(-2, 3) < 0);
+    }
+}</code></div>
+
+                <h3>TDD - Test Driven Development</h3>
+                <p>Metodología donde escribes las pruebas ANTES que el código:</p>
+                <ol>
+                    <li>Escribir prueba (falla porque no hay código)</li>
+                    <li>Escribir código mínimo para pasar la prueba</li>
+                    <li>Refactorizar el código</li>
+                    <li>Repetir</li>
+                </ol>
+            </section>
+
+            <section class="content-section">
+                <h2>Debugging - Depuración</h2>
+                <p>El debugging es el proceso de encontrar y corregir errores en el código.</p>
+
+                <h3>Técnicas de Depuración</h3>
+                <ul>
+                    <li><strong>Breakpoints:</strong> Pausar ejecución en una línea específica</li>
+                    <li><strong>Step Over:</strong> Ejecutar línea actual sin entrar en métodos</li>
+                    <li><strong>Step Into:</strong> Entrar dentro de un método</li>
+                    <li><strong>Step Out:</strong> Salir del método actual</li>
+                    <li><strong>Watch Variables:</strong> Observar valores de variables</li>
+                    <li><strong>Evaluate Expression:</strong> Evaluar expresiones en tiempo de ejecución</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Errores comunes:</strong> NullPointerException (objeto null), ArrayIndexOutOfBoundsException (índice fuera de rango), StackOverflowError (recursión infinita).</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Metodologías Ágiles</h2>
+
+                <h3>Scrum</h3>
+                <p>Framework ágil más popular para gestión de proyectos.</p>
+                <ul>
+                    <li><strong>Sprint:</strong> Iteración de 1-4 semanas</li>
+                    <li><strong>Product Backlog:</strong> Lista priorizada de tareas</li>
+                    <li><strong>Daily Standup:</strong> Reunión diaria de 15 min</li>
+                    <li><strong>Sprint Review:</strong> Demostración al final del sprint</li>
+                    <li><strong>Sprint Retrospective:</strong> Reflexión sobre el proceso</li>
+                </ul>
+
+                <h3>Kanban</h3>
+                <p>Sistema visual de gestión de flujo de trabajo.</p>
+                <ul>
+                    <li>Tablero con columnas: To Do, In Progress, Done</li>
+                    <li>Límite de tareas en progreso (WIP)</li>
+                    <li>Flujo continuo sin sprints fijos</li>
+                </ul>
+
+                <h3>Herramientas de Gestión</h3>
+                <ul>
+                    <li><strong>Jira:</strong> Popular para Scrum y Kanban</li>
+                    <li><strong>Trello:</strong> Simple y visual, ideal para Kanban</li>
+                    <li><strong>GitHub Projects:</strong> Integrado con repositorios</li>
+                    <li><strong>Asana:</strong> Gestión de tareas y proyectos</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Gestión de Dependencias</h2>
+
+                <h3>Maven</h3>
+                <div class="code-block"><code>&lt;!-- pom.xml --&gt;
+&lt;project&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+    &lt;groupId&gt;com.codedam&lt;/groupId&gt;
+    &lt;artifactId&gt;mi-proyecto&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+            &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+            &lt;version&gt;5.9.0&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/project&gt;</code></div>
+
+                <h3>Gradle</h3>
+                <div class="code-block"><code>// build.gradle
+plugins {
+    id 'java'
+}
+
+group 'com.codedam'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+}</code></div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

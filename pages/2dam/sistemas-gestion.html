@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistemas de Gestión Empresarial 2º DAM - ERP, CRM, Odoo y procesos de negocio.">
+    <title>Sistemas de Gestión Empresarial - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo"><a href="../../index.html"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></a></div>
+            <button class="mobile-menu-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../1dam/programacion.html">Programación (Java)</a></li>
+                        <li><a href="../1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="../1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="../1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="../1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Sistemas de Gestión</span></div>
+            <h1 class="page-title">Sistemas de Gestión Empresarial</h1>
+            <p class="page-subtitle">ERP, CRM y Procesos de Negocio</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <section class="content-section">
+                <h2>Sistemas ERP - Enterprise Resource Planning</h2>
+                <p>Un ERP integra todos los procesos de negocio de una empresa en un solo sistema.</p>
+
+                <h3>Módulos Principales de un ERP</h3>
+                <ul>
+                    <li><strong>Finanzas y Contabilidad:</strong> Gestión financiera, facturación, impuestos</li>
+                    <li><strong>Recursos Humanos:</strong> Nóminas, contratación, formación</li>
+                    <li><strong>Ventas y CRM:</strong> Gestión de clientes y oportunidades</li>
+                    <li><strong>Compras:</strong> Proveedores, pedidos, recepciones</li>
+                    <li><strong>Inventario:</strong> Gestión de stock y almacenes</li>
+                    <li><strong>Producción:</strong> Planificación y control de fabricación</li>
+                    <li><strong>Proyectos:</strong> Gestión de proyectos y tareas</li>
+                </ul>
+
+                <h3>ERPs Populares</h3>
+                <ul>
+                    <li><strong>SAP:</strong> Líder mundial, para grandes empresas</li>
+                    <li><strong>Oracle ERP Cloud:</strong> Solución cloud empresarial</li>
+                    <li><strong>Microsoft Dynamics:</strong> Integrado con ecosistema Microsoft</li>
+                    <li><strong>Odoo:</strong> Open source, modular y flexible</li>
+                    <li><strong>ERPNext:</strong> Open source, basado en Python</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Ventajas ERP:</strong> Centralización de datos, automatización, reportes en tiempo real, reducción de errores.</p>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Odoo - ERP Open Source</h2>
+                <p>Odoo es el ERP open source más popular, escrito en Python y muy utilizado en DAM.</p>
+
+                <h3>Arquitectura Odoo</h3>
+                <ul>
+                    <li><strong>Backend:</strong> Python con framework propietario</li>
+                    <li><strong>Frontend:</strong> XML, JavaScript, QWeb (motor de plantillas)</li>
+                    <li><strong>Base de Datos:</strong> PostgreSQL</li>
+                    <li><strong>Módulos:</strong> Aplicaciones independientes pero integrables</li>
+                </ul>
+
+                <h3>Crear Módulo Odoo Básico</h3>
+                <div class="code-block"><code># __manifest__.py
+{
+    'name': 'Gestión de Biblioteca',
+    'version': '1.0',
+    'depends': ['base'],
+    'author': 'CodeDAM',
+    'category': 'Education',
+    'description': 'Módulo para gestionar libros y préstamos',
+    'data': [
+        'security/ir.model.access.csv',
+        'views/libro_views.xml',
+    ],
+    'installable': True,
+    'application': True,
+}</code></div>
+
+                <div class="code-block"><code># models/libro.py
+from odoo import models, fields, api
+
+class Libro(models.Model):
+    _name = 'biblioteca.libro'
+    _description = 'Libro de Biblioteca'
+
+    name = fields.Char(string='Título', required=True)
+    isbn = fields.Char(string='ISBN')
+    autor = fields.Char(string='Autor', required=True)
+    editorial = fields.Char(string='Editorial')
+    año_publicacion = fields.Integer(string='Año')
+    disponible = fields.Boolean(string='Disponible', default=True)
+    estado = fields.Selection([
+        ('nuevo', 'Nuevo'),
+        ('bueno', 'Bueno'),
+        ('regular', 'Regular'),
+        ('malo', 'Malo')
+    ], string='Estado', default='nuevo')
+
+    @api.depends('prestamos_ids')
+    def _compute_disponible(self):
+        for libro in self:
+            libro.disponible = not libro.prestamos_ids.filtered(
+                lambda p: p.estado == 'activo'
+            )</code></div>
+
+                <div class="code-block"><code>&lt;!-- views/libro_views.xml --&gt;
+&lt;odoo&gt;
+    &lt;record id="view_libro_tree" model="ir.ui.view"&gt;
+        &lt;field name="name"&gt;biblioteca.libro.tree&lt;/field&gt;
+        &lt;field name="model"&gt;biblioteca.libro&lt;/field&gt;
+        &lt;field name="arch" type="xml"&gt;
+            &lt;tree&gt;
+                &lt;field name="name"/&gt;
+                &lt;field name="autor"/&gt;
+                &lt;field name="isbn"/&gt;
+                &lt;field name="disponible"/&gt;
+            &lt;/tree&gt;
+        &lt;/field&gt;
+    &lt;/record&gt;
+
+    &lt;record id="view_libro_form" model="ir.ui.view"&gt;
+        &lt;field name="name"&gt;biblioteca.libro.form&lt;/field&gt;
+        &lt;field name="model"&gt;biblioteca.libro&lt;/field&gt;
+        &lt;field name="arch" type="xml"&gt;
+            &lt;form&gt;
+                &lt;sheet&gt;
+                    &lt;group&gt;
+                        &lt;field name="name"/&gt;
+                        &lt;field name="autor"/&gt;
+                        &lt;field name="isbn"/&gt;
+                        &lt;field name="editorial"/&gt;
+                        &lt;field name="año_publicacion"/&gt;
+                        &lt;field name="estado"/&gt;
+                        &lt;field name="disponible"/&gt;
+                    &lt;/group&gt;
+                &lt;/sheet&gt;
+            &lt;/form&gt;
+        &lt;/field&gt;
+    &lt;/record&gt;
+&lt;/odoo&gt;</code></div>
+            </section>
+
+            <section class="content-section">
+                <h2>CRM - Customer Relationship Management</h2>
+                <p>Sistema para gestionar relaciones con clientes y optimizar ventas.</p>
+
+                <h3>Funcionalidades CRM</h3>
+                <ul>
+                    <li><strong>Gestión de Contactos:</strong> Base de datos de clientes y leads</li>
+                    <li><strong>Pipeline de Ventas:</strong> Seguimiento de oportunidades</li>
+                    <li><strong>Automatización:</strong> Emails, seguimientos automáticos</li>
+                    <li><strong>Reporting:</strong> Análisis de ventas y rendimiento</li>
+                    <li><strong>Integración:</strong> Email, calendario, teléfono</li>
+                </ul>
+
+                <h3>CRMs Populares</h3>
+                <ul>
+                    <li><strong>Salesforce:</strong> Líder mundial en CRM cloud</li>
+                    <li><strong>HubSpot:</strong> Gratuito con funciones avanzadas de pago</li>
+                    <li><strong>Zoho CRM:</strong> Completo y económico</li>
+                    <li><strong>Odoo CRM:</strong> Integrado con ERP Odoo</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Procesos de Negocio</h2>
+
+                <h3>Modelado de Procesos - BPMN</h3>
+                <p>BPMN (Business Process Model and Notation) es un estándar para modelar procesos de negocio.</p>
+
+                <h4>Elementos BPMN Básicos</h4>
+                <ul>
+                    <li><strong>Evento de Inicio:</strong> Círculo con borde fino</li>
+                    <li><strong>Actividad/Tarea:</strong> Rectángulo redondeado</li>
+                    <li><strong>Gateway (Decisión):</strong> Diamante</li>
+                    <li><strong>Evento de Fin:</strong> Círculo con borde grueso</li>
+                    <li><strong>Flujo de Secuencia:</strong> Flecha conectora</li>
+                </ul>
+
+                <h3>Ejemplo: Proceso de Venta</h3>
+                <ol>
+                    <li>Cliente realiza pedido</li>
+                    <li>Verificar disponibilidad stock</li>
+                    <li>Si hay stock: Preparar pedido → Enviar</li>
+                    <li>Si no hay stock: Notificar cliente → Fin</li>
+                    <li>Facturar y cobrar</li>
+                    <li>Fin del proceso</li>
+                </ol>
+
+                <h3>KPIs - Indicadores Clave</h3>
+                <ul>
+                    <li><strong>Tasa de Conversión:</strong> Leads que se convierten en clientes</li>
+                    <li><strong>Tiempo de Ciclo:</strong> Duración del proceso</li>
+                    <li><strong>ROI:</strong> Retorno de inversión</li>
+                    <li><strong>Satisfacción Cliente:</strong> NPS, encuestas</li>
+                    <li><strong>Productividad:</strong> Ventas por empleado</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Business Intelligence (BI)</h2>
+                <p>Análisis de datos empresariales para tomar decisiones informadas.</p>
+
+                <h3>Herramientas BI</h3>
+                <ul>
+                    <li><strong>Power BI:</strong> De Microsoft, integración con Office</li>
+                    <li><strong>Tableau:</strong> Visualización avanzada</li>
+                    <li><strong>Google Data Studio:</strong> Gratuito, integración Google</li>
+                    <li><strong>Metabase:</strong> Open source, simple</li>
+                </ul>
+
+                <h3>Tipos de Análisis</h3>
+                <ul>
+                    <li><strong>Descriptivo:</strong> ¿Qué pasó? (Informes históricos)</li>
+                    <li><strong>Diagnóstico:</strong> ¿Por qué pasó? (Análisis de causas)</li>
+                    <li><strong>Predictivo:</strong> ¿Qué pasará? (Machine Learning)</li>
+                    <li><strong>Prescriptivo:</strong> ¿Qué hacer? (Recomendaciones)</li>
+                </ul>
+            </section>
+
+            <section class="content-section">
+                <h2>Integración de Sistemas</h2>
+
+                <h3>APIs y Web Services</h3>
+                <p>Permiten conectar diferentes sistemas empresariales.</p>
+
+                <h3>Ejemplo: Integrar Odoo con API Externa</h3>
+                <div class="code-block"><code># Python - Cliente Odoo
+import xmlrpc.client
+
+# Conexión
+url = 'http://localhost:8069'
+db = 'mi_base_datos'
+username = 'admin'
+password = 'admin'
+
+common = xmlrpc.client.ServerProxy(f'{url}/xmlrpc/2/common')
+uid = common.authenticate(db, username, password, {})
+
+models = xmlrpc.client.ServerProxy(f'{url}/xmlrpc/2/object')
+
+# Buscar registros
+partners = models.execute_kw(db, uid, password,
+    'res.partner', 'search_read',
+    [[['is_company', '=', True]]],
+    {'fields': ['name', 'email']}
+)
+
+for partner in partners:
+    print(f"{partner['name']}: {partner['email']}")
+
+# Crear registro
+partner_id = models.execute_kw(db, uid, password,
+    'res.partner', 'create',
+    [{'name': 'CodeDAM', 'email': 'info@codedam.com'}]
+)</code></div>
+
+                <h3>Middleware</h3>
+                <p>Software que conecta diferentes aplicaciones:</p>
+                <ul>
+                    <li><strong>ESB (Enterprise Service Bus):</strong> Mule ESB, Apache Camel</li>
+                    <li><strong>Zapier:</strong> Automatización sin código</li>
+                    <li><strong>Make (Integromat):</strong> Integración visual</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

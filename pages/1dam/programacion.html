@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apuntes completos de Programación Java para 1º DAM - POO, estructuras de datos, colecciones, excepciones y más.">
+    <meta name="keywords" content="Java, programación, POO, objetos, clases, DAM, apuntes programación">
+    <title>Programación (Java) - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="../../index.html">
+                    <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link active">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="programacion.html">Programación (Java)</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="../2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="../2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="../2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="../2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="../ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="../buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Inicio</a>
+                <span>→</span>
+                <a href="../../index.html#1dam">1º DAM</a>
+                <span>→</span>
+                <span>Programación</span>
+            </div>
+            <h1 class="page-title">Programación (Java)</h1>
+            <p class="page-subtitle">Fundamentos de Programación Orientada a Objetos</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Table of Contents -->
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul></ul>
+            </nav>
+
+            <!-- Introducción -->
+            <section class="content-section">
+                <h2>Introducción a Java</h2>
+                <p>Java es un lenguaje de programación orientado a objetos, robusto, seguro y multiplataforma. Es uno de los lenguajes más utilizados en el mundo del desarrollo de software empresarial y aplicaciones móviles Android.</p>
+
+                <h3>Características de Java</h3>
+                <ul>
+                    <li><strong>Multiplataforma:</strong> "Write Once, Run Anywhere" - compilado a bytecode que se ejecuta en la JVM</li>
+                    <li><strong>Orientado a Objetos:</strong> Todo en Java es un objeto (excepto tipos primitivos)</li>
+                    <li><strong>Robusto:</strong> Gestión automática de memoria (Garbage Collector)</li>
+                    <li><strong>Seguro:</strong> No usa punteros, sistema de seguridad incorporado</li>
+                    <li><strong>Distribuido:</strong> Facilita la creación de aplicaciones distribuidas</li>
+                </ul>
+
+                <h3>Sintaxis Básica</h3>
+                <div class="code-block">
+                    <code>public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("Hola, CodeDAM!");
+
+        // Variables
+        int numero = 42;
+        String texto = "Java";
+        double decimal = 3.14;
+        boolean verdadero = true;
+    }
+}</code>
+                </div>
+            </section>
+
+            <!-- POO -->
+            <section class="content-section">
+                <h2>Programación Orientada a Objetos (POO)</h2>
+
+                <h3>Clases y Objetos</h3>
+                <p>Una <strong>clase</strong> es una plantilla que define las características y comportamientos de un objeto. Un <strong>objeto</strong> es una instancia de una clase.</p>
+
+                <div class="code-block">
+                    <code>public class Estudiante {
+    // Atributos (características)
+    private String nombre;
+    private int edad;
+    private double notaMedia;
+
+    // Constructor
+    public Estudiante(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.notaMedia = 0.0;
+    }
+
+    // Métodos (comportamientos)
+    public void estudiar() {
+        System.out.println(nombre + " está estudiando...");
+    }
+
+    public void setNotaMedia(double nota) {
+        if (nota >= 0 && nota <= 10) {
+            this.notaMedia = nota;
+        }
+    }
+
+    public double getNotaMedia() {
+        return this.notaMedia;
+    }
+}
+
+// Uso:
+Estudiante alumno = new Estudiante("Ana", 20);
+alumno.estudiar();
+alumno.setNotaMedia(8.5);</code>
+                </div>
+
+                <h3>Pilares de la POO</h3>
+
+                <h4>1. Encapsulación</h4>
+                <p>Ocultar los detalles internos de una clase y exponer solo lo necesario mediante modificadores de acceso.</p>
+                <ul>
+                    <li><code>private</code>: Solo accesible dentro de la clase</li>
+                    <li><code>public</code>: Accesible desde cualquier parte</li>
+                    <li><code>protected</code>: Accesible en la clase y sus subclases</li>
+                    <li><code>default</code>: Accesible en el mismo paquete</li>
+                </ul>
+
+                <h4>2. Herencia</h4>
+                <p>Permite crear clases derivadas que heredan características de una clase base.</p>
+                <div class="code-block">
+                    <code>public class Persona {
+    protected String nombre;
+    protected int edad;
+
+    public void saludar() {
+        System.out.println("Hola, soy " + nombre);
+    }
+}
+
+public class Profesor extends Persona {
+    private String asignatura;
+
+    public void enseñar() {
+        System.out.println(nombre + " enseña " + asignatura);
+    }
+}
+
+// Uso:
+Profesor prof = new Profesor();
+prof.nombre = "Carlos";
+prof.saludar();  // Heredado de Persona
+prof.enseñar();  // Propio de Profesor</code>
+                </div>
+
+                <h4>3. Polimorfismo</h4>
+                <p>Capacidad de un objeto de tomar muchas formas. Permite que diferentes clases respondan de manera distinta al mismo método.</p>
+                <div class="code-block">
+                    <code>public abstract class Animal {
+    public abstract void hacerSonido();
+}
+
+public class Perro extends Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Guau guau!");
+    }
+}
+
+public class Gato extends Animal {
+    @Override
+    public void hacerSonido() {
+        System.out.println("Miau!");
+    }
+}
+
+// Polimorfismo en acción:
+Animal miMascota = new Perro();
+miMascota.hacerSonido();  // "Guau guau!"
+
+miMascota = new Gato();
+miMascota.hacerSonido();  // "Miau!"</code>
+                </div>
+
+                <h4>4. Abstracción</h4>
+                <p>Ocultar la complejidad mostrando solo la funcionalidad esencial.</p>
+                <div class="code-block">
+                    <code>public interface Vehiculo {
+    void acelerar();
+    void frenar();
+    void girar(String direccion);
+}
+
+public class Coche implements Vehiculo {
+    @Override
+    public void acelerar() {
+        System.out.println("El coche acelera...");
+    }
+
+    @Override
+    public void frenar() {
+        System.out.println("El coche frena...");
+    }
+
+    @Override
+    public void girar(String direccion) {
+        System.out.println("Girando a " + direccion);
+    }
+}</code>
+                </div>
+            </section>
+
+            <!-- Estructuras de Datos -->
+            <section class="content-section">
+                <h2>Estructuras de Datos</h2>
+
+                <h3>Arrays</h3>
+                <p>Estructura de datos que almacena elementos del mismo tipo en posiciones consecutivas de memoria.</p>
+                <div class="code-block">
+                    <code>// Declaración e inicialización
+int[] numeros = new int[5];
+String[] nombres = {"Ana", "Juan", "María"};
+
+// Acceso a elementos
+numeros[0] = 10;
+System.out.println(nombres[1]);  // "Juan"
+
+// Recorrer array
+for (int i = 0; i < numeros.length; i++) {
+    System.out.println(numeros[i]);
+}
+
+// For-each
+for (String nombre : nombres) {
+    System.out.println(nombre);
+}</code>
+                </div>
+
+                <h3>ArrayList</h3>
+                <p>Lista dinámica que puede crecer y decrecer en tamaño.</p>
+                <div class="code-block">
+                    <code>import java.util.ArrayList;
+
+ArrayList&lt;String&gt; lista = new ArrayList&lt;&gt;();
+
+// Agregar elementos
+lista.add("Java");
+lista.add("Python");
+lista.add("JavaScript");
+
+// Acceder a elementos
+String primero = lista.get(0);
+
+// Modificar elementos
+lista.set(1, "C++");
+
+// Eliminar elementos
+lista.remove(2);
+lista.remove("Java");
+
+// Tamaño
+int tamaño = lista.size();
+
+// Verificar si contiene
+boolean existe = lista.contains("Python");</code>
+                </div>
+
+                <h3>HashMap</h3>
+                <p>Estructura clave-valor para almacenar y recuperar datos eficientemente.</p>
+                <div class="code-block">
+                    <code>import java.util.HashMap;
+
+HashMap&lt;String, Integer&gt; edades = new HashMap&lt;&gt;();
+
+// Agregar pares clave-valor
+edades.put("Ana", 20);
+edades.put("Juan", 22);
+edades.put("María", 21);
+
+// Obtener valor
+int edadAna = edades.get("Ana");
+
+// Verificar si existe clave
+if (edades.containsKey("Juan")) {
+    System.out.println("Juan está en el mapa");
+}
+
+// Recorrer HashMap
+for (String nombre : edades.keySet()) {
+    System.out.println(nombre + ": " + edades.get(nombre));
+}</code>
+                </div>
+            </section>
+
+            <!-- Excepciones -->
+            <section class="content-section">
+                <h2>Manejo de Excepciones</h2>
+                <p>Las excepciones son eventos que interrumpen el flujo normal de ejecución. Java proporciona un mecanismo robusto para manejarlas.</p>
+
+                <h3>Try-Catch</h3>
+                <div class="code-block">
+                    <code>try {
+    int resultado = 10 / 0;  // ArithmeticException
+} catch (ArithmeticException e) {
+    System.out.println("Error: División por cero");
+    e.printStackTrace();
+} finally {
+    // Se ejecuta siempre
+    System.out.println("Bloque finally");
+}
+
+// Múltiples catch
+try {
+    String texto = null;
+    System.out.println(texto.length());
+} catch (NullPointerException e) {
+    System.out.println("Error: Objeto null");
+} catch (Exception e) {
+    System.out.println("Error genérico");
+}</code>
+                </div>
+
+                <h3>Lanzar Excepciones</h3>
+                <div class="code-block">
+                    <code>public void validarEdad(int edad) throws Exception {
+    if (edad < 0) {
+        throw new Exception("La edad no puede ser negativa");
+    }
+    if (edad < 18) {
+        throw new Exception("Debe ser mayor de edad");
+    }
+}
+
+// Crear excepción personalizada
+public class EdadInvalidaException extends Exception {
+    public EdadInvalidaException(String mensaje) {
+        super(mensaje);
+    }
+}</code>
+                </div>
+            </section>
+
+            <!-- Consejos y Recursos -->
+            <section class="content-section">
+                <h2>Consejos para Aprender Java</h2>
+
+                <div class="note-box">
+                    <p><strong>Práctica constante:</strong> La programación se aprende programando. Practica con ejercicios diarios y proyectos pequeños.</p>
+                </div>
+
+                <ul>
+                    <li>Empieza con proyectos simples (calculadora, gestor de tareas)</li>
+                    <li>Lee código de otros desarrolladores en GitHub</li>
+                    <li>Participa en desafíos de programación (HackerRank, LeetCode)</li>
+                    <li>Documenta tu código desde el principio</li>
+                    <li>Aprende a usar un IDE (IntelliJ IDEA, Eclipse, NetBeans)</li>
+                    <li>Estudia las convenciones de nomenclatura de Java</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Errores comunes:</strong> No gestionar excepciones, no cerrar recursos (archivos, conexiones), usar == para comparar Strings (usa .equals()).</p>
+                </div>
+
+                <h3>Recursos Adicionales</h3>
+                <ul>
+                    <li>Documentación oficial de Oracle Java</li>
+                    <li>Java Code Conventions</li>
+                    <li>Effective Java (libro de Joshua Bloch)</li>
+                    <li>Cursos en Udemy, Coursera, Platzi</li>
+                    <li>Canal de YouTube: Programación ATS, MoureDev</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p class="footer-description">Apuntes completos y gratuitos para estudiantes de DAM.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">1º DAM</h4>
+                    <ul class="footer-links">
+                        <li><a href="programacion.html">Programación</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Inicio</a></li>
+                        <li><a href="../buscar.html">Buscador</a></li>
+                        <li><a href="../ingles/index.html">Inglés Técnico</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Contenido educativo gratuito.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+</body>
+</html>

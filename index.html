@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CodeDAM - Apuntes completos y gratuitos de DAM (Desarrollo de Aplicaciones Multiplataforma). Programación Java, Bases de Datos, Acceso a Datos, y más.">
+    <meta name="keywords" content="DAM, desarrollo aplicaciones multiplataforma, programación Java, bases de datos, apuntes DAM, programación España, desarrollo software">
+    <meta name="author" content="CodeDAM">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="CodeDAM - Apuntes Completos de DAM">
+    <meta property="og:description" content="Plataforma educativa con apuntes completos de 1º y 2º DAM. Aprende programación, bases de datos y más.">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="CodeDAM - Apuntes Completos de DAM">
+
+    <title>CodeDAM - Apuntes Completos de DAM | Desarrollo de Aplicaciones Multiplataforma</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">1º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/1dam/programacion.html">Programación (Java)</a></li>
+                        <li><a href="pages/1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="pages/1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="pages/1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="pages/1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link">2º DAM</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="pages/2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="pages/2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="pages/2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="pages/2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="pages/2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </li>
+                <li><a href="pages/ingles/index.html" class="nav-link">Inglés Técnico</a></li>
+                <li><a href="pages/buscar.html" class="nav-link search-btn">Buscar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bienvenido a <span class="highlight">CodeDAM</span></h1>
+                <p class="hero-subtitle">Tu plataforma completa de apuntes para Desarrollo de Aplicaciones Multiplataforma</p>
+
+                <!-- Buscador Principal -->
+                <div class="search-box">
+                    <input type="text" id="main-search" class="search-input" placeholder="Busca conceptos, temas, lenguajes...">
+                    <button class="search-button" onclick="performSearch()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">10</span>
+                        <span class="stat-label">Asignaturas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Gratis</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Disponible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content container">
+        <!-- 1º DAM Section -->
+        <section class="course-section">
+            <h2 class="section-title">Primero de DAM</h2>
+            <p class="section-description">Fundamentos de programación, bases de datos y desarrollo web</p>
+
+            <div class="cards-grid">
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Programación (Java)</h3>
+                    <p class="card-description">POO, estructuras de datos, algoritmos, excepciones, colecciones y más.</p>
+                    <a href="pages/1dam/programacion.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Bases de Datos</h3>
+                    <p class="card-description">SQL, MySQL, diseño de BD, normalización, consultas y relaciones.</p>
+                    <a href="pages/1dam/bases-datos.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Lenguajes de Marcas</h3>
+                    <p class="card-description">HTML5, CSS3, XML, JSON, y tecnologías web fundamentales.</p>
+                    <a href="pages/1dam/lenguajes-marcas.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Entornos de Desarrollo</h3>
+                    <p class="card-description">IDEs, Git, control de versiones, testing, y metodologías ágiles.</p>
+                    <a href="pages/1dam/entornos-desarrollo.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                            <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Sistemas Informáticos</h3>
+                    <p class="card-description">Arquitectura, Linux, Windows, redes, hardware y administración.</p>
+                    <a href="pages/1dam/sistemas-informaticos.html" class="card-link">Ver apuntes →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- 2º DAM Section -->
+        <section class="course-section">
+            <h2 class="section-title">Segundo de DAM</h2>
+            <p class="section-description">Especialización en desarrollo móvil, servicios y gestión empresarial</p>
+
+            <div class="cards-grid">
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Acceso a Datos</h3>
+                    <p class="card-description">JDBC, Hibernate, MongoDB, ficheros, serialización y persistencia.</p>
+                    <a href="pages/2dam/acceso-datos.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Desarrollo de Interfaces</h3>
+                    <p class="card-description">JavaFX, Swing, diseño UI/UX, responsive design y usabilidad.</p>
+                    <a href="pages/2dam/desarrollo-interfaces.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Programación Multimedia</h3>
+                    <p class="card-description">Android, Kotlin, desarrollo móvil, APIs y aplicaciones nativas.</p>
+                    <a href="pages/2dam/programacion-multimedia.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Programación de Servicios</h3>
+                    <p class="card-description">REST APIs, Spring Boot, microservicios, sockets y concurrencia.</p>
+                    <a href="pages/2dam/programacion-servicios.html" class="card-link">Ver apuntes →</a>
+                </article>
+
+                <article class="course-card">
+                    <div class="card-icon" style="background: linear-gradient(135deg, #d299c2 0%, #fef9d7 100%);">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v18h18"></path>
+                            <path d="m19 9-5 5-4-4-3 3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="card-title">Sistemas de Gestión Empresarial</h3>
+                    <p class="card-description">ERP, CRM, Odoo, procesos empresariales y sistemas integrados.</p>
+                    <a href="pages/2dam/sistemas-gestion.html" class="card-link">Ver apuntes →</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Inglés Técnico Section -->
+        <section class="course-section featured-section">
+            <div class="featured-content">
+                <div class="featured-text">
+                    <h2 class="section-title">Inglés Técnico para Programadores</h2>
+                    <p class="section-description">Domina el vocabulario técnico en inglés, aprende a leer documentación y mejora tu comprensión de términos de programación.</p>
+                    <ul class="features-list">
+                        <li>Vocabulario técnico por asignatura</li>
+                        <li>Errores comunes y sus traducciones</li>
+                        <li>Términos de programación esenciales</li>
+                        <li>Guías de pronunciación</li>
+                    </ul>
+                    <a href="pages/ingles/index.html" class="btn-primary">Explorar Inglés Técnico →</a>
+                </div>
+                <div class="featured-visual">
+                    <div class="code-snippet">
+                        <div class="code-header">
+                            <span class="code-lang">Technical English</span>
+                        </div>
+                        <pre><code><span class="comment">// Learn programming in English</span>
+<span class="keyword">class</span> <span class="class">Developer</span> {
+    <span class="keyword">private</span> String knowledge;
+
+    <span class="keyword">public void</span> <span class="function">improveSkills</span>() {
+        <span class="comment">// Master technical vocabulary</span>
+        this.knowledge += "English";
+    }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <h2 class="section-title">¿Por qué CodeDAM?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📚</div>
+                    <h3>Contenido Completo</h3>
+                    <p>Todos los temas de 1º y 2º DAM organizados y explicados</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Enfoque Práctico</h3>
+                    <p>Ejemplos de código reales y ejercicios resueltos</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Búsqueda Rápida</h3>
+                    <p>Encuentra cualquier concepto en segundos</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3>100% Responsive</h3>
+                    <p>Accede desde móvil, tablet o ordenador</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🆓</div>
+                    <h3>Totalmente Gratis</h3>
+                    <p>Sin suscripciones ni pagos ocultos</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Inglés Técnico</h3>
+                    <p>Mejora tu comprensión del inglés en programación</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p class="footer-description">Tu plataforma educativa completa para el ciclo de Desarrollo de Aplicaciones Multiplataforma.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">1º DAM</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/1dam/programacion.html">Programación</a></li>
+                        <li><a href="pages/1dam/bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="pages/1dam/lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                        <li><a href="pages/1dam/entornos-desarrollo.html">Entornos de Desarrollo</a></li>
+                        <li><a href="pages/1dam/sistemas-informaticos.html">Sistemas Informáticos</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">2º DAM</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/2dam/acceso-datos.html">Acceso a Datos</a></li>
+                        <li><a href="pages/2dam/desarrollo-interfaces.html">Desarrollo de Interfaces</a></li>
+                        <li><a href="pages/2dam/programacion-multimedia.html">Programación Multimedia</a></li>
+                        <li><a href="pages/2dam/programacion-servicios.html">Programación de Servicios</a></li>
+                        <li><a href="pages/2dam/sistemas-gestion.html">Sistemas de Gestión</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Recursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/ingles/index.html">Inglés Técnico</a></li>
+                        <li><a href="pages/buscar.html">Buscador</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Contenido educativo gratuito para estudiantes de DAM en España.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
