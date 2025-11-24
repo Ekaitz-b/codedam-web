@@ -158,6 +158,66 @@ Edita las variables CSS en `css/styles.css`:
 ### Modificar Buscador
 Edita el array `searchData` en `js/main.js` para agregar nuevas páginas al buscador.
 
+## Configuración de API Key de Anthropic
+
+### Paso 1: Obtener tu API Key
+
+1. Ve a [https://console.anthropic.com](https://console.anthropic.com)
+2. Inicia sesión o crea una cuenta
+3. Ve a **API Keys** (en el menú de tu perfil)
+4. Haz clic en **"Create Key"** o **"+ Create API Key"**
+5. Asigna un nombre descriptivo (ej: "CodeDAM")
+6. **Copia la clave inmediatamente** - solo se muestra una vez
+
+### Paso 2: Configurar la API Key en el Proyecto
+
+#### Opción A: Para usar con Claude Code (Recomendado)
+
+La API key se configura automáticamente cuando usas Claude Code. Si necesitas configurarla manualmente:
+
+**En Windows PowerShell:**
+```powershell
+$env:ANTHROPIC_API_KEY="tu-api-key-aqui"
+```
+
+**O crear un archivo `.env` en la raíz del proyecto:**
+```env
+ANTHROPIC_API_KEY=tu-api-key-aqui
+```
+
+#### Opción B: Para integrar la API en tu aplicación web
+
+⚠️ **IMPORTANTE**: Para proyectos web estáticos (HTML/JS), **NO** pongas la API key directamente en el código JavaScript del frontend, ya que será visible para cualquier usuario.
+
+**Opciones seguras:**
+
+1. **Usar un backend** (Node.js, Python, etc.):
+   - La API key se mantiene en el servidor
+   - El frontend hace peticiones al backend
+   - El backend usa la API key de forma segura
+
+2. **Usar variables de entorno del sistema** (solo desarrollo local):
+   - Configura la variable de entorno en tu sistema
+   - Úsala desde tu servidor backend
+
+### Archivos de Configuración
+
+- `.env` - Contiene tu API key real (NO subir a Git)
+- `.env.example` - Plantilla de ejemplo (SÍ subir a Git)
+- `.gitignore` - Evita que `.env` se suba al repositorio
+- `js/config.js` - Archivo de configuración con ejemplos de uso
+
+### Verificar la Configuración
+
+Para verificar que tu API key está configurada correctamente:
+
+```powershell
+# En PowerShell
+echo $env:ANTHROPIC_API_KEY
+```
+
+Si ves tu API key, está configurada correctamente.
+
 ## Tecnologías Utilizadas
 
 - **HTML5** - Estructura semántica

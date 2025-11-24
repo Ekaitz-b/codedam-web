@@ -1,0 +1,25 @@
+# Archivos de entorno - NO subir al repositorio
+.env
+.env.local
+.env.*.local
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Dependencias (si las agregas en el futuro)
+node_modules/
+
+
+
