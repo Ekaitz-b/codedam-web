@@ -1,0 +1,2488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistemas de Gestión Empresarial 2º DAM - ERP, CRM, Odoo, procesos de negocio y Business Intelligence.">
+    <title>Sistemas de Gestión Empresarial - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../1dam/programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="./desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Sistemas de Gestión</span></div>
+            <h1 class="page-title">Sistemas de Gestión Empresarial</h1>
+            <p class="page-subtitle">ERP, CRM, Odoo, Procesos de Negocio y Business Intelligence</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <!-- INTRODUCCIÓN A LOS SISTEMAS DE GESTIÓN -->
+            <section class="content-section">
+                <h2>Introducción a los Sistemas de Gestión</h2>
+
+                <h3>¿Qué es un Sistema de Gestión Empresarial?</h3>
+                <p>Un Sistema de Gestión Empresarial (SGE) es una plataforma de software que integra y automatiza los procesos de negocio de una organización, centralizando la información y facilitando la toma de decisiones.</p>
+
+                <h3>ERP - Enterprise Resource Planning</h3>
+                <p>Un ERP (Planificación de Recursos Empresariales) es el núcleo de los sistemas de gestión. Integra todas las áreas funcionales de la empresa en una única plataforma con base de datos compartida.</p>
+
+                <div class="code-block"><code>Características principales de un ERP:
+
+• Integración total: Todos los departamentos comparten la misma información
+• Base de datos única: Elimina duplicidades y datos inconsistentes
+• Tiempo real: Información actualizada al instante
+• Modularidad: Se pueden activar solo los módulos necesarios
+• Escalabilidad: Crece con las necesidades de la empresa
+• Trazabilidad: Seguimiento completo de todas las operaciones</code></div>
+
+                <h3>Tipos de Sistemas Empresariales</h3>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Sistema</th>
+                                <th>Nombre Completo</th>
+                                <th>Función Principal</th>
+                                <th>Áreas que Cubre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ERP</td>
+                                <td>Enterprise Resource Planning</td>
+                                <td>Integrar todos los procesos</td>
+                                <td>Finanzas, RRHH, Producción, Inventario</td>
+                            </tr>
+                            <tr>
+                                <td>CRM</td>
+                                <td>Customer Relationship Management</td>
+                                <td>Gestionar relaciones con clientes</td>
+                                <td>Ventas, Marketing, Soporte</td>
+                            </tr>
+                            <tr>
+                                <td>SCM</td>
+                                <td>Supply Chain Management</td>
+                                <td>Gestionar cadena de suministro</td>
+                                <td>Logística, Proveedores, Distribución</td>
+                            </tr>
+                            <tr>
+                                <td>HRM</td>
+                                <td>Human Resource Management</td>
+                                <td>Gestionar recursos humanos</td>
+                                <td>Nóminas, Contratación, Formación</td>
+                            </tr>
+                            <tr>
+                                <td>BI</td>
+                                <td>Business Intelligence</td>
+                                <td>Análisis de datos y reporting</td>
+                                <td>Dashboards, KPIs, Predicciones</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Ventajas de Implementar un SGE</h3>
+                <ul>
+                    <li><strong>Eficiencia operativa:</strong> Automatización de tareas repetitivas, reducción de errores manuales</li>
+                    <li><strong>Visibilidad en tiempo real:</strong> Datos actualizados para toda la organización</li>
+                    <li><strong>Mejora en la toma de decisiones:</strong> Informes y análisis basados en datos reales</li>
+                    <li><strong>Reducción de costes:</strong> Menor duplicidad de trabajo, optimización de recursos</li>
+                    <li><strong>Cumplimiento normativo:</strong> Facilita auditorías, trazabilidad fiscal y legal</li>
+                    <li><strong>Satisfacción del cliente:</strong> Mejor servicio gracias a información centralizada</li>
+                    <li><strong>Escalabilidad:</strong> Sistema preparado para el crecimiento empresarial</li>
+                </ul>
+
+                <h3>Software Propietario vs Open Source</h3>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Propietario</th>
+                                <th>Open Source</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Coste inicial</td>
+                                <td>Alto (licencias)</td>
+                                <td>Bajo o gratuito</td>
+                            </tr>
+                            <tr>
+                                <td>Personalización</td>
+                                <td>Limitada al proveedor</td>
+                                <td>Total acceso al código</td>
+                            </tr>
+                            <tr>
+                                <td>Soporte</td>
+                                <td>Incluido con licencia</td>
+                                <td>Comunidad o contratar</td>
+                            </tr>
+                            <tr>
+                                <td>Actualizaciones</td>
+                                <td>Controladas por vendor</td>
+                                <td>Comunidad activa</td>
+                            </tr>
+                            <tr>
+                                <td>Dependencia</td>
+                                <td>Vendor lock-in</td>
+                                <td>Independencia total</td>
+                            </tr>
+                            <tr>
+                                <td>Ejemplos</td>
+                                <td>SAP, Oracle, Microsoft Dynamics</td>
+                                <td>Odoo, ERPNext, Dolibarr</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Principales ERPs del Mercado</h3>
+
+                <h4>SAP S/4HANA</h4>
+                <ul>
+                    <li>Líder mundial en ERP para grandes empresas</li>
+                    <li>Base de datos in-memory HANA para análisis en tiempo real</li>
+                    <li>Solución completa pero con alta inversión inicial</li>
+                    <li>Empresas: Coca-Cola, BMW, Siemens</li>
+                </ul>
+
+                <h4>Oracle ERP Cloud</h4>
+                <ul>
+                    <li>Solución 100% cloud, escalable</li>
+                    <li>Fuerte en finanzas y supply chain</li>
+                    <li>Integración con IA y Machine Learning</li>
+                    <li>Empresas: FedEx, Western Union</li>
+                </ul>
+
+                <h4>Microsoft Dynamics 365</h4>
+                <ul>
+                    <li>Integración nativa con Microsoft 365, Teams, Power BI</li>
+                    <li>Versiones Business Central (pymes) y Finance/SCM (enterprise)</li>
+                    <li>Familiar para usuarios de Office</li>
+                    <li>Empresas: HP, Heineken</li>
+                </ul>
+
+                <h4>Odoo</h4>
+                <ul>
+                    <li>Open Source más popular, escrito en Python</li>
+                    <li>Modular: desde 1 app hasta suite completa</li>
+                    <li>Versión Community gratuita, Enterprise con soporte</li>
+                    <li>Ideal para pymes y startups</li>
+                    <li>Empresas: Toyota, Hyundai (divisiones)</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Dato importante:</strong> El mercado global de ERP superó los 50.000 millones de dólares en 2023, con un crecimiento anual del 10%. La tendencia es hacia soluciones cloud (SaaS) que reducen la inversión inicial y facilitan el mantenimiento.</p>
+                </div>
+            </section>
+
+            <!-- CRM - GESTIÓN DE RELACIONES CON CLIENTES -->
+            <section class="content-section">
+                <h2>Gestión de Relaciones con Clientes (CRM)</h2>
+
+                <h3>¿Qué es un CRM?</h3>
+                <p>Un CRM (Customer Relationship Management) es un sistema diseñado para gestionar todas las interacciones con clientes actuales y potenciales, optimizando las relaciones comerciales y aumentando las ventas.</p>
+
+                <div class="code-block"><code>Objetivos de un CRM:
+
+• Centralizar información de clientes en un único lugar
+• Mejorar la comunicación y seguimiento comercial
+• Automatizar procesos de marketing y ventas
+• Aumentar la retención y fidelización de clientes
+• Identificar oportunidades de venta cruzada (cross-selling)
+• Proporcionar mejor servicio al cliente</code></div>
+
+                <h3>Funcionalidades Principales del CRM</h3>
+
+                <h4>Gestión de Contactos</h4>
+                <ul>
+                    <li>Base de datos centralizada de clientes, leads y empresas</li>
+                    <li>Historial completo de interacciones (emails, llamadas, reuniones)</li>
+                    <li>Segmentación por criterios (sector, tamaño, ubicación)</li>
+                    <li>Datos de contacto, preferencias y notas</li>
+                </ul>
+
+                <h4>Pipeline de Ventas</h4>
+                <ul>
+                    <li>Visualización del embudo de ventas por etapas</li>
+                    <li>Seguimiento de oportunidades y probabilidad de cierre</li>
+                    <li>Previsión de ingresos (forecast)</li>
+                    <li>Asignación de comerciales a oportunidades</li>
+                </ul>
+
+                <h4>Automatización de Marketing</h4>
+                <ul>
+                    <li>Campañas de email marketing segmentadas</li>
+                    <li>Lead scoring (puntuación de leads)</li>
+                    <li>Nurturing automático de prospectos</li>
+                    <li>Integración con redes sociales</li>
+                </ul>
+
+                <h4>Servicio al Cliente</h4>
+                <ul>
+                    <li>Sistema de tickets de soporte</li>
+                    <li>Base de conocimiento para autoservicio</li>
+                    <li>Seguimiento de incidencias y SLAs</li>
+                    <li>Encuestas de satisfacción</li>
+                </ul>
+
+                <h3>Ciclo de Vida del Cliente</h3>
+
+                <div class="code-block"><code>Etapas del Customer Journey:
+
+1. CONCIENCIA (Awareness)
+   - El cliente descubre la empresa
+   - Marketing: SEO, redes sociales, publicidad
+   - CRM: Captura de leads
+
+2. CONSIDERACIÓN (Consideration)
+   - El cliente evalúa opciones
+   - Marketing: Contenido, demos, casos de éxito
+   - CRM: Lead nurturing, scoring
+
+3. DECISIÓN (Decision)
+   - El cliente compara y decide
+   - Ventas: Propuestas, negociación
+   - CRM: Pipeline, seguimiento de oportunidades
+
+4. COMPRA (Purchase)
+   - Cierre de la venta
+   - Ventas: Contrato, facturación
+   - CRM: Conversión lead → cliente
+
+5. RETENCIÓN (Retention)
+   - Fidelización del cliente
+   - Soporte: Atención, resolución
+   - CRM: Tickets, satisfacción
+
+6. ADVOCACY (Promoción)
+   - El cliente recomienda
+   - Marketing: Reviews, referidos
+   - CRM: NPS, programas de fidelización</code></div>
+
+                <h3>Métricas Clave en CRM</h3>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Métrica</th>
+                                <th>Descripción</th>
+                                <th>Fórmula</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tasa de Conversión</td>
+                                <td>Leads que se convierten en clientes</td>
+                                <td>(Clientes nuevos / Leads) × 100</td>
+                            </tr>
+                            <tr>
+                                <td>CAC</td>
+                                <td>Coste de Adquisición de Cliente</td>
+                                <td>Inversión Marketing+Ventas / Clientes nuevos</td>
+                            </tr>
+                            <tr>
+                                <td>LTV</td>
+                                <td>Valor de Vida del Cliente</td>
+                                <td>Ingresos medios × Duración relación</td>
+                            </tr>
+                            <tr>
+                                <td>Churn Rate</td>
+                                <td>Tasa de abandono de clientes</td>
+                                <td>(Clientes perdidos / Total clientes) × 100</td>
+                            </tr>
+                            <tr>
+                                <td>NPS</td>
+                                <td>Net Promoter Score</td>
+                                <td>% Promotores - % Detractores</td>
+                            </tr>
+                            <tr>
+                                <td>Ciclo de Venta</td>
+                                <td>Tiempo medio hasta cerrar venta</td>
+                                <td>Días desde lead hasta cierre</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Principales CRMs del Mercado</h3>
+
+                <h4>Salesforce</h4>
+                <ul>
+                    <li>Líder mundial en CRM cloud con 23% de cuota de mercado</li>
+                    <li>Altamente personalizable con AppExchange</li>
+                    <li>Einstein AI para predicciones de ventas</li>
+                    <li>Precio: desde 25€/usuario/mes</li>
+                </ul>
+
+                <h4>HubSpot CRM</h4>
+                <ul>
+                    <li>CRM gratuito con funciones básicas completas</li>
+                    <li>Integración nativa con marketing, ventas y servicio</li>
+                    <li>Ideal para inbound marketing</li>
+                    <li>Precio: Gratis (básico), desde 45€/mes (profesional)</li>
+                </ul>
+
+                <h4>Zoho CRM</h4>
+                <ul>
+                    <li>Suite completa con excelente relación calidad-precio</li>
+                    <li>Automatización avanzada y IA (Zia)</li>
+                    <li>Integración con 40+ apps Zoho</li>
+                    <li>Precio: desde 14€/usuario/mes</li>
+                </ul>
+
+                <h4>Pipedrive</h4>
+                <ul>
+                    <li>Enfocado 100% en ventas y pipeline</li>
+                    <li>Interfaz visual e intuitiva</li>
+                    <li>Ideal para equipos comerciales pequeños</li>
+                    <li>Precio: desde 15€/usuario/mes</li>
+                </ul>
+
+                <h3>Ejemplo Práctico: Flujo de Ventas en CRM</h3>
+                <div class="code-block"><code>Caso: Empresa de software B2B
+
+ETAPA 1: Lead entrante
+- Origen: Formulario web "Solicitar demo"
+- Datos: Empresa ABC, contacto María García, email, teléfono
+- Acción automática: Email de bienvenida, asignar a comercial
+
+ETAPA 2: Cualificación
+- Comercial llama en 24h
+- BANT: Budget 50K€, Authority (directora), Need (gestión proyectos), Timeline (Q2)
+- Puntuación: 85/100 (lead cualificado)
+
+ETAPA 3: Demo
+- Reunión online de 45 min
+- Participantes: María + CTO
+- Resultado: Interés alto, solicitan propuesta
+
+ETAPA 4: Propuesta
+- Envío presupuesto: 35.000€ + 5.000€/año mantenimiento
+- Seguimiento: email a los 3 días
+
+ETAPA 5: Negociación
+- Objeción: presupuesto excede 30K€
+- Contraoferta: 32.000€ con pago fraccionado
+
+ETAPA 6: Cierre
+- Aceptación y firma contrato
+- Conversión: Lead → Cliente
+- Próximos pasos: onboarding, implementación</code></div>
+            </section>
+
+            <!-- ERP - GESTIÓN DE RECURSOS EMPRESARIALES -->
+            <section class="content-section">
+                <h2>Gestión de Recursos Empresariales (ERP)</h2>
+
+                <h3>Módulos Principales de un ERP</h3>
+                <p>Un ERP se compone de módulos interconectados que cubren todas las áreas funcionales de la empresa. La información fluye entre ellos en tiempo real.</p>
+
+                <h4>Módulo de Gestión Financiera y Contabilidad</h4>
+                <ul>
+                    <li><strong>Contabilidad general:</strong> Plan contable, asientos, balance, cuenta de resultados</li>
+                    <li><strong>Cuentas a cobrar:</strong> Facturas de clientes, cobros, morosidad</li>
+                    <li><strong>Cuentas a pagar:</strong> Facturas de proveedores, pagos, vencimientos</li>
+                    <li><strong>Tesorería:</strong> Bancos, conciliación, previsión de cash flow</li>
+                    <li><strong>Impuestos:</strong> IVA, retenciones IRPF, modelos fiscales</li>
+                    <li><strong>Activos fijos:</strong> Amortizaciones, inventario de activos</li>
+                </ul>
+
+                <h4>Módulo de Gestión de Inventario</h4>
+                <ul>
+                    <li><strong>Productos:</strong> Catálogo, variantes, categorías</li>
+                    <li><strong>Almacenes:</strong> Ubicaciones, zonas, multi-almacén</li>
+                    <li><strong>Movimientos:</strong> Entradas, salidas, traspasos</li>
+                    <li><strong>Valoración:</strong> FIFO, LIFO, precio medio ponderado</li>
+                    <li><strong>Inventarios:</strong> Recuento físico, ajustes</li>
+                    <li><strong>Trazabilidad:</strong> Lotes, números de serie</li>
+                </ul>
+
+                <h4>Módulo de Compras</h4>
+                <ul>
+                    <li><strong>Proveedores:</strong> Ficha, condiciones, evaluación</li>
+                    <li><strong>Solicitudes de compra:</strong> Peticiones internas</li>
+                    <li><strong>Pedidos de compra:</strong> Órdenes a proveedores</li>
+                    <li><strong>Recepciones:</strong> Albaranes de entrada</li>
+                    <li><strong>Facturas de proveedor:</strong> Control y contabilización</li>
+                    <li><strong>Reglas de reabastecimiento:</strong> Puntos de pedido automáticos</li>
+                </ul>
+
+                <h4>Módulo de Ventas</h4>
+                <ul>
+                    <li><strong>Clientes:</strong> Ficha, condiciones de pago, límite crédito</li>
+                    <li><strong>Presupuestos:</strong> Ofertas comerciales</li>
+                    <li><strong>Pedidos de venta:</strong> Confirmación de cliente</li>
+                    <li><strong>Albaranes:</strong> Documentos de entrega</li>
+                    <li><strong>Facturas de cliente:</strong> Facturación y contabilización</li>
+                    <li><strong>Tarifas:</strong> Listas de precios, descuentos</li>
+                </ul>
+
+                <h4>Módulo de Recursos Humanos</h4>
+                <ul>
+                    <li><strong>Empleados:</strong> Ficha personal, contratos, documentación</li>
+                    <li><strong>Nóminas:</strong> Cálculo, deducciones, pagos</li>
+                    <li><strong>Ausencias:</strong> Vacaciones, bajas, permisos</li>
+                    <li><strong>Control horario:</strong> Fichajes, horas extras</li>
+                    <li><strong>Reclutamiento:</strong> Ofertas, candidatos, selección</li>
+                    <li><strong>Evaluaciones:</strong> Desempeño, objetivos</li>
+                </ul>
+
+                <h4>Módulo de Producción (MRP)</h4>
+                <ul>
+                    <li><strong>Listas de materiales (BOM):</strong> Componentes de productos</li>
+                    <li><strong>Rutas de fabricación:</strong> Operaciones, centros de trabajo</li>
+                    <li><strong>Órdenes de producción:</strong> Fabricación planificada</li>
+                    <li><strong>MRP:</strong> Planificación de materiales</li>
+                    <li><strong>Control de calidad:</strong> Inspecciones, no conformidades</li>
+                </ul>
+
+                <h3>Integración Entre Módulos</h3>
+
+                <div class="code-block"><code>Ejemplo: Flujo completo de una venta
+
+VENTAS                    INVENTARIO               CONTABILIDAD
+────────                  ──────────               ────────────
+Presupuesto
+    ↓
+Pedido confirmado  ──────→ Reserva stock
+    ↓                          ↓
+                          Preparación
+    ↓                          ↓
+Albarán entrega   ←────── Salida almacén
+    ↓                          ↓
+Factura           ──────────────────────────→ Asiento contable
+    ↓                                         (Debe: Cliente
+                                               Haber: Ventas + IVA)
+    ↓
+Cobro             ──────────────────────────→ Asiento cobro
+                                              (Debe: Banco
+                                               Haber: Cliente)
+
+Todo en tiempo real y sin duplicar datos.</code></div>
+
+                <h3>Flujos de Trabajo Empresariales</h3>
+
+                <h4>Proceso Order-to-Cash (O2C)</h4>
+                <p>Desde el pedido del cliente hasta el cobro:</p>
+                <ol>
+                    <li>Recepción del pedido</li>
+                    <li>Verificación de crédito del cliente</li>
+                    <li>Comprobación de disponibilidad</li>
+                    <li>Preparación y envío</li>
+                    <li>Facturación</li>
+                    <li>Cobro y conciliación</li>
+                </ol>
+
+                <h4>Proceso Procure-to-Pay (P2P)</h4>
+                <p>Desde la necesidad de compra hasta el pago:</p>
+                <ol>
+                    <li>Solicitud de compra interna</li>
+                    <li>Aprobación según límites</li>
+                    <li>Selección de proveedor</li>
+                    <li>Pedido de compra</li>
+                    <li>Recepción de mercancía</li>
+                    <li>Validación factura (three-way match)</li>
+                    <li>Pago al proveedor</li>
+                </ol>
+
+                <h4>Record-to-Report (R2R)</h4>
+                <p>Desde la transacción hasta los informes financieros:</p>
+                <ol>
+                    <li>Registro de transacciones</li>
+                    <li>Asientos contables</li>
+                    <li>Conciliaciones</li>
+                    <li>Ajustes de cierre</li>
+                    <li>Generación de informes</li>
+                    <li>Análisis y reporting</li>
+                </ol>
+            </section>
+
+            <!-- ODOO - ERP OPEN SOURCE -->
+            <section class="content-section">
+                <h2>Odoo - ERP Open Source</h2>
+
+                <h3>Introducción a Odoo</h3>
+                <p>Odoo es el ERP open source más popular del mundo, con más de 7 millones de usuarios. Desarrollado en Python, ofrece una suite completa de aplicaciones empresariales modulares e integrables.</p>
+
+                <div class="code-block"><code>Características técnicas de Odoo:
+
+• Lenguaje: Python 3
+• Framework web: Odoo Framework (OWL para frontend)
+• Base de datos: PostgreSQL
+• Servidor web: Werkzeug
+• ORM propio para acceso a datos
+• Motor de plantillas: QWeb (XML)
+• API XML-RPC y JSON-RPC
+
+Versiones:
+• Community: Gratuita, open source (LGPL)
+• Enterprise: De pago, funciones adicionales + soporte</code></div>
+
+                <h3>Instalación de Odoo</h3>
+
+                <div class="code-block"><code># Instalación en Ubuntu/Debian (método Docker - recomendado)
+
+# 1. Instalar Docker
+sudo apt update
+sudo apt install docker.io docker-compose
+
+# 2. Crear docker-compose.yml
+version: '3.1'
+services:
+  web:
+    image: odoo:16.0
+    depends_on:
+      - db
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    environment:
+      - HOST=db
+      - USER=odoo
+      - PASSWORD=odoo
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+
+volumes:
+  odoo-web-data:
+  odoo-db-data:
+
+# 3. Iniciar servicios
+docker-compose up -d
+
+# 4. Acceder en http://localhost:8069</code></div>
+
+                <h3>Módulos Principales de Odoo</h3>
+
+                <h4>Ventas (Sales)</h4>
+                <ul>
+                    <li>Gestión de presupuestos y pedidos</li>
+                    <li>Tarifas y listas de precios</li>
+                    <li>Portal del cliente</li>
+                    <li>Firmas electrónicas</li>
+                    <li>Informes de ventas</li>
+                </ul>
+
+                <h4>CRM</h4>
+                <ul>
+                    <li>Pipeline de oportunidades visual</li>
+                    <li>Gestión de leads y contactos</li>
+                    <li>Actividades planificadas</li>
+                    <li>Previsión de ingresos</li>
+                    <li>Integración con email y VoIP</li>
+                </ul>
+
+                <h4>Compras (Purchase)</h4>
+                <ul>
+                    <li>Solicitudes de presupuesto (RFQ)</li>
+                    <li>Pedidos de compra</li>
+                    <li>Control de recepciones</li>
+                    <li>Acuerdos con proveedores</li>
+                    <li>Reglas de reabastecimiento</li>
+                </ul>
+
+                <h4>Inventario (Inventory)</h4>
+                <ul>
+                    <li>Gestión multi-almacén</li>
+                    <li>Trazabilidad por lotes/series</li>
+                    <li>Rutas y reglas de aprovisionamiento</li>
+                    <li>Estrategias de extracción (FIFO, FEFO)</li>
+                    <li>Códigos de barras</li>
+                </ul>
+
+                <h4>Contabilidad (Accounting)</h4>
+                <ul>
+                    <li>Contabilidad de doble entrada</li>
+                    <li>Facturación automática</li>
+                    <li>Conciliación bancaria</li>
+                    <li>Gestión de impuestos</li>
+                    <li>Informes financieros</li>
+                </ul>
+
+                <h4>Sitio Web y eCommerce</h4>
+                <ul>
+                    <li>Constructor de sitios web drag & drop</li>
+                    <li>Tienda online integrada</li>
+                    <li>Pasarelas de pago</li>
+                    <li>SEO integrado</li>
+                    <li>Blog y formularios</li>
+                </ul>
+
+                <h3>Navegación por la Interfaz de Odoo</h3>
+
+                <div class="code-block"><code>Estructura de la interfaz de Odoo:
+
+┌─────────────────────────────────────────────────┐
+│  [Apps]  [Menú]  [Búsqueda]           [Usuario] │  ← Barra superior
+├─────────────────────────────────────────────────┤
+│                                                 │
+│  ┌─────────┐  ┌─────────┐  ┌─────────┐         │
+│  │ Ventas  │  │ Compras │  │  CRM    │  ...    │  ← Apps instaladas
+│  └─────────┘  └─────────┘  └─────────┘         │
+│                                                 │
+│  Al entrar en una app:                          │
+│  ┌──────────────────────────────────────────┐  │
+│  │ [Crear] [Importar]  🔍 Filtros  Agrupar   │  │  ← Acciones
+│  ├──────────────────────────────────────────┤  │
+│  │  Vista Lista / Kanban / Calendario        │  │  ← Vistas
+│  │  ┌────────────────────────────────────┐  │  │
+│  │  │ Registro 1                          │  │  │
+│  │  │ Registro 2                          │  │  │
+│  │  │ ...                                 │  │  │
+│  │  └────────────────────────────────────┘  │  │
+│  └──────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────┘
+
+Tipos de vistas:
+• Lista (tree): Tabla con registros
+• Formulario (form): Detalle de un registro
+• Kanban: Tarjetas arrastrables
+• Calendario: Vista temporal
+• Gráfico: Charts y estadísticas
+• Pivot: Tabla dinámica</code></div>
+
+                <h3>Caso de Uso: Proceso Completo de Venta en Odoo</h3>
+
+                <div class="code-block"><code>Escenario: Venta de productos a cliente
+
+1. CREAR CLIENTE
+   Ventas → Clientes → Crear
+   - Nombre: Empresa ABC S.L.
+   - NIF: B12345678
+   - Dirección: C/ Principal 123, Madrid
+   - Plazo de pago: 30 días
+
+2. CREAR PRESUPUESTO
+   Ventas → Presupuestos → Crear
+   - Cliente: Empresa ABC S.L.
+   - Líneas:
+     • Producto: Laptop Dell XPS 15
+     • Cantidad: 5
+     • Precio unitario: 1.500€
+   - Total: 7.500€ + IVA
+
+3. ENVIAR PRESUPUESTO
+   - Botón "Enviar por email"
+   - Se genera PDF automáticamente
+   - Cliente recibe enlace al portal
+
+4. CONFIRMAR PEDIDO
+   - Cliente acepta → Botón "Confirmar"
+   - Presupuesto → Pedido de Venta
+   - Se crea orden de entrega automáticamente
+
+5. PREPARAR ENVÍO
+   Inventario → Órdenes de entrega
+   - Verificar disponibilidad
+   - Reservar productos
+   - Validar entrega
+
+6. FACTURAR
+   En el pedido → "Crear factura"
+   - Factura borrador generada
+   - Validar → Asiento contable automático
+   - Enviar al cliente
+
+7. REGISTRAR COBRO
+   Contabilidad → Pagos
+   - Registrar pago del cliente
+   - Conciliar con factura
+   - Factura marcada como pagada</code></div>
+
+                <h3>Desarrollo de Módulos en Odoo</h3>
+
+                <div class="code-block"><code># Estructura de un módulo Odoo
+
+mi_modulo/
+├── __init__.py
+├── __manifest__.py
+├── models/
+│   ├── __init__.py
+│   └── mi_modelo.py
+├── views/
+│   └── mi_modelo_views.xml
+├── security/
+│   └── ir.model.access.csv
+├── data/
+│   └── datos_demo.xml
+└── static/
+    └── description/
+        └── icon.png</code></div>
+
+                <div class="code-block"><code># __manifest__.py
+{
+    'name': 'Gestión de Proyectos DAM',
+    'version': '16.0.1.0.0',
+    'category': 'Project',
+    'summary': 'Gestión de proyectos de desarrollo',
+    'description': '''
+        Módulo para gestionar proyectos de desarrollo de software.
+        - Tareas y subtareas
+        - Control de horas
+        - Entregables
+    ''',
+    'author': 'CodeDAM',
+    'website': 'https://codedam.com',
+    'depends': ['base', 'project', 'hr_timesheet'],
+    'data': [
+        'security/ir.model.access.csv',
+        'views/proyecto_views.xml',
+        'views/menus.xml',
+    ],
+    'demo': [
+        'data/demo_data.xml',
+    ],
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}</code></div>
+
+                <div class="code-block"><code># models/proyecto.py
+from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+
+class ProyectoDesarrollo(models.Model):
+    _name = 'dam.proyecto'
+    _description = 'Proyecto de Desarrollo'
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+
+    name = fields.Char(string='Nombre', required=True, tracking=True)
+    codigo = fields.Char(string='Código', readonly=True, copy=False)
+    descripcion = fields.Text(string='Descripción')
+    fecha_inicio = fields.Date(string='Fecha Inicio', default=fields.Date.today)
+    fecha_fin = fields.Date(string='Fecha Fin')
+
+    cliente_id = fields.Many2one('res.partner', string='Cliente',
+                                  domain=[('is_company', '=', True)])
+    responsable_id = fields.Many2one('res.users', string='Responsable',
+                                      default=lambda self: self.env.user)
+
+    estado = fields.Selection([
+        ('borrador', 'Borrador'),
+        ('en_curso', 'En Curso'),
+        ('pausado', 'Pausado'),
+        ('finalizado', 'Finalizado'),
+        ('cancelado', 'Cancelado')
+    ], string='Estado', default='borrador', tracking=True)
+
+    presupuesto = fields.Float(string='Presupuesto (€)')
+    horas_estimadas = fields.Float(string='Horas Estimadas')
+    horas_reales = fields.Float(string='Horas Reales', compute='_compute_horas')
+    progreso = fields.Float(string='Progreso (%)', compute='_compute_progreso')
+
+    tarea_ids = fields.One2many('dam.tarea', 'proyecto_id', string='Tareas')
+    tarea_count = fields.Integer(compute='_compute_tarea_count')
+
+    @api.model
+    def create(self, vals):
+        if not vals.get('codigo'):
+            vals['codigo'] = self.env['ir.sequence'].next_by_code('dam.proyecto')
+        return super().create(vals)
+
+    @api.depends('tarea_ids.horas_reales')
+    def _compute_horas(self):
+        for proyecto in self:
+            proyecto.horas_reales = sum(proyecto.tarea_ids.mapped('horas_reales'))
+
+    @api.depends('tarea_ids', 'tarea_ids.completada')
+    def _compute_progreso(self):
+        for proyecto in self:
+            tareas = proyecto.tarea_ids
+            if tareas:
+                completadas = tareas.filtered(lambda t: t.completada)
+                proyecto.progreso = (len(completadas) / len(tareas)) * 100
+            else:
+                proyecto.progreso = 0
+
+    def _compute_tarea_count(self):
+        for proyecto in self:
+            proyecto.tarea_count = len(proyecto.tarea_ids)
+
+    @api.constrains('fecha_inicio', 'fecha_fin')
+    def _check_fechas(self):
+        for proyecto in self:
+            if proyecto.fecha_fin and proyecto.fecha_inicio > proyecto.fecha_fin:
+                raise ValidationError('La fecha de fin debe ser posterior a la de inicio.')
+
+    def action_en_curso(self):
+        self.estado = 'en_curso'
+
+    def action_finalizar(self):
+        self.estado = 'finalizado'</code></div>
+            </section>
+
+            <!-- PROCESOS DE NEGOCIO -->
+            <section class="content-section">
+                <h2>Procesos de Negocio</h2>
+
+                <h3>Proceso de Venta Completo</h3>
+                <p>El proceso de venta abarca desde la captación del cliente hasta el cobro de la factura.</p>
+
+                <div class="code-block"><code>PROCESO ORDER-TO-CASH DETALLADO
+
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│ Presupuesto │ → │   Pedido    │ → │  Albarán    │
+│   (Quote)   │    │(Sales Order)│    │ (Delivery)  │
+└─────────────┘    └─────────────┘    └─────────────┘
+                                             ↓
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│    Cobro    │ ← │   Factura   │ ← │  Entrega    │
+│  (Payment)  │    │  (Invoice)  │    │ confirmada  │
+└─────────────┘    └─────────────┘    └─────────────┘
+
+DOCUMENTOS GENERADOS:
+1. Presupuesto → Oferta comercial al cliente
+2. Pedido → Confirmación de la venta
+3. Albarán → Documento de entrega de mercancía
+4. Factura → Documento fiscal de cobro
+5. Recibo → Justificante de pago</code></div>
+
+                <h4>Ejemplo Detallado: Venta B2B</h4>
+                <div class="code-block"><code>Empresa: Distribuidora TechParts S.L.
+Cliente: Montajes Industriales S.A.
+Producto: 100 unidades de Componente Electrónico REF-2847
+
+1. PRESUPUESTO (10/03/2024)
+   ─────────────────────────
+   Línea 1: Componente REF-2847 x 100 uds
+   Precio unitario: 45,00 €
+   Subtotal: 4.500,00 €
+   IVA 21%: 945,00 €
+   TOTAL: 5.445,00 €
+   Validez: 30 días
+   Condiciones de pago: 30 días fecha factura
+
+2. PEDIDO CONFIRMADO (15/03/2024)
+   ───────────────────────────────
+   Referencia: SO-2024-00547
+   Cliente confirma por email
+   Estado stock: 85 uds disponibles, 15 uds en pedido proveedor
+   Fecha entrega prevista: 22/03/2024
+
+3. RECEPCIÓN PROVEEDOR (18/03/2024)
+   ─────────────────────────────────
+   Llegan las 15 unidades pendientes
+   Stock completo para el pedido: 100 uds reservadas
+
+4. PREPARACIÓN Y ENVÍO (20/03/2024)
+   ─────────────────────────────────
+   Picking: Preparar las 100 unidades
+   Packing: Embalar en 2 cajas
+   Albarán: ALB-2024-00892
+   Transportista: SEUR, tracking: 1234567890
+
+5. ENTREGA (22/03/2024)
+   ─────────────────────
+   Cliente firma conformidad
+   Albarán validado en sistema
+
+6. FACTURACIÓN (22/03/2024)
+   ─────────────────────────
+   Factura: FAC-2024-00423
+   Base imponible: 4.500,00 €
+   IVA 21%: 945,00 €
+   Total: 5.445,00 €
+   Vencimiento: 21/04/2024
+
+   Asiento contable automático:
+   DEBE: (430) Clientes 5.445,00 €
+   HABER: (700) Ventas 4.500,00 €
+   HABER: (477) IVA Repercutido 945,00 €
+
+7. COBRO (18/04/2024)
+   ──────────────────
+   Transferencia bancaria recibida
+   Conciliación automática
+   Factura marcada como pagada
+
+   Asiento contable:
+   DEBE: (572) Bancos 5.445,00 €
+   HABER: (430) Clientes 5.445,00 €</code></div>
+
+                <h3>Proceso de Compra Completo</h3>
+
+                <div class="code-block"><code>PROCESO PROCURE-TO-PAY DETALLADO
+
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│  Solicitud  │ → │   Pedido    │ → │  Recepción  │
+│   Compra    │    │   Compra    │    │  (Receipt)  │
+└─────────────┘    └─────────────┘    └─────────────┘
+                                             ↓
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│    Pago     │ ← │  Factura    │ ← │ Verificación│
+│ (Payment)   │    │ Proveedor   │    │   3-way     │
+└─────────────┘    └─────────────┘    └─────────────┘
+
+THREE-WAY MATCH (Verificación de 3 vías):
+1. Pedido de compra (lo que pedimos)
+2. Albarán de entrada (lo que recibimos)
+3. Factura proveedor (lo que nos cobran)
+→ Los tres deben coincidir para aprobar el pago</code></div>
+
+                <h4>Ejemplo: Compra de Material de Oficina</h4>
+                <div class="code-block"><code>Empresa: Software Solutions S.L.
+Proveedor: Suministros Oficina Plus
+Producto: Material diverso de oficina
+
+1. NECESIDAD DETECTADA
+   ─────────────────────
+   Departamento Marketing solicita material:
+   - 10 packs folios A4
+   - 5 cartuchos tinta color
+   - 3 grapadoras
+
+2. SOLICITUD DE COMPRA
+   ─────────────────────
+   Empleado crea solicitud en sistema
+   Aprobación automática (< 500€)
+
+3. PEDIDO DE COMPRA (PO-2024-00234)
+   ─────────────────────────────────
+   Proveedor: Suministros Oficina Plus
+
+   Líneas:
+   - Pack folios A4 x 10: 35,00 €
+   - Cartucho tinta color x 5: 175,00 €
+   - Grapadora x 3: 24,00 €
+
+   Subtotal: 234,00 €
+   IVA 21%: 49,14 €
+   Total: 283,14 €
+
+4. RECEPCIÓN (3 días después)
+   ───────────────────────────
+   Albarán proveedor: ALB-5678
+   Verificación de cantidades: OK
+   Estado productos: OK
+   Entrada de almacén registrada
+
+5. FACTURA PROVEEDOR
+   ──────────────────
+   Factura: FP-2024-789
+   Verificación 3-way match:
+   ✓ Cantidades = Pedido
+   ✓ Cantidades = Recepción
+   ✓ Precios = Acordados
+
+   Asiento contable:
+   DEBE: (602) Compras 234,00 €
+   DEBE: (472) IVA Soportado 49,14 €
+   HABER: (400) Proveedores 283,14 €
+
+6. PAGO (30 días)
+   ────────────────
+   Remesa de pagos automática
+   Transferencia a proveedor
+
+   Asiento contable:
+   DEBE: (400) Proveedores 283,14 €
+   HABER: (572) Bancos 283,14 €</code></div>
+
+                <h3>Gestión de Inventario</h3>
+
+                <div class="code-block"><code>CONCEPTOS CLAVE DE INVENTARIO
+
+Stock disponible = Stock físico - Reservas - Salidas pendientes + Entradas pendientes
+
+MÉTODOS DE VALORACIÓN:
+─────────────────────
+• FIFO (First In, First Out):
+  Primero en entrar, primero en salir
+  Las primeras unidades compradas son las primeras vendidas
+  Usado en la mayoría de empresas comerciales
+
+• LIFO (Last In, First Out):
+  Último en entrar, primero en salir
+  No permitido en España por normativa contable
+
+• Precio Medio Ponderado (PMP):
+  Coste medio de todas las unidades en stock
+  PMP = (Stock × Precio anterior + Compra × Precio nuevo) / (Stock + Compra)
+
+EJEMPLO PMP:
+────────────
+Stock inicial: 100 uds a 10€ = 1.000€
+Compra: 50 uds a 12€ = 600€
+Nuevo PMP = (1.000 + 600) / (100 + 50) = 10,67€/ud</code></div>
+
+                <h4>Reglas de Reabastecimiento</h4>
+                <div class="code-block"><code>Configuración de punto de pedido automático:
+
+Producto: Componente Electrónico REF-2847
+Almacén: Principal
+Stock mínimo: 50 unidades
+Stock máximo: 200 unidades
+Cantidad a pedir: 100 unidades
+Proveedor preferido: ElectroComponents S.A.
+Lead time: 5 días
+
+FUNCIONAMIENTO:
+─────────────────
+Cuando stock < 50 → Se genera pedido automático de 100 uds
+
+Ejemplo:
+- Stock actual: 45 unidades
+- Sistema detecta que 45 < 50
+- Genera borrador pedido compra
+- Cantidad: 100 unidades
+- Proveedor: ElectroComponents S.A.
+- Fecha prevista: Hoy + 5 días</code></div>
+
+                <h3>Ciclo Contable Básico</h3>
+
+                <div class="code-block"><code>CICLO CONTABLE MENSUAL/ANUAL
+
+1. REGISTRO DIARIO
+   - Asientos de operaciones (ventas, compras, cobros, pagos)
+   - Asientos automáticos desde módulos
+
+2. CONCILIACIONES
+   - Conciliación bancaria
+   - Cuadre de clientes y proveedores
+   - Verificación de saldos
+
+3. AJUSTES DE CIERRE
+   - Amortizaciones
+   - Periodificaciones
+   - Provisiones
+   - Regularización de existencias
+
+4. CIERRE DEL PERÍODO
+   - Balance de sumas y saldos
+   - Regularización (grupo 6 y 7 → Resultado)
+   - Asiento de cierre
+
+5. INFORMES FINANCIEROS
+   - Balance de situación
+   - Cuenta de pérdidas y ganancias
+   - Estado de flujos de efectivo
+   - Memoria
+
+CUENTAS PRINCIPALES (PGC España):
+─────────────────────────────────
+Grupo 1: Financiación básica
+Grupo 2: Activo no corriente
+Grupo 3: Existencias
+Grupo 4: Acreedores y deudores
+Grupo 5: Cuentas financieras
+Grupo 6: Compras y gastos
+Grupo 7: Ventas e ingresos</code></div>
+
+                <h3>8 Ejemplos de Flujos Empresariales</h3>
+
+                <h4>Ejemplo 1: Devolución de Cliente</h4>
+                <div class="code-block"><code>Situación: Cliente devuelve 2 de 10 productos comprados
+
+1. Cliente contacta servicio postventa
+2. Se crea orden de devolución (RMA)
+3. Cliente envía productos defectuosos
+4. Recepción y verificación del defecto
+5. Entrada de stock de los productos devueltos
+6. Factura rectificativa (abono) por 2 unidades
+7. Opción: Reembolso o nota de crédito
+
+Asientos:
+DEBE: (708) Devoluciones ventas
+DEBE: (477) IVA Repercutido
+HABER: (430) Clientes</code></div>
+
+                <h4>Ejemplo 2: Venta con Anticipo</h4>
+                <div class="code-block"><code>Situación: Cliente paga 30% por adelantado
+
+1. Presupuesto: 10.000€ + IVA
+2. Cliente acepta con anticipo 30%
+3. Factura de anticipo: 3.000€ + 630€ IVA
+4. Cobro del anticipo
+5. Entrega del producto/servicio
+6. Factura final: 10.000€ + IVA - anticipo
+   Total a pagar: 7.000€ + 1.470€ IVA
+7. Cobro del resto</code></div>
+
+                <h4>Ejemplo 3: Importación de Productos</h4>
+                <div class="code-block"><code>Situación: Compra a proveedor de China
+
+1. Pedido de compra en USD
+2. Incoterm: FOB Shanghai
+3. Costes adicionales:
+   - Transporte marítimo
+   - Seguro
+   - Despacho aduanas
+   - Aranceles
+   - IVA importación
+4. DUA (Documento Único Administrativo)
+5. Entrada de mercancía con coste total:
+   Precio producto + Transporte + Aranceles + Otros
+6. IVA importación deducible</code></div>
+
+                <h4>Ejemplo 4: Venta con Rappel</h4>
+                <div class="code-block"><code>Situación: Descuento por volumen anual
+
+Condiciones:
+- Compras 10.000-25.000€: 2% rappel
+- Compras 25.000-50.000€: 3% rappel
+- Compras > 50.000€: 5% rappel
+
+Cliente: Compras anuales 35.000€
+Rappel aplicable: 3% = 1.050€
+
+Proceso:
+1. Al cierre anual, calcular compras totales
+2. Determinar % de rappel
+3. Factura rectificativa de abono
+4. Abonar al cliente o descontar próximas facturas</code></div>
+
+                <h4>Ejemplo 5: Producción bajo Pedido</h4>
+                <div class="code-block"><code>Situación: Fabricación de producto personalizado
+
+1. Pedido de venta: 50 uds producto custom
+2. Crear orden de producción
+3. Verificar BOM (lista de materiales):
+   - Componente A x 2
+   - Componente B x 1
+   - Embalaje especial
+4. Reservar materiales de inventario
+5. Si falta stock: generar compras
+6. Fabricar productos
+7. Entrada productos terminados en almacén
+8. Entregar al cliente
+9. Facturar
+
+Coste de producción:
+Materiales + Mano obra directa + Costes indirectos</code></div>
+
+                <h4>Ejemplo 6: Venta de Servicio Recurrente</h4>
+                <div class="code-block"><code>Situación: Suscripción mensual de software
+
+Cliente: Empresa XYZ
+Servicio: Licencia SaaS
+Precio: 500€/mes
+Duración: 12 meses
+
+1. Crear contrato de suscripción
+2. Configurar facturación recurrente:
+   - Frecuencia: Mensual
+   - Día factura: 1 de cada mes
+   - Método pago: Domiciliación bancaria
+3. Sistema genera factura automáticamente
+4. Cobro por domiciliación SEPA
+5. Reconocimiento de ingresos mensual
+
+Accounting:
+Mes 1: Factura 500€ → Ingreso diferido
+       Reconocer 500€ de servicio prestado</code></div>
+
+                <h4>Ejemplo 7: Gestión de Consignación</h4>
+                <div class="code-block"><code>Situación: Stock en consignación en cliente
+
+1. Enviar 100 productos a almacén del cliente
+2. Tipo movimiento: Consignación (sin facturar)
+3. Stock sigue siendo de nuestra empresa
+4. Cliente reporta consumo mensual:
+   - Enero: 30 uds consumidas
+   - Febrero: 25 uds consumidas
+5. Facturar solo lo consumido
+6. Reponer stock en consignación según necesidad
+7. Inventario físico periódico en cliente
+
+Ventajas:
+- Cliente no inmoviliza capital
+- Proveedor asegura disponibilidad
+- Facturación por consumo real</code></div>
+
+                <h4>Ejemplo 8: Multi-divisa</h4>
+                <div class="code-block"><code>Situación: Venta en dólares a cliente USA
+
+Fecha pedido: 01/03
+Importe: 10.000 USD
+Tipo cambio: 1€ = 1,10 USD
+Valor en euros: 9.090,91€
+
+Fecha cobro: 31/03
+Tipo cambio: 1€ = 1,05 USD
+Valor recibido: 9.523,81€
+
+Diferencia de cambio: +432,90€ (favorable)
+
+Asientos:
+1. Factura (01/03):
+   DEBE: (4304) Clientes USD 9.090,91€
+   HABER: (700) Ventas 9.090,91€
+
+2. Cobro con diferencia (31/03):
+   DEBE: (572) Bancos 9.523,81€
+   HABER: (4304) Clientes USD 9.090,91€
+   HABER: (768) Diferencias cambio positivas 432,90€</code></div>
+            </section>
+
+            <!-- GESTIÓN DOCUMENTAL -->
+            <section class="content-section">
+                <h2>Gestión Documental</h2>
+
+                <h3>Facturación Electrónica</h3>
+                <p>La factura electrónica es un documento tributario generado en formato digital que tiene la misma validez legal que una factura en papel.</p>
+
+                <div class="code-block"><code>REQUISITOS FACTURA ELECTRÓNICA EN ESPAÑA
+
+Formato estándar: Facturae (XML)
+Versión actual: 3.2.2
+
+Contenido obligatorio:
+• Número y serie de factura
+• Fecha de expedición
+• NIF emisor y receptor
+• Nombre/razón social
+• Domicilio fiscal
+• Descripción de operaciones
+• Base imponible
+• Tipo impositivo y cuota
+• Importe total
+
+Firma electrónica:
+• Certificado digital reconocido
+• Garantiza autenticidad e integridad
+• Tipos: Persona física, representante, sello de empresa
+
+Conservación: Mínimo 4 años (6 en País Vasco/Navarra)</code></div>
+
+                <h4>Facturación a la Administración Pública</h4>
+                <div class="code-block"><code>Obligaciones FACe (Punto General de Entrada):
+
+• Obligatoria para facturas > 5.000€ a AAPP
+• Portal: https://face.gob.es
+• Formato: Facturae firmado electrónicamente
+
+Campos específicos:
+• Código DIR3 del órgano gestor
+• Código DIR3 de la unidad tramitadora
+• Código DIR3 de la oficina contable
+
+Estados de la factura:
+1. Registrada → en FACe
+2. Contabilizada → en la AAPP
+3. Reconocida → obligación de pago
+4. Pagada → cobrada</code></div>
+
+                <h3>Documentos Comerciales</h3>
+
+                <h4>Albarán de Entrega</h4>
+                <div class="code-block"><code>ALBARÁN DE ENTREGA
+
+Documento que acredita la entrega de mercancía.
+NO tiene validez fiscal, pero sí valor probatorio.
+
+Contenido:
+• Número de albarán
+• Fecha de entrega
+• Datos del remitente y destinatario
+• Detalle de productos y cantidades
+• Firma del receptor (conformidad)
+• Referencia al pedido
+
+Tipos:
+• Valorado: incluye precios
+• Sin valorar: solo cantidades
+
+Importante:
+El cliente firma conforme recibe la mercancía
+en buen estado y cantidad correcta.</code></div>
+
+                <h4>Tipos de Facturas</h4>
+                <div class="code-block"><code>TIPOS DE FACTURAS
+
+1. FACTURA ORDINARIA
+   Documento completo con todos los datos fiscales
+   Uso general en operaciones B2B y B2C
+
+2. FACTURA SIMPLIFICADA (antes ticket)
+   Requisitos reducidos
+   Solo si importe < 400€ (o 3.000€ según sector)
+   No permite deducir IVA al receptor
+
+3. FACTURA RECTIFICATIVA
+   Corrige errores de factura anterior
+   Motivos: error en datos, devolución, descuento
+   Debe referenciar factura original
+   Puede ser por sustitución o diferencias
+
+4. FACTURA RECAPITULATIVA
+   Agrupa varias operaciones del mes
+   Con el mismo cliente
+   Fecha límite: último día del mes
+
+5. FACTURA PROFORMA
+   No tiene valor fiscal
+   Uso: presupuestos, aduanas, financiación
+   Indica claramente "PROFORMA"</code></div>
+
+                <h3>Normativa Fiscal Básica</h3>
+
+                <h4>IVA (Impuesto sobre el Valor Añadido)</h4>
+                <div class="code-block"><code>TIPOS DE IVA EN ESPAÑA (2024)
+
+General: 21%
+- La mayoría de productos y servicios
+
+Reducido: 10%
+- Alimentos (excepto básicos)
+- Transporte de viajeros
+- Hostelería
+- Entradas espectáculos
+
+Superreducido: 4%
+- Pan, leche, huevos, frutas, verduras
+- Libros, periódicos, revistas
+- Medicamentos
+- Vehículos para discapacitados
+
+Exento: 0%
+- Servicios médicos
+- Educación
+- Seguros
+- Operaciones financieras
+
+LIQUIDACIÓN:
+IVA a pagar = IVA Repercutido (ventas) - IVA Soportado (compras)
+Si resultado negativo → a compensar o devolver</code></div>
+
+                <h4>Retenciones IRPF</h4>
+                <div class="code-block"><code>RETENCIONES EN FACTURAS
+
+Aplica a:
+• Profesionales autónomos que facturan a empresas
+• Arrendamientos de locales
+
+Tipos retención 2024:
+• General profesionales: 15%
+• Nuevos autónomos (3 primeros años): 7%
+• Alquileres: 19%
+
+Ejemplo factura con retención:
+─────────────────────────────
+Servicios profesionales: 1.000,00 €
+IVA 21%: +210,00 €
+Retención IRPF 15%: -150,00 €
+─────────────────────────────
+TOTAL A PAGAR: 1.060,00 €
+
+El pagador ingresa la retención a Hacienda (mod. 111)
+El profesional la deduce en su declaración de IRPF</code></div>
+
+                <h3>Trazabilidad Documental</h3>
+
+                <div class="code-block"><code>CADENA DE DOCUMENTOS EN UNA VENTA
+
+Presupuesto PRE-2024-00123
+    ↓ (cliente acepta)
+Pedido de Venta SO-2024-00456
+    ↓ (preparar envío)
+Albarán de Entrega ALB-2024-00789
+    ↓ (facturar)
+Factura FAC-2024-00234
+    ↓ (cobrar)
+Recibo/Pago PAY-2024-00567
+
+Todos los documentos están vinculados:
+• Desde la factura puedo ver el pedido original
+• Desde el pedido puedo ver la entrega y factura
+• Auditoría completa de la operación
+
+TRAZABILIDAD = Capacidad de seguir el histórico,
+aplicación y ubicación de un producto o documento
+mediante identificación registrada.</code></div>
+            </section>
+
+            <!-- BUSINESS INTELLIGENCE BÁSICO -->
+            <section class="content-section">
+                <h2>Business Intelligence Básico</h2>
+
+                <h3>¿Qué es Business Intelligence?</h3>
+                <p>Business Intelligence (BI) es el conjunto de estrategias, tecnologías y prácticas para transformar datos en información útil que apoye la toma de decisiones empresariales.</p>
+
+                <div class="code-block"><code>COMPONENTES DE UN SISTEMA BI
+
+1. FUENTES DE DATOS
+   - ERP, CRM, bases de datos
+   - Hojas de cálculo
+   - APIs externas
+   - Datos de mercado
+
+2. ETL (Extract, Transform, Load)
+   - Extracción de datos de fuentes
+   - Transformación y limpieza
+   - Carga en data warehouse
+
+3. DATA WAREHOUSE
+   - Almacén de datos centralizado
+   - Datos históricos
+   - Optimizado para consultas
+
+4. ANÁLISIS Y REPORTING
+   - Dashboards
+   - Informes
+   - Alertas
+   - Análisis ad-hoc
+
+5. VISUALIZACIÓN
+   - Gráficos interactivos
+   - Mapas
+   - KPIs en tiempo real</code></div>
+
+                <h3>Tipos de Análisis de Datos</h3>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Pregunta</th>
+                                <th>Técnicas</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Descriptivo</td>
+                                <td>¿Qué pasó?</td>
+                                <td>Informes, dashboards</td>
+                                <td>Ventas del mes: 150.000€</td>
+                            </tr>
+                            <tr>
+                                <td>Diagnóstico</td>
+                                <td>¿Por qué pasó?</td>
+                                <td>Drill-down, correlaciones</td>
+                                <td>Ventas bajaron por promoción competidor</td>
+                            </tr>
+                            <tr>
+                                <td>Predictivo</td>
+                                <td>¿Qué pasará?</td>
+                                <td>ML, series temporales</td>
+                                <td>Forecast ventas próximo trimestre</td>
+                            </tr>
+                            <tr>
+                                <td>Prescriptivo</td>
+                                <td>¿Qué debemos hacer?</td>
+                                <td>Optimización, simulación</td>
+                                <td>Recomendar descuento óptimo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Cuadros de Mando (Dashboards)</h3>
+                <p>Un dashboard es una representación visual de los KPIs más importantes, actualizada en tiempo real.</p>
+
+                <div class="code-block"><code>DASHBOARD DE VENTAS - Elementos típicos
+
+┌─────────────────────────────────────────────────┐
+│  VENTAS DEL MES                                 │
+│  ┌─────────┐ ┌─────────┐ ┌─────────┐ ┌────────┐│
+│  │ 245.000€│ │   +12%  │ │  87%    │ │  142   ││
+│  │ Ingresos│ │vs mes ant│ │Objetivo │ │Pedidos ││
+│  └─────────┘ └─────────┘ └─────────┘ └────────┘│
+├─────────────────────────────────────────────────┤
+│  Ventas por Producto        │ Ventas por Región │
+│  [Gráfico de barras]        │ [Mapa de calor]   │
+├─────────────────────────────────────────────────┤
+│  Evolución mensual          │ Top 10 Clientes   │
+│  [Gráfico de líneas]        │ [Tabla ranking]   │
+├─────────────────────────────────────────────────┤
+│  Pipeline CRM               │ Alertas           │
+│  [Funnel chart]             │ ⚠ 5 facturas +30d │
+└─────────────────────────────────────────────────┘</code></div>
+
+                <h3>KPIs Empresariales Básicos</h3>
+
+                <h4>KPIs Financieros</h4>
+                <div class="code-block"><code>MARGEN BRUTO
+= (Ventas - Coste de ventas) / Ventas × 100
+Ejemplo: (500.000 - 300.000) / 500.000 = 40%
+
+EBITDA
+= Beneficio antes de intereses, impuestos,
+  depreciaciones y amortizaciones
+Indica la capacidad de generar beneficios operativos
+
+ROI (Return on Investment)
+= (Beneficio - Inversión) / Inversión × 100
+Ejemplo: (150.000 - 100.000) / 100.000 = 50%
+
+ROE (Return on Equity)
+= Beneficio Neto / Patrimonio Neto × 100
+Rentabilidad de los fondos propios
+
+DSO (Days Sales Outstanding)
+= (Cuentas a cobrar / Ventas) × 365
+Días medios de cobro a clientes</code></div>
+
+                <h4>KPIs Comerciales</h4>
+                <div class="code-block"><code>TASA DE CONVERSIÓN
+= (Ventas cerradas / Oportunidades) × 100
+Ejemplo: 25 ventas / 100 leads = 25%
+
+TICKET MEDIO
+= Ventas totales / Número de transacciones
+Ejemplo: 100.000€ / 200 pedidos = 500€
+
+CLV (Customer Lifetime Value)
+= Ingreso medio por cliente × Duración relación
+Valor total de un cliente durante toda la relación
+
+CHURN RATE
+= Clientes perdidos / Total clientes × 100
+Tasa de abandono de clientes
+
+NPS (Net Promoter Score)
+= % Promotores (9-10) - % Detractores (0-6)
+Mide lealtad del cliente (-100 a +100)</code></div>
+
+                <h4>KPIs Operativos</h4>
+                <div class="code-block"><code>ROTACIÓN DE INVENTARIO
+= Coste de ventas / Inventario medio
+Veces que se renueva el stock al año
+Ejemplo: 600.000 / 100.000 = 6 veces
+
+DÍAS DE INVENTARIO
+= 365 / Rotación
+Ejemplo: 365 / 6 = 61 días de stock
+
+TASA DE CUMPLIMIENTO DE PEDIDOS
+= Pedidos completos a tiempo / Total pedidos × 100
+Objetivo típico: > 95%
+
+OEE (Overall Equipment Effectiveness)
+= Disponibilidad × Rendimiento × Calidad
+Eficiencia global de equipos productivos</code></div>
+
+                <h3>Herramientas de BI</h3>
+
+                <h4>Power BI (Microsoft)</h4>
+                <ul>
+                    <li>Integración nativa con Excel, Azure, Dynamics</li>
+                    <li>DAX para cálculos avanzados</li>
+                    <li>Versión Desktop gratuita</li>
+                    <li>Pro desde 8,40€/usuario/mes</li>
+                </ul>
+
+                <h4>Tableau</h4>
+                <ul>
+                    <li>Visualizaciones avanzadas e interactivas</li>
+                    <li>Fuerte en exploración de datos</li>
+                    <li>Tableau Public gratuito</li>
+                    <li>Creator desde 70$/usuario/mes</li>
+                </ul>
+
+                <h4>Google Looker Studio (Data Studio)</h4>
+                <ul>
+                    <li>100% gratuito</li>
+                    <li>Integración con Google Analytics, Sheets, BigQuery</li>
+                    <li>Ideal para marketing digital</li>
+                    <li>Colaboración en tiempo real</li>
+                </ul>
+
+                <h4>Metabase</h4>
+                <ul>
+                    <li>Open source</li>
+                    <li>Fácil de instalar y usar</li>
+                    <li>Consultas sin saber SQL</li>
+                    <li>Ideal para pymes</li>
+                </ul>
+
+                <h3>Toma de Decisiones Basada en Datos</h3>
+
+                <div class="code-block"><code>PROCESO DATA-DRIVEN DECISION MAKING
+
+1. DEFINIR EL PROBLEMA
+   ¿Qué decisión necesitamos tomar?
+   Ejemplo: ¿Deberíamos expandirnos a Cataluña?
+
+2. IDENTIFICAR DATOS NECESARIOS
+   - Ventas actuales por región
+   - Tamaño de mercado en Cataluña
+   - Competencia
+   - Costes de expansión
+
+3. RECOPILAR Y LIMPIAR DATOS
+   - Datos internos del ERP
+   - Estudios de mercado externos
+   - Datos del INE
+
+4. ANALIZAR
+   - Segmentación de mercado
+   - Análisis de competencia
+   - Proyección de ventas
+   - Análisis de rentabilidad
+
+5. VISUALIZAR E INTERPRETAR
+   - Dashboards con escenarios
+   - Comparativas
+   - Tendencias
+
+6. DECIDIR Y ACTUAR
+   - Decisión informada con datos
+   - Plan de acción
+   - KPIs para medir éxito
+
+7. MEDIR RESULTADOS
+   - Seguimiento de KPIs
+   - Ajustar según resultados</code></div>
+            </section>
+
+            <!-- IMPLANTACIÓN DE UN SGE -->
+            <section class="content-section">
+                <h2>Implantación de un SGE</h2>
+
+                <h3>Fases de Implantación</h3>
+
+                <div class="code-block"><code>METODOLOGÍA DE IMPLANTACIÓN ERP
+
+FASE 1: ANÁLISIS (2-4 semanas)
+─────────────────────────────
+• Análisis de la situación actual (AS-IS)
+• Identificación de procesos de negocio
+• Levantamiento de requisitos
+• Gap analysis (diferencias con el sistema)
+• Definición de objetivos y alcance
+• Planificación del proyecto
+
+FASE 2: DISEÑO (3-6 semanas)
+────────────────────────────
+• Diseño de la solución (TO-BE)
+• Mapeo de procesos al sistema
+• Definición de personalizaciones
+• Plan de migración de datos
+• Plan de integraciones
+• Diseño de informes
+
+FASE 3: DESARROLLO (4-8 semanas)
+────────────────────────────────
+• Configuración del sistema
+• Desarrollo de personalizaciones
+• Desarrollo de integraciones
+• Migración de datos maestros
+• Pruebas unitarias
+
+FASE 4: PRUEBAS (2-4 semanas)
+─────────────────────────────
+• Pruebas de integración
+• Pruebas de usuario (UAT)
+• Pruebas de rendimiento
+• Corrección de errores
+• Validación de datos migrados
+
+FASE 5: FORMACIÓN (2-3 semanas)
+───────────────────────────────
+• Formación a usuarios clave
+• Formación a usuarios finales
+• Documentación de procesos
+• Manuales de usuario
+
+FASE 6: GO-LIVE (1 semana)
+──────────────────────────
+• Migración final de datos
+• Puesta en producción
+• Soporte intensivo
+• Resolución de incidencias
+
+FASE 7: POST-IMPLANTACIÓN (continuo)
+────────────────────────────────────
+• Estabilización del sistema
+• Soporte a usuarios
+• Mejora continua
+• Nuevas funcionalidades</code></div>
+
+                <h3>Análisis de Requisitos</h3>
+
+                <div class="code-block"><code>TÉCNICAS DE LEVANTAMIENTO DE REQUISITOS
+
+1. ENTREVISTAS
+   - Con responsables de cada departamento
+   - Entender procesos actuales
+   - Identificar pain points
+   - Conocer expectativas
+
+2. WORKSHOPS
+   - Sesiones grupales por área
+   - Modelado de procesos en conjunto
+   - Priorización de requisitos
+
+3. OBSERVACIÓN
+   - Shadowing de usuarios
+   - Entender el trabajo diario
+   - Detectar ineficiencias
+
+4. ANÁLISIS DOCUMENTAL
+   - Procedimientos actuales
+   - Informes existentes
+   - Documentos de trabajo
+
+CLASIFICACIÓN DE REQUISITOS:
+• Funcionales: Qué debe hacer el sistema
+• No funcionales: Rendimiento, seguridad, usabilidad
+• Técnicos: Integraciones, infraestructura
+• Legales: Normativa, compliance</code></div>
+
+                <h3>Configuración vs Personalización</h3>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Configuración</th>
+                                <th>Personalización</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Definición</td>
+                                <td>Ajustes con opciones estándar</td>
+                                <td>Desarrollo de código nuevo</td>
+                            </tr>
+                            <tr>
+                                <td>Ejemplos</td>
+                                <td>Activar módulos, definir flujos, crear campos</td>
+                                <td>Nuevos modelos, integraciones, lógica especial</td>
+                            </tr>
+                            <tr>
+                                <td>Coste</td>
+                                <td>Bajo</td>
+                                <td>Alto</td>
+                            </tr>
+                            <tr>
+                                <td>Tiempo</td>
+                                <td>Rápido</td>
+                                <td>Lento</td>
+                            </tr>
+                            <tr>
+                                <td>Mantenimiento</td>
+                                <td>Fácil, actualizaciones estándar</td>
+                                <td>Complejo, puede romper con updates</td>
+                            </tr>
+                            <tr>
+                                <td>Recomendación</td>
+                                <td>Siempre que sea posible</td>
+                                <td>Solo si es imprescindible</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Regla de oro:</strong> "Adaptar el proceso al sistema antes que el sistema al proceso". Las personalizaciones excesivas incrementan costes, dificultan actualizaciones y generan dependencia del proveedor.</p>
+                </div>
+
+                <h3>Formación de Usuarios</h3>
+
+                <div class="code-block"><code>PLAN DE FORMACIÓN
+
+1. USUARIOS CLAVE (Key Users)
+   - Formación intensiva (40+ horas)
+   - Conocimiento profundo del módulo
+   - Capacidad de resolver dudas del equipo
+   - Participan en pruebas UAT
+
+2. USUARIOS FINALES
+   - Formación específica de su rol (8-16 horas)
+   - Enfoque práctico en sus tareas diarias
+   - Ejercicios con casos reales
+   - Documentación de referencia
+
+3. ADMINISTRADORES
+   - Formación técnica del sistema
+   - Gestión de usuarios y permisos
+   - Configuración básica
+   - Resolución de incidencias nivel 1
+
+MATERIALES DE FORMACIÓN:
+• Manuales de usuario por rol
+• Vídeos tutoriales
+• Ejercicios prácticos
+• Guías rápidas (cheat sheets)
+• FAQ
+
+CONSEJO: Formar en el entorno real con datos reales
+(o lo más parecido posible) para mayor efectividad.</code></div>
+
+                <h3>Gestión del Cambio</h3>
+
+                <div class="code-block"><code>FACTORES CRÍTICOS DE ÉXITO
+
+1. PATROCINIO DIRECTIVO
+   - Apoyo visible de la dirección
+   - Asignación de recursos
+   - Comunicación del proyecto
+
+2. EQUIPO DE PROYECTO
+   - Project Manager dedicado
+   - Key users por departamento
+   - Consultor funcional
+   - Consultor técnico
+
+3. COMUNICACIÓN
+   - Plan de comunicación
+   - Informar avances y cambios
+   - Gestionar expectativas
+
+4. GESTIÓN DE RESISTENCIA AL CAMBIO
+   - Identificar detractores
+   - Involucrar desde el inicio
+   - Mostrar beneficios concretos
+   - Quick wins tempranos
+
+5. DATOS DE CALIDAD
+   - Limpieza de datos antes de migrar
+   - Validación de datos maestros
+   - Pruebas de migración
+
+PRINCIPALES CAUSAS DE FRACASO:
+• Falta de apoyo directivo
+• Requisitos mal definidos
+• Resistencia de usuarios
+• Datos incorrectos
+• Personalización excesiva
+• Formación insuficiente</code></div>
+
+                <h3>Mantenimiento y Mejora Continua</h3>
+
+                <div class="code-block"><code>TAREAS DE MANTENIMIENTO
+
+DIARIO:
+• Monitorización del sistema
+• Backup de base de datos
+• Revisión de logs de error
+• Atención a incidencias
+
+SEMANAL:
+• Revisión de rendimiento
+• Limpieza de datos temporales
+• Análisis de incidencias recurrentes
+
+MENSUAL:
+• Informes de uso del sistema
+• Revisión de seguridad y accesos
+• Optimización de procesos
+• Recogida de feedback usuarios
+
+TRIMESTRAL:
+• Evaluación de KPIs del proyecto
+• Planificación de mejoras
+• Actualización de documentación
+
+ANUAL:
+• Actualización de versión (si aplica)
+• Revisión de licencias
+• Auditoría de datos
+• Plan de formación de refresco
+
+MEJORA CONTINUA:
+1. Identificar área de mejora
+2. Analizar causa raíz
+3. Proponer solución
+4. Implementar y medir
+5. Estandarizar si funciona</code></div>
+            </section>
+
+            <!-- EJERCICIOS PRÁCTICOS -->
+            <section class="content-section">
+                <h2>Ejercicios Prácticos Resueltos</h2>
+
+                <h3>Caso 1: Ciclo Completo de Venta</h3>
+                <div class="code-block"><code>ENUNCIADO:
+La empresa TechStore S.L. recibe un pedido del cliente "Informática López"
+por 10 portátiles a 800€/ud. Gestionar el proceso completo hasta el cobro.
+
+SOLUCIÓN:
+
+1. CREAR/VERIFICAR CLIENTE
+   Datos del cliente:
+   - Nombre: Informática López S.L.
+   - NIF: B98765432
+   - Dirección: C/ Mayor 45, Valencia
+   - Plazo de pago: 30 días
+   - Límite de crédito: 15.000€
+
+2. CREAR PRESUPUESTO
+   - Cliente: Informática López S.L.
+   - Fecha: 15/03/2024
+   - Validez: 15 días
+   - Producto: Portátil HP 250 G9
+   - Cantidad: 10
+   - Precio unitario: 800€
+   - Subtotal: 8.000€
+   - IVA 21%: 1.680€
+   - TOTAL: 9.680€
+
+3. CONFIRMAR PEDIDO
+   El cliente acepta el presupuesto.
+   Estado: Presupuesto → Pedido de Venta (SO-2024-00089)
+
+   Verificaciones:
+   ✓ Crédito disponible: 15.000 - 9.680 = 5.320€ OK
+   ✓ Stock disponible: 12 uds en almacén OK
+
+4. PREPARAR ENTREGA
+   Orden de entrega: OUT-2024-00156
+   - Reservar 10 portátiles
+   - Preparar (picking)
+   - Embalar
+   - Validar entrega
+   Fecha entrega: 17/03/2024
+
+5. FACTURAR
+   Crear factura desde pedido
+   Factura: FAC-2024-00234
+   - Base imponible: 8.000€
+   - IVA 21%: 1.680€
+   - Total: 9.680€
+   - Vencimiento: 16/04/2024
+
+   Asiento automático:
+   DEBE: (430) Clientes 9.680€
+   HABER: (700) Ventas 8.000€
+   HABER: (477) IVA Repercutido 1.680€
+
+6. REGISTRAR COBRO
+   Fecha: 14/04/2024
+   Método: Transferencia bancaria
+
+   Asiento:
+   DEBE: (572) Bancos 9.680€
+   HABER: (430) Clientes 9.680€
+
+   Factura: Estado PAGADA</code></div>
+
+                <h3>Caso 2: Gestión de Compra con Incidencia</h3>
+                <div class="code-block"><code>ENUNCIADO:
+Comprar 50 unidades del componente REF-100 al proveedor ElectroParts.
+El proveedor entrega solo 45 unidades. Gestionar la incidencia.
+
+SOLUCIÓN:
+
+1. CREAR PEDIDO DE COMPRA
+   - Proveedor: ElectroParts S.A.
+   - Producto: Componente REF-100
+   - Cantidad: 50 unidades
+   - Precio: 25€/ud
+   - Total: 1.250€ + IVA
+
+2. RECEPCIÓN PARCIAL
+   Llegan 45 de 50 unidades
+   Opciones en sistema:
+   a) Recepción parcial (validar 45, quedan 5 pendientes)
+   b) Backorder automático para las 5 restantes
+
+   Seleccionamos opción a):
+   - Validar entrada de 45 unidades
+   - El sistema mantiene 5 en espera
+
+3. GESTIÓN DE INCIDENCIA
+   Contactar proveedor:
+   - Reclamar las 5 unidades pendientes
+   - Proveedor confirma envío en 2 días
+
+4. RECEPCIÓN DE UNIDADES PENDIENTES
+   Llegan las 5 unidades restantes
+   - Validar entrada
+   - Pedido completo
+
+5. FACTURA DEL PROVEEDOR
+   El proveedor envía factura por 50 unidades
+   - Verificar three-way match:
+     ✓ 50 unidades pedidas
+     ✓ 50 unidades recibidas (45 + 5)
+     ✓ 50 unidades facturadas
+   - Aprobar factura
+
+6. PAGO
+   Según condiciones acordadas (30 días)
+
+ALTERNATIVA: Si las 5 unidades no llegaran
+- Factura solo por 45 unidades
+- O reclamación/compensación</code></div>
+
+                <h3>Caso 3: Análisis de Rentabilidad por Cliente</h3>
+                <div class="code-block"><code>ENUNCIADO:
+Analizar la rentabilidad de los 3 principales clientes del Q1
+y proponer acciones comerciales.
+
+DATOS:
+
+Cliente A - Industrias Norte
+- Ventas Q1: 85.000€
+- Coste de ventas: 55.000€
+- Descuentos aplicados: 8%
+- Pedidos: 12
+- Devoluciones: 2.000€
+- Días medios de cobro: 45
+
+Cliente B - Comercial Este
+- Ventas Q1: 62.000€
+- Coste de ventas: 38.000€
+- Descuentos aplicados: 5%
+- Pedidos: 28
+- Devoluciones: 500€
+- Días medios de cobro: 30
+
+Cliente C - Distribuciones Sur
+- Ventas Q1: 48.000€
+- Coste de ventas: 35.000€
+- Descuentos aplicados: 12%
+- Pedidos: 8
+- Devoluciones: 4.500€
+- Días medios de cobro: 60
+
+ANÁLISIS:
+
+Cliente A:
+- Margen bruto: (85.000 - 55.000) / 85.000 = 35,3%
+- Margen neto (con devol.): (30.000 - 2.000) / 85.000 = 32,9%
+- Ticket medio: 85.000 / 12 = 7.083€
+- Valoración: BUENO - Alto volumen, buen margen, cobro algo lento
+
+Cliente B:
+- Margen bruto: (62.000 - 38.000) / 62.000 = 38,7%
+- Margen neto: (24.000 - 500) / 62.000 = 37,9%
+- Ticket medio: 62.000 / 28 = 2.214€
+- Valoración: EXCELENTE - Mejor margen, cobro rápido, pocas incidencias
+
+Cliente C:
+- Margen bruto: (48.000 - 35.000) / 48.000 = 27,1%
+- Margen neto: (13.000 - 4.500) / 48.000 = 17,7%
+- Ticket medio: 48.000 / 8 = 6.000€
+- Valoración: PROBLEMÁTICO - Bajo margen, muchas devoluciones, cobro lento
+
+ACCIONES PROPUESTAS:
+
+Cliente A:
+- Negociar reducción plazo de pago a 30 días
+- Ofrecer descuento 2% por pronto pago
+- Mantener condiciones comerciales
+
+Cliente B:
+- Aumentar esfuerzo comercial (cliente ideal)
+- Proponer productos adicionales (cross-selling)
+- Programa de fidelización
+
+Cliente C:
+- Revisar causas de devoluciones (calidad, logística)
+- Reducir descuento al 8% máximo
+- Exigir pago a 30 días o anticipo
+- Si no mejora: considerar dejar de servir</code></div>
+
+                <h3>Caso 4: Configuración de Producto con Variantes</h3>
+                <div class="code-block"><code>ENUNCIADO:
+Configurar en el ERP una camiseta que se vende en 3 colores
+y 4 tallas, con diferentes precios según talla.
+
+SOLUCIÓN:
+
+1. CREAR ATRIBUTOS
+
+   Atributo: Color
+   Valores: Blanco, Negro, Azul
+
+   Atributo: Talla
+   Valores: S, M, L, XL
+
+2. CREAR PRODUCTO PLANTILLA
+
+   Nombre: Camiseta Básica
+   Tipo: Producto almacenable
+   Categoría: Ropa / Camisetas
+   Precio base: 15,00€
+   Coste: 6,00€
+
+   Atributos:
+   - Color: Blanco, Negro, Azul
+   - Talla: S, M, L, XL
+
+3. VARIANTES GENERADAS AUTOMÁTICAMENTE
+
+   El sistema genera 3 × 4 = 12 variantes:
+   - Camiseta Básica - Blanco - S
+   - Camiseta Básica - Blanco - M
+   - Camiseta Básica - Blanco - L
+   - Camiseta Básica - Blanco - XL
+   - Camiseta Básica - Negro - S
+   ... (12 variantes en total)
+
+4. CONFIGURAR PRECIOS EXTRA POR TALLA
+
+   Atributo Talla - Valores con extra:
+   - S: +0,00€
+   - M: +0,00€
+   - L: +2,00€
+   - XL: +4,00€
+
+   Precios finales:
+   - S/M: 15,00€
+   - L: 17,00€
+   - XL: 19,00€
+
+5. GESTIÓN DE STOCK POR VARIANTE
+
+   Cada variante tiene su propio stock:
+   - Camiseta Blanco S: 25 uds
+   - Camiseta Blanco M: 40 uds
+   - Camiseta Negro L: 15 uds
+   - etc.
+
+6. CÓDIGO DE BARRAS / SKU
+
+   Asignar referencia única a cada variante:
+   - CAM-BLA-S: 8400000000001
+   - CAM-BLA-M: 8400000000002
+   - etc.</code></div>
+
+                <h3>Caso 5: Cuadro de Mando Comercial</h3>
+                <div class="code-block"><code>ENUNCIADO:
+Diseñar un dashboard para el director comercial con los KPIs
+más relevantes para el seguimiento mensual.
+
+SOLUCIÓN:
+
+DASHBOARD: RENDIMIENTO COMERCIAL MENSUAL
+
+┌─────────────────────────────────────────────────────────┐
+│  KPIs PRINCIPALES                                       │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │
+│  │ 325.000€ │ │   +8%    │ │   92%    │ │   23%    │   │
+│  │  Ventas  │ │ vs Obj.  │ │ Cuota    │ │ Margen   │   │
+│  │  Mes     │ │          │ │ Mercado  │ │ Bruto    │   │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘   │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  EVOLUCIÓN VENTAS 12 MESES        VENTAS POR COMERCIAL │
+│  ┌─────────────────────────┐      ┌─────────────────┐  │
+│  │    📈 Gráfico líneas   │      │ García: 95.000€ │  │
+│  │                         │      │ López: 82.000€  │  │
+│  │  Año actual vs anterior │      │ Martín: 78.000€ │  │
+│  └─────────────────────────┘      │ Ruiz: 70.000€   │  │
+│                                    └─────────────────┘  │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  PIPELINE CRM                      TOP PRODUCTOS        │
+│  ┌─────────────────────────┐      ┌─────────────────┐  │
+│  │ Leads:     45  │ 125K€ │      │ 1. Producto A   │  │
+│  │ Cualific.: 28  │ 280K€ │      │ 2. Producto B   │  │
+│  │ Propuesta: 15  │ 185K€ │      │ 3. Producto C   │  │
+│  │ Negociac.: 8   │ 120K€ │      │ 4. Producto D   │  │
+│  │ Cierre:    5   │  75K€ │      │ 5. Producto E   │  │
+│  └─────────────────────────┘      └─────────────────┘  │
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  MÉTRICAS CLAVE                    ALERTAS ⚠️          │
+│  ┌─────────────────────────┐      ┌─────────────────┐  │
+│  │ Ticket medio: 2.340€    │      │ 12 facturas     │  │
+│  │ Conversión: 18%         │      │ vencidas >30d   │  │
+│  │ Ciclo venta: 23 días    │      │                 │  │
+│  │ NPS: +42                │      │ 3 clientes      │  │
+│  │ Clientes nuevos: 8      │      │ sin actividad   │  │
+│  └─────────────────────────┘      │ >60 días        │  │
+│                                    └─────────────────┘  │
+└─────────────────────────────────────────────────────────┘
+
+FILTROS DISPONIBLES:
+- Período: Mes / Trimestre / Año
+- Comercial: Todos / Individual
+- Zona: Norte / Centro / Sur / Este
+- Producto: Categoría / Producto específico</code></div>
+
+                <h3>Caso 6: Proceso de Inventario Físico</h3>
+                <div class="code-block"><code>ENUNCIADO:
+Realizar el inventario físico del almacén principal
+y registrar los ajustes necesarios.
+
+SOLUCIÓN:
+
+1. PREPARACIÓN DEL INVENTARIO
+
+   - Fecha: Sábado 30/03/2024 (día sin actividad)
+   - Bloquear entradas/salidas del almacén
+   - Generar listados de conteo por ubicación
+   - Asignar equipos de conteo
+
+2. CONTEO FÍSICO
+
+   Equipo 1: Zona A (Electrónica)
+   Equipo 2: Zona B (Accesorios)
+   Equipo 3: Zona C (Consumibles)
+
+   Doble conteo para verificación
+
+3. REGISTRAR RESULTADOS
+
+   Producto: Ratón Inalámbrico USB
+   Stock sistema: 150 unidades
+   Conteo físico: 143 unidades
+   Diferencia: -7 unidades
+
+   Producto: Teclado Mecánico
+   Stock sistema: 45 unidades
+   Conteo físico: 47 unidades
+   Diferencia: +2 unidades
+
+   Producto: Cable HDMI 2m
+   Stock sistema: 200 unidades
+   Conteo físico: 200 unidades
+   Diferencia: 0
+
+4. INVESTIGAR DIFERENCIAS
+
+   Ratón Inalámbrico (-7):
+   - Revisar albaranes no registrados
+   - Buscar posibles roturas/pérdidas
+   - Conclusión: 4 rotos, 3 sin documentar (posible hurto)
+
+   Teclado (+2):
+   - Revisar entradas no registradas
+   - Conclusión: Devolución proveedor no registrada
+
+5. APROBAR Y REGISTRAR AJUSTES
+
+   Ajuste de inventario INV-ADJ-2024-001
+
+   Líneas:
+   - Ratón Inalámbrico: -7 uds (Motivo: Rotura/Diferencia)
+   - Teclado Mecánico: +2 uds (Motivo: Error registro)
+
+   Impacto contable:
+   DEBE: (693) Pérdidas por deterioro existencias: 7 × 8€ = 56€
+   HABER: (390) Deterioro valor existencias: 56€
+
+6. ACCIONES CORRECTIVAS
+
+   - Mejorar control de roturas (reportar inmediatamente)
+   - Revisar proceso de devoluciones
+   - Considerar cámaras en zona problemática
+   - Próximo inventario: revisión trimestral en Zona A</code></div>
+            </section>
+
+            <div class="note-box">
+                <p><strong>Consejo Final:</strong> El éxito de un Sistema de Gestión Empresarial no depende solo de la tecnología, sino de las personas y los procesos. Involucra a los usuarios desde el inicio, define procesos claros antes de automatizarlos, y mide constantemente el ROI de la implantación. Un ERP bien implementado puede transformar una empresa; uno mal implementado puede paralizarla.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entornos de Desarrollo 1º DAM - Git, IDEs, testing, debugging, metodologías ágiles y documentación.">
+    <title>Entornos de Desarrollo - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="./bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="./lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="./entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../2dam/acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#1dam">1º DAM</a><span>→</span><span>Entornos de Desarrollo</span></div>
+            <h1 class="page-title">Entornos de Desarrollo</h1>
+            <p class="page-subtitle">Git, IDEs, Testing, Debugging y Metodologías Ágiles</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul>
+                    <li><a href="#introduccion">Introducción al Desarrollo</a></li>
+                    <li><a href="#git">Control de Versiones - Git</a></li>
+                    <li><a href="#ides">IDEs Principales</a></li>
+                    <li><a href="#debugging">Depuración (Debugging)</a></li>
+                    <li><a href="#testing">Testing con JUnit</a></li>
+                    <li><a href="#agile">Metodologías Ágiles</a></li>
+                    <li><a href="#documentacion">Documentación</a></li>
+                    <li><a href="#ejercicios">Ejercicios Prácticos</a></li>
+                </ul>
+            </nav>
+
+            <!-- INTRODUCCIÓN -->
+            <section id="introduccion" class="content-section">
+                <h2>Introducción al Desarrollo de Software</h2>
+
+                <p>El módulo de <strong>Entornos de Desarrollo</strong> enseña las herramientas y metodologías necesarias para desarrollar software de forma profesional, incluyendo control de versiones, testing, debugging y trabajo en equipo.</p>
+
+                <h3>Ciclo de Vida del Software (SDLC)</h3>
+                <div class="info-box">
+                    <h4>Fases del Desarrollo</h4>
+                    <ol>
+                        <li><strong>Análisis de Requisitos</strong>: Definir qué debe hacer el software</li>
+                        <li><strong>Diseño</strong>: Arquitectura, diagramas, estructuras de datos</li>
+                        <li><strong>Implementación</strong>: Escribir el código</li>
+                        <li><strong>Pruebas</strong>: Testing unitario, integración, sistema</li>
+                        <li><strong>Despliegue</strong>: Poner en producción</li>
+                        <li><strong>Mantenimiento</strong>: Corrección de errores, mejoras</li>
+                    </ol>
+                </div>
+
+                <h3>Modelos de Desarrollo</h3>
+                <ul>
+                    <li><strong>Cascada (Waterfall)</strong>: Fases secuenciales, una tras otra. Poco flexible</li>
+                    <li><strong>Iterativo</strong>: Desarrollo en ciclos repetitivos</li>
+                    <li><strong>Incremental</strong>: Añadir funcionalidad gradualmente</li>
+                    <li><strong>Ágil</strong>: Iteraciones cortas, flexibilidad, colaboración continua</li>
+                </ul>
+
+                <h3>Modelo en Cascada vs Ágil</h3>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Cascada</th>
+                        <th>Ágil</th>
+                    </tr>
+                    <tr>
+                        <td>Fases secuenciales</td>
+                        <td>Iteraciones cortas (sprints)</td>
+                    </tr>
+                    <tr>
+                        <td>Requisitos fijos</td>
+                        <td>Requisitos pueden cambiar</td>
+                    </tr>
+                    <tr>
+                        <td>Documentación extensa</td>
+                        <td>Software funcionando</td>
+                    </tr>
+                    <tr>
+                        <td>Cliente ve al final</td>
+                        <td>Feedback continuo</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- GIT -->
+            <section id="git" class="content-section">
+                <h2>Control de Versiones con Git</h2>
+
+                <p><strong>Git</strong> es el sistema de control de versiones más utilizado en el mundo. Permite rastrear cambios, colaborar en equipo y mantener un historial completo del proyecto.</p>
+
+                <div class="info-box">
+                    <h4>Por qué usar Git</h4>
+                    <ul>
+                        <li>Historial completo de todos los cambios</li>
+                        <li>Trabajo en paralelo con branches</li>
+                        <li>Colaboración en equipo</li>
+                        <li>Backup del código en repositorios remotos</li>
+                        <li>Revertir errores fácilmente</li>
+                    </ul>
+                </div>
+
+                <h3>Conceptos Fundamentales</h3>
+                <ul>
+                    <li><strong>Repository</strong>: Carpeta con historial de versiones</li>
+                    <li><strong>Commit</strong>: Instantánea del proyecto en un momento</li>
+                    <li><strong>Branch</strong>: Línea de desarrollo paralela</li>
+                    <li><strong>Merge</strong>: Fusionar ramas</li>
+                    <li><strong>Remote</strong>: Repositorio en servidor (GitHub, GitLab)</li>
+                    <li><strong>Clone</strong>: Copiar repositorio remoto a local</li>
+                    <li><strong>Pull</strong>: Descargar cambios del remoto</li>
+                    <li><strong>Push</strong>: Subir cambios al remoto</li>
+                </ul>
+
+                <h3>1. Configuración Inicial</h3>
+                <div class="code-block"><code># Configurar identidad (solo una vez)
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu@email.com"
+
+# Ver configuración
+git config --list
+
+# Editor por defecto
+git config --global core.editor "code --wait"</code></div>
+
+                <h3>2. Crear y Clonar Repositorios</h3>
+                <div class="code-block"><code># Crear repositorio nuevo
+mkdir mi-proyecto
+cd mi-proyecto
+git init
+
+# Clonar repositorio existente
+git clone https://github.com/usuario/repo.git
+
+# Clonar en carpeta específica
+git clone https://github.com/usuario/repo.git mi-carpeta</code></div>
+
+                <h3>3. Comandos Básicos - Add, Commit, Status</h3>
+                <div class="code-block"><code># Ver estado del repositorio
+git status
+
+# Ver cambios en detalle
+git diff
+
+# Añadir archivo al staging area
+git add archivo.java
+
+# Añadir todos los archivos modificados
+git add .
+
+# Añadir solo archivos .java
+git add *.java
+
+# Hacer commit
+git commit -m "Mensaje descriptivo del cambio"
+
+# Add + commit en un paso (solo archivos ya trackeados)
+git commit -am "Mensaje"
+
+# Ver historial de commits
+git log
+git log --oneline
+git log --oneline --graph</code></div>
+
+                <h3>4. Trabajar con Branches</h3>
+                <div class="code-block"><code># Ver ramas
+git branch
+
+# Crear rama
+git branch nueva-feature
+
+# Cambiar a rama
+git checkout nueva-feature
+
+# Crear y cambiar en un paso
+git checkout -b feature/login
+
+# Volver a main
+git checkout main
+
+# Fusionar rama en main
+git checkout main
+git merge feature/login
+
+# Eliminar rama
+git branch -d feature/login
+
+# Ver todas las ramas (locales y remotas)
+git branch -a</code></div>
+
+                <h3>5. Repositorios Remotos</h3>
+                <div class="code-block"><code># Ver remotos configurados
+git remote -v
+
+# Añadir remoto
+git remote add origin https://github.com/usuario/repo.git
+
+# Subir rama al remoto
+git push -u origin main
+
+# Push normal (después de -u)
+git push
+
+# Descargar cambios del remoto
+git pull
+
+# Descargar sin fusionar
+git fetch
+
+# Ver cambios antes de hacer pull
+git fetch
+git diff origin/main</code></div>
+
+                <h3>6. Resolver Conflictos</h3>
+                <div class="code-block"><code># Cuando hay conflicto al hacer merge o pull:
+# Git marca los conflictos en el archivo:
+
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+Tu código local
+=======
+Código del remoto
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/main
+
+# Pasos para resolver:
+# 1. Abrir archivo y editar manualmente
+# 2. Elegir qué código mantener
+# 3. Eliminar los marcadores (&lt;&lt;&lt;, ===, &gt;&gt;&gt;)
+# 4. Hacer commit del archivo resuelto
+
+git add archivo-conflicto.java
+git commit -m "Resolver conflicto en archivo"</code></div>
+
+                <h3>7. Deshacer Cambios</h3>
+                <div class="code-block"><code># Descartar cambios en archivo (no commiteado)
+git checkout -- archivo.java
+
+# Quitar del staging area
+git reset HEAD archivo.java
+
+# Deshacer último commit (mantiene cambios)
+git reset --soft HEAD~1
+
+# Deshacer último commit (descarta cambios)
+git reset --hard HEAD~1
+
+# Crear commit que revierte otro
+git revert abc123</code></div>
+
+                <h3>8. Flujo de Trabajo Completo</h3>
+                <div class="code-block"><code># 1. Actualizar main
+git checkout main
+git pull
+
+# 2. Crear rama para nueva funcionalidad
+git checkout -b feature/carrito-compra
+
+# 3. Desarrollar y hacer commits
+git add .
+git commit -m "Añadir modelo Carrito"
+
+git add .
+git commit -m "Implementar añadir producto al carrito"
+
+git add .
+git commit -m "Implementar calcular total"
+
+# 4. Subir rama al remoto
+git push -u origin feature/carrito-compra
+
+# 5. En GitHub: Crear Pull Request
+
+# 6. Después de aprobar, fusionar
+git checkout main
+git pull
+git merge feature/carrito-compra
+git push
+
+# 7. Eliminar rama
+git branch -d feature/carrito-compra
+git push origin --delete feature/carrito-compra</code></div>
+
+                <h3>GitHub Básico</h3>
+                <ul>
+                    <li><strong>Fork</strong>: Copiar repositorio de otro usuario a tu cuenta</li>
+                    <li><strong>Pull Request</strong>: Solicitar fusión de tu rama en otra</li>
+                    <li><strong>Issues</strong>: Reportar bugs o solicitar features</li>
+                    <li><strong>Actions</strong>: CI/CD automatizado</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Buenas prácticas:</strong> Commits pequeños y frecuentes, mensajes descriptivos en imperativo ("Añadir función", no "Añadida función"), no commitear contraseñas ni archivos sensibles.</p>
+                </div>
+            </section>
+
+            <!-- IDEs -->
+            <section id="ides" class="content-section">
+                <h2>IDEs Principales</h2>
+
+                <p>Un <strong>IDE (Integrated Development Environment)</strong> proporciona todas las herramientas necesarias para desarrollar software en un solo lugar.</p>
+
+                <h3>IntelliJ IDEA</h3>
+                <ul>
+                    <li>IDE más popular para Java</li>
+                    <li>Community Edition gratuita</li>
+                    <li>Autocompletado inteligente</li>
+                    <li>Refactorización potente</li>
+                    <li>Integración con Git, Maven, Gradle</li>
+                </ul>
+                <div class="code-block"><code># Atajos de teclado IntelliJ (Windows/Linux)
+Ctrl + Space       # Autocompletar
+Ctrl + Shift + F   # Buscar en todo el proyecto
+Ctrl + B           # Ir a definición
+Ctrl + Alt + L     # Formatear código
+Shift + F6         # Renombrar
+Ctrl + /           # Comentar línea
+Ctrl + D           # Duplicar línea
+Alt + Enter        # Quick fixes
+Shift + Shift      # Buscar todo</code></div>
+
+                <h3>Eclipse</h3>
+                <ul>
+                    <li>Código abierto</li>
+                    <li>Muy configurable con plugins</li>
+                    <li>Popular en entornos empresariales</li>
+                    <li>Workspace para organizar proyectos</li>
+                </ul>
+                <div class="code-block"><code># Atajos Eclipse
+Ctrl + Space       # Autocompletar
+Ctrl + H           # Buscar en archivos
+F3                 # Ir a definición
+Ctrl + Shift + F   # Formatear código
+Alt + Shift + R    # Renombrar
+Ctrl + /           # Comentar
+Ctrl + D           # Eliminar línea</code></div>
+
+                <h3>Visual Studio Code</h3>
+                <ul>
+                    <li>Ligero y rápido</li>
+                    <li>Extensiones para Java (Extension Pack for Java)</li>
+                    <li>Terminal integrada</li>
+                    <li>Ideal para múltiples lenguajes</li>
+                </ul>
+                <div class="code-block"><code># Atajos VS Code
+Ctrl + Space       # Sugerencias
+Ctrl + Shift + F   # Buscar en archivos
+F12                # Ir a definición
+Shift + Alt + F    # Formatear
+F2                 # Renombrar
+Ctrl + /           # Comentar
+Ctrl + `           # Terminal</code></div>
+
+                <h3>Android Studio</h3>
+                <ul>
+                    <li>Basado en IntelliJ</li>
+                    <li>IDE oficial para Android</li>
+                    <li>Emulador integrado</li>
+                    <li>Layout Editor visual</li>
+                    <li>Profiler para rendimiento</li>
+                </ul>
+
+                <h3>Características Comunes</h3>
+                <ul>
+                    <li>Syntax highlighting</li>
+                    <li>Autocompletado</li>
+                    <li>Debugger integrado</li>
+                    <li>Control de versiones</li>
+                    <li>Refactorización</li>
+                    <li>Análisis de código</li>
+                </ul>
+            </section>
+
+            <!-- DEBUGGING -->
+            <section id="debugging" class="content-section">
+                <h2>Depuración (Debugging)</h2>
+
+                <p>El <strong>debugging</strong> es el proceso de encontrar y corregir errores en el código. Los IDEs modernos ofrecen potentes herramientas de depuración.</p>
+
+                <h3>Conceptos de Debugging</h3>
+                <ul>
+                    <li><strong>Breakpoint</strong>: Punto donde se pausa la ejecución</li>
+                    <li><strong>Step Over (F8)</strong>: Ejecutar línea sin entrar en métodos</li>
+                    <li><strong>Step Into (F7)</strong>: Entrar dentro del método</li>
+                    <li><strong>Step Out (Shift+F8)</strong>: Salir del método actual</li>
+                    <li><strong>Resume (F9)</strong>: Continuar hasta siguiente breakpoint</li>
+                    <li><strong>Watch</strong>: Observar valor de variables</li>
+                    <li><strong>Evaluate Expression</strong>: Evaluar expresiones en tiempo real</li>
+                </ul>
+
+                <h3>1. Ejemplo - Encontrar Error en Bucle</h3>
+                <div class="code-block"><code>public class BusquedaArray {
+
+    public static int buscar(int[] array, int objetivo) {
+        // Poner breakpoint en esta línea
+        for (int i = 0; i <= array.length; i++) {  // ERROR: <= debería ser <
+            if (array[i] == objetivo) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        int[] numeros = {5, 2, 8, 1, 9};
+        int resultado = buscar(numeros, 8);
+        System.out.println("Índice: " + resultado);
+    }
+}
+
+// Debug:
+// 1. Poner breakpoint en el for
+// 2. Ejecutar en modo debug
+// 3. Usar Step Over para ver cada iteración
+// 4. Observar valor de i en el panel de variables
+// 5. Cuando i=5 y array.length=5, veremos el error</code></div>
+
+                <h3>2. Ejemplo - NullPointerException</h3>
+                <div class="code-block"><code>public class GestorUsuarios {
+
+    private List&lt;Usuario&gt; usuarios;
+
+    public void agregarUsuario(Usuario u) {
+        usuarios.add(u);  // ERROR: usuarios nunca inicializado
+    }
+
+    public static void main(String[] args) {
+        GestorUsuarios gestor = new GestorUsuarios();
+        gestor.agregarUsuario(new Usuario("Juan"));
+    }
+}
+
+// Debug:
+// 1. Breakpoint en usuarios.add(u)
+// 2. Ver panel de variables: usuarios = null
+// 3. Solución: inicializar en constructor o declaración
+// private List&lt;Usuario&gt; usuarios = new ArrayList&lt;&gt;();</code></div>
+
+                <h3>3. Ejemplo - Lógica Incorrecta</h3>
+                <div class="code-block"><code>public class Calculadora {
+
+    public static double calcularMedia(int[] notas) {
+        int suma = 0;
+        for (int nota : notas) {
+            suma += nota;
+        }
+        return suma / notas.length;  // ERROR: división entera
+    }
+
+    public static void main(String[] args) {
+        int[] notas = {7, 8, 6, 9, 7};
+        double media = calcularMedia(notas);
+        System.out.println("Media: " + media);  // Imprime 7.0 en vez de 7.4
+    }
+}
+
+// Debug:
+// 1. Breakpoint en return
+// 2. Evaluate: suma = 37, notas.length = 5
+// 3. Evaluate: suma / notas.length = 7 (división entera!)
+// 4. Solución: return (double) suma / notas.length;</code></div>
+
+                <h3>4. Breakpoints Condicionales</h3>
+                <div class="code-block"><code>public class ProcesadorPedidos {
+
+    public void procesar(List&lt;Pedido&gt; pedidos) {
+        for (Pedido p : pedidos) {
+            // Click derecho en breakpoint > Condition
+            // Condición: p.getTotal() > 1000
+            validar(p);
+            calcularDescuento(p);
+            enviar(p);
+        }
+    }
+}
+
+// El debugger solo para cuando el total > 1000
+// Útil para listas grandes donde solo nos interesa un caso</code></div>
+
+                <div class="warning-box">
+                    <h4>Errores Comunes</h4>
+                    <ul>
+                        <li><strong>NullPointerException</strong>: Usar objeto que es null</li>
+                        <li><strong>ArrayIndexOutOfBoundsException</strong>: Índice fuera de rango</li>
+                        <li><strong>StackOverflowError</strong>: Recursión infinita</li>
+                        <li><strong>Off-by-one</strong>: Error de uno en bucles</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- TESTING -->
+            <section id="testing" class="content-section">
+                <h2>Testing con JUnit</h2>
+
+                <p>Las pruebas automatizadas aseguran que el código funciona correctamente y facilitan el mantenimiento y refactorización.</p>
+
+                <h3>Tipos de Tests</h3>
+                <ul>
+                    <li><strong>Tests Unitarios</strong>: Prueban métodos individuales</li>
+                    <li><strong>Tests de Integración</strong>: Prueban interacción entre componentes</li>
+                    <li><strong>Tests de Sistema</strong>: Prueban el sistema completo</li>
+                    <li><strong>Tests de Aceptación</strong>: Verifican requisitos del cliente</li>
+                </ul>
+
+                <h3>Configuración de JUnit 5</h3>
+                <div class="code-block"><code>&lt;!-- pom.xml --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+    &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+    &lt;version&gt;5.9.0&lt;/version&gt;
+    &lt;scope&gt;test&lt;/scope&gt;
+&lt;/dependency&gt;</code></div>
+
+                <h3>1. Test Básico - Calculadora</h3>
+                <div class="code-block"><code>// Calculadora.java
+public class Calculadora {
+    public int sumar(int a, int b) {
+        return a + b;
+    }
+
+    public int restar(int a, int b) {
+        return a - b;
+    }
+
+    public double dividir(double a, double b) {
+        if (b == 0) {
+            throw new ArithmeticException("División por cero");
+        }
+        return a / b;
+    }
+}
+
+// CalculadoraTest.java
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class CalculadoraTest {
+
+    private Calculadora calc;
+
+    @BeforeEach
+    void setUp() {
+        calc = new Calculadora();
+    }
+
+    @Test
+    void testSumar() {
+        assertEquals(8, calc.sumar(5, 3));
+        assertEquals(0, calc.sumar(-5, 5));
+        assertEquals(-10, calc.sumar(-5, -5));
+    }
+
+    @Test
+    void testRestar() {
+        assertEquals(2, calc.restar(5, 3));
+        assertEquals(-10, calc.restar(-5, 5));
+    }
+
+    @Test
+    void testDividir() {
+        assertEquals(2.5, calc.dividir(5, 2), 0.001);
+        assertEquals(-2.0, calc.dividir(-4, 2), 0.001);
+    }
+
+    @Test
+    void testDividirPorCero() {
+        assertThrows(ArithmeticException.class, () -> {
+            calc.dividir(10, 0);
+        });
+    }
+}</code></div>
+
+                <h3>2. Test con Assertions Variadas</h3>
+                <div class="code-block"><code>import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class UsuarioTest {
+
+    @Test
+    void testCrearUsuario() {
+        Usuario u = new Usuario("Juan", "juan@mail.com");
+
+        // Igualdad
+        assertEquals("Juan", u.getNombre());
+        assertEquals("juan@mail.com", u.getEmail());
+
+        // Booleanos
+        assertTrue(u.isActivo());
+        assertFalse(u.isAdmin());
+
+        // Null
+        assertNotNull(u.getNombre());
+        assertNull(u.getDireccion());
+
+        // Mismo objeto
+        Usuario u2 = u;
+        assertSame(u, u2);
+
+        // Diferentes objetos
+        Usuario u3 = new Usuario("Juan", "juan@mail.com");
+        assertNotSame(u, u3);
+
+        // Arrays
+        String[] esperado = {"USER"};
+        assertArrayEquals(esperado, u.getRoles());
+    }
+}</code></div>
+
+                <h3>3. Test de Listas</h3>
+                <div class="code-block"><code>import java.util.List;
+
+public class CarritoTest {
+
+    @Test
+    void testAgregarProducto() {
+        Carrito carrito = new Carrito();
+
+        carrito.agregar(new Producto("Laptop", 900));
+        carrito.agregar(new Producto("Mouse", 30));
+
+        assertEquals(2, carrito.cantidadProductos());
+        assertEquals(930, carrito.getTotal(), 0.01);
+    }
+
+    @Test
+    void testEliminarProducto() {
+        Carrito carrito = new Carrito();
+        Producto laptop = new Producto("Laptop", 900);
+
+        carrito.agregar(laptop);
+        carrito.eliminar(laptop);
+
+        assertEquals(0, carrito.cantidadProductos());
+        assertTrue(carrito.estaVacio());
+    }
+
+    @Test
+    void testVaciarCarrito() {
+        Carrito carrito = new Carrito();
+        carrito.agregar(new Producto("A", 10));
+        carrito.agregar(new Producto("B", 20));
+
+        carrito.vaciar();
+
+        assertTrue(carrito.estaVacio());
+        assertEquals(0, carrito.getTotal(), 0.01);
+    }
+}</code></div>
+
+                <h3>4. Test Parametrizado</h3>
+                <div class="code-block"><code>import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.ValueSource;
+
+public class ValidadorTest {
+
+    @ParameterizedTest
+    @ValueSource(strings = {"test@mail.com", "user@domain.org", "a@b.co"})
+    void testEmailValido(String email) {
+        assertTrue(Validador.esEmailValido(email));
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"", "sinArroba", "@nodomain", "espacios @mail.com"})
+    void testEmailInvalido(String email) {
+        assertFalse(Validador.esEmailValido(email));
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+        "5, 3, 8",
+        "-1, 1, 0",
+        "0, 0, 0",
+        "100, -50, 50"
+    })
+    void testSumar(int a, int b, int esperado) {
+        Calculadora calc = new Calculadora();
+        assertEquals(esperado, calc.sumar(a, b));
+    }
+}</code></div>
+
+                <h3>5. TDD - Test Driven Development</h3>
+                <div class="code-block"><code>// Paso 1: Escribir test PRIMERO (falla)
+@Test
+void testEsPalindromo() {
+    assertTrue(StringUtil.esPalindromo("ana"));
+    assertTrue(StringUtil.esPalindromo("Reconocer"));
+    assertFalse(StringUtil.esPalindromo("hola"));
+}
+
+// Paso 2: Escribir código mínimo para pasar
+public class StringUtil {
+    public static boolean esPalindromo(String texto) {
+        String limpio = texto.toLowerCase();
+        String invertido = new StringBuilder(limpio).reverse().toString();
+        return limpio.equals(invertido);
+    }
+}
+
+// Paso 3: Refactorizar si es necesario
+// Repetir ciclo con más tests</code></div>
+            </section>
+
+            <!-- METODOLOGÍAS ÁGILES -->
+            <section id="agile" class="content-section">
+                <h2>Metodologías Ágiles</h2>
+
+                <p>Las metodologías ágiles priorizan la colaboración, la flexibilidad y la entrega continua de software funcionando.</p>
+
+                <div class="info-box">
+                    <h4>Manifiesto Ágil (Valores)</h4>
+                    <ul>
+                        <li><strong>Individuos e interacciones</strong> sobre procesos y herramientas</li>
+                        <li><strong>Software funcionando</strong> sobre documentación extensiva</li>
+                        <li><strong>Colaboración con el cliente</strong> sobre negociación de contratos</li>
+                        <li><strong>Respuesta al cambio</strong> sobre seguir un plan</li>
+                    </ul>
+                </div>
+
+                <h3>Scrum</h3>
+                <p>Framework ágil más popular para gestión de proyectos.</p>
+
+                <h4>Roles en Scrum</h4>
+                <ul>
+                    <li><strong>Product Owner</strong>: Define requisitos, prioriza backlog</li>
+                    <li><strong>Scrum Master</strong>: Facilita el proceso, elimina obstáculos</li>
+                    <li><strong>Development Team</strong>: Desarrolla el producto (3-9 personas)</li>
+                </ul>
+
+                <h4>Eventos Scrum</h4>
+                <ul>
+                    <li><strong>Sprint</strong>: Iteración de 1-4 semanas</li>
+                    <li><strong>Sprint Planning</strong>: Planificar el trabajo del sprint</li>
+                    <li><strong>Daily Scrum</strong>: Reunión diaria de 15 min (stand-up)</li>
+                    <li><strong>Sprint Review</strong>: Demostración al final del sprint</li>
+                    <li><strong>Sprint Retrospective</strong>: Reflexionar y mejorar</li>
+                </ul>
+
+                <h4>Artefactos Scrum</h4>
+                <ul>
+                    <li><strong>Product Backlog</strong>: Lista priorizada de todo lo que necesita el producto</li>
+                    <li><strong>Sprint Backlog</strong>: Items seleccionados para el sprint actual</li>
+                    <li><strong>Incremento</strong>: Software funcionando al final del sprint</li>
+                </ul>
+
+                <h3>Kanban</h3>
+                <p>Sistema visual de gestión del flujo de trabajo.</p>
+                <ul>
+                    <li><strong>Tablero visual</strong>: Columnas To Do, In Progress, Done</li>
+                    <li><strong>WIP Limits</strong>: Límite de tareas en progreso</li>
+                    <li><strong>Flujo continuo</strong>: Sin sprints fijos</li>
+                    <li><strong>Mejora continua</strong>: Optimizar el flujo</li>
+                </ul>
+
+                <h3>Extreme Programming (XP)</h3>
+                <p>Metodología enfocada en prácticas técnicas.</p>
+                <ul>
+                    <li><strong>Pair Programming</strong>: Dos programadores en un ordenador</li>
+                    <li><strong>TDD</strong>: Test Driven Development</li>
+                    <li><strong>Integración Continua</strong>: Integrar código frecuentemente</li>
+                    <li><strong>Refactoring</strong>: Mejorar código sin cambiar funcionalidad</li>
+                    <li><strong>Simple Design</strong>: Diseño lo más simple posible</li>
+                </ul>
+
+                <h3>Herramientas de Gestión</h3>
+                <ul>
+                    <li><strong>Jira</strong>: Completo para Scrum y Kanban</li>
+                    <li><strong>Trello</strong>: Simple, visual, ideal para Kanban</li>
+                    <li><strong>GitHub Projects</strong>: Integrado con repositorios</li>
+                    <li><strong>Azure DevOps</strong>: Suite completa de Microsoft</li>
+                </ul>
+            </section>
+
+            <!-- DOCUMENTACIÓN -->
+            <section id="documentacion" class="content-section">
+                <h2>Documentación</h2>
+
+                <h3>Javadoc</h3>
+                <p>Sistema estándar de documentación de código Java.</p>
+                <div class="code-block"><code>/**
+ * Representa un producto en el catálogo.
+ * &lt;p&gt;
+ * Esta clase gestiona la información básica de un producto
+ * incluyendo nombre, precio y stock disponible.
+ * &lt;/p&gt;
+ *
+ * @author CodeDAM
+ * @version 1.0
+ * @since 2024-01-01
+ */
+public class Producto {
+
+    private String nombre;
+    private double precio;
+    private int stock;
+
+    /**
+     * Crea un nuevo producto con los datos especificados.
+     *
+     * @param nombre el nombre del producto
+     * @param precio el precio unitario (debe ser positivo)
+     * @param stock  la cantidad en stock (debe ser >= 0)
+     * @throws IllegalArgumentException si precio o stock son negativos
+     */
+    public Producto(String nombre, double precio, int stock) {
+        if (precio < 0 || stock < 0) {
+            throw new IllegalArgumentException("Valores no pueden ser negativos");
+        }
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
+    /**
+     * Calcula el precio total para una cantidad determinada.
+     *
+     * @param cantidad número de unidades a comprar
+     * @return el precio total (precio * cantidad)
+     * @throws IllegalArgumentException si cantidad es negativa o mayor que stock
+     */
+    public double calcularTotal(int cantidad) {
+        if (cantidad < 0 || cantidad > stock) {
+            throw new IllegalArgumentException("Cantidad inválida");
+        }
+        return precio * cantidad;
+    }
+
+    /**
+     * Obtiene el nombre del producto.
+     *
+     * @return el nombre del producto
+     */
+    public String getNombre() {
+        return nombre;
+    }
+}
+
+// Generar documentación:
+// javadoc -d docs src/*.java</code></div>
+
+                <h3>README.md</h3>
+                <div class="code-block"><code># Nombre del Proyecto
+
+Breve descripción del proyecto.
+
+## Requisitos
+
+- Java 17 o superior
+- Maven 3.8+
+- MySQL 8.0
+
+## Instalación
+
+```bash
+git clone https://github.com/usuario/proyecto.git
+cd proyecto
+mvn install
+```
+
+## Uso
+
+```bash
+java -jar target/proyecto.jar
+```
+
+## Configuración
+
+Crear archivo `config.properties`:
+```
+db.url=jdbc:mysql://localhost:3306/midb
+db.user=root
+db.password=secret
+```
+
+## Tests
+
+```bash
+mvn test
+```
+
+## Estructura del Proyecto
+
+```
+src/
+├── main/java/
+│   └── com/ejemplo/
+│       ├── model/
+│       ├── service/
+│       └── controller/
+└── test/java/
+```
+
+## Contribuir
+
+1. Fork del repositorio
+2. Crear rama feature (`git checkout -b feature/nueva`)
+3. Commit cambios (`git commit -am 'Añadir nueva feature'`)
+4. Push a la rama (`git push origin feature/nueva`)
+5. Crear Pull Request
+
+## Licencia
+
+MIT License</code></div>
+
+                <h3>Diagramas UML Básicos</h3>
+                <ul>
+                    <li><strong>Diagrama de Clases</strong>: Estructura de clases y relaciones</li>
+                    <li><strong>Diagrama de Casos de Uso</strong>: Funcionalidades desde perspectiva del usuario</li>
+                    <li><strong>Diagrama de Secuencia</strong>: Interacción entre objetos en el tiempo</li>
+                    <li><strong>Diagrama de Actividades</strong>: Flujo de trabajo o algoritmo</li>
+                </ul>
+                <p>Herramientas: PlantUML, Draw.io, Lucidchart, StarUML</p>
+            </section>
+
+            <!-- EJERCICIOS -->
+            <section id="ejercicios" class="content-section">
+                <h2>Ejercicios Prácticos</h2>
+
+                <div class="exercise">
+                    <h3>Ejercicio 1: Flujo Git Completo</h3>
+                    <p>Practicar el flujo de trabajo con Git y GitHub.</p>
+
+                    <div class="code-block"><code># 1. Crear repositorio en GitHub
+# 2. Clonar en local
+git clone https://github.com/tu-usuario/practica-git.git
+cd practica-git
+
+# 3. Crear archivo inicial
+echo "# Mi Proyecto" > README.md
+git add README.md
+git commit -m "Initial commit"
+git push
+
+# 4. Crear rama para feature
+git checkout -b feature/calculadora
+
+# 5. Añadir código
+# Crear Calculadora.java con métodos sumar, restar
+
+git add Calculadora.java
+git commit -m "Añadir clase Calculadora con sumar y restar"
+
+# 6. Añadir más funcionalidad
+# Añadir métodos multiplicar y dividir
+
+git add Calculadora.java
+git commit -m "Añadir multiplicar y dividir"
+
+# 7. Subir rama
+git push -u origin feature/calculadora
+
+# 8. Crear Pull Request en GitHub
+# 9. Fusionar PR
+# 10. Actualizar local
+
+git checkout main
+git pull</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 2: Resolver Conflictos</h3>
+                    <p>Simular y resolver un conflicto de merge.</p>
+
+                    <div class="code-block"><code># Preparación
+git checkout main
+echo "Línea original" > archivo.txt
+git add archivo.txt
+git commit -m "Añadir archivo"
+
+# Crear dos ramas que modifiquen lo mismo
+git checkout -b rama-a
+echo "Cambio de rama A" > archivo.txt
+git commit -am "Cambio en rama A"
+
+git checkout main
+git checkout -b rama-b
+echo "Cambio de rama B" > archivo.txt
+git commit -am "Cambio en rama B"
+
+# Fusionar rama-a en main
+git checkout main
+git merge rama-a  # OK
+
+# Intentar fusionar rama-b
+git merge rama-b  # CONFLICTO!
+
+# Resolver conflicto
+# Editar archivo.txt, elegir contenido correcto
+git add archivo.txt
+git commit -m "Resolver conflicto entre rama-a y rama-b"</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 3: Tests JUnit para Gestor de Tareas</h3>
+                    <p>Escribir tests unitarios completos.</p>
+
+                    <div class="code-block"><code>// Tarea.java
+public class Tarea {
+    private String titulo;
+    private boolean completada;
+
+    public Tarea(String titulo) {
+        this.titulo = titulo;
+        this.completada = false;
+    }
+
+    // Getters, setters, completar()
+}
+
+// GestorTareas.java
+public class GestorTareas {
+    private List&lt;Tarea&gt; tareas = new ArrayList&lt;&gt;();
+
+    public void agregar(Tarea t) { tareas.add(t); }
+    public void eliminar(Tarea t) { tareas.remove(t); }
+    public int total() { return tareas.size(); }
+    public int completadas() {
+        return (int) tareas.stream()
+            .filter(Tarea::isCompletada).count();
+    }
+    public int pendientes() { return total() - completadas(); }
+}
+
+// GestorTareasTest.java
+public class GestorTareasTest {
+
+    private GestorTareas gestor;
+
+    @BeforeEach
+    void setUp() {
+        gestor = new GestorTareas();
+    }
+
+    @Test
+    void testAgregarTarea() {
+        gestor.agregar(new Tarea("Test"));
+        assertEquals(1, gestor.total());
+    }
+
+    @Test
+    void testEliminarTarea() {
+        Tarea t = new Tarea("Test");
+        gestor.agregar(t);
+        gestor.eliminar(t);
+        assertEquals(0, gestor.total());
+    }
+
+    @Test
+    void testCompletadas() {
+        Tarea t1 = new Tarea("A");
+        Tarea t2 = new Tarea("B");
+        gestor.agregar(t1);
+        gestor.agregar(t2);
+
+        t1.completar();
+
+        assertEquals(1, gestor.completadas());
+        assertEquals(1, gestor.pendientes());
+    }
+
+    @Test
+    void testGestorVacio() {
+        assertEquals(0, gestor.total());
+        assertEquals(0, gestor.completadas());
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 4: Debug de Algoritmo</h3>
+                    <p>Encontrar y corregir errores usando el debugger.</p>
+
+                    <div class="code-block"><code>// Código con errores para debuggear
+public class BuscadorMax {
+
+    // Encontrar el número mayor de un array
+    public static int encontrarMaximo(int[] numeros) {
+        int max = 0;  // ERROR 1: debería ser Integer.MIN_VALUE o numeros[0]
+
+        for (int i = 1; i <= numeros.length; i++) {  // ERROR 2: <= debería ser <
+            if (numeros[i] > max) {
+                max = numeros[i];
+            }
+        }
+
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] datos = {-5, -2, -10, -1, -8};
+        System.out.println("Máximo: " + encontrarMaximo(datos));
+        // Esperado: -1, pero dará error o resultado incorrecto
+    }
+}
+
+// Pasos de debugging:
+// 1. Poner breakpoint en el for
+// 2. Observar que max empieza en 0
+// 3. Para array con negativos, nunca se actualiza
+// 4. Además, i=5 causará ArrayIndexOutOfBoundsException
+
+// Solución:
+public static int encontrarMaximo(int[] numeros) {
+    if (numeros.length == 0) {
+        throw new IllegalArgumentException("Array vacío");
+    }
+
+    int max = numeros[0];  // Corregido
+
+    for (int i = 1; i < numeros.length; i++) {  // Corregido
+        if (numeros[i] > max) {
+            max = numeros[i];
+        }
+    }
+
+    return max;
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 5: Proyecto con Maven</h3>
+                    <p>Configurar proyecto Maven con JUnit.</p>
+
+                    <div class="code-block"><code>&lt;!-- pom.xml --&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+    &lt;groupId&gt;com.codedam&lt;/groupId&gt;
+    &lt;artifactId&gt;mi-proyecto&lt;/artifactId&gt;
+    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+    &lt;packaging&gt;jar&lt;/packaging&gt;
+
+    &lt;properties&gt;
+        &lt;maven.compiler.source&gt;17&lt;/maven.compiler.source&gt;
+        &lt;maven.compiler.target&gt;17&lt;/maven.compiler.target&gt;
+    &lt;/properties&gt;
+
+    &lt;dependencies&gt;
+        &lt;dependency&gt;
+            &lt;groupId&gt;org.junit.jupiter&lt;/groupId&gt;
+            &lt;artifactId&gt;junit-jupiter&lt;/artifactId&gt;
+            &lt;version&gt;5.9.0&lt;/version&gt;
+            &lt;scope&gt;test&lt;/scope&gt;
+        &lt;/dependency&gt;
+    &lt;/dependencies&gt;
+&lt;/project&gt;
+
+# Comandos Maven
+mvn compile       # Compilar
+mvn test          # Ejecutar tests
+mvn package       # Crear JAR
+mvn clean         # Limpiar
+mvn install       # Instalar en repo local</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 6: Documentar con Javadoc</h3>
+                    <p>Documentar una clase completa.</p>
+
+                    <div class="code-block"><code>/**
+ * Gestiona las operaciones de una cuenta bancaria.
+ *
+ * @author Tu Nombre
+ * @version 1.0
+ */
+public class CuentaBancaria {
+
+    private String titular;
+    private double saldo;
+
+    /**
+     * Crea una cuenta bancaria con saldo inicial.
+     *
+     * @param titular nombre del titular de la cuenta
+     * @param saldoInicial saldo inicial (debe ser >= 0)
+     */
+    public CuentaBancaria(String titular, double saldoInicial) {
+        this.titular = titular;
+        this.saldo = saldoInicial;
+    }
+
+    /**
+     * Deposita dinero en la cuenta.
+     *
+     * @param cantidad cantidad a depositar (debe ser > 0)
+     * @throws IllegalArgumentException si cantidad <= 0
+     */
+    public void depositar(double cantidad) {
+        if (cantidad <= 0) {
+            throw new IllegalArgumentException("Cantidad debe ser positiva");
+        }
+        saldo += cantidad;
+    }
+
+    /**
+     * Retira dinero de la cuenta.
+     *
+     * @param cantidad cantidad a retirar
+     * @return true si se pudo retirar, false si saldo insuficiente
+     */
+    public boolean retirar(double cantidad) {
+        if (cantidad > saldo) {
+            return false;
+        }
+        saldo -= cantidad;
+        return true;
+    }
+
+    /**
+     * Obtiene el saldo actual.
+     *
+     * @return el saldo de la cuenta
+     */
+    public double getSaldo() {
+        return saldo;
+    }
+}</code></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p>Recursos completos para estudiantes de Desarrollo de Aplicaciones Multiplataforma.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Proyecto educativo de código abierto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>

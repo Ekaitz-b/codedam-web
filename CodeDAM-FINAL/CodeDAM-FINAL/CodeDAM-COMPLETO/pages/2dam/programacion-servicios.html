@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programación de Servicios y Procesos 2º DAM - Threads, Sockets, APIs REST, Spring Boot y programación concurrente.">
+    <title>Programación de Servicios - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../1dam/programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="./desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Programación de Servicios</span></div>
+            <h1 class="page-title">Programación de Servicios y Procesos</h1>
+            <p class="page-subtitle">Threads, Sockets, APIs REST y Spring Boot</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul>
+                    <li><a href="#concurrencia">Programación Concurrente</a></li>
+                    <li><a href="#sockets">Sockets - Cliente/Servidor</a></li>
+                    <li><a href="#red">Comunicación en Red</a></li>
+                    <li><a href="#spring">Spring Boot</a></li>
+                    <li><a href="#seguridad">Seguridad Básica</a></li>
+                    <li><a href="#ejercicios">Ejercicios Resueltos</a></li>
+                </ul>
+            </nav>
+
+            <!-- PROGRAMACIÓN CONCURRENTE -->
+            <section id="concurrencia" class="content-section">
+                <h2>Programación Concurrente</h2>
+
+                <p>La <strong>programación concurrente</strong> permite ejecutar múltiples tareas simultáneamente, mejorando el rendimiento y la capacidad de respuesta de las aplicaciones.</p>
+
+                <div class="info-box">
+                    <h4>Conceptos Clave</h4>
+                    <ul>
+                        <li><strong>Proceso</strong>: Programa en ejecución con su propio espacio de memoria</li>
+                        <li><strong>Hilo (Thread)</strong>: Unidad de ejecución dentro de un proceso, comparte memoria</li>
+                        <li><strong>Concurrencia</strong>: Múltiples tareas en progreso (no necesariamente simultáneas)</li>
+                        <li><strong>Paralelismo</strong>: Múltiples tareas ejecutándose al mismo tiempo</li>
+                    </ul>
+                </div>
+
+                <h3>Estados de un Thread</h3>
+                <ul>
+                    <li><strong>NEW</strong>: Creado pero no iniciado</li>
+                    <li><strong>RUNNABLE</strong>: En ejecución o listo para ejecutar</li>
+                    <li><strong>BLOCKED</strong>: Esperando obtener un lock</li>
+                    <li><strong>WAITING</strong>: Esperando indefinidamente</li>
+                    <li><strong>TIMED_WAITING</strong>: Esperando con timeout</li>
+                    <li><strong>TERMINATED</strong>: Ha finalizado su ejecución</li>
+                </ul>
+
+                <h3>1. Crear Threads - Extender Thread</h3>
+                <div class="code-block"><code>public class MiThread extends Thread {
+
+    private String nombre;
+
+    public MiThread(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @Override
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(nombre + " - Iteración " + i);
+            try {
+                Thread.sleep(1000); // Pausa 1 segundo
+            } catch (InterruptedException e) {
+                System.out.println(nombre + " interrumpido");
+                return;
+            }
+        }
+        System.out.println(nombre + " ha terminado");
+    }
+
+    public static void main(String[] args) {
+        MiThread hilo1 = new MiThread("Hilo-1");
+        MiThread hilo2 = new MiThread("Hilo-2");
+
+        hilo1.start(); // Inicia el hilo
+        hilo2.start();
+
+        System.out.println("Main continúa ejecutándose");
+    }
+}</code></div>
+
+                <h3>2. Implementar Runnable (Recomendado)</h3>
+                <div class="code-block"><code>public class TareaDescarga implements Runnable {
+
+    private String archivo;
+
+    public TareaDescarga(String archivo) {
+        this.archivo = archivo;
+    }
+
+    @Override
+    public void run() {
+        System.out.println("Descargando " + archivo + "...");
+        try {
+            // Simular descarga
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        System.out.println(archivo + " descargado!");
+    }
+
+    public static void main(String[] args) {
+        // Crear hilos con Runnable
+        Thread t1 = new Thread(new TareaDescarga("archivo1.zip"));
+        Thread t2 = new Thread(new TareaDescarga("archivo2.zip"));
+
+        t1.start();
+        t2.start();
+
+        // Con lambda
+        Thread t3 = new Thread(() -> {
+            System.out.println("Ejecutando tarea lambda");
+        });
+        t3.start();
+    }
+}</code></div>
+
+                <h3>3. Sincronización con synchronized</h3>
+                <div class="code-block"><code>public class CuentaBancaria {
+
+    private double saldo;
+
+    public CuentaBancaria(double saldoInicial) {
+        this.saldo = saldoInicial;
+    }
+
+    // Método sincronizado - solo un hilo a la vez
+    public synchronized void depositar(double cantidad) {
+        double nuevoSaldo = saldo + cantidad;
+        // Simular procesamiento
+        try { Thread.sleep(100); } catch (InterruptedException e) {}
+        saldo = nuevoSaldo;
+        System.out.println("Depositado: " + cantidad + ", Saldo: " + saldo);
+    }
+
+    public synchronized void retirar(double cantidad) {
+        if (saldo >= cantidad) {
+            double nuevoSaldo = saldo - cantidad;
+            try { Thread.sleep(100); } catch (InterruptedException e) {}
+            saldo = nuevoSaldo;
+            System.out.println("Retirado: " + cantidad + ", Saldo: " + saldo);
+        } else {
+            System.out.println("Saldo insuficiente");
+        }
+    }
+
+    public synchronized double getSaldo() {
+        return saldo;
+    }
+}
+
+// Uso con múltiples hilos
+public class TestCuenta {
+    public static void main(String[] args) throws InterruptedException {
+        CuentaBancaria cuenta = new CuentaBancaria(1000);
+
+        Thread depositante = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                cuenta.depositar(100);
+            }
+        });
+
+        Thread extractor = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                cuenta.retirar(150);
+            }
+        });
+
+        depositante.start();
+        extractor.start();
+
+        depositante.join(); // Esperar a que termine
+        extractor.join();
+
+        System.out.println("Saldo final: " + cuenta.getSaldo());
+    }
+}</code></div>
+
+                <h3>4. ExecutorService - Pool de Threads</h3>
+                <div class="code-block"><code>import java.util.concurrent.*;
+
+public class EjemploExecutor {
+
+    public static void main(String[] args) {
+        // Pool de 3 hilos
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        // Enviar 10 tareas
+        for (int i = 1; i <= 10; i++) {
+            int taskId = i;
+            executor.submit(() -> {
+                String threadName = Thread.currentThread().getName();
+                System.out.println("Tarea " + taskId + " en " + threadName);
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+                return taskId * 2;
+            });
+        }
+
+        // Cerrar executor ordenadamente
+        executor.shutdown();
+        try {
+            // Esperar máximo 30 segundos
+            if (!executor.awaitTermination(30, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+        }
+
+        System.out.println("Todas las tareas completadas");
+    }
+}</code></div>
+
+                <h3>5. Future y Callable - Resultados Asíncronos</h3>
+                <div class="code-block"><code>import java.util.concurrent.*;
+import java.util.*;
+
+public class EjemploFuture {
+
+    public static void main(String[] args) throws Exception {
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+
+        // Callable devuelve resultado
+        Callable&lt;Integer&gt; tarea = () -> {
+            Thread.sleep(2000);
+            return 42;
+        };
+
+        // Future representa el resultado futuro
+        Future&lt;Integer&gt; future = executor.submit(tarea);
+
+        System.out.println("Tarea enviada, haciendo otras cosas...");
+
+        // Obtener resultado (bloquea hasta que esté listo)
+        Integer resultado = future.get();
+        System.out.println("Resultado: " + resultado);
+
+        // Múltiples Futures
+        List&lt;Future&lt;String&gt;&gt; futures = new ArrayList&lt;&gt;();
+
+        for (int i = 1; i <= 5; i++) {
+            int id = i;
+            Future&lt;String&gt; f = executor.submit(() -> {
+                Thread.sleep(1000);
+                return "Resultado de tarea " + id;
+            });
+            futures.add(f);
+        }
+
+        // Recoger todos los resultados
+        for (Future&lt;String&gt; f : futures) {
+            System.out.println(f.get());
+        }
+
+        executor.shutdown();
+    }
+}</code></div>
+
+                <h3>6. Wait y Notify - Productor/Consumidor</h3>
+                <div class="code-block"><code>import java.util.LinkedList;
+import java.util.Queue;
+
+public class ProductorConsumidor {
+
+    private final Queue&lt;Integer&gt; cola = new LinkedList&lt;&gt;();
+    private final int CAPACIDAD = 5;
+
+    // Productor añade elementos
+    public void producir() throws InterruptedException {
+        int valor = 0;
+        while (true) {
+            synchronized (this) {
+                // Esperar si la cola está llena
+                while (cola.size() == CAPACIDAD) {
+                    wait();
+                }
+
+                System.out.println("Producido: " + valor);
+                cola.add(valor++);
+
+                // Notificar al consumidor
+                notify();
+            }
+            Thread.sleep(500);
+        }
+    }
+
+    // Consumidor retira elementos
+    public void consumir() throws InterruptedException {
+        while (true) {
+            synchronized (this) {
+                // Esperar si la cola está vacía
+                while (cola.isEmpty()) {
+                    wait();
+                }
+
+                int valor = cola.poll();
+                System.out.println("Consumido: " + valor);
+
+                // Notificar al productor
+                notify();
+            }
+            Thread.sleep(1000);
+        }
+    }
+
+    public static void main(String[] args) {
+        ProductorConsumidor pc = new ProductorConsumidor();
+
+        Thread productor = new Thread(() -> {
+            try { pc.producir(); }
+            catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+        });
+
+        Thread consumidor = new Thread(() -> {
+            try { pc.consumir(); }
+            catch (InterruptedException e) { Thread.currentThread().interrupt(); }
+        });
+
+        productor.start();
+        consumidor.start();
+    }
+}</code></div>
+            </section>
+
+            <!-- SOCKETS -->
+            <section id="sockets" class="content-section">
+                <h2>Sockets - Comunicación Cliente/Servidor</h2>
+
+                <p>Los <strong>sockets</strong> permiten la comunicación entre procesos a través de la red. Java proporciona clases para TCP (orientado a conexión) y UDP (datagramas).</p>
+
+                <div class="info-box">
+                    <h4>TCP vs UDP</h4>
+                    <ul>
+                        <li><strong>TCP</strong>: Fiable, ordenado, orientado a conexión (Socket, ServerSocket)</li>
+                        <li><strong>UDP</strong>: Rápido, sin conexión, puede perder paquetes (DatagramSocket)</li>
+                    </ul>
+                </div>
+
+                <h3>1. Servidor TCP Básico</h3>
+                <div class="code-block"><code>import java.net.*;
+import java.io.*;
+
+public class ServidorTCP {
+
+    public static void main(String[] args) {
+        int puerto = 5000;
+
+        try (ServerSocket servidor = new ServerSocket(puerto)) {
+            System.out.println("Servidor iniciado en puerto " + puerto);
+
+            while (true) {
+                // Esperar conexión de cliente
+                Socket cliente = servidor.accept();
+                System.out.println("Cliente conectado: " +
+                    cliente.getInetAddress().getHostAddress());
+
+                // Manejar cliente en nuevo hilo
+                new Thread(() -> manejarCliente(cliente)).start();
+            }
+
+        } catch (IOException e) {
+            System.err.println("Error en servidor: " + e.getMessage());
+        }
+    }
+
+    private static void manejarCliente(Socket cliente) {
+        try (
+            BufferedReader entrada = new BufferedReader(
+                new InputStreamReader(cliente.getInputStream()));
+            PrintWriter salida = new PrintWriter(
+                cliente.getOutputStream(), true)
+        ) {
+            String mensaje;
+            while ((mensaje = entrada.readLine()) != null) {
+                System.out.println("Recibido: " + mensaje);
+
+                // Procesar y responder
+                String respuesta = mensaje.toUpperCase();
+                salida.println(respuesta);
+
+                if (mensaje.equalsIgnoreCase("salir")) {
+                    break;
+                }
+            }
+        } catch (IOException e) {
+            System.err.println("Error con cliente: " + e.getMessage());
+        } finally {
+            try {
+                cliente.close();
+            } catch (IOException e) {}
+            System.out.println("Cliente desconectado");
+        }
+    }
+}</code></div>
+
+                <h3>2. Cliente TCP</h3>
+                <div class="code-block"><code>import java.net.*;
+import java.io.*;
+
+public class ClienteTCP {
+
+    public static void main(String[] args) {
+        String host = "localhost";
+        int puerto = 5000;
+
+        try (
+            Socket socket = new Socket(host, puerto);
+            PrintWriter salida = new PrintWriter(
+                socket.getOutputStream(), true);
+            BufferedReader entrada = new BufferedReader(
+                new InputStreamReader(socket.getInputStream()));
+            BufferedReader teclado = new BufferedReader(
+                new InputStreamReader(System.in))
+        ) {
+            System.out.println("Conectado al servidor");
+            System.out.println("Escribe mensajes (o 'salir' para terminar):");
+
+            String mensaje;
+            while ((mensaje = teclado.readLine()) != null) {
+                // Enviar al servidor
+                salida.println(mensaje);
+
+                // Leer respuesta
+                String respuesta = entrada.readLine();
+                System.out.println("Servidor: " + respuesta);
+
+                if (mensaje.equalsIgnoreCase("salir")) {
+                    break;
+                }
+            }
+
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+    }
+}</code></div>
+
+                <h3>3. Servidor de Chat Multiusuario</h3>
+                <div class="code-block"><code>import java.net.*;
+import java.io.*;
+import java.util.*;
+
+public class ServidorChat {
+
+    private static Set&lt;PrintWriter&gt; clientes = new HashSet&lt;&gt;();
+
+    public static void main(String[] args) throws IOException {
+        ServerSocket servidor = new ServerSocket(6000);
+        System.out.println("Servidor de chat iniciado...");
+
+        try {
+            while (true) {
+                Socket socket = servidor.accept();
+                new ManejadorCliente(socket).start();
+            }
+        } finally {
+            servidor.close();
+        }
+    }
+
+    // Enviar mensaje a todos los clientes
+    private static void broadcast(String mensaje) {
+        synchronized (clientes) {
+            for (PrintWriter cliente : clientes) {
+                cliente.println(mensaje);
+            }
+        }
+    }
+
+    private static class ManejadorCliente extends Thread {
+        private Socket socket;
+        private PrintWriter salida;
+        private String nombre;
+
+        public ManejadorCliente(Socket socket) {
+            this.socket = socket;
+        }
+
+        public void run() {
+            try {
+                BufferedReader entrada = new BufferedReader(
+                    new InputStreamReader(socket.getInputStream()));
+                salida = new PrintWriter(socket.getOutputStream(), true);
+
+                // Pedir nombre
+                salida.println("Introduce tu nombre:");
+                nombre = entrada.readLine();
+
+                synchronized (clientes) {
+                    clientes.add(salida);
+                }
+
+                broadcast("*** " + nombre + " se ha unido al chat ***");
+
+                String mensaje;
+                while ((mensaje = entrada.readLine()) != null) {
+                    if (mensaje.equalsIgnoreCase("/salir")) {
+                        break;
+                    }
+                    broadcast(nombre + ": " + mensaje);
+                }
+
+            } catch (IOException e) {
+                System.err.println("Error: " + e.getMessage());
+            } finally {
+                synchronized (clientes) {
+                    clientes.remove(salida);
+                }
+                broadcast("*** " + nombre + " ha salido del chat ***");
+                try { socket.close(); } catch (IOException e) {}
+            }
+        }
+    }
+}</code></div>
+
+                <h3>4. Socket UDP</h3>
+                <div class="code-block"><code>// Servidor UDP
+import java.net.*;
+
+public class ServidorUDP {
+
+    public static void main(String[] args) throws Exception {
+        DatagramSocket socket = new DatagramSocket(7000);
+        byte[] buffer = new byte[1024];
+
+        System.out.println("Servidor UDP escuchando...");
+
+        while (true) {
+            // Recibir datagrama
+            DatagramPacket paquete = new DatagramPacket(buffer, buffer.length);
+            socket.receive(paquete);
+
+            String mensaje = new String(paquete.getData(), 0, paquete.getLength());
+            System.out.println("Recibido: " + mensaje);
+
+            // Responder
+            String respuesta = "Eco: " + mensaje;
+            byte[] datosRespuesta = respuesta.getBytes();
+
+            DatagramPacket paqueteRespuesta = new DatagramPacket(
+                datosRespuesta,
+                datosRespuesta.length,
+                paquete.getAddress(),
+                paquete.getPort()
+            );
+            socket.send(paqueteRespuesta);
+        }
+    }
+}
+
+// Cliente UDP
+public class ClienteUDP {
+
+    public static void main(String[] args) throws Exception {
+        DatagramSocket socket = new DatagramSocket();
+        InetAddress direccion = InetAddress.getByName("localhost");
+
+        String mensaje = "Hola UDP";
+        byte[] datos = mensaje.getBytes();
+
+        // Enviar
+        DatagramPacket paquete = new DatagramPacket(
+            datos, datos.length, direccion, 7000);
+        socket.send(paquete);
+
+        // Recibir respuesta
+        byte[] buffer = new byte[1024];
+        DatagramPacket respuesta = new DatagramPacket(buffer, buffer.length);
+        socket.receive(respuesta);
+
+        String textoRespuesta = new String(
+            respuesta.getData(), 0, respuesta.getLength());
+        System.out.println("Respuesta: " + textoRespuesta);
+
+        socket.close();
+    }
+}</code></div>
+
+                <h3>5. Transferencia de Archivos</h3>
+                <div class="code-block"><code>// Servidor que envía archivo
+public class ServidorArchivo {
+
+    public static void main(String[] args) throws Exception {
+        ServerSocket servidor = new ServerSocket(8000);
+        System.out.println("Esperando cliente...");
+
+        Socket cliente = servidor.accept();
+        System.out.println("Cliente conectado, enviando archivo...");
+
+        File archivo = new File("documento.pdf");
+        FileInputStream fis = new FileInputStream(archivo);
+        OutputStream os = cliente.getOutputStream();
+
+        byte[] buffer = new byte[4096];
+        int bytesLeidos;
+
+        while ((bytesLeidos = fis.read(buffer)) != -1) {
+            os.write(buffer, 0, bytesLeidos);
+        }
+
+        os.flush();
+        fis.close();
+        cliente.close();
+        servidor.close();
+
+        System.out.println("Archivo enviado!");
+    }
+}
+
+// Cliente que recibe archivo
+public class ClienteArchivo {
+
+    public static void main(String[] args) throws Exception {
+        Socket socket = new Socket("localhost", 8000);
+        System.out.println("Descargando archivo...");
+
+        InputStream is = socket.getInputStream();
+        FileOutputStream fos = new FileOutputStream("descargado.pdf");
+
+        byte[] buffer = new byte[4096];
+        int bytesLeidos;
+
+        while ((bytesLeidos = is.read(buffer)) != -1) {
+            fos.write(buffer, 0, bytesLeidos);
+        }
+
+        fos.close();
+        socket.close();
+
+        System.out.println("Archivo descargado!");
+    }
+}</code></div>
+            </section>
+
+            <!-- COMUNICACIÓN EN RED -->
+            <section id="red" class="content-section">
+                <h2>Comunicación en Red - HTTP y APIs</h2>
+
+                <h3>1. HttpURLConnection</h3>
+                <div class="code-block"><code>import java.net.*;
+import java.io.*;
+
+public class ClienteHTTP {
+
+    // GET request
+    public static String get(String urlString) throws Exception {
+        URL url = new URL(urlString);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("GET");
+        conn.setRequestProperty("Accept", "application/json");
+
+        int responseCode = conn.getResponseCode();
+        if (responseCode != 200) {
+            throw new RuntimeException("Error: " + responseCode);
+        }
+
+        BufferedReader reader = new BufferedReader(
+            new InputStreamReader(conn.getInputStream()));
+        StringBuilder response = new StringBuilder();
+        String linea;
+
+        while ((linea = reader.readLine()) != null) {
+            response.append(linea);
+        }
+        reader.close();
+        conn.disconnect();
+
+        return response.toString();
+    }
+
+    // POST request
+    public static String post(String urlString, String jsonBody) throws Exception {
+        URL url = new URL(urlString);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setDoOutput(true);
+
+        // Enviar body
+        OutputStream os = conn.getOutputStream();
+        os.write(jsonBody.getBytes());
+        os.flush();
+        os.close();
+
+        // Leer respuesta
+        BufferedReader reader = new BufferedReader(
+            new InputStreamReader(conn.getInputStream()));
+        StringBuilder response = new StringBuilder();
+        String linea;
+
+        while ((linea = reader.readLine()) != null) {
+            response.append(linea);
+        }
+        reader.close();
+        conn.disconnect();
+
+        return response.toString();
+    }
+
+    public static void main(String[] args) throws Exception {
+        // GET
+        String usuarios = get("https://jsonplaceholder.typicode.com/users");
+        System.out.println(usuarios);
+
+        // POST
+        String json = "{\"title\":\"foo\",\"body\":\"bar\",\"userId\":1}";
+        String resultado = post("https://jsonplaceholder.typicode.com/posts", json);
+        System.out.println(resultado);
+    }
+}</code></div>
+
+                <h3>2. Parseo de JSON con Gson</h3>
+                <div class="code-block"><code>import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.util.List;
+
+// Clase modelo
+public class Usuario {
+    private int id;
+    private String name;
+    private String email;
+
+    // Getters y setters
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public String getEmail() { return email; }
+}
+
+public class EjemploGson {
+
+    public static void main(String[] args) throws Exception {
+        Gson gson = new Gson();
+
+        // Obtener JSON de API
+        String json = ClienteHTTP.get(
+            "https://jsonplaceholder.typicode.com/users");
+
+        // Parsear lista de usuarios
+        List&lt;Usuario&gt; usuarios = gson.fromJson(json,
+            new TypeToken&lt;List&lt;Usuario&gt;&gt;(){}.getType());
+
+        for (Usuario u : usuarios) {
+            System.out.println(u.getId() + " - " + u.getName());
+        }
+
+        // Convertir objeto a JSON
+        Usuario nuevo = new Usuario();
+        nuevo.setName("Test");
+        nuevo.setEmail("test@mail.com");
+
+        String jsonUsuario = gson.toJson(nuevo);
+        System.out.println(jsonUsuario);
+    }
+}</code></div>
+
+                <h3>3. Cliente REST con HttpClient (Java 11+)</h3>
+                <div class="code-block"><code>import java.net.http.*;
+import java.net.URI;
+
+public class ClienteREST {
+
+    private static final HttpClient client = HttpClient.newHttpClient();
+
+    public static String get(String url) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(url))
+            .GET()
+            .header("Accept", "application/json")
+            .build();
+
+        HttpResponse&lt;String&gt; response = client.send(
+            request, HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
+
+    public static String post(String url, String json) throws Exception {
+        HttpRequest request = HttpRequest.newBuilder()
+            .uri(URI.create(url))
+            .POST(HttpRequest.BodyPublishers.ofString(json))
+            .header("Content-Type", "application/json")
+            .build();
+
+        HttpResponse&lt;String&gt; response = client.send(
+            request, HttpResponse.BodyHandlers.ofString());
+
+        return response.body();
+    }
+
+    public static void main(String[] args) throws Exception {
+        String resultado = get("https://api.github.com/users/octocat");
+        System.out.println(resultado);
+    }
+}</code></div>
+
+                <h3>4. Descargar Archivo de URL</h3>
+                <div class="code-block"><code>import java.io.*;
+import java.net.*;
+import java.nio.file.*;
+
+public class DescargadorArchivo {
+
+    public static void descargar(String urlString, String destino)
+            throws Exception {
+        URL url = new URL(urlString);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+        long tamanoTotal = conn.getContentLengthLong();
+        System.out.println("Tamaño: " + tamanoTotal + " bytes");
+
+        try (InputStream in = conn.getInputStream();
+             FileOutputStream out = new FileOutputStream(destino)) {
+
+            byte[] buffer = new byte[8192];
+            int bytesLeidos;
+            long totalLeido = 0;
+
+            while ((bytesLeidos = in.read(buffer)) != -1) {
+                out.write(buffer, 0, bytesLeidos);
+                totalLeido += bytesLeidos;
+
+                // Mostrar progreso
+                int progreso = (int) ((totalLeido * 100) / tamanoTotal);
+                System.out.print("\rProgreso: " + progreso + "%");
+            }
+        }
+
+        System.out.println("\nDescarga completada: " + destino);
+    }
+
+    public static void main(String[] args) throws Exception {
+        descargar(
+            "https://example.com/archivo.zip",
+            "descargado.zip"
+        );
+    }
+}</code></div>
+            </section>
+
+            <!-- SPRING BOOT -->
+            <section id="spring" class="content-section">
+                <h2>Spring Boot - API REST</h2>
+
+                <p><strong>Spring Boot</strong> simplifica la creación de aplicaciones Java empresariales con configuración automática y servidor embebido.</p>
+
+                <h3>Configuración del Proyecto</h3>
+                <div class="code-block"><code>&lt;!-- pom.xml --&gt;
+&lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+    &lt;version&gt;3.1.0&lt;/version&gt;
+&lt;/parent&gt;
+
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.h2database&lt;/groupId&gt;
+        &lt;artifactId&gt;h2&lt;/artifactId&gt;
+        &lt;scope&gt;runtime&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+# application.properties
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.h2.console.enabled=true
+spring.jpa.hibernate.ddl-auto=update</code></div>
+
+                <h3>1. Aplicación Principal</h3>
+                <div class="code-block"><code>import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MiApiApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MiApiApplication.class, args);
+    }
+}</code></div>
+
+                <h3>2. Entidad JPA</h3>
+                <div class="code-block"><code>import jakarta.persistence.*;
+
+@Entity
+@Table(name = "productos")
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String nombre;
+
+    private Double precio;
+
+    private Integer stock;
+
+    // Constructor vacío requerido
+    public Producto() {}
+
+    public Producto(String nombre, Double precio, Integer stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
+    // Getters y Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public Double getPrecio() { return precio; }
+    public void setPrecio(Double precio) { this.precio = precio; }
+    public Integer getStock() { return stock; }
+    public void setStock(Integer stock) { this.stock = stock; }
+}</code></div>
+
+                <h3>3. Repository</h3>
+                <div class="code-block"><code>import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import java.util.List;
+
+public interface ProductoRepository extends JpaRepository&lt;Producto, Long&gt; {
+
+    // Spring Data genera la implementación automáticamente
+    List&lt;Producto&gt; findByNombreContaining(String nombre);
+
+    List&lt;Producto&gt; findByPrecioBetween(Double min, Double max);
+
+    List&lt;Producto&gt; findByStockGreaterThan(Integer stock);
+
+    @Query("SELECT p FROM Producto p WHERE p.precio < ?1 ORDER BY p.precio")
+    List&lt;Producto&gt; findBaratos(Double precioMax);
+}</code></div>
+
+                <h3>4. Service</h3>
+                <div class="code-block"><code>import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
+@Service
+public class ProductoService {
+
+    @Autowired
+    private ProductoRepository repository;
+
+    public List&lt;Producto&gt; findAll() {
+        return repository.findAll();
+    }
+
+    public Producto findById(Long id) {
+        return repository.findById(id)
+            .orElseThrow(() -> new RuntimeException("Producto no encontrado: " + id));
+    }
+
+    public Producto save(Producto producto) {
+        return repository.save(producto);
+    }
+
+    public Producto update(Long id, Producto datos) {
+        Producto producto = findById(id);
+        producto.setNombre(datos.getNombre());
+        producto.setPrecio(datos.getPrecio());
+        producto.setStock(datos.getStock());
+        return repository.save(producto);
+    }
+
+    public void delete(Long id) {
+        repository.deleteById(id);
+    }
+
+    public List&lt;Producto&gt; buscar(String nombre) {
+        return repository.findByNombreContaining(nombre);
+    }
+}</code></div>
+
+                <h3>5. REST Controller - CRUD Completo</h3>
+                <div class="code-block"><code>import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/productos")
+public class ProductoController {
+
+    private final ProductoService service;
+
+    public ProductoController(ProductoService service) {
+        this.service = service;
+    }
+
+    // GET /api/productos
+    @GetMapping
+    public List&lt;Producto&gt; listar() {
+        return service.findAll();
+    }
+
+    // GET /api/productos/{id}
+    @GetMapping("/{id}")
+    public Producto obtener(@PathVariable Long id) {
+        return service.findById(id);
+    }
+
+    // GET /api/productos/buscar?nombre=xxx
+    @GetMapping("/buscar")
+    public List&lt;Producto&gt; buscar(@RequestParam String nombre) {
+        return service.buscar(nombre);
+    }
+
+    // POST /api/productos
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Producto crear(@RequestBody Producto producto) {
+        return service.save(producto);
+    }
+
+    // PUT /api/productos/{id}
+    @PutMapping("/{id}")
+    public Producto actualizar(@PathVariable Long id, @RequestBody Producto producto) {
+        return service.update(id, producto);
+    }
+
+    // DELETE /api/productos/{id}
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminar(@PathVariable Long id) {
+        service.delete(id);
+    }
+}
+
+// Manejo global de excepciones
+@RestControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity&lt;String&gt; handleNotFound(RuntimeException ex) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+}</code></div>
+            </section>
+
+            <!-- SEGURIDAD -->
+            <section id="seguridad" class="content-section">
+                <h2>Seguridad Básica</h2>
+
+                <p>La seguridad en aplicaciones incluye autenticación (verificar identidad) y autorización (verificar permisos).</p>
+
+                <h3>1. Spring Security - Configuración Básica</h3>
+                <div class="code-block"><code>// Dependencia en pom.xml
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+&lt;/dependency&gt;
+
+// Configuración de seguridad
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+public class SecurityConfig {
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        http
+            .csrf().disable()
+            .authorizeHttpRequests(auth -> auth
+                .requestMatchers("/api/public/**").permitAll()
+                .requestMatchers("/api/admin/**").hasRole("ADMIN")
+                .anyRequest().authenticated()
+            )
+            .httpBasic();
+
+        return http.build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+
+// Usuario en memoria para pruebas
+@Bean
+public UserDetailsService userDetailsService() {
+    UserDetails user = User.builder()
+        .username("usuario")
+        .password(passwordEncoder().encode("password"))
+        .roles("USER")
+        .build();
+
+    UserDetails admin = User.builder()
+        .username("admin")
+        .password(passwordEncoder().encode("admin123"))
+        .roles("ADMIN", "USER")
+        .build();
+
+    return new InMemoryUserDetailsManager(user, admin);
+}</code></div>
+
+                <h3>2. JWT - JSON Web Token (Conceptos)</h3>
+                <div class="code-block"><code>// Estructura de un JWT:
+// Header.Payload.Signature
+
+// Header: {"alg": "HS256", "typ": "JWT"}
+// Payload: {"sub": "user123", "exp": 1234567890, "roles": ["USER"]}
+// Signature: HMACSHA256(base64(header) + "." + base64(payload), secret)
+
+// Generar JWT (con jjwt library)
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import java.util.Date;
+
+public class JwtUtil {
+
+    private static final String SECRET = "miClaveSecretaMuyLarga123456789";
+    private static final long EXPIRATION = 86400000; // 24 horas
+
+    public static String generarToken(String username) {
+        return Jwts.builder()
+            .setSubject(username)
+            .setIssuedAt(new Date())
+            .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
+            .signWith(SignatureAlgorithm.HS256, SECRET)
+            .compact();
+    }
+
+    public static String extraerUsername(String token) {
+        return Jwts.parser()
+            .setSigningKey(SECRET)
+            .parseClaimsJws(token)
+            .getBody()
+            .getSubject();
+    }
+
+    public static boolean validarToken(String token) {
+        try {
+            Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+}
+
+// Controller de autenticación
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+    @PostMapping("/login")
+    public ResponseEntity&lt;String&gt; login(@RequestBody LoginRequest request) {
+        // Validar credenciales (simplificado)
+        if ("usuario".equals(request.getUsername()) &&
+            "password".equals(request.getPassword())) {
+
+            String token = JwtUtil.generarToken(request.getUsername());
+            return ResponseEntity.ok(token);
+        }
+        return ResponseEntity.status(401).body("Credenciales inválidas");
+    }
+}</code></div>
+            </section>
+
+            <!-- EJERCICIOS -->
+            <section id="ejercicios" class="content-section">
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise">
+                    <h3>Ejercicio 1: Descarga Paralela</h3>
+                    <p>Descargar múltiples archivos en paralelo con threads.</p>
+
+                    <div class="code-block"><code>import java.util.concurrent.*;
+import java.util.*;
+
+public class DescargaParalela {
+
+    public static void main(String[] args) throws Exception {
+        List&lt;String&gt; urls = List.of(
+            "https://example.com/file1.zip",
+            "https://example.com/file2.zip",
+            "https://example.com/file3.zip"
+        );
+
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        List&lt;Future&lt;String&gt;&gt; futures = new ArrayList&lt;&gt;();
+
+        for (String url : urls) {
+            Future&lt;String&gt; future = executor.submit(() -> {
+                // Simular descarga
+                String archivo = url.substring(url.lastIndexOf('/') + 1);
+                Thread.sleep(2000);
+                return "Descargado: " + archivo;
+            });
+            futures.add(future);
+        }
+
+        // Recoger resultados
+        for (Future&lt;String&gt; future : futures) {
+            System.out.println(future.get());
+        }
+
+        executor.shutdown();
+        System.out.println("Todas las descargas completadas");
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 2: Servidor HTTP Simple</h3>
+                    <p>Servidor que responde a peticiones HTTP básicas.</p>
+
+                    <div class="code-block"><code>import java.net.*;
+import java.io.*;
+
+public class ServidorHTTPSimple {
+
+    public static void main(String[] args) throws Exception {
+        ServerSocket servidor = new ServerSocket(8080);
+        System.out.println("Servidor HTTP en http://localhost:8080");
+
+        while (true) {
+            Socket cliente = servidor.accept();
+            new Thread(() -> manejarPeticion(cliente)).start();
+        }
+    }
+
+    private static void manejarPeticion(Socket cliente) {
+        try (
+            BufferedReader in = new BufferedReader(
+                new InputStreamReader(cliente.getInputStream()));
+            PrintWriter out = new PrintWriter(cliente.getOutputStream())
+        ) {
+            // Leer primera línea de la petición
+            String linea = in.readLine();
+            if (linea == null) return;
+
+            System.out.println("Petición: " + linea);
+
+            // Respuesta HTML
+            String html = """
+                &lt;html&gt;
+                &lt;head&gt;&lt;title&gt;Mi Servidor&lt;/title&gt;&lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;Hola desde mi servidor Java!&lt;/h1&gt;
+                    &lt;p&gt;Fecha: %s&lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+                """.formatted(new java.util.Date());
+
+            // Enviar respuesta HTTP
+            out.println("HTTP/1.1 200 OK");
+            out.println("Content-Type: text/html; charset=UTF-8");
+            out.println("Content-Length: " + html.length());
+            out.println();
+            out.println(html);
+            out.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 3: Cliente API Weather</h3>
+                    <p>Consultar API del tiempo y mostrar resultados.</p>
+
+                    <div class="code-block"><code>import com.google.gson.*;
+
+public class ClienteWeather {
+
+    private static final String API_KEY = "tu_api_key";
+    private static final String BASE_URL = "https://api.openweathermap.org/data/2.5/weather";
+
+    public static void main(String[] args) throws Exception {
+        String ciudad = "Madrid";
+        String url = BASE_URL + "?q=" + ciudad + "&appid=" + API_KEY + "&units=metric&lang=es";
+
+        String json = ClienteHTTP.get(url);
+
+        // Parsear JSON
+        JsonObject obj = JsonParser.parseString(json).getAsJsonObject();
+
+        String nombre = obj.get("name").getAsString();
+        JsonObject main = obj.getAsJsonObject("main");
+        double temp = main.get("temp").getAsDouble();
+        int humedad = main.get("humidity").getAsInt();
+
+        String descripcion = obj.getAsJsonArray("weather")
+            .get(0).getAsJsonObject()
+            .get("description").getAsString();
+
+        System.out.println("Ciudad: " + nombre);
+        System.out.println("Temperatura: " + temp + "°C");
+        System.out.println("Humedad: " + humedad + "%");
+        System.out.println("Descripción: " + descripcion);
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 4: Pool de Conexiones</h3>
+                    <p>Implementar un pool de conexiones simple.</p>
+
+                    <div class="code-block"><code>import java.util.concurrent.*;
+
+public class ConnectionPool {
+
+    private final BlockingQueue&lt;Connection&gt; pool;
+    private final int maxSize;
+
+    public ConnectionPool(int size) {
+        this.maxSize = size;
+        this.pool = new LinkedBlockingQueue&lt;&gt;(size);
+
+        // Crear conexiones iniciales
+        for (int i = 0; i < size; i++) {
+            pool.offer(new Connection(i));
+        }
+    }
+
+    public Connection getConnection() throws InterruptedException {
+        return pool.take(); // Espera si no hay disponibles
+    }
+
+    public void releaseConnection(Connection conn) {
+        pool.offer(conn);
+    }
+
+    // Clase de conexión simulada
+    static class Connection {
+        private int id;
+
+        public Connection(int id) {
+            this.id = id;
+        }
+
+        public void execute(String query) {
+            System.out.println("Conexión " + id + " ejecuta: " + query);
+        }
+    }
+
+    // Test
+    public static void main(String[] args) {
+        ConnectionPool pool = new ConnectionPool(3);
+        ExecutorService executor = Executors.newFixedThreadPool(10);
+
+        for (int i = 0; i < 10; i++) {
+            int taskId = i;
+            executor.submit(() -> {
+                try {
+                    Connection conn = pool.getConnection();
+                    conn.execute("SELECT * FROM tabla WHERE id = " + taskId);
+                    Thread.sleep(1000);
+                    pool.releaseConnection(conn);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                }
+            });
+        }
+
+        executor.shutdown();
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 5: API REST de Tareas (Spring Boot)</h3>
+                    <p>API completa para gestionar tareas.</p>
+
+                    <div class="code-block"><code>// Tarea.java
+@Entity
+public class Tarea {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String titulo;
+    private String descripcion;
+    private boolean completada;
+    private LocalDateTime fechaCreacion;
+
+    @PrePersist
+    public void prePersist() {
+        fechaCreacion = LocalDateTime.now();
+    }
+
+    // Getters y setters
+}
+
+// TareaRepository.java
+public interface TareaRepository extends JpaRepository&lt;Tarea, Long&gt; {
+    List&lt;Tarea&gt; findByCompletada(boolean completada);
+}
+
+// TareaController.java
+@RestController
+@RequestMapping("/api/tareas")
+public class TareaController {
+
+    @Autowired
+    private TareaRepository repository;
+
+    @GetMapping
+    public List&lt;Tarea&gt; listar(@RequestParam(required = false) Boolean completada) {
+        if (completada != null) {
+            return repository.findByCompletada(completada);
+        }
+        return repository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Tarea obtener(@PathVariable Long id) {
+        return repository.findById(id)
+            .orElseThrow(() -> new ResponseStatusException(
+                HttpStatus.NOT_FOUND, "Tarea no encontrada"));
+    }
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Tarea crear(@RequestBody Tarea tarea) {
+        return repository.save(tarea);
+    }
+
+    @PatchMapping("/{id}/completar")
+    public Tarea completar(@PathVariable Long id) {
+        Tarea tarea = obtener(id);
+        tarea.setCompletada(true);
+        return repository.save(tarea);
+    }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void eliminar(@PathVariable Long id) {
+        repository.deleteById(id);
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 6: WebSocket Chat</h3>
+                    <p>Chat en tiempo real con WebSockets.</p>
+
+                    <div class="code-block"><code>// Dependencia
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-websocket&lt;/artifactId&gt;
+&lt;/dependency&gt;
+
+// WebSocketConfig.java
+@Configuration
+@EnableWebSocketMessageBroker
+public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+        config.enableSimpleBroker("/topic");
+        config.setApplicationDestinationPrefixes("/app");
+    }
+
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/ws").withSockJS();
+    }
+}
+
+// ChatController.java
+@Controller
+public class ChatController {
+
+    @MessageMapping("/chat.send")
+    @SendTo("/topic/public")
+    public ChatMessage enviar(ChatMessage mensaje) {
+        return mensaje;
+    }
+
+    @MessageMapping("/chat.join")
+    @SendTo("/topic/public")
+    public ChatMessage unirse(ChatMessage mensaje) {
+        mensaje.setTipo(ChatMessage.Tipo.JOIN);
+        return mensaje;
+    }
+}
+
+// ChatMessage.java
+public class ChatMessage {
+    public enum Tipo { CHAT, JOIN, LEAVE }
+
+    private Tipo tipo;
+    private String contenido;
+    private String remitente;
+
+    // Getters y setters
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 7: Scheduler de Tareas</h3>
+                    <p>Ejecutar tareas programadas periódicamente.</p>
+
+                    <div class="code-block"><code>import java.util.concurrent.*;
+
+public class Scheduler {
+
+    public static void main(String[] args) {
+        ScheduledExecutorService scheduler =
+            Executors.newScheduledThreadPool(2);
+
+        // Tarea cada 5 segundos
+        scheduler.scheduleAtFixedRate(() -> {
+            System.out.println("Backup ejecutado: " + new java.util.Date());
+        }, 0, 5, TimeUnit.SECONDS);
+
+        // Tarea con delay de 10 segundos entre ejecuciones
+        scheduler.scheduleWithFixedDelay(() -> {
+            System.out.println("Limpieza ejecutada");
+            try {
+                Thread.sleep(2000); // Simular trabajo
+            } catch (InterruptedException e) {}
+        }, 0, 10, TimeUnit.SECONDS);
+
+        // Ejecutar una vez después de 30 segundos
+        scheduler.schedule(() -> {
+            System.out.println("Tarea única ejecutada");
+        }, 30, TimeUnit.SECONDS);
+
+        // Mantener vivo el programa
+        try {
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {}
+
+        scheduler.shutdown();
+    }
+}
+
+// Con Spring Boot
+@Component
+public class TareasProgramadas {
+
+    @Scheduled(fixedRate = 60000) // Cada minuto
+    public void tareaMinuto() {
+        System.out.println("Ejecutando tarea...");
+    }
+
+    @Scheduled(cron = "0 0 2 * * ?") // Cada día a las 2:00
+    public void backupNocturno() {
+        System.out.println("Ejecutando backup nocturno");
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 8: API REST Completa con Paginación</h3>
+                    <p>API con paginación, filtros y ordenación.</p>
+
+                    <div class="code-block"><code>// ProductoController con paginación
+@RestController
+@RequestMapping("/api/productos")
+public class ProductoController {
+
+    @Autowired
+    private ProductoRepository repository;
+
+    // GET /api/productos?page=0&size=10&sort=precio,desc
+    @GetMapping
+    public Page&lt;Producto&gt; listar(
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "id") String sort,
+            @RequestParam(defaultValue = "asc") String dir) {
+
+        Sort.Direction direction = dir.equalsIgnoreCase("desc") ?
+            Sort.Direction.DESC : Sort.Direction.ASC;
+
+        Pageable pageable = PageRequest.of(page, size, Sort.by(direction, sort));
+
+        return repository.findAll(pageable);
+    }
+
+    // GET /api/productos/buscar?nombre=laptop&precioMin=100&precioMax=1000
+    @GetMapping("/buscar")
+    public List&lt;Producto&gt; buscar(
+            @RequestParam(required = false) String nombre,
+            @RequestParam(required = false) Double precioMin,
+            @RequestParam(required = false) Double precioMax) {
+
+        if (nombre != null && precioMin != null && precioMax != null) {
+            return repository.findByNombreContainingAndPrecioBetween(
+                nombre, precioMin, precioMax);
+        } else if (nombre != null) {
+            return repository.findByNombreContaining(nombre);
+        } else if (precioMin != null && precioMax != null) {
+            return repository.findByPrecioBetween(precioMin, precioMax);
+        }
+
+        return repository.findAll();
+    }
+
+    // Estadísticas
+    @GetMapping("/estadisticas")
+    public Map&lt;String, Object&gt; estadisticas() {
+        Map&lt;String, Object&gt; stats = new HashMap&lt;&gt;();
+        stats.put("total", repository.count());
+        stats.put("precioPromedio", repository.findAll().stream()
+            .mapToDouble(Producto::getPrecio)
+            .average().orElse(0));
+        stats.put("stockTotal", repository.findAll().stream()
+            .mapToInt(Producto::getStock)
+            .sum());
+        return stats;
+    }
+}</code></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p>Recursos completos para estudiantes de Desarrollo de Aplicaciones Multiplataforma.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Proyecto educativo de código abierto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>

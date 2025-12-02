@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desarrollo de Interfaces 2º DAM - JavaFX, Swing, UI/UX, FXML y diseño de aplicaciones gráficas.">
+    <title>Desarrollo de Interfaces - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../1dam/programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="./desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Desarrollo de Interfaces</span></div>
+            <h1 class="page-title">Desarrollo de Interfaces</h1>
+            <p class="page-subtitle">JavaFX, Swing, UI/UX y Diseño de Aplicaciones</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul>
+                    <li><a href="#introduccion">Introducción a UI/UX</a></li>
+                    <li><a href="#javafx">JavaFX - Fundamentos</a></li>
+                    <li><a href="#layouts">Layouts en JavaFX</a></li>
+                    <li><a href="#controles">Controles y Componentes</a></li>
+                    <li><a href="#fxml">FXML y SceneBuilder</a></li>
+                    <li><a href="#eventos">Eventos y Manejadores</a></li>
+                    <li><a href="#swing">Swing - Fundamentos</a></li>
+                    <li><a href="#css">CSS en JavaFX</a></li>
+                    <li><a href="#ejercicios">Ejercicios Resueltos</a></li>
+                </ul>
+            </nav>
+
+            <!-- INTRODUCCIÓN UI/UX -->
+            <section id="introduccion" class="content-section">
+                <h2>Introducción a UI/UX</h2>
+
+                <p>El <strong>Desarrollo de Interfaces</strong> se centra en crear aplicaciones gráficas que sean funcionales, atractivas y fáciles de usar. Combina aspectos técnicos de programación con principios de diseño centrado en el usuario.</p>
+
+                <div class="info-box">
+                    <h4>Diferencia entre UI y UX</h4>
+                    <ul>
+                        <li><strong>UI (User Interface)</strong>: Elementos visuales con los que interactúa el usuario (botones, menús, colores)</li>
+                        <li><strong>UX (User Experience)</strong>: Experiencia global del usuario al usar la aplicación (facilidad, satisfacción)</li>
+                    </ul>
+                </div>
+
+                <h3>Principios de Diseño de Interfaces</h3>
+                <ul>
+                    <li><strong>Simplicidad</strong>: Interfaces limpias sin elementos innecesarios</li>
+                    <li><strong>Consistencia</strong>: Mantener patrones visuales y de interacción uniformes</li>
+                    <li><strong>Feedback</strong>: Responder siempre a las acciones del usuario</li>
+                    <li><strong>Jerarquía Visual</strong>: Destacar elementos importantes mediante tamaño, color y posición</li>
+                    <li><strong>Affordance</strong>: Los elementos deben sugerir cómo usarlos</li>
+                    <li><strong>Prevención de Errores</strong>: Diseñar para evitar errores del usuario</li>
+                </ul>
+
+                <h3>Accesibilidad (a11y)</h3>
+                <ul>
+                    <li>Contraste de colores adecuado (WCAG 2.1)</li>
+                    <li>Textos alternativos en imágenes</li>
+                    <li>Navegación por teclado</li>
+                    <li>Tamaños de fuente legibles (mínimo 16px)</li>
+                    <li>No depender solo del color para transmitir información</li>
+                </ul>
+
+                <div class="note-box">
+                    <p><strong>Regla de los 3 clics:</strong> El usuario debe poder acceder a cualquier función en máximo 3 clics.</p>
+                </div>
+            </section>
+
+            <!-- JAVAFX FUNDAMENTOS -->
+            <section id="javafx" class="content-section">
+                <h2>JavaFX - Fundamentos</h2>
+
+                <p>JavaFX es el framework moderno de Java para crear interfaces gráficas ricas. Reemplazó a Swing como la tecnología recomendada para aplicaciones de escritorio.</p>
+
+                <h3>Configuración del Proyecto</h3>
+                <div class="code-block"><code>&lt;!-- pom.xml - Dependencias Maven --&gt;
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.openjfx&lt;/groupId&gt;
+        &lt;artifactId&gt;javafx-controls&lt;/artifactId&gt;
+        &lt;version&gt;17.0.2&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.openjfx&lt;/groupId&gt;
+        &lt;artifactId&gt;javafx-fxml&lt;/artifactId&gt;
+        &lt;version&gt;17.0.2&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+
+&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.openjfx&lt;/groupId&gt;
+            &lt;artifactId&gt;javafx-maven-plugin&lt;/artifactId&gt;
+            &lt;version&gt;0.0.8&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;mainClass&gt;com.ejemplo.App&lt;/mainClass&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;</code></div>
+
+                <h3>Estructura Básica de una Aplicación JavaFX</h3>
+                <div class="code-block"><code>import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+
+public class MiAplicacion extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        // Configurar ventana principal
+        primaryStage.setTitle("Mi Primera App JavaFX");
+
+        // Crear componentes
+        Label etiqueta = new Label("Bienvenido a JavaFX");
+        etiqueta.setStyle("-fx-font-size: 20px; -fx-font-weight: bold;");
+
+        TextField campoNombre = new TextField();
+        campoNombre.setPromptText("Introduce tu nombre");
+        campoNombre.setMaxWidth(200);
+
+        Button btnSaludar = new Button("Saludar");
+        btnSaludar.setOnAction(e -> {
+            String nombre = campoNombre.getText();
+            if (!nombre.isEmpty()) {
+                etiqueta.setText("¡Hola, " + nombre + "!");
+            }
+        });
+
+        // Layout vertical
+        VBox root = new VBox(15);
+        root.getChildren().addAll(etiqueta, campoNombre, btnSaludar);
+        root.setStyle("-fx-padding: 30; -fx-alignment: center;");
+
+        // Crear escena y mostrar
+        Scene scene = new Scene(root, 400, 300);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    @Override
+    public void stop() {
+        // Limpiar recursos al cerrar
+        System.out.println("Aplicación cerrada");
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}</code></div>
+
+                <h3>Ciclo de Vida de una Aplicación JavaFX</h3>
+                <div class="code-block"><code>// Orden de ejecución:
+// 1. Constructor de la clase Application
+// 2. init() - Inicialización (hilo JavaFX Launcher)
+// 3. start(Stage) - Crear UI (hilo JavaFX Application)
+// 4. stop() - Limpieza al cerrar
+
+public class AppCicloVida extends Application {
+
+    public AppCicloVida() {
+        System.out.println("1. Constructor");
+    }
+
+    @Override
+    public void init() throws Exception {
+        System.out.println("2. init() - Cargar recursos");
+        // NO crear componentes UI aquí
+    }
+
+    @Override
+    public void start(Stage stage) {
+        System.out.println("3. start() - Crear interfaz");
+        // Crear toda la UI aquí
+    }
+
+    @Override
+    public void stop() throws Exception {
+        System.out.println("4. stop() - Cerrar conexiones");
+    }
+}</code></div>
+            </section>
+
+            <!-- LAYOUTS -->
+            <section id="layouts" class="content-section">
+                <h2>Layouts en JavaFX</h2>
+
+                <p>Los layouts son contenedores que organizan automáticamente los componentes hijos según reglas específicas.</p>
+
+                <h3>VBox - Disposición Vertical</h3>
+                <div class="code-block"><code>import javafx.geometry.Pos;
+import javafx.scene.layout.VBox;
+
+VBox vbox = new VBox(10); // spacing de 10px
+vbox.setAlignment(Pos.CENTER);
+vbox.setPadding(new Insets(20));
+
+vbox.getChildren().addAll(
+    new Label("Elemento 1"),
+    new Label("Elemento 2"),
+    new Button("Botón")
+);
+
+// Hacer que un hijo crezca verticalmente
+VBox.setVgrow(boton, Priority.ALWAYS);</code></div>
+
+                <h3>HBox - Disposición Horizontal</h3>
+                <div class="code-block"><code>import javafx.scene.layout.HBox;
+
+HBox hbox = new HBox(15);
+hbox.setAlignment(Pos.CENTER_LEFT);
+hbox.setPadding(new Insets(10));
+
+Button btn1 = new Button("Aceptar");
+Button btn2 = new Button("Cancelar");
+
+hbox.getChildren().addAll(btn1, btn2);
+
+// Hacer que un hijo crezca horizontalmente
+HBox.setHgrow(btn1, Priority.ALWAYS);
+btn1.setMaxWidth(Double.MAX_VALUE);</code></div>
+
+                <h3>BorderPane - 5 Regiones</h3>
+                <div class="code-block"><code>import javafx.scene.layout.BorderPane;
+
+BorderPane borderPane = new BorderPane();
+
+// Barra de navegación arriba
+MenuBar menuBar = new MenuBar();
+borderPane.setTop(menuBar);
+
+// Menú lateral izquierdo
+VBox sidebar = new VBox(10);
+sidebar.getChildren().addAll(
+    new Button("Inicio"),
+    new Button("Productos"),
+    new Button("Usuarios")
+);
+borderPane.setLeft(sidebar);
+
+// Contenido principal en el centro
+TableView tabla = new TableView();
+borderPane.setCenter(tabla);
+
+// Barra de estado abajo
+Label statusBar = new Label("Listo");
+borderPane.setBottom(statusBar);
+
+// Alineación dentro de la región
+BorderPane.setAlignment(statusBar, Pos.CENTER);</code></div>
+
+                <h3>GridPane - Cuadrícula</h3>
+                <div class="code-block"><code>import javafx.scene.layout.GridPane;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.layout.RowConstraints;
+
+GridPane grid = new GridPane();
+grid.setHgap(10);
+grid.setVgap(10);
+grid.setPadding(new Insets(20));
+
+// Configurar columnas
+ColumnConstraints col1 = new ColumnConstraints();
+col1.setPercentWidth(30);
+ColumnConstraints col2 = new ColumnConstraints();
+col2.setPercentWidth(70);
+grid.getColumnConstraints().addAll(col1, col2);
+
+// Añadir componentes (columna, fila)
+grid.add(new Label("Nombre:"), 0, 0);
+grid.add(new TextField(), 1, 0);
+
+grid.add(new Label("Email:"), 0, 1);
+grid.add(new TextField(), 1, 1);
+
+grid.add(new Label("Mensaje:"), 0, 2);
+TextArea textArea = new TextArea();
+grid.add(textArea, 1, 2);
+
+// Span múltiples columnas/filas
+Button btnEnviar = new Button("Enviar");
+grid.add(btnEnviar, 0, 3, 2, 1); // col, row, colspan, rowspan</code></div>
+
+                <h3>StackPane y AnchorPane</h3>
+                <div class="code-block"><code>// StackPane - Componentes apilados (uno sobre otro)
+StackPane stack = new StackPane();
+ImageView imagen = new ImageView("fondo.png");
+Label texto = new Label("Texto sobre imagen");
+stack.getChildren().addAll(imagen, texto);
+StackPane.setAlignment(texto, Pos.BOTTOM_CENTER);
+
+// AnchorPane - Anclar a los bordes
+AnchorPane anchor = new AnchorPane();
+Button btn = new Button("Esquina");
+
+AnchorPane.setTopAnchor(btn, 10.0);
+AnchorPane.setRightAnchor(btn, 10.0);
+anchor.getChildren().add(btn);</code></div>
+            </section>
+
+            <!-- CONTROLES -->
+            <section id="controles" class="content-section">
+                <h2>Controles y Componentes</h2>
+
+                <h3>Controles de Entrada</h3>
+                <div class="code-block"><code>// TextField - Texto de una línea
+TextField txtNombre = new TextField();
+txtNombre.setPromptText("Nombre completo");
+String valor = txtNombre.getText();
+
+// PasswordField - Contraseña
+PasswordField txtPassword = new PasswordField();
+txtPassword.setPromptText("Contraseña");
+
+// TextArea - Texto multilínea
+TextArea txtDescripcion = new TextArea();
+txtDescripcion.setPrefRowCount(5);
+txtDescripcion.setWrapText(true);
+
+// ComboBox - Lista desplegable
+ComboBox&lt;String&gt; cboPaises = new ComboBox&lt;&gt;();
+cboPaises.getItems().addAll("España", "Francia", "Italia", "Alemania");
+cboPaises.setValue("España"); // Valor por defecto
+String seleccion = cboPaises.getValue();
+
+// ComboBox editable
+cboPaises.setEditable(true);
+
+// Spinner - Selector numérico
+Spinner&lt;Integer&gt; spnCantidad = new Spinner&lt;&gt;(1, 100, 1);
+spnCantidad.setEditable(true);
+
+// DatePicker - Selector de fecha
+DatePicker dpFecha = new DatePicker();
+dpFecha.setValue(LocalDate.now());
+LocalDate fecha = dpFecha.getValue();</code></div>
+
+                <h3>Controles de Selección</h3>
+                <div class="code-block"><code>// CheckBox - Casilla de verificación
+CheckBox chkAceptar = new CheckBox("Acepto los términos");
+boolean aceptado = chkAceptar.isSelected();
+
+// Listener de cambio
+chkAceptar.selectedProperty().addListener((obs, oldVal, newVal) -> {
+    btnEnviar.setDisable(!newVal);
+});
+
+// RadioButton - Selección única en grupo
+ToggleGroup grupo = new ToggleGroup();
+
+RadioButton rbMasculino = new RadioButton("Masculino");
+rbMasculino.setToggleGroup(grupo);
+
+RadioButton rbFemenino = new RadioButton("Femenino");
+rbFemenino.setToggleGroup(grupo);
+
+rbMasculino.setSelected(true);
+
+// Obtener selección
+RadioButton seleccionado = (RadioButton) grupo.getSelectedToggle();
+String textoSeleccionado = seleccionado.getText();
+
+// ChoiceBox - Similar a ComboBox
+ChoiceBox&lt;String&gt; choiceTipo = new ChoiceBox&lt;&gt;();
+choiceTipo.getItems().addAll("Admin", "Usuario", "Invitado");</code></div>
+
+                <h3>Controles de Visualización</h3>
+                <div class="code-block"><code>// Label - Etiqueta de texto
+Label lblTitulo = new Label("Título Principal");
+lblTitulo.setFont(Font.font("Arial", FontWeight.BOLD, 24));
+
+// ImageView - Mostrar imagen
+Image imagen = new Image("file:logo.png");
+// O desde resources: new Image(getClass().getResourceAsStream("/img/logo.png"));
+ImageView imgView = new ImageView(imagen);
+imgView.setFitWidth(100);
+imgView.setPreserveRatio(true);
+
+// ProgressBar - Barra de progreso
+ProgressBar progressBar = new ProgressBar(0.5); // 50%
+progressBar.setPrefWidth(200);
+
+// ProgressIndicator - Indicador circular
+ProgressIndicator indicator = new ProgressIndicator();
+indicator.setProgress(0.75);
+
+// Slider - Control deslizante
+Slider slider = new Slider(0, 100, 50);
+slider.setShowTickLabels(true);
+slider.setShowTickMarks(true);
+slider.setMajorTickUnit(25);</code></div>
+
+                <h3>TableView - Tabla de Datos</h3>
+                <div class="code-block"><code>import javafx.collections.*;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+// Modelo de datos
+public class Producto {
+    private int id;
+    private String nombre;
+    private double precio;
+    private int stock;
+
+    public Producto(int id, String nombre, double precio, int stock) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+
+    // Getters necesarios para PropertyValueFactory
+    public int getId() { return id; }
+    public String getNombre() { return nombre; }
+    public double getPrecio() { return precio; }
+    public int getStock() { return stock; }
+}
+
+// Crear TableView
+TableView&lt;Producto&gt; tabla = new TableView&lt;&gt;();
+
+// Definir columnas
+TableColumn&lt;Producto, Integer&gt; colId = new TableColumn&lt;&gt;("ID");
+colId.setCellValueFactory(new PropertyValueFactory&lt;&gt;("id"));
+colId.setPrefWidth(50);
+
+TableColumn&lt;Producto, String&gt; colNombre = new TableColumn&lt;&gt;("Nombre");
+colNombre.setCellValueFactory(new PropertyValueFactory&lt;&gt;("nombre"));
+colNombre.setPrefWidth(150);
+
+TableColumn&lt;Producto, Double&gt; colPrecio = new TableColumn&lt;&gt;("Precio");
+colPrecio.setCellValueFactory(new PropertyValueFactory&lt;&gt;("precio"));
+
+TableColumn&lt;Producto, Integer&gt; colStock = new TableColumn&lt;&gt;("Stock");
+colStock.setCellValueFactory(new PropertyValueFactory&lt;&gt;("stock"));
+
+tabla.getColumns().addAll(colId, colNombre, colPrecio, colStock);
+
+// Cargar datos
+ObservableList&lt;Producto&gt; datos = FXCollections.observableArrayList(
+    new Producto(1, "Laptop", 899.99, 10),
+    new Producto(2, "Mouse", 29.99, 50),
+    new Producto(3, "Teclado", 79.99, 30)
+);
+tabla.setItems(datos);
+
+// Obtener elemento seleccionado
+Producto seleccionado = tabla.getSelectionModel().getSelectedItem();</code></div>
+
+                <h3>ListView</h3>
+                <div class="code-block"><code>ListView&lt;String&gt; lista = new ListView&lt;&gt;();
+ObservableList&lt;String&gt; items = FXCollections.observableArrayList(
+    "Java", "Python", "JavaScript", "C++", "Go"
+);
+lista.setItems(items);
+
+// Selección múltiple
+lista.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+
+// Listener de selección
+lista.getSelectionModel().selectedItemProperty()
+    .addListener((obs, oldVal, newVal) -> {
+        System.out.println("Seleccionado: " + newVal);
+    });
+
+// Custom cell factory
+lista.setCellFactory(lv -> new ListCell&lt;String&gt;() {
+    @Override
+    protected void updateItem(String item, boolean empty) {
+        super.updateItem(item, empty);
+        if (empty || item == null) {
+            setText(null);
+            setGraphic(null);
+        } else {
+            setText(item);
+            setStyle("-fx-font-weight: bold;");
+        }
+    }
+});</code></div>
+            </section>
+
+            <!-- FXML -->
+            <section id="fxml" class="content-section">
+                <h2>FXML y SceneBuilder</h2>
+
+                <p>FXML permite separar la definición de la interfaz (XML) de la lógica (Java), siguiendo el patrón MVC. SceneBuilder es una herramienta visual para diseñar FXML.</p>
+
+                <h3>Archivo FXML</h3>
+                <div class="code-block"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;?import javafx.scene.control.*?&gt;
+&lt;?import javafx.scene.layout.*?&gt;
+&lt;?import javafx.geometry.Insets?&gt;
+
+&lt;BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ejemplo.MainController"
+            prefWidth="600" prefHeight="400"&gt;
+
+    &lt;top&gt;
+        &lt;HBox alignment="CENTER" style="-fx-background-color: #667eea; -fx-padding: 15;"&gt;
+            &lt;Label text="Gestión de Productos" style="-fx-text-fill: white; -fx-font-size: 18px;"/&gt;
+        &lt;/HBox&gt;
+    &lt;/top&gt;
+
+    &lt;center&gt;
+        &lt;VBox spacing="15" alignment="CENTER"&gt;
+            &lt;padding&gt;&lt;Insets top="20" right="20" bottom="20" left="20"/&gt;&lt;/padding&gt;
+
+            &lt;GridPane hgap="10" vgap="10"&gt;
+                &lt;Label text="Nombre:" GridPane.columnIndex="0" GridPane.rowIndex="0"/&gt;
+                &lt;TextField fx:id="txtNombre" GridPane.columnIndex="1" GridPane.rowIndex="0"/&gt;
+
+                &lt;Label text="Precio:" GridPane.columnIndex="0" GridPane.rowIndex="1"/&gt;
+                &lt;TextField fx:id="txtPrecio" GridPane.columnIndex="1" GridPane.rowIndex="1"/&gt;
+
+                &lt;Label text="Categoría:" GridPane.columnIndex="0" GridPane.rowIndex="2"/&gt;
+                &lt;ComboBox fx:id="cboCategoria" GridPane.columnIndex="1" GridPane.rowIndex="2"/&gt;
+            &lt;/GridPane&gt;
+
+            &lt;HBox spacing="10" alignment="CENTER"&gt;
+                &lt;Button text="Guardar" onAction="#handleGuardar"/&gt;
+                &lt;Button text="Limpiar" onAction="#handleLimpiar"/&gt;
+            &lt;/HBox&gt;
+
+            &lt;Label fx:id="lblMensaje" style="-fx-text-fill: green;"/&gt;
+        &lt;/VBox&gt;
+    &lt;/center&gt;
+
+&lt;/BorderPane&gt;</code></div>
+
+                <h3>Controlador Java</h3>
+                <div class="code-block"><code>package com.ejemplo;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class MainController implements Initializable {
+
+    @FXML
+    private TextField txtNombre;
+
+    @FXML
+    private TextField txtPrecio;
+
+    @FXML
+    private ComboBox&lt;String&gt; cboCategoria;
+
+    @FXML
+    private Label lblMensaje;
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        // Inicializar componentes
+        cboCategoria.getItems().addAll(
+            "Electrónica", "Ropa", "Hogar", "Deportes"
+        );
+        cboCategoria.setValue("Electrónica");
+    }
+
+    @FXML
+    private void handleGuardar() {
+        String nombre = txtNombre.getText();
+        String precio = txtPrecio.getText();
+        String categoria = cboCategoria.getValue();
+
+        if (nombre.isEmpty() || precio.isEmpty()) {
+            lblMensaje.setText("Complete todos los campos");
+            lblMensaje.setStyle("-fx-text-fill: red;");
+            return;
+        }
+
+        try {
+            double precioNum = Double.parseDouble(precio);
+            // Guardar producto...
+            lblMensaje.setText("Producto guardado: " + nombre);
+            lblMensaje.setStyle("-fx-text-fill: green;");
+            handleLimpiar();
+        } catch (NumberFormatException e) {
+            lblMensaje.setText("Precio inválido");
+            lblMensaje.setStyle("-fx-text-fill: red;");
+        }
+    }
+
+    @FXML
+    private void handleLimpiar() {
+        txtNombre.clear();
+        txtPrecio.clear();
+        cboCategoria.setValue("Electrónica");
+    }
+}</code></div>
+
+                <h3>Cargar FXML desde la Aplicación</h3>
+                <div class="code-block"><code>import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class App extends Application {
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        // Cargar FXML
+        FXMLLoader loader = new FXMLLoader(
+            getClass().getResource("/fxml/main.fxml")
+        );
+        Parent root = loader.load();
+
+        // Obtener controlador si es necesario
+        MainController controller = loader.getController();
+
+        // Crear escena
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add(
+            getClass().getResource("/css/estilos.css").toExternalForm()
+        );
+
+        stage.setTitle("Mi Aplicación");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}</code></div>
+            </section>
+
+            <!-- EVENTOS -->
+            <section id="eventos" class="content-section">
+                <h2>Eventos y Manejadores</h2>
+
+                <h3>Eventos de Acción</h3>
+                <div class="code-block"><code>// Evento de botón - Lambda
+Button btn = new Button("Click");
+btn.setOnAction(e -> {
+    System.out.println("Botón clickeado");
+});
+
+// Con EventHandler
+btn.setOnAction(new EventHandler&lt;ActionEvent&gt;() {
+    @Override
+    public void handle(ActionEvent event) {
+        System.out.println("Click");
+    }
+});
+
+// Referencia a método
+btn.setOnAction(this::handleClick);
+
+private void handleClick(ActionEvent event) {
+    Button source = (Button) event.getSource();
+    System.out.println("Click en: " + source.getText());
+}</code></div>
+
+                <h3>Eventos de Teclado</h3>
+                <div class="code-block"><code>import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+
+// Key Pressed
+textField.setOnKeyPressed(e -> {
+    if (e.getCode() == KeyCode.ENTER) {
+        handleBuscar();
+    }
+    if (e.isControlDown() && e.getCode() == KeyCode.S) {
+        handleGuardar();
+    }
+});
+
+// Key Released
+textField.setOnKeyReleased(e -> {
+    String texto = textField.getText();
+    lblContador.setText("Caracteres: " + texto.length());
+});
+
+// Key Typed (solo caracteres imprimibles)
+textField.setOnKeyTyped(e -> {
+    char c = e.getCharacter().charAt(0);
+    if (!Character.isDigit(c)) {
+        e.consume(); // Bloquear entrada
+    }
+});</code></div>
+
+                <h3>Eventos de Ratón</h3>
+                <div class="code-block"><code>import javafx.scene.input.MouseEvent;
+import javafx.scene.input.MouseButton;
+
+// Click
+label.setOnMouseClicked(e -> {
+    if (e.getButton() == MouseButton.PRIMARY) {
+        System.out.println("Click izquierdo");
+    } else if (e.getButton() == MouseButton.SECONDARY) {
+        System.out.println("Click derecho");
+    }
+
+    if (e.getClickCount() == 2) {
+        System.out.println("Doble click");
+    }
+});
+
+// Hover
+label.setOnMouseEntered(e -> {
+    label.setStyle("-fx-text-fill: blue; -fx-cursor: hand;");
+});
+
+label.setOnMouseExited(e -> {
+    label.setStyle("-fx-text-fill: black;");
+});
+
+// Drag
+label.setOnMouseDragged(e -> {
+    label.setLayoutX(e.getSceneX());
+    label.setLayoutY(e.getSceneY());
+});</code></div>
+
+                <h3>Listeners de Propiedades</h3>
+                <div class="code-block"><code>// ChangeListener - Cuando cambia un valor
+slider.valueProperty().addListener((observable, oldValue, newValue) -> {
+    lblValor.setText(String.format("%.0f", newValue));
+    progressBar.setProgress(newValue.doubleValue() / 100);
+});
+
+// InvalidationListener - Solo notifica que cambió
+textField.textProperty().addListener(observable -> {
+    // Se ejecuta cuando el valor se invalida
+});
+
+// Binding - Vincular propiedades
+lblResultado.textProperty().bind(
+    Bindings.concat("Nombre: ", txtNombre.textProperty())
+);
+
+// Binding bidireccional
+txtCopia.textProperty().bindBidirectional(txtOriginal.textProperty());
+
+// Binding con conversión
+lblTotal.textProperty().bind(
+    Bindings.format("Total: %.2f €",
+        slider.valueProperty().multiply(10))
+);</code></div>
+            </section>
+
+            <!-- SWING -->
+            <section id="swing" class="content-section">
+                <h2>Swing - Fundamentos</h2>
+
+                <p>Swing es la biblioteca clásica de Java para interfaces gráficas. Aunque JavaFX es más moderno, Swing sigue siendo importante por su amplia base de código existente.</p>
+
+                <h3>Aplicación Swing Básica</h3>
+                <div class="code-block"><code>import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class AppSwing extends JFrame {
+
+    private JTextField txtNombre;
+    private JLabel lblSaludo;
+
+    public AppSwing() {
+        // Configurar ventana
+        setTitle("Aplicación Swing");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        // Crear panel principal
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 20));
+
+        // Componentes
+        lblSaludo = new JLabel("Introduce tu nombre:");
+        txtNombre = new JTextField(20);
+
+        JButton btnSaludar = new JButton("Saludar");
+        btnSaludar.addActionListener(e -> {
+            String nombre = txtNombre.getText();
+            lblSaludo.setText("¡Hola, " + nombre + "!");
+        });
+
+        // Añadir al panel
+        panel.add(lblSaludo);
+        panel.add(txtNombre);
+        panel.add(btnSaludar);
+
+        add(panel);
+    }
+
+    public static void main(String[] args) {
+        // Ejecutar en Event Dispatch Thread
+        SwingUtilities.invokeLater(() -> {
+            new AppSwing().setVisible(true);
+        });
+    }
+}</code></div>
+
+                <h3>Layouts en Swing</h3>
+                <div class="code-block"><code>// BorderLayout
+JFrame frame = new JFrame();
+frame.setLayout(new BorderLayout());
+frame.add(new JButton("Norte"), BorderLayout.NORTH);
+frame.add(new JButton("Sur"), BorderLayout.SOUTH);
+frame.add(new JButton("Centro"), BorderLayout.CENTER);
+
+// GridLayout
+JPanel panelGrid = new JPanel(new GridLayout(3, 2, 5, 5));
+panelGrid.add(new JLabel("Usuario:"));
+panelGrid.add(new JTextField());
+panelGrid.add(new JLabel("Password:"));
+panelGrid.add(new JPasswordField());
+
+// BoxLayout
+JPanel panelBox = new JPanel();
+panelBox.setLayout(new BoxLayout(panelBox, BoxLayout.Y_AXIS));
+panelBox.add(new JButton("Opción 1"));
+panelBox.add(Box.createVerticalStrut(10)); // Espacio
+panelBox.add(new JButton("Opción 2"));</code></div>
+
+                <h3>Componentes Swing Comunes</h3>
+                <div class="code-block"><code>// JComboBox
+String[] opciones = {"Opción 1", "Opción 2", "Opción 3"};
+JComboBox&lt;String&gt; combo = new JComboBox&lt;&gt;(opciones);
+String seleccion = (String) combo.getSelectedItem();
+
+// JList
+DefaultListModel&lt;String&gt; modelo = new DefaultListModel&lt;&gt;();
+modelo.addElement("Item 1");
+modelo.addElement("Item 2");
+JList&lt;String&gt; lista = new JList&lt;&gt;(modelo);
+
+// JTable
+String[] columnas = {"ID", "Nombre", "Precio"};
+Object[][] datos = {
+    {1, "Producto A", 10.50},
+    {2, "Producto B", 20.00}
+};
+JTable tabla = new JTable(datos, columnas);
+JScrollPane scroll = new JScrollPane(tabla);
+
+// JMenuBar
+JMenuBar menuBar = new JMenuBar();
+JMenu menuArchivo = new JMenu("Archivo");
+JMenuItem itemNuevo = new JMenuItem("Nuevo");
+itemNuevo.addActionListener(e -> nuevo());
+menuArchivo.add(itemNuevo);
+menuBar.add(menuArchivo);
+frame.setJMenuBar(menuBar);</code></div>
+
+                <h3>Comparación Swing vs JavaFX</h3>
+                <table class="comparison-table">
+                    <tr>
+                        <th>Característica</th>
+                        <th>Swing</th>
+                        <th>JavaFX</th>
+                    </tr>
+                    <tr>
+                        <td>Año de lanzamiento</td>
+                        <td>1997</td>
+                        <td>2008</td>
+                    </tr>
+                    <tr>
+                        <td>Diseño visual</td>
+                        <td>Código Java</td>
+                        <td>FXML + SceneBuilder</td>
+                    </tr>
+                    <tr>
+                        <td>Estilos</td>
+                        <td>Look & Feel</td>
+                        <td>CSS</td>
+                    </tr>
+                    <tr>
+                        <td>Multimedia</td>
+                        <td>Limitado</td>
+                        <td>Completo</td>
+                    </tr>
+                    <tr>
+                        <td>Binding de datos</td>
+                        <td>Manual</td>
+                        <td>Nativo</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- CSS -->
+            <section id="css" class="content-section">
+                <h2>CSS en JavaFX</h2>
+
+                <p>JavaFX permite estilizar interfaces con CSS, similar al desarrollo web pero con propiedades específicas prefijadas con <code>-fx-</code>.</p>
+
+                <h3>Hoja de Estilos Completa</h3>
+                <div class="code-block"><code>/* estilos.css */
+
+/* Estilos globales */
+.root {
+    -fx-background-color: #f5f5f5;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+/* Botones */
+.button {
+    -fx-background-color: #667eea;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #5a67d8;
+}
+
+.button:pressed {
+    -fx-background-color: #4c51bf;
+}
+
+.button:disabled {
+    -fx-background-color: #a0aec0;
+    -fx-cursor: default;
+}
+
+/* Botón secundario */
+.button-secondary {
+    -fx-background-color: transparent;
+    -fx-text-fill: #667eea;
+    -fx-border-color: #667eea;
+    -fx-border-radius: 5px;
+}
+
+/* Campos de texto */
+.text-field, .text-area {
+    -fx-font-size: 14px;
+    -fx-padding: 10px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-border-color: #667eea;
+    -fx-effect: dropshadow(gaussian, rgba(102, 126, 234, 0.3), 10, 0, 0, 0);
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4a5568;
+}
+
+.label-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2d3748;
+}
+
+/* Tablas */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+}
+
+.table-view .column-header {
+    -fx-background-color: #edf2f7;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #ebf4ff;
+}
+
+/* ComboBox */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 5px;
+}</code></div>
+
+                <h3>Aplicar Estilos</h3>
+                <div class="code-block"><code>// Aplicar hoja de estilos a la escena
+Scene scene = new Scene(root, 800, 600);
+scene.getStylesheets().add(
+    getClass().getResource("/css/estilos.css").toExternalForm()
+);
+
+// Añadir clase CSS a un componente
+Button btnPrimario = new Button("Guardar");
+btnPrimario.getStyleClass().add("button");
+
+Button btnSecundario = new Button("Cancelar");
+btnSecundario.getStyleClass().addAll("button", "button-secondary");
+
+// Estilo inline
+Label titulo = new Label("Dashboard");
+titulo.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
+
+// Aplicar ID para CSS
+txtBuscar.setId("search-field");
+// En CSS: #search-field { ... }</code></div>
+
+                <h3>Temas Claro y Oscuro</h3>
+                <div class="code-block"><code>/* tema-oscuro.css */
+.root {
+    -fx-background-color: #1a202c;
+}
+
+.label {
+    -fx-text-fill: #e2e8f0;
+}
+
+.text-field {
+    -fx-background-color: #2d3748;
+    -fx-text-fill: #e2e8f0;
+    -fx-border-color: #4a5568;
+}
+
+.button {
+    -fx-background-color: #4299e1;
+}
+
+// Cambiar tema en tiempo de ejecución
+public void cambiarTema(boolean oscuro) {
+    scene.getStylesheets().clear();
+    if (oscuro) {
+        scene.getStylesheets().add(
+            getClass().getResource("/css/tema-oscuro.css").toExternalForm()
+        );
+    } else {
+        scene.getStylesheets().add(
+            getClass().getResource("/css/tema-claro.css").toExternalForm()
+        );
+    }
+}</code></div>
+            </section>
+
+            <!-- EJERCICIOS -->
+            <section id="ejercicios" class="content-section">
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise">
+                    <h3>Ejercicio 1: Formulario de Registro</h3>
+                    <p>Crea un formulario de registro con validación.</p>
+
+                    <div class="code-block"><code>public class FormularioRegistro extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+        grid.setPadding(new Insets(25));
+
+        // Campos
+        TextField txtUsuario = new TextField();
+        PasswordField txtPassword = new PasswordField();
+        PasswordField txtConfirmar = new PasswordField();
+        TextField txtEmail = new TextField();
+
+        Label lblError = new Label();
+        lblError.setStyle("-fx-text-fill: red;");
+
+        // Layout
+        grid.add(new Label("Usuario:"), 0, 0);
+        grid.add(txtUsuario, 1, 0);
+
+        grid.add(new Label("Email:"), 0, 1);
+        grid.add(txtEmail, 1, 1);
+
+        grid.add(new Label("Contraseña:"), 0, 2);
+        grid.add(txtPassword, 1, 2);
+
+        grid.add(new Label("Confirmar:"), 0, 3);
+        grid.add(txtConfirmar, 1, 3);
+
+        Button btnRegistrar = new Button("Registrar");
+        grid.add(btnRegistrar, 1, 4);
+        grid.add(lblError, 0, 5, 2, 1);
+
+        // Validación
+        btnRegistrar.setOnAction(e -> {
+            String usuario = txtUsuario.getText();
+            String email = txtEmail.getText();
+            String pass = txtPassword.getText();
+            String confirm = txtConfirmar.getText();
+
+            if (usuario.isEmpty() || email.isEmpty() || pass.isEmpty()) {
+                lblError.setText("Todos los campos son obligatorios");
+            } else if (!email.matches("^[\\w.-]+@[\\w.-]+\\.[a-z]{2,}$")) {
+                lblError.setText("Email inválido");
+            } else if (pass.length() < 6) {
+                lblError.setText("Contraseña mínimo 6 caracteres");
+            } else if (!pass.equals(confirm)) {
+                lblError.setText("Las contraseñas no coinciden");
+            } else {
+                lblError.setStyle("-fx-text-fill: green;");
+                lblError.setText("¡Registro exitoso!");
+            }
+        });
+
+        Scene scene = new Scene(grid, 350, 250);
+        stage.setTitle("Registro");
+        stage.setScene(scene);
+        stage.show();
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 2: Calculadora</h3>
+                    <p>Calculadora básica con operaciones aritméticas.</p>
+
+                    <div class="code-block"><code>public class Calculadora extends Application {
+    private TextField display;
+    private double operando1 = 0;
+    private String operacion = "";
+
+    @Override
+    public void start(Stage stage) {
+        VBox root = new VBox(10);
+        root.setPadding(new Insets(10));
+
+        display = new TextField("0");
+        display.setEditable(false);
+        display.setAlignment(Pos.CENTER_RIGHT);
+        display.setStyle("-fx-font-size: 24px;");
+
+        GridPane botones = new GridPane();
+        botones.setHgap(5);
+        botones.setVgap(5);
+
+        String[][] teclas = {
+            {"7", "8", "9", "/"},
+            {"4", "5", "6", "*"},
+            {"1", "2", "3", "-"},
+            {"C", "0", "=", "+"}
+        };
+
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                Button btn = new Button(teclas[i][j]);
+                btn.setPrefSize(50, 50);
+                btn.setOnAction(this::handleClick);
+                botones.add(btn, j, i);
+            }
+        }
+
+        root.getChildren().addAll(display, botones);
+
+        Scene scene = new Scene(root);
+        stage.setTitle("Calculadora");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void handleClick(ActionEvent e) {
+        String texto = ((Button) e.getSource()).getText();
+
+        switch (texto) {
+            case "C":
+                display.setText("0");
+                operando1 = 0;
+                operacion = "";
+                break;
+            case "+": case "-": case "*": case "/":
+                operando1 = Double.parseDouble(display.getText());
+                operacion = texto;
+                display.setText("0");
+                break;
+            case "=":
+                double operando2 = Double.parseDouble(display.getText());
+                double resultado = calcular(operando1, operando2, operacion);
+                display.setText(String.valueOf(resultado));
+                break;
+            default:
+                if (display.getText().equals("0")) {
+                    display.setText(texto);
+                } else {
+                    display.setText(display.getText() + texto);
+                }
+        }
+    }
+
+    private double calcular(double a, double b, String op) {
+        return switch (op) {
+            case "+" -> a + b;
+            case "-" -> a - b;
+            case "*" -> a * b;
+            case "/" -> b != 0 ? a / b : 0;
+            default -> b;
+        };
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 3: Lista de Tareas</h3>
+                    <p>Aplicación para gestionar tareas pendientes.</p>
+
+                    <div class="code-block"><code>public class TodoApp extends Application {
+    private ObservableList&lt;String&gt; tareas;
+    private ListView&lt;String&gt; listView;
+
+    @Override
+    public void start(Stage stage) {
+        VBox root = new VBox(10);
+        root.setPadding(new Insets(15));
+
+        // Input
+        HBox inputBox = new HBox(10);
+        TextField txtTarea = new TextField();
+        txtTarea.setPromptText("Nueva tarea...");
+        HBox.setHgrow(txtTarea, Priority.ALWAYS);
+
+        Button btnAgregar = new Button("Agregar");
+
+        inputBox.getChildren().addAll(txtTarea, btnAgregar);
+
+        // Lista
+        tareas = FXCollections.observableArrayList();
+        listView = new ListView&lt;&gt;(tareas);
+        VBox.setVgrow(listView, Priority.ALWAYS);
+
+        // Botones de acción
+        HBox actionBox = new HBox(10);
+        Button btnEliminar = new Button("Eliminar");
+        Button btnLimpiar = new Button("Limpiar todo");
+        actionBox.getChildren().addAll(btnEliminar, btnLimpiar);
+
+        // Eventos
+        btnAgregar.setOnAction(e -> {
+            String tarea = txtTarea.getText().trim();
+            if (!tarea.isEmpty()) {
+                tareas.add(tarea);
+                txtTarea.clear();
+            }
+        });
+
+        txtTarea.setOnKeyPressed(e -> {
+            if (e.getCode() == KeyCode.ENTER) {
+                btnAgregar.fire();
+            }
+        });
+
+        btnEliminar.setOnAction(e -> {
+            int index = listView.getSelectionModel().getSelectedIndex();
+            if (index >= 0) {
+                tareas.remove(index);
+            }
+        });
+
+        btnLimpiar.setOnAction(e -> tareas.clear());
+
+        root.getChildren().addAll(
+            new Label("Lista de Tareas"),
+            inputBox,
+            listView,
+            actionBox
+        );
+
+        Scene scene = new Scene(root, 400, 500);
+        stage.setTitle("Todo App");
+        stage.setScene(scene);
+        stage.show();
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 4: Conversor de Unidades</h3>
+                    <p>Conversor de temperatura, longitud y peso.</p>
+
+                    <div class="code-block"><code>public class Conversor extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        TabPane tabPane = new TabPane();
+
+        tabPane.getTabs().addAll(
+            crearTabTemperatura(),
+            crearTabLongitud(),
+            crearTabPeso()
+        );
+
+        Scene scene = new Scene(tabPane, 400, 300);
+        stage.setTitle("Conversor de Unidades");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private Tab crearTabTemperatura() {
+        Tab tab = new Tab("Temperatura");
+        tab.setClosable(false);
+
+        VBox content = new VBox(15);
+        content.setPadding(new Insets(20));
+        content.setAlignment(Pos.CENTER);
+
+        TextField txtValor = new TextField();
+        txtValor.setPromptText("Valor");
+        txtValor.setMaxWidth(150);
+
+        ComboBox&lt;String&gt; cboOrigen = new ComboBox&lt;&gt;();
+        cboOrigen.getItems().addAll("Celsius", "Fahrenheit", "Kelvin");
+        cboOrigen.setValue("Celsius");
+
+        ComboBox&lt;String&gt; cboDestino = new ComboBox&lt;&gt;();
+        cboDestino.getItems().addAll("Celsius", "Fahrenheit", "Kelvin");
+        cboDestino.setValue("Fahrenheit");
+
+        Label lblResultado = new Label("Resultado: ");
+        lblResultado.setStyle("-fx-font-size: 16px; -fx-font-weight: bold;");
+
+        Button btnConvertir = new Button("Convertir");
+        btnConvertir.setOnAction(e -> {
+            try {
+                double valor = Double.parseDouble(txtValor.getText());
+                double resultado = convertirTemp(valor,
+                    cboOrigen.getValue(), cboDestino.getValue());
+                lblResultado.setText(String.format("Resultado: %.2f %s",
+                    resultado, cboDestino.getValue()));
+            } catch (NumberFormatException ex) {
+                lblResultado.setText("Valor inválido");
+            }
+        });
+
+        content.getChildren().addAll(
+            new HBox(10, new Label("De:"), cboOrigen),
+            txtValor,
+            new HBox(10, new Label("A:"), cboDestino),
+            btnConvertir,
+            lblResultado
+        );
+
+        tab.setContent(content);
+        return tab;
+    }
+
+    private double convertirTemp(double valor, String origen, String destino) {
+        // Convertir a Celsius primero
+        double celsius = switch (origen) {
+            case "Fahrenheit" -> (valor - 32) * 5 / 9;
+            case "Kelvin" -> valor - 273.15;
+            default -> valor;
+        };
+
+        // Convertir de Celsius al destino
+        return switch (destino) {
+            case "Fahrenheit" -> celsius * 9 / 5 + 32;
+            case "Kelvin" -> celsius + 273.15;
+            default -> celsius;
+        };
+    }
+
+    // Métodos similares para crearTabLongitud() y crearTabPeso()
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 5: Visor de Imágenes</h3>
+                    <p>Galería de imágenes con navegación.</p>
+
+                    <div class="code-block"><code>public class VisorImagenes extends Application {
+    private ImageView imageView;
+    private List&lt;String&gt; imagenes;
+    private int indiceActual = 0;
+
+    @Override
+    public void start(Stage stage) {
+        BorderPane root = new BorderPane();
+
+        // Cargar imágenes
+        imagenes = List.of(
+            "/img/foto1.jpg",
+            "/img/foto2.jpg",
+            "/img/foto3.jpg"
+        );
+
+        // ImageView
+        imageView = new ImageView();
+        imageView.setPreserveRatio(true);
+        imageView.setFitWidth(500);
+
+        StackPane center = new StackPane(imageView);
+        center.setStyle("-fx-background-color: #333;");
+        root.setCenter(center);
+
+        // Navegación
+        Button btnAnterior = new Button("◀");
+        btnAnterior.setOnAction(e -> mostrarImagen(-1));
+
+        Button btnSiguiente = new Button("▶");
+        btnSiguiente.setOnAction(e -> mostrarImagen(1));
+
+        HBox nav = new HBox(20, btnAnterior, btnSiguiente);
+        nav.setAlignment(Pos.CENTER);
+        nav.setPadding(new Insets(10));
+        root.setBottom(nav);
+
+        // Mostrar primera imagen
+        cargarImagen(imagenes.get(0));
+
+        // Navegación con teclado
+        root.setOnKeyPressed(e -> {
+            switch (e.getCode()) {
+                case LEFT -> mostrarImagen(-1);
+                case RIGHT -> mostrarImagen(1);
+            }
+        });
+
+        Scene scene = new Scene(root, 600, 500);
+        stage.setTitle("Visor de Imágenes");
+        stage.setScene(scene);
+        stage.show();
+
+        root.requestFocus();
+    }
+
+    private void mostrarImagen(int direccion) {
+        indiceActual = (indiceActual + direccion + imagenes.size()) % imagenes.size();
+        cargarImagen(imagenes.get(indiceActual));
+    }
+
+    private void cargarImagen(String ruta) {
+        try {
+            Image img = new Image(getClass().getResourceAsStream(ruta));
+            imageView.setImage(img);
+        } catch (Exception e) {
+            System.err.println("Error cargando imagen: " + ruta);
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 6: Editor de Texto Simple</h3>
+                    <p>Editor con menú Archivo (Nuevo, Abrir, Guardar).</p>
+
+                    <div class="code-block"><code>public class EditorTexto extends Application {
+    private TextArea textArea;
+    private Stage stage;
+    private File archivoActual;
+
+    @Override
+    public void start(Stage primaryStage) {
+        this.stage = primaryStage;
+
+        BorderPane root = new BorderPane();
+
+        // Menú
+        MenuBar menuBar = new MenuBar();
+        Menu menuArchivo = new Menu("Archivo");
+
+        MenuItem itemNuevo = new MenuItem("Nuevo");
+        itemNuevo.setAccelerator(KeyCombination.keyCombination("Ctrl+N"));
+        itemNuevo.setOnAction(e -> nuevo());
+
+        MenuItem itemAbrir = new MenuItem("Abrir");
+        itemAbrir.setAccelerator(KeyCombination.keyCombination("Ctrl+O"));
+        itemAbrir.setOnAction(e -> abrir());
+
+        MenuItem itemGuardar = new MenuItem("Guardar");
+        itemGuardar.setAccelerator(KeyCombination.keyCombination("Ctrl+S"));
+        itemGuardar.setOnAction(e -> guardar());
+
+        MenuItem itemSalir = new MenuItem("Salir");
+        itemSalir.setOnAction(e -> Platform.exit());
+
+        menuArchivo.getItems().addAll(itemNuevo, itemAbrir, itemGuardar,
+            new SeparatorMenuItem(), itemSalir);
+        menuBar.getMenus().add(menuArchivo);
+
+        root.setTop(menuBar);
+
+        // Área de texto
+        textArea = new TextArea();
+        textArea.setWrapText(true);
+        root.setCenter(textArea);
+
+        Scene scene = new Scene(root, 600, 400);
+        stage.setTitle("Editor de Texto");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void nuevo() {
+        textArea.clear();
+        archivoActual = null;
+        stage.setTitle("Editor de Texto - Nuevo");
+    }
+
+    private void abrir() {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Abrir archivo");
+        fileChooser.getExtensionFilters().add(
+            new FileChooser.ExtensionFilter("Archivos de texto", "*.txt")
+        );
+
+        File file = fileChooser.showOpenDialog(stage);
+        if (file != null) {
+            try {
+                String contenido = Files.readString(file.toPath());
+                textArea.setText(contenido);
+                archivoActual = file;
+                stage.setTitle("Editor - " + file.getName());
+            } catch (IOException e) {
+                mostrarError("Error al abrir archivo");
+            }
+        }
+    }
+
+    private void guardar() {
+        if (archivoActual == null) {
+            FileChooser fileChooser = new FileChooser();
+            fileChooser.setTitle("Guardar archivo");
+            archivoActual = fileChooser.showSaveDialog(stage);
+        }
+
+        if (archivoActual != null) {
+            try {
+                Files.writeString(archivoActual.toPath(), textArea.getText());
+                stage.setTitle("Editor - " + archivoActual.getName());
+            } catch (IOException e) {
+                mostrarError("Error al guardar");
+            }
+        }
+    }
+
+    private void mostrarError(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 7: Gestión de Productos (CRUD)</h3>
+                    <p>Interfaz completa con TableView para gestionar productos.</p>
+
+                    <div class="code-block"><code>public class GestionProductos extends Application {
+    private TableView&lt;Producto&gt; tabla;
+    private ObservableList&lt;Producto&gt; productos;
+
+    @Override
+    public void start(Stage stage) {
+        BorderPane root = new BorderPane();
+
+        // Formulario
+        GridPane form = new GridPane();
+        form.setHgap(10);
+        form.setVgap(10);
+        form.setPadding(new Insets(15));
+
+        TextField txtNombre = new TextField();
+        TextField txtPrecio = new TextField();
+        TextField txtStock = new TextField();
+
+        form.add(new Label("Nombre:"), 0, 0);
+        form.add(txtNombre, 1, 0);
+        form.add(new Label("Precio:"), 0, 1);
+        form.add(txtPrecio, 1, 1);
+        form.add(new Label("Stock:"), 0, 2);
+        form.add(txtStock, 1, 2);
+
+        Button btnAgregar = new Button("Agregar");
+        Button btnModificar = new Button("Modificar");
+        Button btnEliminar = new Button("Eliminar");
+
+        HBox botones = new HBox(10, btnAgregar, btnModificar, btnEliminar);
+        form.add(botones, 0, 3, 2, 1);
+
+        root.setTop(form);
+
+        // Tabla
+        tabla = new TableView&lt;&gt;();
+        productos = FXCollections.observableArrayList();
+
+        TableColumn&lt;Producto, Integer&gt; colId = new TableColumn&lt;&gt;("ID");
+        colId.setCellValueFactory(new PropertyValueFactory&lt;&gt;("id"));
+
+        TableColumn&lt;Producto, String&gt; colNombre = new TableColumn&lt;&gt;("Nombre");
+        colNombre.setCellValueFactory(new PropertyValueFactory&lt;&gt;("nombre"));
+
+        TableColumn&lt;Producto, Double&gt; colPrecio = new TableColumn&lt;&gt;("Precio");
+        colPrecio.setCellValueFactory(new PropertyValueFactory&lt;&gt;("precio"));
+
+        TableColumn&lt;Producto, Integer&gt; colStock = new TableColumn&lt;&gt;("Stock");
+        colStock.setCellValueFactory(new PropertyValueFactory&lt;&gt;("stock"));
+
+        tabla.getColumns().addAll(colId, colNombre, colPrecio, colStock);
+        tabla.setItems(productos);
+
+        root.setCenter(tabla);
+
+        // Selección en tabla
+        tabla.getSelectionModel().selectedItemProperty().addListener((obs, old, nuevo) -> {
+            if (nuevo != null) {
+                txtNombre.setText(nuevo.getNombre());
+                txtPrecio.setText(String.valueOf(nuevo.getPrecio()));
+                txtStock.setText(String.valueOf(nuevo.getStock()));
+            }
+        });
+
+        // Eventos
+        btnAgregar.setOnAction(e -> {
+            Producto p = new Producto(
+                productos.size() + 1,
+                txtNombre.getText(),
+                Double.parseDouble(txtPrecio.getText()),
+                Integer.parseInt(txtStock.getText())
+            );
+            productos.add(p);
+            limpiarCampos(txtNombre, txtPrecio, txtStock);
+        });
+
+        btnEliminar.setOnAction(e -> {
+            Producto seleccionado = tabla.getSelectionModel().getSelectedItem();
+            if (seleccionado != null) {
+                productos.remove(seleccionado);
+            }
+        });
+
+        Scene scene = new Scene(root, 500, 400);
+        stage.setTitle("Gestión de Productos");
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    private void limpiarCampos(TextField... campos) {
+        for (TextField campo : campos) {
+            campo.clear();
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 8: Dashboard con Gráficos</h3>
+                    <p>Panel de control con gráficos de barras y circular.</p>
+
+                    <div class="code-block"><code>import javafx.scene.chart.*;
+
+public class Dashboard extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        BorderPane root = new BorderPane();
+
+        // Título
+        Label titulo = new Label("Dashboard de Ventas");
+        titulo.setStyle("-fx-font-size: 24px; -fx-font-weight: bold;");
+        BorderPane.setAlignment(titulo, Pos.CENTER);
+        BorderPane.setMargin(titulo, new Insets(20));
+        root.setTop(titulo);
+
+        // Gráficos en grid
+        GridPane charts = new GridPane();
+        charts.setHgap(20);
+        charts.setVgap(20);
+        charts.setPadding(new Insets(20));
+
+        // Gráfico de barras
+        CategoryAxis xAxis = new CategoryAxis();
+        NumberAxis yAxis = new NumberAxis();
+        BarChart&lt;String, Number&gt; barChart = new BarChart&lt;&gt;(xAxis, yAxis);
+        barChart.setTitle("Ventas por Mes");
+
+        XYChart.Series&lt;String, Number&gt; series = new XYChart.Series&lt;&gt;();
+        series.setName("2024");
+        series.getData().addAll(
+            new XYChart.Data&lt;&gt;("Ene", 150),
+            new XYChart.Data&lt;&gt;("Feb", 200),
+            new XYChart.Data&lt;&gt;("Mar", 180),
+            new XYChart.Data&lt;&gt;("Abr", 250)
+        );
+        barChart.getData().add(series);
+
+        // Gráfico circular
+        PieChart pieChart = new PieChart();
+        pieChart.setTitle("Ventas por Categoría");
+        pieChart.getData().addAll(
+            new PieChart.Data("Electrónica", 35),
+            new PieChart.Data("Ropa", 25),
+            new PieChart.Data("Hogar", 20),
+            new PieChart.Data("Otros", 20)
+        );
+
+        // Gráfico de líneas
+        NumberAxis xAxis2 = new NumberAxis();
+        NumberAxis yAxis2 = new NumberAxis();
+        LineChart&lt;Number, Number&gt; lineChart = new LineChart&lt;&gt;(xAxis2, yAxis2);
+        lineChart.setTitle("Tendencia");
+
+        XYChart.Series&lt;Number, Number&gt; lineSeries = new XYChart.Series&lt;&gt;();
+        lineSeries.setName("Ventas");
+        for (int i = 1; i <= 12; i++) {
+            lineSeries.getData().add(
+                new XYChart.Data&lt;&gt;(i, Math.random() * 100 + 100)
+            );
+        }
+        lineChart.getData().add(lineSeries);
+
+        charts.add(barChart, 0, 0);
+        charts.add(pieChart, 1, 0);
+        charts.add(lineChart, 0, 1, 2, 1);
+
+        root.setCenter(charts);
+
+        Scene scene = new Scene(root, 900, 700);
+        stage.setTitle("Dashboard");
+        stage.setScene(scene);
+        stage.show();
+    }
+}</code></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p>Recursos completos para estudiantes de Desarrollo de Aplicaciones Multiplataforma.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Proyecto educativo de código abierto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>

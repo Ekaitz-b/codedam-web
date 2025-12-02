@@ -1,0 +1,3835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apuntes completos de Programación Java para 1º DAM - POO, estructuras de datos, colecciones, excepciones y más.">
+    <meta name="keywords" content="Java, programación, POO, objetos, clases, DAM, apuntes programación">
+    <title>Programación (Java) - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="./bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="./lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="./entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../2dam/acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../../index.html">Inicio</a>
+                <span>→</span>
+                <a href="../../index.html#1dam">1º DAM</a>
+                <span>→</span>
+                <span>Programación</span>
+            </div>
+            <h1 class="page-title">Programación (Java)</h1>
+            <p class="page-subtitle">Fundamentos de Programación Orientada a Objetos</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Table of Contents -->
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul></ul>
+            </nav>
+
+            <!-- Introducción -->
+            <section class="content-section">
+                <h2>Introducción a Java</h2>
+                <p>Java es uno de los lenguajes de programación más populares y demandados del mundo. Creado por James Gosling en Sun Microsystems (ahora Oracle) en 1995, Java revolucionó el desarrollo de software con su filosofía "Write Once, Run Anywhere" (Escribe una vez, ejecuta en cualquier lugar).</p>
+
+                <h3>¿Qué es Java?</h3>
+                <p>Java es un lenguaje de programación de propósito general, orientado a objetos, basado en clases y diseñado para tener las mínimas dependencias de implementación posibles. Es un lenguaje <strong>compilado e interpretado</strong>:</p>
+                <ul>
+                    <li><strong>Compilado:</strong> El código fuente (.java) se compila a bytecode (.class)</li>
+                    <li><strong>Interpretado:</strong> El bytecode se ejecuta en la JVM (Java Virtual Machine)</li>
+                </ul>
+
+                <h3>¿Por qué aprender Java?</h3>
+                <div class="note-box">
+                    <p><strong>Dato:</strong> Según el índice TIOBE y Stack Overflow Developer Survey, Java está consistentemente entre los 3 lenguajes más usados mundialmente.</p>
+                </div>
+
+                <ul>
+                    <li><strong>Demanda laboral alta:</strong> Miles de ofertas de empleo para desarrolladores Java</li>
+                    <li><strong>Multiplataforma:</strong> El mismo código funciona en Windows, Linux, Mac, Android...</li>
+                    <li><strong>Ecosistema maduro:</strong> Millones de librerías, frameworks y herramientas</li>
+                    <li><strong>Desarrollo Android:</strong> Lenguaje principal para apps móviles Android</li>
+                    <li><strong>Backend empresarial:</strong> Usado por bancos, empresas Fortune 500, startups...</li>
+                    <li><strong>Comunidad gigante:</strong> Fácil encontrar ayuda, tutoriales y soluciones</li>
+                    <li><strong>Estabilidad:</strong> Código escrito hace 20 años aún funciona</li>
+                </ul>
+
+                <h3>El Ecosistema Java</h3>
+                <p>Cuando hablamos de Java, en realidad hablamos de varios componentes:</p>
+
+                <h4>1. JDK (Java Development Kit)</h4>
+                <p>El kit completo de desarrollo que incluye:</p>
+                <ul>
+                    <li><strong>javac:</strong> El compilador de Java</li>
+                    <li><strong>java:</strong> El intérprete/launcher de Java</li>
+                    <li><strong>jar:</strong> Empaquetador de aplicaciones</li>
+                    <li><strong>javadoc:</strong> Generador de documentación</li>
+                    <li><strong>debugger:</strong> Herramientas de depuración</li>
+                </ul>
+
+                <h4>2. JRE (Java Runtime Environment)</h4>
+                <p>El entorno de ejecución que incluye la JVM y las librerías necesarias para ejecutar aplicaciones Java (pero NO compilarlas).</p>
+
+                <h4>3. JVM (Java Virtual Machine)</h4>
+                <p>La máquina virtual que ejecuta el bytecode. Es la clave de la portabilidad de Java: existe una JVM para cada sistema operativo.</p>
+
+                <div class="code-block">
+                    <code>// Proceso de ejecución de un programa Java:
+// 1. Escribes código: HolaMundo.java
+// 2. Compilas: javac HolaMundo.java → HolaMundo.class (bytecode)
+// 3. Ejecutas: java HolaMundo → La JVM interpreta el bytecode
+// 4. El mismo .class funciona en Windows, Linux, Mac...</code>
+                </div>
+
+                <h3>Características Principales de Java</h3>
+
+                <h4>1. Orientado a Objetos (OOP)</h4>
+                <p>Todo en Java (excepto tipos primitivos) es un objeto. Esto significa que el código se organiza en clases y objetos que interactúan entre sí.</p>
+
+                <h4>2. Multiplataforma</h4>
+                <p>El bytecode de Java es independiente de la plataforma. Lo compilas una vez y funciona en cualquier sistema con JVM.</p>
+
+                <h4>3. Gestión Automática de Memoria</h4>
+                <p>El <strong>Garbage Collector</strong> libera automáticamente la memoria de objetos no utilizados. No necesitas delete/free como en C/C++.</p>
+
+                <h4>4. Tipado Fuerte y Estático</h4>
+                <p>Debes declarar el tipo de cada variable y no puedes cambiarlos. Esto previene muchos errores en tiempo de compilación.</p>
+
+                <h4>5. Seguridad</h4>
+                <ul>
+                    <li>No hay punteros (no puedes acceder a memoria arbitraria)</li>
+                    <li>Verificación de bytecode antes de ejecutar</li>
+                    <li>Security Manager para aplicaciones de red</li>
+                    <li>Manejo de excepciones obligatorio</li>
+                </ul>
+
+                <h4>6. Robusto y Confiable</h4>
+                <ul>
+                    <li>Fuerte chequeo de tipos en compilación</li>
+                    <li>Manejo de excepciones</li>
+                    <li>Sin sobrecarga de operadores (menos confusión)</li>
+                    <li>Sin herencia múltiple (evita problemas del diamante)</li>
+                </ul>
+
+                <h3>Tu Primer Programa en Java</h3>
+                <p>Vamos a crear el clásico "Hola Mundo" y entender cada línea:</p>
+
+                <div class="code-block">
+                    <code>// HolaMundo.java
+
+// Definición de una clase pública llamada HolaMundo
+// IMPORTANTE: El nombre del archivo DEBE coincidir con el nombre de la clase pública
+public class HolaMundo {
+
+    // Método principal: punto de entrada del programa
+    // public: accesible desde cualquier parte
+    // static: se puede ejecutar sin crear un objeto de la clase
+    // void: no retorna ningún valor
+    // main: nombre especial reconocido por la JVM
+    // String[] args: array de argumentos de línea de comandos
+    public static void main(String[] args) {
+
+        // System.out.println() imprime texto y agrega un salto de línea
+        System.out.println("¡Hola, CodeDAM!");
+
+        // System.out.print() imprime texto SIN salto de línea
+        System.out.print("Estoy aprendiendo ");
+        System.out.print("Java");  // Quedará en la misma línea
+
+        System.out.println();  // Salto de línea vacío
+
+        // Imprimir variables
+        String nombre = "Ana";
+        int edad = 20;
+        System.out.println("Me llamo " + nombre + " y tengo " + edad + " años");
+
+        // Formateo con printf (como en C)
+        System.out.printf("Me llamo %s y tengo %d años%n", nombre, edad);
+    }
+}</code>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Compilar y ejecutar:</strong></p>
+                    <p><code>javac HolaMundo.java</code> → Compila y crea HolaMundo.class</p>
+                    <p><code>java HolaMundo</code> → Ejecuta el programa</p>
+                </div>
+
+                <h3>Estructura de un Programa Java</h3>
+                <div class="code-block">
+                    <code>// 1. PAQUETE (opcional, pero recomendado)
+package com.codedam.ejemplos;
+
+// 2. IMPORTS (opcional)
+import java.util.Scanner;
+import java.util.ArrayList;
+
+// 3. CLASE PÚBLICA (una por archivo, nombre = nombre del archivo)
+public class MiPrograma {
+
+    // 4. VARIABLES DE CLASE (atributos estáticos)
+    private static int contador = 0;
+
+    // 5. VARIABLES DE INSTANCIA (atributos de objeto)
+    private String nombre;
+    private int edad;
+
+    // 6. CONSTRUCTOR
+    public MiPrograma(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        contador++;
+    }
+
+    // 7. MÉTODOS
+    public void saludar() {
+        System.out.println("Hola, soy " + nombre);
+    }
+
+    // 8. MÉTODO MAIN (punto de entrada)
+    public static void main(String[] args) {
+        MiPrograma persona = new MiPrograma("Carlos", 25);
+        persona.saludar();
+    }
+}</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes al Empezar:</strong></p>
+                    <ul>
+                        <li>Nombre del archivo NO coincide con la clase pública</li>
+                        <li>Olvidar el punto y coma (;) al final de las sentencias</li>
+                        <li>Mayúsculas/minúsculas incorrectas (Java es case-sensitive)</li>
+                        <li>Olvidar las llaves {} en bloques de código</li>
+                        <li>Intentar ejecutar con <code>java HolaMundo.java</code> (debe ser <code>java HolaMundo</code> sin .java)</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro:</strong></p>
+                    <ul>
+                        <li>Usa un IDE (IntelliJ IDEA, Eclipse, VS Code con extensiones) para autocompletado y detección de errores</li>
+                        <li>Aprende atajos de teclado: <code>sout + Tab</code> en IntelliJ escribe System.out.println()</li>
+                        <li>Lee el mensaje de error COMPLETO: Java da información muy detallada de errores</li>
+                        <li>Usa <code>System.out.println()</code> para depurar (imprimir valores de variables)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Sintaxis Básica -->
+            <section class="content-section">
+                <h2>Sintaxis Básica de Java</h2>
+
+                <h3>Variables y Tipos de Datos</h3>
+                <p>Una variable es un espacio en memoria con un nombre que almacena un valor. En Java, TODAS las variables deben tener un tipo definido.</p>
+
+                <h4>Tipos Primitivos</h4>
+                <p>Java tiene 8 tipos primitivos (no son objetos):</p>
+
+                <div class="code-block">
+                    <code>// ENTEROS (números sin decimales)
+
+// byte: 8 bits, rango -128 a 127
+byte edad = 25;
+byte temperatura = -10;
+
+// short: 16 bits, rango -32,768 a 32,767
+short habitantes = 30000;
+
+// int: 32 bits, rango -2,147,483,648 a 2,147,483,647
+// Es el tipo entero MÁS USADO
+int poblacion = 47000000;
+int year = 2024;
+
+// long: 64 bits, rango -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807
+// Para números muy grandes, añade 'L' al final
+long distanciaEstrella = 9460730472580800L;
+
+// DECIMALES (números con coma)
+
+// float: 32 bits, precisión ~7 dígitos decimales
+// Añade 'f' al final
+float precio = 19.99f;
+float pi = 3.14159f;
+
+// double: 64 bits, precisión ~15 dígitos decimales
+// Es el tipo decimal MÁS USADO
+double salario = 1850.50;
+double gravedad = 9.80665;
+
+// CARACTERES
+
+// char: 16 bits, un único carácter Unicode
+// Se escribe entre comillas simples ''
+char letra = 'A';
+char simbolo = '@';
+char emoji = '😊';  // Unicode funciona!
+
+// BOOLEANOS
+
+// boolean: true o false (verdadero o falso)
+boolean esEstudiante = true;
+boolean mayorDeEdad = false;
+boolean aprobado = true;</code>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Regla de oro:</strong> Usa <code>int</code> para enteros y <code>double</code> para decimales, salvo que necesites optimizar memoria o rangos específicos.</p>
+                </div>
+
+                <h4>Tipos de Referencia (Objetos)</h4>
+                <div class="code-block">
+                    <code>// String: cadena de texto (secuencia de caracteres)
+// Se escribe entre comillas dobles ""
+String nombre = "Ana García";
+String mensaje = "Hola, ¿qué tal?";
+String vacio = "";  // String vacío (válido)
+
+// Arrays: colección de elementos del mismo tipo
+int[] numeros = {1, 2, 3, 4, 5};
+String[] nombres = {"Ana", "Juan", "María"};
+
+// Clases: cualquier objeto que crees o uses
+Scanner scanner = new Scanner(System.in);
+ArrayList&lt;String&gt; lista = new ArrayList&lt;&gt;();</code>
+                </div>
+
+                <h4>Declaración e Inicialización de Variables</h4>
+                <div class="code-block">
+                    <code>// DECLARACIÓN: reservas espacio en memoria
+int numero;
+String texto;
+
+// INICIALIZACIÓN: asignas un valor
+numero = 10;
+texto = "Hola";
+
+// DECLARACIÓN + INICIALIZACIÓN (forma más común)
+int edad = 20;
+String nombre = "Carlos";
+
+// MÚLTIPLES VARIABLES DEL MISMO TIPO
+int x = 5, y = 10, z = 15;
+String nombre1 = "Ana", nombre2 = "Juan";
+
+// CONSTANTES (valores que NO cambian)
+// Usa 'final' y por convención MAYÚSCULAS
+final int DIAS_SEMANA = 7;
+final double PI = 3.14159265359;
+final String UNIVERSIDAD = "UAM";
+
+// DIAS_SEMANA = 8;  // ERROR: no puedes cambiar una constante</code>
+                </div>
+
+                <h4>Conversión de Tipos (Casting)</h4>
+                <div class="code-block">
+                    <code>// CONVERSIÓN IMPLÍCITA (automática, de menor a mayor)
+int entero = 100;
+long largo = entero;        // int → long (OK)
+float decimal = entero;      // int → float (OK)
+double doble = decimal;      // float → double (OK)
+
+// CONVERSIÓN EXPLÍCITA (manual, de mayor a menor)
+// ¡CUIDADO! Puede haber pérdida de datos
+double precio = 19.99;
+int precioEntero = (int) precio;  // 19 (se pierde .99)
+
+long numeroGrande = 1000000000L;
+int numeroNormal = (int) numeroGrande;  // OK si cabe
+
+// String a número
+String textoNumero = "123";
+int numero = Integer.parseInt(textoNumero);  // String → int
+
+String textoDecimal = "19.99";
+double decimal2 = Double.parseDouble(textoDecimal);  // String → double
+
+// Número a String
+int edad = 25;
+String edadTexto = String.valueOf(edad);  // int → String
+// O más fácil:
+String edadTexto2 = "" + edad;  // Concatenar con String vacío</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes con Variables:</strong></p>
+                    <ul>
+                        <li><strong>Variable no inicializada:</strong> <code>int x; System.out.println(x);</code> → ERROR</li>
+                        <li><strong>Overflow:</strong> <code>byte num = 200;</code> → ERROR (byte max = 127)</li>
+                        <li><strong>Perder decimales:</strong> <code>int division = 5 / 2;</code> → 2 (no 2.5, usa double!)</li>
+                        <li><strong>Comparar Strings con ==:</strong> <code>"hola" == "hola"</code> → Usa .equals()</li>
+                    </ul>
+                </div>
+
+                <h3>Operadores</h3>
+
+                <h4>Operadores Aritméticos</h4>
+                <div class="code-block">
+                    <code>int a = 10, b = 3;
+
+// Suma
+int suma = a + b;           // 13
+
+// Resta
+int resta = a - b;          // 7
+
+// Multiplicación
+int multiplicacion = a * b; // 30
+
+// División
+int division = a / b;       // 3 (división entera!)
+double divisionReal = (double) a / b;  // 3.333... (al menos uno debe ser double)
+
+// Módulo (resto de división)
+int resto = a % b;          // 1 (10 / 3 = 3, resto 1)
+
+// Ejemplos útiles del módulo
+int numero = 17;
+if (numero % 2 == 0) {
+    System.out.println("Par");
+} else {
+    System.out.println("Impar");  // Se ejecuta esto
+}
+
+// Incremento y Decremento
+int x = 5;
+x++;        // x = x + 1 → 6 (post-incremento)
+++x;        // x = x + 1 → 7 (pre-incremento)
+x--;        // x = x - 1 → 6 (post-decremento)
+--x;        // x = x - 1 → 5 (pre-decremento)
+
+// Diferencia entre pre y post
+int y = 5;
+int z = y++;  // z = 5, y = 6 (primero asigna, luego incrementa)
+
+int w = 5;
+int v = ++w;  // v = 6, w = 6 (primero incrementa, luego asigna)</code>
+                </div>
+
+                <h4>Operadores de Asignación</h4>
+                <div class="code-block">
+                    <code>int x = 10;
+
+// Asignación compuesta (abreviada)
+x += 5;   // x = x + 5  → 15
+x -= 3;   // x = x - 3  → 12
+x *= 2;   // x = x * 2  → 24
+x /= 4;   // x = x / 4  → 6
+x %= 4;   // x = x % 4  → 2
+
+// Son equivalentes pero más cortos
+int puntos = 100;
+puntos = puntos + 50;  // Forma larga
+puntos += 50;          // Forma corta (recomendada)</code>
+                </div>
+
+                <h4>Operadores de Comparación</h4>
+                <div class="code-block">
+                    <code>int a = 10, b = 20;
+
+// Igual a
+boolean igual = (a == b);           // false
+
+// Diferente de
+boolean diferente = (a != b);       // true
+
+// Mayor que
+boolean mayor = (a > b);            // false
+
+// Menor que
+boolean menor = (a < b);            // true
+
+// Mayor o igual que
+boolean mayorIgual = (a >= 10);     // true
+
+// Menor o igual que
+boolean menorIgual = (b <= 15);     // false
+
+// CUIDADO con Strings (objetos)
+String texto1 = "Hola";
+String texto2 = "Hola";
+String texto3 = new String("Hola");
+
+// INCORRECTO: == compara referencias (posición de memoria)
+System.out.println(texto1 == texto2);   // true (pool de Strings)
+System.out.println(texto1 == texto3);   // false (diferente objeto)
+
+// CORRECTO: .equals() compara contenido
+System.out.println(texto1.equals(texto2));   // true
+System.out.println(texto1.equals(texto3));   // true</code>
+                </div>
+
+                <h4>Operadores Lógicos</h4>
+                <div class="code-block">
+                    <code>boolean a = true, b = false;
+
+// AND lógico (&&): true solo si AMBOS son true
+boolean and = a && b;           // false
+boolean and2 = true && true;    // true
+
+// OR lógico (||): true si AL MENOS UNO es true
+boolean or = a || b;            // true
+boolean or2 = false || false;   // false
+
+// NOT lógico (!): invierte el valor
+boolean not = !a;               // false
+boolean not2 = !b;              // true
+
+// Ejemplos prácticos
+int edad = 20;
+boolean tieneCarnet = true;
+
+// Puede conducir si tiene 18+ años Y tiene carnet
+boolean puedeConducir = (edad >= 18) && tieneCarnet;  // true
+
+int nota = 4;
+boolean recuperacion = true;
+
+// Aprueba si nota >= 5 O si está en recuperación y nota >= 4
+boolean aprueba = (nota >= 5) || (recuperacion && nota >= 4);  // true
+
+// Precedencia de operadores
+boolean resultado = !false && true || false;
+// Se evalúa como: (!false) && true || false
+//                  true && true || false
+//                  true || false
+//                  true</code>
+                </div>
+
+                <h4>Operador Ternario</h4>
+                <div class="code-block">
+                    <code>// Forma compacta de if-else
+// Sintaxis: condicion ? valorSiTrue : valorSiFalse
+
+int edad = 17;
+String categoria = (edad >= 18) ? "Adulto" : "Menor";  // "Menor"
+
+// Es equivalente a:
+String categoria2;
+if (edad >= 18) {
+    categoria2 = "Adulto";
+} else {
+    categoria2 = "Menor";
+}
+
+// Ejemplos prácticos
+int nota = 7;
+String resultado = (nota >= 5) ? "Aprobado" : "Suspendido";
+
+int numero = -5;
+int absoluto = (numero >= 0) ? numero : -numero;  // Valor absoluto
+
+// Se puede anidar (¡pero no abuses!)
+int puntos = 85;
+String calificacion = (puntos >= 90) ? "Sobresaliente" :
+                      (puntos >= 70) ? "Notable" :
+                      (puntos >= 50) ? "Aprobado" : "Suspendido";
+// "Notable"</code>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro - Operadores:</strong></p>
+                    <ul>
+                        <li>Usa paréntesis para claridad, incluso si no son necesarios: <code>(a + b) * c</code></li>
+                        <li>En divisiones, convierte a double: <code>(double) a / b</code></li>
+                        <li>Para Strings, SIEMPRE usa <code>.equals()</code>, nunca <code>==</code></li>
+                        <li>El operador <code>%</code> es útil para saber si un número es par/impar, múltiplo, etc.</li>
+                        <li><code>x += 1</code> es más corto que <code>x = x + 1</code>, pero <code>x++</code> es aún más corto</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Estructuras de Control -->
+            <section class="content-section">
+                <h2>Estructuras de Control</h2>
+                <p>Las estructuras de control permiten modificar el flujo de ejecución de un programa. Son fundamentales para tomar decisiones y repetir acciones.</p>
+
+                <h3>Condicionales: if, else if, else</h3>
+                <p>Permiten ejecutar código solo si se cumple una condición.</p>
+
+                <h4>if básico</h4>
+                <div class="code-block">
+                    <code>// Sintaxis básica
+int edad = 18;
+
+if (edad >= 18) {
+    System.out.println("Eres mayor de edad");
+}
+
+// Si solo hay UNA instrucción, las llaves son opcionales (pero recomendadas)
+if (edad >= 18)
+    System.out.println("Eres mayor de edad");
+
+// Ejemplos prácticos
+int nota = 7;
+if (nota >= 5) {
+    System.out.println("¡Aprobado!");
+}
+
+double saldo = 150.0;
+if (saldo > 100) {
+    System.out.println("Tienes suficiente dinero");
+    saldo -= 100;  // Se ejecuta solo si la condición es true
+}
+
+// Condiciones múltiples con AND (&&)
+int edad2 = 20;
+boolean tieneCarnet = true;
+if (edad2 >= 18 && tieneCarnet) {
+    System.out.println("Puedes conducir");
+}
+
+// Condiciones múltiples con OR (||)
+char letra = 'a';
+if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
+    System.out.println("Es una vocal");
+}</code>
+                </div>
+
+                <h4>if-else</h4>
+                <div class="code-block">
+                    <code>// Ejecuta un bloque si la condición es true, otro si es false
+int edad = 15;
+
+if (edad >= 18) {
+    System.out.println("Eres mayor de edad");
+} else {
+    System.out.println("Eres menor de edad");
+}
+
+// Ejemplo: Par o Impar
+int numero = 7;
+if (numero % 2 == 0) {
+    System.out.println(numero + " es par");
+} else {
+    System.out.println(numero + " es impar");
+}
+
+// Ejemplo: Validación de login
+String usuario = "admin";
+String password = "1234";
+
+if (usuario.equals("admin") && password.equals("1234")) {
+    System.out.println("Login exitoso");
+} else {
+    System.out.println("Credenciales incorrectas");
+}</code>
+                </div>
+
+                <h4>if-else if-else (Cascada)</h4>
+                <div class="code-block">
+                    <code>// Para múltiples condiciones
+int nota = 7;
+
+if (nota >= 9) {
+    System.out.println("Sobresaliente");
+} else if (nota >= 7) {
+    System.out.println("Notable");
+} else if (nota >= 5) {
+    System.out.println("Aprobado");
+} else {
+    System.out.println("Suspendido");
+}
+
+// Ejemplo completo: Sistema de calificaciones
+double puntuacion = 85.5;
+
+if (puntuacion >= 90) {
+    System.out.println("Calificación: A - Excelente");
+} else if (puntuacion >= 80) {
+    System.out.println("Calificación: B - Muy bien");
+} else if (puntuacion >= 70) {
+    System.out.println("Calificación: C - Bien");
+} else if (puntuacion >= 60) {
+    System.out.println("Calificación: D - Suficiente");
+} else {
+    System.out.println("Calificación: F - Reprobado");
+}
+
+// Ejemplo: Calculadora de IMC
+double peso = 70;  // kg
+double altura = 1.75;  // metros
+double imc = peso / (altura * altura);
+
+if (imc < 18.5) {
+    System.out.println("Bajo peso");
+} else if (imc < 25) {
+    System.out.println("Peso normal");
+} else if (imc < 30) {
+    System.out.println("Sobrepeso");
+} else {
+    System.out.println("Obesidad");
+}</code>
+                </div>
+
+                <h4>if anidados</h4>
+                <div class="code-block">
+                    <code>// Un if dentro de otro if
+int edad = 20;
+boolean tieneEntrada = true;
+
+if (edad >= 18) {
+    if (tieneEntrada) {
+        System.out.println("Puedes entrar al concierto");
+    } else {
+        System.out.println("Necesitas comprar una entrada");
+    }
+} else {
+    System.out.println("Eres menor de edad, no puedes entrar");
+}
+
+// Ejemplo: Sistema de descuentos
+double precioOriginal = 100.0;
+boolean esEstudiante = true;
+boolean tieneCupon = true;
+double precioFinal = precioOriginal;
+
+if (esEstudiante) {
+    precioFinal *= 0.9;  // 10% descuento
+    System.out.println("Descuento estudiante aplicado");
+
+    if (tieneCupon) {
+        precioFinal *= 0.95;  // 5% adicional
+        System.out.println("Cupón aplicado");
+    }
+}
+
+System.out.println("Precio final: " + precioFinal + "€");</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes con if:</strong></p>
+                    <ul>
+                        <li><strong>Usar = en vez de ==:</strong> <code>if (x = 5)</code> → ERROR (= es asignación, == es comparación)</li>
+                        <li><strong>Comparar Strings con ==:</strong> <code>if (texto == "hola")</code> → Usa <code>texto.equals("hola")</code></li>
+                        <li><strong>Punto y coma después del if:</strong> <code>if (x > 5); { ... }</code> → El ; termina el if</li>
+                        <li><strong>Lógica invertida:</strong> Asegúrate de usar && (AND) y || (OR) correctamente</li>
+                    </ul>
+                </div>
+
+                <h3>Switch-Case</h3>
+                <p>Alternativa al if-else if cuando comparas una variable con múltiples valores concretos.</p>
+
+                <div class="code-block">
+                    <code>// Sintaxis básica
+int dia = 3;
+
+switch (dia) {
+    case 1:
+        System.out.println("Lunes");
+        break;  // IMPORTANTE: sin break, continúa al siguiente case
+    case 2:
+        System.out.println("Martes");
+        break;
+    case 3:
+        System.out.println("Miércoles");
+        break;
+    case 4:
+        System.out.println("Jueves");
+        break;
+    case 5:
+        System.out.println("Viernes");
+        break;
+    case 6:
+        System.out.println("Sábado");
+        break;
+    case 7:
+        System.out.println("Domingo");
+        break;
+    default:  // Opcional: se ejecuta si ningún case coincide
+        System.out.println("Día inválido");
+}
+
+// Ejemplo: Menú de opciones
+Scanner scanner = new Scanner(System.in);
+System.out.println("1. Nuevo juego");
+System.out.println("2. Cargar partida");
+System.out.println("3. Opciones");
+System.out.println("4. Salir");
+int opcion = scanner.nextInt();
+
+switch (opcion) {
+    case 1:
+        System.out.println("Iniciando nuevo juego...");
+        break;
+    case 2:
+        System.out.println("Cargando partida...");
+        break;
+    case 3:
+        System.out.println("Abriendo opciones...");
+        break;
+    case 4:
+        System.out.println("Saliendo del juego...");
+        break;
+    default:
+        System.out.println("Opción inválida");
+}
+
+// Agrupar casos (sin break, "fall-through")
+char letra = 'A';
+
+switch (letra) {
+    case 'A':
+    case 'E':
+    case 'I':
+    case 'O':
+    case 'U':
+        System.out.println("Es una vocal mayúscula");
+        break;
+    case 'a':
+    case 'e':
+    case 'i':
+    case 'o':
+    case 'u':
+        System.out.println("Es una vocal minúscula");
+        break;
+    default:
+        System.out.println("Es una consonante");
+}
+
+// Ejemplo: Días laborables vs fin de semana
+int diaSemana = 6;
+
+switch (diaSemana) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+        System.out.println("Día laborable - a trabajar!");
+        break;
+    case 6:
+    case 7:
+        System.out.println("Fin de semana - a descansar!");
+        break;
+    default:
+        System.out.println("Día inválido");
+}</code>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Switch Expression (Java 14+):</strong> Nueva sintaxis más moderna</p>
+                    <code>int dia = 3;<br>
+String nombreDia = switch (dia) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;case 1 -> "Lunes";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;case 2 -> "Martes";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;case 3 -> "Miércoles";<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default -> "Inválido";<br>
+};</code>
+                </div>
+
+                <h3>Bucle while</h3>
+                <p>Repite un bloque de código mientras una condición sea verdadera. Evalúa la condición ANTES de ejecutar.</p>
+
+                <div class="code-block">
+                    <code>// Sintaxis básica
+int contador = 1;
+
+while (contador <= 5) {
+    System.out.println("Iteración: " + contador);
+    contador++;  // IMPORTANTE: incrementar el contador para evitar bucle infinito
+}
+// Salida: Iteración: 1, 2, 3, 4, 5
+
+// Ejemplo: Suma de números del 1 al 10
+int suma = 0;
+int numero = 1;
+
+while (numero <= 10) {
+    suma += numero;  // suma = suma + numero
+    numero++;
+}
+System.out.println("La suma es: " + suma);  // 55
+
+// Ejemplo: Validación de entrada
+Scanner scanner = new Scanner(System.in);
+int edad = -1;
+
+while (edad < 0 || edad > 120) {
+    System.out.print("Introduce tu edad (0-120): ");
+    edad = scanner.nextInt();
+
+    if (edad < 0 || edad > 120) {
+        System.out.println("Edad inválida, intenta de nuevo");
+    }
+}
+System.out.println("Edad válida: " + edad);
+
+// Ejemplo: Adivinar número
+int numeroSecreto = 42;
+int intento = 0;
+
+while (intento != numeroSecreto) {
+    System.out.print("Adivina el número: ");
+    intento = scanner.nextInt();
+
+    if (intento < numeroSecreto) {
+        System.out.println("Más alto!");
+    } else if (intento > numeroSecreto) {
+        System.out.println("Más bajo!");
+    } else {
+        System.out.println("¡Correcto!");
+    }
+}</code>
+                </div>
+
+                <h3>Bucle do-while</h3>
+                <p>Similar a while, pero evalúa la condición DESPUÉS de ejecutar. Se ejecuta al menos UNA vez.</p>
+
+                <div class="code-block">
+                    <code>// Sintaxis básica
+int contador = 1;
+
+do {
+    System.out.println("Iteración: " + contador);
+    contador++;
+} while (contador <= 5);
+
+// Diferencia clave: do-while se ejecuta al menos una vez
+int x = 10;
+
+// while: NO se ejecuta (condición falsa desde el inicio)
+while (x < 5) {
+    System.out.println("Esto no se imprime");
+}
+
+// do-while: se ejecuta UNA vez
+do {
+    System.out.println("Esto SÍ se imprime una vez");
+} while (x < 5);
+
+// Ejemplo práctico: Menú que se muestra al menos una vez
+Scanner scanner = new Scanner(System.in);
+int opcion;
+
+do {
+    System.out.println("\n=== MENÚ ===");
+    System.out.println("1. Ver perfil");
+    System.out.println("2. Configuración");
+    System.out.println("3. Salir");
+    System.out.print("Elige opción: ");
+    opcion = scanner.nextInt();
+
+    switch (opcion) {
+        case 1:
+            System.out.println("Mostrando perfil...");
+            break;
+        case 2:
+            System.out.println("Abriendo configuración...");
+            break;
+        case 3:
+            System.out.println("Saliendo...");
+            break;
+        default:
+            System.out.println("Opción inválida");
+    }
+} while (opcion != 3);  // Repetir hasta que elija "Salir"</code>
+                </div>
+
+                <h3>Bucle for</h3>
+                <p>Ideal cuando sabes cuántas veces quieres repetir algo. Tiene inicialización, condición e incremento en una sola línea.</p>
+
+                <div class="code-block">
+                    <code>// Sintaxis: for (inicialización; condición; incremento)
+for (int i = 1; i <= 5; i++) {
+    System.out.println("Iteración: " + i);
+}
+
+// Equivalente con while:
+int i = 1;           // Inicialización
+while (i <= 5) {     // Condición
+    System.out.println("Iteración: " + i);
+    i++;             // Incremento
+}
+
+// Ejemplo: Imprimir números del 1 al 10
+for (int num = 1; num <= 10; num++) {
+    System.out.print(num + " ");
+}
+// Salida: 1 2 3 4 5 6 7 8 9 10
+
+// Ejemplo: Imprimir números pares del 0 al 20
+for (int num = 0; num <= 20; num += 2) {
+    System.out.print(num + " ");
+}
+// Salida: 0 2 4 6 8 10 12 14 16 18 20
+
+// Ejemplo: Cuenta atrás
+for (int i = 10; i >= 1; i--) {
+    System.out.println(i);
+}
+System.out.println("¡Despegue!");
+
+// Ejemplo: Tabla de multiplicar
+int numero = 7;
+for (int i = 1; i <= 10; i++) {
+    System.out.println(numero + " x " + i + " = " + (numero * i));
+}
+
+// Ejemplo: Suma de números del 1 al 100
+int suma = 0;
+for (int i = 1; i <= 100; i++) {
+    suma += i;
+}
+System.out.println("Suma: " + suma);  // 5050
+
+// For con múltiples variables
+for (int i = 0, j = 10; i < j; i++, j--) {
+    System.out.println("i=" + i + ", j=" + j);
+}</code>
+                </div>
+
+                <h4>For-each (Enhanced for)</h4>
+                <p>Forma simplificada para recorrer arrays y colecciones.</p>
+
+                <div class="code-block">
+                    <code>// Sintaxis: for (TipoDato elemento : coleccion)
+String[] nombres = {"Ana", "Juan", "María", "Pedro"};
+
+// For-each: más simple y legible
+for (String nombre : nombres) {
+    System.out.println(nombre);
+}
+
+// Equivalente con for tradicional:
+for (int i = 0; i < nombres.length; i++) {
+    System.out.println(nombres[i]);
+}
+
+// Ejemplo: Suma de array
+int[] numeros = {5, 10, 15, 20, 25};
+int suma = 0;
+
+for (int num : numeros) {
+    suma += num;
+}
+System.out.println("Suma total: " + suma);  // 75
+
+// Ejemplo: Buscar elemento
+String[] frutas = {"manzana", "pera", "plátano", "naranja"};
+String buscar = "pera";
+boolean encontrado = false;
+
+for (String fruta : frutas) {
+    if (fruta.equals(buscar)) {
+        encontrado = true;
+        break;  // Salir del bucle cuando lo encuentres
+    }
+}
+
+if (encontrado) {
+    System.out.println("Fruta encontrada!");
+} else {
+    System.out.println("Fruta no encontrada");
+}</code>
+                </div>
+
+                <h3>Control de Bucles: break y continue</h3>
+
+                <h4>break: Sale del bucle completamente</h4>
+                <div class="code-block">
+                    <code>// Ejemplo: Buscar número y salir
+int[] numeros = {5, 12, 8, 20, 15, 30};
+
+for (int num : numeros) {
+    if (num > 18) {
+        System.out.println("Encontrado número mayor que 18: " + num);
+        break;  // Sale del bucle inmediatamente
+    }
+    System.out.println("Revisando: " + num);
+}
+// Salida:
+// Revisando: 5
+// Revisando: 12
+// Revisando: 8
+// Encontrado número mayor que 18: 20
+
+// Ejemplo: Validar contraseña con intentos limitados
+Scanner scanner = new Scanner(System.in);
+String passwordCorrecta = "1234";
+int intentos = 0;
+int maxIntentos = 3;
+
+while (intentos < maxIntentos) {
+    System.out.print("Introduce contraseña: ");
+    String password = scanner.next();
+    intentos++;
+
+    if (password.equals(passwordCorrecta)) {
+        System.out.println("Acceso concedido!");
+        break;  // Salir si la contraseña es correcta
+    } else {
+        System.out.println("Contraseña incorrecta. Intentos restantes: " + (maxIntentos - intentos));
+    }
+}
+
+if (intentos == maxIntentos) {
+    System.out.println("Cuenta bloqueada");
+}</code>
+                </div>
+
+                <h4>continue: Salta a la siguiente iteración</h4>
+                <div class="code-block">
+                    <code>// Ejemplo: Imprimir solo números impares
+for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+        continue;  // Salta los números pares
+    }
+    System.out.println(i);
+}
+// Salida: 1 3 5 7 9
+
+// Ejemplo: Ignorar números negativos
+int[] numeros = {5, -2, 10, -8, 15, -3, 20};
+int suma = 0;
+
+for (int num : numeros) {
+    if (num < 0) {
+        System.out.println("Ignorando número negativo: " + num);
+        continue;  // Saltar este número
+    }
+    suma += num;
+}
+System.out.println("Suma de positivos: " + suma);  // 50
+
+// Ejemplo: Validar elementos
+String[] palabras = {"hola", "", "mundo", null, "java", ""};
+
+for (String palabra : palabras) {
+    if (palabra == null || palabra.isEmpty()) {
+        continue;  // Saltar palabras vacías o null
+    }
+    System.out.println(palabra.toUpperCase());
+}
+// Salida: HOLA, MUNDO, JAVA</code>
+                </div>
+
+                <h3>Bucles Anidados</h3>
+                <p>Un bucle dentro de otro. Útil para trabajar con matrices, tablas, etc.</p>
+
+                <div class="code-block">
+                    <code>// Ejemplo básico: Tabla de multiplicar completa (1-10)
+for (int i = 1; i <= 10; i++) {
+    for (int j = 1; j <= 10; j++) {
+        System.out.print((i * j) + "\t");  // \t = tabulación
+    }
+    System.out.println();  // Nueva línea después de cada fila
+}
+
+// Ejemplo: Patrón de asteriscos
+// *
+// **
+// ***
+// ****
+// *****
+for (int i = 1; i <= 5; i++) {
+    for (int j = 1; j <= i; j++) {
+        System.out.print("*");
+    }
+    System.out.println();
+}
+
+// Ejemplo: Matriz de números
+int filas = 3;
+int columnas = 4;
+
+for (int i = 0; i < filas; i++) {
+    for (int j = 0; j < columnas; j++) {
+        System.out.print("[" + i + "," + j + "] ");
+    }
+    System.out.println();
+}
+// Salida:
+// [0,0] [0,1] [0,2] [0,3]
+// [1,0] [1,1] [1,2] [1,3]
+// [2,0] [2,1] [2,2] [2,3]
+
+// Ejemplo: Buscar en matriz 2D
+int[][] matriz = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+int buscar = 5;
+boolean encontrado = false;
+
+for (int i = 0; i < matriz.length; i++) {
+    for (int j = 0; j < matriz[i].length; j++) {
+        if (matriz[i][j] == buscar) {
+            System.out.println("Encontrado en posición [" + i + "," + j + "]");
+            encontrado = true;
+            break;  // Sale del bucle interno
+        }
+    }
+    if (encontrado) {
+        break;  // Sale del bucle externo
+    }
+}</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes con Bucles:</strong></p>
+                    <ul>
+                        <li><strong>Bucle infinito:</strong> Olvidar incrementar/modificar la variable de control</li>
+                        <li><strong>Off-by-one:</strong> <code>for (int i = 0; i <= array.length; i++)</code> → Usa <code>i < array.length</code></li>
+                        <li><strong>Modificar colección en for-each:</strong> <code>for (String s : lista) { lista.remove(s); }</code> → ERROR</li>
+                        <li><strong>Condición siempre verdadera:</strong> <code>while (true)</code> sin break dentro</li>
+                        <li><strong>Usar = en vez de ==:</strong> <code>while (x = 5)</code> es un error de compilación</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro - Estructuras de Control:</strong></p>
+                    <ul>
+                        <li><strong>Usa for</strong> cuando sepas cuántas iteraciones necesitas</li>
+                        <li><strong>Usa while</strong> cuando no sepas cuántas iteraciones (depende de condición)</li>
+                        <li><strong>Usa do-while</strong> cuando necesites ejecutar al menos una vez</li>
+                        <li><strong>Usa for-each</strong> para recorrer arrays/colecciones completas (más legible)</li>
+                        <li><strong>Evita bucles anidados profundos</strong> (máximo 2-3 niveles)</li>
+                        <li><strong>Usa break con cuidado:</strong> Puede dificultar la lectura del código</li>
+                        <li><strong>Nombra bien las variables:</strong> <code>i, j, k</code> para índices, nombres descriptivos para lo demás</li>
+                    </ul>
+                </div>
+
+                <h3>Ejercicios Resueltos - Estructuras de Control</h3>
+
+                <h4>Ejercicio 1: Calculadora de Notas</h4>
+                <div class="code-block">
+                    <code>// Pedir 5 notas, calcular media y mostrar si aprueba
+Scanner scanner = new Scanner(System.in);
+double suma = 0;
+
+for (int i = 1; i <= 5; i++) {
+    System.out.print("Introduce nota " + i + ": ");
+    double nota = scanner.nextDouble();
+    suma += nota;
+}
+
+double media = suma / 5;
+System.out.println("Nota media: " + media);
+
+if (media >= 5) {
+    System.out.println("APROBADO");
+} else {
+    System.out.println("SUSPENDIDO");
+}</code>
+                </div>
+
+                <h4>Ejercicio 2: Números Primos</h4>
+                <div class="code-block">
+                    <code>// Verificar si un número es primo
+Scanner scanner = new Scanner(System.in);
+System.out.print("Introduce un número: ");
+int numero = scanner.nextInt();
+
+boolean esPrimo = true;
+
+if (numero <= 1) {
+    esPrimo = false;
+} else {
+    for (int i = 2; i <= numero / 2; i++) {
+        if (numero % i == 0) {
+            esPrimo = false;
+            break;  // No necesitamos seguir comprobando
+        }
+    }
+}
+
+if (esPrimo) {
+    System.out.println(numero + " es primo");
+} else {
+    System.out.println(numero + " NO es primo");
+}</code>
+                </div>
+
+                <h4>Ejercicio 3: Factorial de un Número</h4>
+                <div class="code-block">
+                    <code>// Calcular factorial (5! = 5 * 4 * 3 * 2 * 1 = 120)
+Scanner scanner = new Scanner(System.in);
+System.out.print("Introduce un número: ");
+int n = scanner.nextInt();
+
+long factorial = 1;  // Usar long para números grandes
+
+for (int i = 1; i <= n; i++) {
+    factorial *= i;  // factorial = factorial * i
+}
+
+System.out.println(n + "! = " + factorial);
+
+// Ejemplo: 5! = 1*2*3*4*5 = 120</code>
+                </div>
+
+                <h4>Ejercicio 4: Pirámide de Números</h4>
+                <div class="code-block">
+                    <code>// Crear una pirámide como esta:
+// 1
+// 1 2
+// 1 2 3
+// 1 2 3 4
+// 1 2 3 4 5
+
+int filas = 5;
+
+for (int i = 1; i <= filas; i++) {
+    for (int j = 1; j <= i; j++) {
+        System.out.print(j + " ");
+    }
+    System.out.println();  // Nueva línea
+}</code>
+                </div>
+
+                <h4>Ejercicio 5: FizzBuzz (Clásico de Entrevistas)</h4>
+                <div class="code-block">
+                    <code>// Imprime números del 1 al 100, pero:
+// - Si es múltiplo de 3: imprime "Fizz"
+// - Si es múltiplo de 5: imprime "Buzz"
+// - Si es múltiplo de ambos: imprime "FizzBuzz"
+
+for (int i = 1; i <= 100; i++) {
+    if (i % 3 == 0 && i % 5 == 0) {
+        System.out.println("FizzBuzz");
+    } else if (i % 3 == 0) {
+        System.out.println("Fizz");
+    } else if (i % 5 == 0) {
+        System.out.println("Buzz");
+    } else {
+        System.out.println(i);
+    }
+}</code>
+                </div>
+            </section>
+
+            <!-- Arrays -->
+            <section class="content-section">
+                <h2>Arrays (Arreglos)</h2>
+                <p>Un array es una estructura de datos que almacena una colección de elementos del mismo tipo en posiciones consecutivas de memoria. El tamaño es fijo una vez creado.</p>
+
+                <h3>Declaración e Inicialización</h3>
+
+                <div class="code-block">
+                    <code>// FORMA 1: Declarar y crear array vacío
+int[] numeros = new int[5];  // Array de 5 enteros (inicializados a 0)
+String[] nombres = new String[3];  // Array de 3 Strings (inicializados a null)
+
+// FORMA 2: Declarar e inicializar con valores
+int[] edades = {18, 20, 22, 25, 19};  // Array de 5 elementos
+String[] frutas = {"manzana", "pera", "plátano"};  // Array de 3 elementos
+
+// FORMA 3: Declarar, crear e inicializar por separado
+double[] precios;  // Declaración
+precios = new double[4];  // Creación
+precios[0] = 19.99;  // Inicialización elemento por elemento
+precios[1] = 25.50;
+precios[2] = 15.00;
+precios[3] = 30.75;
+
+// Sintaxis alternativa (menos común)
+int numeros2[] = new int[5];  // También válido, pero menos recomendado
+
+// Arrays de diferentes tipos
+byte[] bytes = new byte[10];
+short[] shorts = new short[10];
+long[] longs = new long[10];
+float[] floats = new float[10];
+double[] doubles = new double[10];
+boolean[] flags = new boolean[10];
+char[] caracteres = new char[10];</code>
+                </div>
+
+                <h3>Acceso a Elementos</h3>
+                <div class="code-block">
+                    <code>String[] dias = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"};
+
+// Acceder a elementos (índice empieza en 0)
+String primerDia = dias[0];     // "Lunes"
+String tercerDia = dias[2];     // "Miércoles"
+String ultimoDia = dias[4];     // "Viernes"
+
+// Modificar elementos
+dias[0] = "Monday";
+dias[1] = "Tuesday";
+
+// Longitud del array
+int tamaño = dias.length;  // 5 (IMPORTANTE: length SIN paréntesis)
+
+// Acceder al último elemento
+String ultimo = dias[dias.length - 1];  // "Viernes"
+
+// CUIDADO: Acceso fuera de rango
+// String dia = dias[10];  // ERROR: ArrayIndexOutOfBoundsException</code>
+                </div>
+
+                <h3>Recorrer Arrays</h3>
+
+                <h4>Con bucle for tradicional</h4>
+                <div class="code-block">
+                    <code>int[] numeros = {10, 20, 30, 40, 50};
+
+// Imprimir todos los elementos
+for (int i = 0; i < numeros.length; i++) {
+    System.out.println("Posición " + i + ": " + numeros[i]);
+}
+
+// Recorrer en orden inverso
+for (int i = numeros.length - 1; i >= 0; i--) {
+    System.out.println(numeros[i]);
+}
+
+// Modificar todos los elementos
+for (int i = 0; i < numeros.length; i++) {
+    numeros[i] = numeros[i] * 2;  // Duplicar cada número
+}</code>
+                </div>
+
+                <h4>Con bucle for-each (enhanced for)</h4>
+                <div class="code-block">
+                    <code>String[] nombres = {"Ana", "Juan", "María", "Pedro"};
+
+// For-each: más simple y legible
+for (String nombre : nombres) {
+    System.out.println(nombre);
+}
+
+// LIMITACIÓN: No tienes acceso al índice
+// LIMITACIÓN: No puedes modificar el array directamente
+int[] numeros = {1, 2, 3, 4, 5};
+for (int num : numeros) {
+    num = num * 2;  // Esto NO modifica el array original
+}
+// numeros sigue siendo {1, 2, 3, 4, 5}</code>
+                </div>
+
+                <h3>Operaciones Comunes con Arrays</h3>
+
+                <h4>Buscar un elemento</h4>
+                <div class="code-block">
+                    <code>String[] frutas = {"manzana", "pera", "plátano", "naranja"};
+String buscar = "pera";
+int posicion = -1;  // -1 significa "no encontrado"
+
+for (int i = 0; i < frutas.length; i++) {
+    if (frutas[i].equals(buscar)) {
+        posicion = i;
+        break;  // Salir del bucle
+    }
+}
+
+if (posicion != -1) {
+    System.out.println(buscar + " encontrado en posición " + posicion);
+} else {
+    System.out.println(buscar + " no encontrado");
+}</code>
+                </div>
+
+                <h4>Encontrar el máximo y mínimo</h4>
+                <div class="code-block">
+                    <code>int[] numeros = {45, 12, 78, 23, 90, 34};
+
+// Encontrar el máximo
+int maximo = numeros[0];  // Asumir que el primero es el máximo
+for (int i = 1; i < numeros.length; i++) {
+    if (numeros[i] > maximo) {
+        maximo = numeros[i];
+    }
+}
+System.out.println("Máximo: " + maximo);  // 90
+
+// Encontrar el mínimo
+int minimo = numeros[0];
+for (int i = 1; i < numeros.length; i++) {
+    if (numeros[i] < minimo) {
+        minimo = numeros[i];
+    }
+}
+System.out.println("Mínimo: " + minimo);  // 12</code>
+                </div>
+
+                <h4>Calcular suma y media</h4>
+                <div class="code-block">
+                    <code>double[] notas = {7.5, 8.0, 6.5, 9.0, 7.0};
+
+double suma = 0;
+for (double nota : notas) {
+    suma += nota;
+}
+
+double media = suma / notas.length;
+System.out.println("Suma: " + suma);      // 38.0
+System.out.println("Media: " + media);    // 7.6</code>
+                </div>
+
+                <h4>Copiar arrays</h4>
+                <div class="code-block">
+                    <code>int[] original = {1, 2, 3, 4, 5};
+
+// MAL: Esto NO copia el array, copia la referencia
+int[] copia1 = original;
+copia1[0] = 99;  // Esto también modifica 'original'!
+
+// BIEN: Copiar manualmente
+int[] copia2 = new int[original.length];
+for (int i = 0; i < original.length; i++) {
+    copia2[i] = original[i];
+}
+
+// MEJOR: Usar Arrays.copyOf() (requiere import java.util.Arrays)
+import java.util.Arrays;
+int[] copia3 = Arrays.copyOf(original, original.length);
+
+// Copiar parte del array
+int[] parcial = Arrays.copyOfRange(original, 1, 4);  // Copia índices 1, 2, 3</code>
+                </div>
+
+                <h4>Ordenar arrays</h4>
+                <div class="code-block">
+                    <code>import java.util.Arrays;
+
+int[] numeros = {45, 12, 78, 23, 90, 34};
+
+// Ordenar de menor a mayor
+Arrays.sort(numeros);
+System.out.println(Arrays.toString(numeros));  // [12, 23, 34, 45, 78, 90]
+
+String[] nombres = {"Carlos", "Ana", "Beatriz", "David"};
+Arrays.sort(nombres);
+System.out.println(Arrays.toString(nombres));  // [Ana, Beatriz, Carlos, David]</code>
+                </div>
+
+                <h4>Comparar arrays</h4>
+                <div class="code-block">
+                    <code>import java.util.Arrays;
+
+int[] array1 = {1, 2, 3};
+int[] array2 = {1, 2, 3};
+int[] array3 = {1, 2, 4};
+
+// MAL: == compara referencias, no contenido
+System.out.println(array1 == array2);  // false (diferentes objetos)
+
+// BIEN: Arrays.equals() compara contenido
+System.out.println(Arrays.equals(array1, array2));  // true
+System.out.println(Arrays.equals(array1, array3));  // false</code>
+                </div>
+
+                <h3>Arrays Multidimensionales (Matrices)</h3>
+                <p>Arrays de arrays. Los más comunes son 2D (matrices), pero pueden tener más dimensiones.</p>
+
+                <h4>Arrays 2D (Matrices)</h4>
+                <div class="code-block">
+                    <code>// Declarar e inicializar matriz 3x4 (3 filas, 4 columnas)
+int[][] matriz = new int[3][4];
+
+// Inicializar con valores
+int[][] tabla = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};
+
+// Acceder a elementos
+int valor = tabla[0][0];  // 1 (fila 0, columna 0)
+int valor2 = tabla[1][2];  // 7 (fila 1, columna 2)
+int valor3 = tabla[2][3];  // 12 (fila 2, columna 3)
+
+// Modificar elementos
+tabla[0][0] = 99;
+
+// Dimensiones
+int filas = tabla.length;          // 3
+int columnas = tabla[0].length;    // 4
+
+// Recorrer matriz con bucles anidados
+for (int i = 0; i < tabla.length; i++) {
+    for (int j = 0; j < tabla[i].length; j++) {
+        System.out.print(tabla[i][j] + "\t");
+    }
+    System.out.println();  // Nueva línea después de cada fila
+}
+
+// Recorrer con for-each
+for (int[] fila : tabla) {
+    for (int valor : fila) {
+        System.out.print(valor + "\t");
+    }
+    System.out.println();
+}</code>
+                </div>
+
+                <h4>Ejemplos prácticos con matrices</h4>
+                <div class="code-block">
+                    <code>// Matriz de calificaciones (estudiantes x asignaturas)
+double[][] notas = {
+    {7.5, 8.0, 6.5},  // Estudiante 1
+    {9.0, 8.5, 9.5},  // Estudiante 2
+    {6.0, 7.0, 5.5}   // Estudiante 3
+};
+
+// Calcular media de cada estudiante
+for (int i = 0; i < notas.length; i++) {
+    double suma = 0;
+    for (int j = 0; j < notas[i].length; j++) {
+        suma += notas[i][j];
+    }
+    double media = suma / notas[i].length;
+    System.out.println("Estudiante " + (i+1) + " - Media: " + media);
+}
+
+// Matriz identidad 3x3
+int[][] identidad = {
+    {1, 0, 0},
+    {0, 1, 0},
+    {0, 0, 1}
+};</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes con Arrays:</strong></p>
+                    <ul>
+                        <li><strong>ArrayIndexOutOfBoundsException:</strong> Acceder a <code>array[array.length]</code> → El último índice es <code>length - 1</code></li>
+                        <li><strong>Olvidar inicializar:</strong> <code>int[] nums; nums[0] = 5;</code> → ERROR, primero debes hacer <code>new int[tamaño]</code></li>
+                        <li><strong>Confundir length:</strong> Para arrays es <code>array.length</code> (sin paréntesis), para Strings es <code>string.length()</code> (con paréntesis)</li>
+                        <li><strong>Modificar en for-each:</strong> No puedes cambiar elementos del array usando for-each</li>
+                        <li><strong>Copiar con =:</strong> <code>array2 = array1</code> NO copia, solo copia la referencia</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro - Arrays:</strong></p>
+                    <ul>
+                        <li>Usa <code>Arrays.toString(array)</code> para imprimir arrays fácilmente</li>
+                        <li>Usa <code>Arrays.fill(array, valor)</code> para rellenar todo el array con un valor</li>
+                        <li>Para ordenar de mayor a menor: ordena y luego recorre al revés, o usa Comparator</li>
+                        <li>Los arrays de objetos se inicializan con <code>null</code>, no con objetos vacíos</li>
+                        <li>Para arrays dinámicos (que cambian de tamaño), usa <code>ArrayList</code></li>
+                    </ul>
+                </div>
+
+                <h3>Ejercicios Resueltos - Arrays</h3>
+
+                <h4>Ejercicio 1: Invertir un Array</h4>
+                <div class="code-block">
+                    <code>// Invertir el orden de los elementos
+int[] numeros = {1, 2, 3, 4, 5};
+int[] invertido = new int[numeros.length];
+
+for (int i = 0; i < numeros.length; i++) {
+    invertido[i] = numeros[numeros.length - 1 - i];
+}
+
+System.out.println(Arrays.toString(invertido));  // [5, 4, 3, 2, 1]
+
+// Alternativa: Invertir en el mismo array
+for (int i = 0; i < numeros.length / 2; i++) {
+    int temp = numeros[i];
+    numeros[i] = numeros[numeros.length - 1 - i];
+    numeros[numeros.length - 1 - i] = temp;
+}
+System.out.println(Arrays.toString(numeros));  // [5, 4, 3, 2, 1]</code>
+                </div>
+
+                <h4>Ejercicio 2: Eliminar Duplicados</h4>
+                <div class="code-block">
+                    <code>// Encontrar elementos únicos en un array
+int[] numeros = {1, 2, 3, 2, 4, 1, 5, 3};
+int[] unicos = new int[numeros.length];
+int contador = 0;
+
+for (int i = 0; i < numeros.length; i++) {
+    boolean duplicado = false;
+
+    // Verificar si ya está en el array de únicos
+    for (int j = 0; j < contador; j++) {
+        if (numeros[i] == unicos[j]) {
+            duplicado = true;
+            break;
+        }
+    }
+
+    // Si no es duplicado, agregarlo
+    if (!duplicado) {
+        unicos[contador] = numeros[i];
+        contador++;
+    }
+}
+
+// Imprimir solo los elementos únicos
+System.out.print("Únicos: ");
+for (int i = 0; i < contador; i++) {
+    System.out.print(unicos[i] + " ");
+}
+// Salida: 1 2 3 4 5</code>
+                </div>
+
+                <h4>Ejercicio 3: Rotar Array</h4>
+                <div class="code-block">
+                    <code>// Rotar array n posiciones a la derecha
+int[] numeros = {1, 2, 3, 4, 5};
+int rotaciones = 2;
+
+for (int r = 0; r < rotaciones; r++) {
+    int ultimo = numeros[numeros.length - 1];
+
+    // Mover todos los elementos una posición a la derecha
+    for (int i = numeros.length - 1; i > 0; i--) {
+        numeros[i] = numeros[i - 1];
+    }
+
+    numeros[0] = ultimo;
+}
+
+System.out.println(Arrays.toString(numeros));  // [4, 5, 1, 2, 3]</code>
+                </div>
+
+                <h4>Ejercicio 4: Fusionar Dos Arrays Ordenados</h4>
+                <div class="code-block">
+                    <code>// Fusionar dos arrays ordenados en uno solo ordenado
+int[] array1 = {1, 3, 5, 7};
+int[] array2 = {2, 4, 6, 8};
+int[] fusionado = new int[array1.length + array2.length];
+
+int i = 0, j = 0, k = 0;
+
+while (i < array1.length && j < array2.length) {
+    if (array1[i] < array2[j]) {
+        fusionado[k++] = array1[i++];
+    } else {
+        fusionado[k++] = array2[j++];
+    }
+}
+
+// Copiar elementos restantes de array1
+while (i < array1.length) {
+    fusionado[k++] = array1[i++];
+}
+
+// Copiar elementos restantes de array2
+while (j < array2.length) {
+    fusionado[k++] = array2[j++];
+}
+
+System.out.println(Arrays.toString(fusionado));  // [1, 2, 3, 4, 5, 6, 7, 8]</code>
+                </div>
+
+                <h4>Ejercicio 5: Matriz Transpuesta</h4>
+                <div class="code-block">
+                    <code>// Transponer una matriz (intercambiar filas por columnas)
+int[][] matriz = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+int filas = matriz.length;
+int columnas = matriz[0].length;
+int[][] transpuesta = new int[columnas][filas];
+
+for (int i = 0; i < filas; i++) {
+    for (int j = 0; j < columnas; j++) {
+        transpuesta[j][i] = matriz[i][j];
+    }
+}
+
+// Imprimir transpuesta
+for (int[] fila : transpuesta) {
+    System.out.println(Arrays.toString(fila));
+}
+// Salida:
+// [1, 4, 7]
+// [2, 5, 8]
+// [3, 6, 9]</code>
+                </div>
+            </section>
+
+            <!-- Métodos -->
+            <section class="content-section">
+                <h2>Métodos (Funciones)</h2>
+                <p>Un método es un bloque de código reutilizable que realiza una tarea específica. Los métodos ayudan a organizar el código y evitar repetición.</p>
+
+                <h3>Estructura de un Método</h3>
+                <div class="code-block">
+                    <code>// Sintaxis completa:
+// modificadorAcceso tipoRetorno nombreMetodo(parametros) {
+//     // Cuerpo del método
+//     return valor;  // Si retorna algo
+// }
+
+public static int sumar(int a, int b) {
+    int resultado = a + b;
+    return resultado;
+}
+
+// Componentes:
+// - public: modificador de acceso (puede ser private, protected, default)
+// - static: pertenece a la clase, no a una instancia
+// - int: tipo de dato que retorna
+// - sumar: nombre del método (camelCase)
+// - (int a, int b): parámetros que recibe
+// - return: devuelve el resultado</code>
+                </div>
+
+                <h3>Métodos sin Retorno (void)</h3>
+                <div class="code-block">
+                    <code>// void significa que el método NO retorna nada
+public static void saludar() {
+    System.out.println("¡Hola!");
+    // No tiene return
+}
+
+public static void saludarPersona(String nombre) {
+    System.out.println("¡Hola, " + nombre + "!");
+}
+
+public static void imprimirTabla(int numero) {
+    for (int i = 1; i <= 10; i++) {
+        System.out.println(numero + " x " + i + " = " + (numero * i));
+    }
+}
+
+// Uso:
+saludar();                    // ¡Hola!
+saludarPersona("Ana");        // ¡Hola, Ana!
+imprimirTabla(5);             // Tabla del 5</code>
+                </div>
+
+                <h3>Métodos con Retorno</h3>
+                <div class="code-block">
+                    <code>// Método que retorna un valor
+public static int sumar(int a, int b) {
+    return a + b;
+}
+
+public static double calcularMedia(double[] numeros) {
+    double suma = 0;
+    for (double num : numeros) {
+        suma += num;
+    }
+    return suma / numeros.length;
+}
+
+public static boolean esPar(int numero) {
+    return numero % 2 == 0;
+}
+
+public static String obtenerDia(int numero) {
+    switch (numero) {
+        case 1: return "Lunes";
+        case 2: return "Martes";
+        case 3: return "Miércoles";
+        case 4: return "Jueves";
+        case 5: return "Viernes";
+        case 6: return "Sábado";
+        case 7: return "Domingo";
+        default: return "Día inválido";
+    }
+}
+
+// Uso:
+int resultado = sumar(5, 3);           // 8
+double media = calcularMedia(new double[]{7.5, 8.0, 9.0});  // 8.166...
+boolean par = esPar(10);               // true
+String dia = obtenerDia(3);            // "Miércoles"</code>
+                </div>
+
+                <h3>Parámetros de Métodos</h3>
+
+                <h4>Sin parámetros</h4>
+                <div class="code-block">
+                    <code>public static void saludar() {
+    System.out.println("¡Hola!");
+}
+
+public static int obtenerNumeroAleatorio() {
+    return (int) (Math.random() * 100);
+}</code>
+                </div>
+
+                <h4>Con un parámetro</h4>
+                <div class="code-block">
+                    <code>public static void imprimir(String mensaje) {
+    System.out.println(mensaje);
+}
+
+public static int cuadrado(int numero) {
+    return numero * numero;
+}</code>
+                </div>
+
+                <h4>Con múltiples parámetros</h4>
+                <div class="code-block">
+                    <code>public static int sumar(int a, int b) {
+    return a + b;
+}
+
+public static double calcularAreaRectangulo(double base, double altura) {
+    return base * altura;
+}
+
+public static String crearNombreCompleto(String nombre, String apellido1, String apellido2) {
+    return nombre + " " + apellido1 + " " + apellido2;
+}
+
+// Uso:
+int suma = sumar(10, 5);                           // 15
+double area = calcularAreaRectangulo(5.0, 3.0);   // 15.0
+String nombreCompleto = crearNombreCompleto("Ana", "García", "López");  // "Ana García López"</code>
+                </div>
+
+                <h4>Arrays como parámetros</h4>
+                <div class="code-block">
+                    <code>public static void imprimirArray(int[] array) {
+    for (int num : array) {
+        System.out.print(num + " ");
+    }
+    System.out.println();
+}
+
+public static int sumarArray(int[] numeros) {
+    int suma = 0;
+    for (int num : numeros) {
+        suma += num;
+    }
+    return suma;
+}
+
+public static int encontrarMaximo(int[] numeros) {
+    int max = numeros[0];
+    for (int i = 1; i < numeros.length; i++) {
+        if (numeros[i] > max) {
+            max = numeros[i];
+        }
+    }
+    return max;
+}
+
+// Uso:
+int[] datos = {5, 10, 15, 20};
+imprimirArray(datos);           // 5 10 15 20
+int total = sumarArray(datos);  // 50
+int maximo = encontrarMaximo(datos);  // 20</code>
+                </div>
+
+                <h3>Sobrecarga de Métodos (Overloading)</h3>
+                <p>Varios métodos con el MISMO NOMBRE pero diferentes parámetros (cantidad o tipo).</p>
+
+                <div class="code-block">
+                    <code>// Diferentes números de parámetros
+public static int sumar(int a, int b) {
+    return a + b;
+}
+
+public static int sumar(int a, int b, int c) {
+    return a + b + c;
+}
+
+public static int sumar(int a, int b, int c, int d) {
+    return a + b + c + d;
+}
+
+// Diferentes tipos de parámetros
+public static double sumar(double a, double b) {
+    return a + b;
+}
+
+public static String sumar(String a, String b) {
+    return a + b;  // Concatenación
+}
+
+// Uso:
+int suma1 = sumar(5, 10);              // Usa sumar(int, int) → 15
+int suma2 = sumar(5, 10, 15);          // Usa sumar(int, int, int) → 30
+double suma3 = sumar(5.5, 10.3);       // Usa sumar(double, double) → 15.8
+String suma4 = sumar("Hola", "Mundo"); // Usa sumar(String, String) → "HolaMundo"
+
+// Ejemplo práctico: Área de figuras
+public static double calcularArea(double radio) {
+    return Math.PI * radio * radio;  // Círculo
+}
+
+public static double calcularArea(double base, double altura) {
+    return base * altura;  // Rectángulo
+}
+
+public static double calcularArea(double lado1, double lado2, double lado3) {
+    // Triángulo (fórmula de Herón)
+    double s = (lado1 + lado2 + lado3) / 2;
+    return Math.sqrt(s * (s - lado1) * (s - lado2) * (s - lado3));
+}</code>
+                </div>
+
+                <h3>Paso por Valor vs Paso por Referencia</h3>
+                <p>En Java, TODO se pasa por valor, pero con objetos se pasa el valor de la referencia.</p>
+
+                <div class="code-block">
+                    <code>// TIPOS PRIMITIVOS: Paso por valor (se copia el valor)
+public static void modificarNumero(int x) {
+    x = 100;  // Modifica la copia, NO el original
+}
+
+int numero = 5;
+modificarNumero(numero);
+System.out.println(numero);  // 5 (sin cambios)
+
+// OBJETOS/ARRAYS: Paso por referencia (se copia la referencia)
+public static void modificarArray(int[] array) {
+    array[0] = 999;  // Modifica el array original
+}
+
+int[] numeros = {1, 2, 3};
+modificarArray(numeros);
+System.out.println(numeros[0]);  // 999 (¡cambió!)
+
+// Pero si reasignas el parámetro, no afecta al original
+public static void reasignarArray(int[] array) {
+    array = new int[]{10, 20, 30};  // Crea nuevo array, NO modifica el original
+}
+
+int[] datos = {1, 2, 3};
+reasignarArray(datos);
+System.out.println(Arrays.toString(datos));  // [1, 2, 3] (sin cambios)</code>
+                </div>
+
+                <h3>Recursividad</h3>
+                <p>Un método que se llama a sí mismo. Útil para problemas que se pueden dividir en subproblemas similares.</p>
+
+                <div class="code-block">
+                    <code>// Factorial recursivo
+public static int factorial(int n) {
+    // Caso base: detener la recursión
+    if (n == 0 || n == 1) {
+        return 1;
+    }
+    // Caso recursivo
+    return n * factorial(n - 1);
+}
+
+// factorial(5) = 5 * factorial(4)
+//              = 5 * 4 * factorial(3)
+//              = 5 * 4 * 3 * factorial(2)
+//              = 5 * 4 * 3 * 2 * factorial(1)
+//              = 5 * 4 * 3 * 2 * 1
+//              = 120
+
+// Fibonacci recursivo
+public static int fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+// Suma recursiva de array
+public static int sumaRecursiva(int[] array, int index) {
+    if (index == array.length) {
+        return 0;
+    }
+    return array[index] + sumaRecursiva(array, index + 1);
+}
+
+// Potencia recursiva
+public static int potencia(int base, int exponente) {
+    if (exponente == 0) {
+        return 1;
+    }
+    return base * potencia(base, exponente - 1);
+}</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes con Métodos:</strong></p>
+                    <ul>
+                        <li><strong>No retornar valor:</strong> Si el método no es <code>void</code>, DEBE tener <code>return</code></li>
+                        <li><strong>Tipo de retorno incorrecto:</strong> <code>public static int metodo() { return "texto"; }</code> → ERROR</li>
+                        <li><strong>Llamar método no-static desde static:</strong> No puedes llamar métodos de instancia desde <code>main</code> sin crear un objeto</li>
+                        <li><strong>Recursión sin caso base:</strong> Provoca <code>StackOverflowError</code></li>
+                        <li><strong>Modificar parámetros primitivos:</strong> Los cambios NO afectan al original</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro - Métodos:</strong></p>
+                    <ul>
+                        <li>Nombra métodos con verbos: <code>calcular</code>, <code>obtener</code>, <code>verificar</code>, <code>imprimir</code></li>
+                        <li>Un método debe hacer UNA cosa y hacerla bien (Single Responsibility Principle)</li>
+                        <li>Máximo 3-4 parámetros; si necesitas más, considera usar un objeto</li>
+                        <li>Métodos cortos (máximo 20-30 líneas) son más legibles y mantenibles</li>
+                        <li>Documenta métodos complejos con comentarios o JavaDoc</li>
+                    </ul>
+                </div>
+
+                <h3>Ejercicios Resueltos - Métodos</h3>
+
+                <h4>Ejercicio 1: Validador de Email</h4>
+                <div class="code-block">
+                    <code>public static boolean esEmailValido(String email) {
+    // Validar que contenga @ y .
+    if (!email.contains("@") || !email.contains(".")) {
+        return false;
+    }
+
+    // Validar que @ esté antes de .
+    int posArroba = email.indexOf("@");
+    int posPunto = email.lastIndexOf(".");
+
+    if (posArroba > posPunto) {
+        return false;
+    }
+
+    // Validar que no esté vacío antes/después de @
+    if (posArroba == 0 || posArroba == email.length() - 1) {
+        return false;
+    }
+
+    return true;
+}
+
+// Uso:
+System.out.println(esEmailValido("ana@gmail.com"));     // true
+System.out.println(esEmailValido("invalido.com"));      // false
+System.out.println(esEmailValido("@gmail.com"));        // false</code>
+                </div>
+
+                <h4>Ejercicio 2: Convertidor de Temperatura</h4>
+                <div class="code-block">
+                    <code>public static double celsiusAFahrenheit(double celsius) {
+    return (celsius * 9/5) + 32;
+}
+
+public static double fahrenheitACelsius(double fahrenheit) {
+    return (fahrenheit - 32) * 5/9;
+}
+
+public static double celsiusAKelvin(double celsius) {
+    return celsius + 273.15;
+}
+
+// Uso:
+double tempC = 25;
+double tempF = celsiusAFahrenheit(tempC);
+System.out.println(tempC + "°C = " + tempF + "°F");  // 25°C = 77°F</code>
+                </div>
+
+                <h4>Ejercicio 3: Calculadora de Números Primos</h4>
+                <div class="code-block">
+                    <code>public static boolean esPrimo(int numero) {
+    if (numero <= 1) {
+        return false;
+    }
+
+    for (int i = 2; i <= Math.sqrt(numero); i++) {
+        if (numero % i == 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+public static void imprimirPrimosHasta(int limite) {
+    System.out.println("Números primos hasta " + limite + ":");
+    for (int i = 2; i <= limite; i++) {
+        if (esPrimo(i)) {
+            System.out.print(i + " ");
+        }
+    }
+    System.out.println();
+}
+
+// Uso:
+imprimirPrimosHasta(50);  // 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47</code>
+                </div>
+
+                <h4>Ejercicio 4: Generador de Contraseñas</h4>
+                <div class="code-block">
+                    <code>public static String generarPassword(int longitud) {
+    String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+    String password = "";
+
+    for (int i = 0; i < longitud; i++) {
+        int index = (int) (Math.random() * caracteres.length());
+        password += caracteres.charAt(index);
+    }
+
+    return password;
+}
+
+public static boolean esPasswordSegura(String password) {
+    if (password.length() < 8) {
+        return false;
+    }
+
+    boolean tieneMayuscula = false;
+    boolean tieneMinuscula = false;
+    boolean tieneNumero = false;
+
+    for (char c : password.toCharArray()) {
+        if (Character.isUpperCase(c)) tieneMayuscula = true;
+        if (Character.isLowerCase(c)) tieneMinuscula = true;
+        if (Character.isDigit(c)) tieneNumero = true;
+    }
+
+    return tieneMayuscula && tieneMinuscula && tieneNumero;
+}
+
+// Uso:
+String pass = generarPassword(12);
+System.out.println("Password generada: " + pass);
+System.out.println("¿Es segura? " + esPasswordSegura(pass));</code>
+                </div>
+
+                <h4>Ejercicio 5: Analizador de Texto</h4>
+                <div class="code-block">
+                    <code>public static int contarPalabras(String texto) {
+    if (texto == null || texto.trim().isEmpty()) {
+        return 0;
+    }
+    return texto.trim().split("\\s+").length;
+}
+
+public static int contarVocales(String texto) {
+    int contador = 0;
+    texto = texto.toLowerCase();
+
+    for (char c : texto.toCharArray()) {
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u') {
+            contador++;
+        }
+    }
+
+    return contador;
+}
+
+public static String invertirTexto(String texto) {
+    String invertido = "";
+    for (int i = texto.length() - 1; i >= 0; i--) {
+        invertido += texto.charAt(i);
+    }
+    return invertido;
+}
+
+// Uso:
+String texto = "Hola Mundo desde Java";
+System.out.println("Palabras: " + contarPalabras(texto));     // 4
+System.out.println("Vocales: " + contarVocales(texto));        // 8
+System.out.println("Invertido: " + invertirTexto(texto));      // avaJ edsedomuM aloH</code>
+                </div>
+            </section>
+
+            <!-- POO -->
+            <section class="content-section">
+                <h2>Programación Orientada a Objetos (POO)</h2>
+
+                <p>La Programación Orientada a Objetos (POO) es un paradigma de programación basado en el concepto de "objetos", que pueden contener datos (atributos) y código (métodos). Java es un lenguaje completamente orientado a objetos.</p>
+
+                <h3>¿Qué es una Clase?</h3>
+                <p>Una <strong>clase</strong> es una plantilla o molde que define las características (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.</p>
+
+                <div class="code-block">
+                    <code>// Ejemplo simple de clase
+public class Coche {
+    // ATRIBUTOS (características del coche)
+    String marca;
+    String modelo;
+    int año;
+    String color;
+
+    // MÉTODOS (comportamientos del coche)
+    void arrancar() {
+        System.out.println("El coche está arrancando...");
+    }
+
+    void frenar() {
+        System.out.println("El coche está frenando...");
+    }
+
+    void mostrarInfo() {
+        System.out.println("Marca: " + marca);
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Año: " + año);
+        System.out.println("Color: " + color);
+    }
+}</code>
+                </div>
+
+                <h3>¿Qué es un Objeto?</h3>
+                <p>Un <strong>objeto</strong> es una instancia concreta de una clase. Mientras la clase es la plantilla, el objeto es la "cosa real" creada a partir de esa plantilla.</p>
+
+                <div class="code-block">
+                    <code>// Crear objetos (instanciar la clase)
+Coche miCoche = new Coche();  // Objeto 1
+Coche tuCoche = new Coche();  // Objeto 2
+
+// Asignar valores a los atributos
+miCoche.marca = "Toyota";
+miCoche.modelo = "Corolla";
+miCoche.año = 2022;
+miCoche.color = "Rojo";
+
+tuCoche.marca = "Honda";
+tuCoche.modelo = "Civic";
+tuCoche.año = 2023;
+tuCoche.color = "Azul";
+
+// Llamar a métodos
+miCoche.arrancar();     // El coche está arrancando...
+miCoche.mostrarInfo();  // Muestra: Toyota Corolla 2022 Rojo
+
+tuCoche.arrancar();     // El coche está arrancando...
+tuCoche.mostrarInfo();  // Muestra: Honda Civic 2023 Azul</code>
+                </div>
+
+                <h3>Constructores</h3>
+                <p>Un <strong>constructor</strong> es un método especial que se ejecuta automáticamente al crear un objeto. Se usa para inicializar atributos.</p>
+
+                <div class="code-block">
+                    <code>public class Persona {
+    String nombre;
+    int edad;
+    String ciudad;
+
+    // Constructor sin parámetros (por defecto)
+    public Persona() {
+        nombre = "Desconocido";
+        edad = 0;
+        ciudad = "Madrid";
+    }
+
+    // Constructor con parámetros
+    public Persona(String nombre, int edad) {
+        this.nombre = nombre;  // 'this' se refiere al atributo de la clase
+        this.edad = edad;
+        this.ciudad = "Madrid";  // Valor por defecto
+    }
+
+    // Constructor completo
+    public Persona(String nombre, int edad, String ciudad) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.ciudad = ciudad;
+    }
+
+    void presentarse() {
+        System.out.println("Hola, soy " + nombre + ", tengo " + edad + " años y vivo en " + ciudad);
+    }
+}
+
+// Uso de constructores
+Persona p1 = new Persona();  // Usa constructor sin parámetros
+p1.presentarse();  // Hola, soy Desconocido, tengo 0 años y vivo en Madrid
+
+Persona p2 = new Persona("Ana", 25);  // Usa constructor con 2 parámetros
+p2.presentarse();  // Hola, soy Ana, tengo 25 años y vivo en Madrid
+
+Persona p3 = new Persona("Carlos", 30, "Barcelona");  // Usa constructor completo
+p3.presentarse();  // Hola, soy Carlos, tengo 30 años y vivo en Barcelona</code>
+                </div>
+
+                <h3>Encapsulación: Getters y Setters</h3>
+                <p>La <strong>encapsulación</strong> es ocultar los detalles internos de una clase. Hacemos los atributos <code>private</code> y proporcionamos métodos <code>public</code> (getters/setters) para acceder a ellos.</p>
+
+                <div class="code-block">
+                    <code>public class CuentaBancaria {
+    // Atributos PRIVATE (no accesibles desde fuera)
+    private String titular;
+    private double saldo;
+    private String numeroCuenta;
+
+    // Constructor
+    public CuentaBancaria(String titular, String numeroCuenta) {
+        this.titular = titular;
+        this.numeroCuenta = numeroCuenta;
+        this.saldo = 0.0;  // Saldo inicial
+    }
+
+    // GETTER: obtener valor de un atributo
+    public String getTitular() {
+        return titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getNumeroCuenta() {
+        return numeroCuenta;
+    }
+
+    // SETTER: modificar valor de un atributo (con validación)
+    public void setTitular(String titular) {
+        if (titular != null && !titular.isEmpty()) {
+            this.titular = titular;
+        } else {
+            System.out.println("Nombre de titular inválido");
+        }
+    }
+
+    // Métodos de negocio
+    public void depositar(double cantidad) {
+        if (cantidad > 0) {
+            saldo += cantidad;
+            System.out.println("Depósito exitoso. Nuevo saldo: " + saldo + "€");
+        } else {
+            System.out.println("Cantidad inválida");
+        }
+    }
+
+    public void retirar(double cantidad) {
+        if (cantidad > 0 && cantidad <= saldo) {
+            saldo -= cantidad;
+            System.out.println("Retiro exitoso. Nuevo saldo: " + saldo + "€");
+        } else {
+            System.out.println("Fondos insuficientes o cantidad inválida");
+        }
+    }
+
+    public void mostrarInfo() {
+        System.out.println("Titular: " + titular);
+        System.out.println("Cuenta: " + numeroCuenta);
+        System.out.println("Saldo: " + saldo + "€");
+    }
+}
+
+// Uso:
+CuentaBancaria cuenta = new CuentaBancaria("Ana García", "ES1234567890");
+cuenta.depositar(1000);      // Depósito exitoso. Nuevo saldo: 1000.0€
+cuenta.retirar(300);         // Retiro exitoso. Nuevo saldo: 700.0€
+cuenta.mostrarInfo();
+
+// NO puedes acceder directamente a saldo:
+// cuenta.saldo = 99999;  // ERROR: saldo is private
+// Pero sí con el getter:
+double miSaldo = cuenta.getSaldo();  // OK</code>
+                </div>
+
+                <h3>Los 4 Pilares de la POO</h3>
+
+                <h4>1. Encapsulación</h4>
+                <p>Ocultar los detalles internos y exponer solo lo necesario mediante modificadores de acceso.</p>
+
+                <div class="code-block">
+                    <code>// Modificadores de acceso
+public class Ejemplo {
+    // PRIVATE: Solo accesible dentro de esta clase
+    private String secreto = "Solo yo lo veo";
+
+    // PUBLIC: Accesible desde cualquier parte
+    public String publico = "Todos pueden verme";
+
+    // PROTECTED: Accesible en la clase, subclases y mismo paquete
+    protected String protegido = "Mis hijos pueden verme";
+
+    // DEFAULT (sin modificador): Accesible solo en el mismo paquete
+    String porDefecto = "Solo en mi paquete";
+
+    // Método private: solo se puede llamar desde esta clase
+    private void metodoPrivado() {
+        System.out.println("Solo interno");
+    }
+
+    // Método public: accesible desde cualquier lugar
+    public void metodoPublico() {
+        metodoPrivado();  // Puedo llamar a métodos privados desde aquí
+        System.out.println("Accesible para todos");
+    }
+}</code>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Regla de oro:</strong> Haz los atributos <code>private</code> y los métodos <code>public</code> (salvo excepciones). Esto da control sobre cómo se usa tu clase.</p>
+                </div>
+
+                <h4>2. Herencia</h4>
+                <p>Permite crear clases nuevas basadas en clases existentes, heredando sus atributos y métodos.</p>
+
+                <div class="code-block">
+                    <code>// CLASE BASE (Padre/Superclase)
+public class Animal {
+    protected String nombre;
+    protected int edad;
+
+    public Animal(String nombre, int edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public void comer() {
+        System.out.println(nombre + " está comiendo");
+    }
+
+    public void dormir() {
+        System.out.println(nombre + " está durmiendo");
+    }
+
+    public void hacerSonido() {
+        System.out.println("El animal hace un sonido");
+    }
+}
+
+// CLASE DERIVADA (Hijo/Subclase)
+public class Perro extends Animal {
+    private String raza;
+
+    // Constructor
+    public Perro(String nombre, int edad, String raza) {
+        super(nombre, edad);  // Llamar al constructor del padre
+        this.raza = raza;
+    }
+
+    // OVERRIDE: Sobrescribir método del padre
+    @Override
+    public void hacerSonido() {
+        System.out.println(nombre + " dice: Guau guau!");
+    }
+
+    // Método propio de Perro
+    public void traerPelota() {
+        System.out.println(nombre + " trae la pelota");
+    }
+}
+
+public class Gato extends Animal {
+    private boolean esDomestico;
+
+    public Gato(String nombre, int edad, boolean esDomestico) {
+        super(nombre, edad);
+        this.esDomestico = esDomestico;
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println(nombre + " dice: Miau!");
+    }
+
+    public void arañar() {
+        System.out.println(nombre + " está arañando");
+    }
+}
+
+// Uso:
+Perro miPerro = new Perro("Max", 3, "Golden Retriever");
+miPerro.comer();         // Heredado de Animal
+miPerro.hacerSonido();   // Sobrescrito en Perro: "Max dice: Guau guau!"
+miPerro.traerPelota();   // Propio de Perro
+
+Gato miGato = new Gato("Luna", 2, true);
+miGato.dormir();         // Heredado de Animal
+miGato.hacerSonido();    // Sobrescrito en Gato: "Luna dice: Miau!"
+miGato.arañar();         // Propio de Gato</code>
+                </div>
+
+                <h4>3. Polimorfismo</h4>
+                <p>Un objeto puede tomar muchas formas. Permite tratar objetos de diferentes clases de manera uniforme.</p>
+
+                <div class="code-block">
+                    <code>// Polimorfismo: Variable de tipo padre, objeto de tipo hijo
+Animal animal1 = new Perro("Rex", 4, "Labrador");
+Animal animal2 = new Gato("Michi", 1, true);
+
+// Aunque la variable es tipo Animal, cada objeto ejecuta SU versión del método
+animal1.hacerSonido();  // "Rex dice: Guau guau!" (método de Perro)
+animal2.hacerSonido();  // "Michi dice: Miau!" (método de Gato)
+
+// Polimorfismo con arrays
+Animal[] animales = new Animal[3];
+animales[0] = new Perro("Bobby", 2, "Poodle");
+animales[1] = new Gato("Félix", 3, false);
+animales[2] = new Perro("Toby", 5, "Bulldog");
+
+// Recorrer y cada uno hace su sonido
+for (Animal animal : animales) {
+    animal.hacerSonido();  // Cada uno ejecuta su propia versión
+}
+
+// Casting: Convertir de tipo padre a tipo hijo
+Animal a = new Perro("Lassie", 7, "Collie");
+// a.traerPelota();  // ERROR: Animal no tiene este método
+
+// Necesitas hacer casting a Perro
+if (a instanceof Perro) {  // Verificar primero
+    Perro p = (Perro) a;  // Casting
+    p.traerPelota();  // Ahora sí funciona
+}</code>
+                </div>
+
+                <h4>4. Abstracción</h4>
+                <p>Ocultar detalles de implementación y mostrar solo la funcionalidad esencial.</p>
+
+                <h5>Clases Abstractas</h5>
+                <div class="code-block">
+                    <code>// Clase abstracta: NO se puede instanciar directamente
+public abstract class FiguraGeometrica {
+    protected String color;
+
+    public FiguraGeometrica(String color) {
+        this.color = color;
+    }
+
+    // Método abstracto: NO tiene implementación (las subclases DEBEN implementarlo)
+    public abstract double calcularArea();
+    public abstract double calcularPerimetro();
+
+    // Método concreto: tiene implementación
+    public void mostrarColor() {
+        System.out.println("Color: " + color);
+    }
+}
+
+public class Rectangulo extends FiguraGeometrica {
+    private double base;
+    private double altura;
+
+    public Rectangulo(String color, double base, double altura) {
+        super(color);
+        this.base = base;
+        this.altura = altura;
+    }
+
+    @Override
+    public double calcularArea() {
+        return base * altura;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 2 * (base + altura);
+    }
+}
+
+public class Circulo extends FiguraGeometrica {
+    private double radio;
+
+    public Circulo(String color, double radio) {
+        super(color);
+        this.radio = radio;
+    }
+
+    @Override
+    public double calcularArea() {
+        return Math.PI * radio * radio;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return 2 * Math.PI * radio;
+    }
+}
+
+// Uso:
+// FiguraGeometrica fig = new FiguraGeometrica("rojo");  // ERROR: es abstracta
+
+Rectangulo rect = new Rectangulo("azul", 5, 3);
+System.out.println("Área: " + rect.calcularArea());         // 15.0
+System.out.println("Perímetro: " + rect.calcularPerimetro());  // 16.0
+
+Circulo circ = new Circulo("verde", 4);
+System.out.println("Área: " + circ.calcularArea());         // 50.26...
+System.out.println("Perímetro: " + circ.calcularPerimetro());  // 25.13...</code>
+                </div>
+
+                <h5>Interfaces</h5>
+                <div class="code-block">
+                    <code>// Interface: Contrato que define QUÉ debe hacer una clase (no CÓMO)
+public interface Volador {
+    // Métodos abstractos (por defecto public abstract)
+    void despegar();
+    void aterrizar();
+    void volar();
+
+    // Constantes (por defecto public static final)
+    int ALTURA_MAXIMA = 10000;
+}
+
+public class Avion implements Volador {
+    private String modelo;
+    private int pasajeros;
+
+    public Avion(String modelo, int pasajeros) {
+        this.modelo = modelo;
+        this.pasajeros = pasajeros;
+    }
+
+    @Override
+    public void despegar() {
+        System.out.println("El avión " + modelo + " está despegando...");
+    }
+
+    @Override
+    public void aterrizar() {
+        System.out.println("El avión " + modelo + " está aterrizando...");
+    }
+
+    @Override
+    public void volar() {
+        System.out.println("El avión vuela a " + ALTURA_MAXIMA + " metros");
+    }
+
+    public void transportarPasajeros() {
+        System.out.println("Transportando " + pasajeros + " pasajeros");
+    }
+}
+
+public class Pajaro implements Volador {
+    private String especie;
+
+    public Pajaro(String especie) {
+        this.especie = especie;
+    }
+
+    @Override
+    public void despegar() {
+        System.out.println("El pájaro " + especie + " abre sus alas");
+    }
+
+    @Override
+    public void aterrizar() {
+        System.out.println("El pájaro " + especie + " se posa en una rama");
+    }
+
+    @Override
+    public void volar() {
+        System.out.println("El pájaro " + especie + " vuela libremente");
+    }
+}
+
+// Una clase puede implementar MÚLTIPLES interfaces
+public class Superheroe implements Volador, Comparable<Superheroe> {
+    private String nombre;
+    private int poder;
+
+    // ... implementar todos los métodos de ambas interfaces
+}
+
+// Uso:
+Volador v1 = new Avion("Boeing 747", 400);
+Volador v2 = new Pajaro("Águila");
+
+v1.despegar();  // El avión Boeing 747 está despegando...
+v2.despegar();  // El pájaro Águila abre sus alas</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Diferencia Clase Abstracta vs Interface:</strong></p>
+                    <ul>
+                        <li><strong>Clase Abstracta:</strong> Puede tener métodos implementados y abstractos, constructor, atributos. Una clase solo puede heredar de UNA clase abstracta.</li>
+                        <li><strong>Interface:</strong> Solo métodos abstractos (hasta Java 8, ahora puede tener default/static). Una clase puede implementar MÚLTIPLES interfaces.</li>
+                        <li><strong>Cuándo usar:</strong> Clase abstracta para relación "ES UN" (Perro ES UN Animal). Interface para habilidad/capacidad (Avión PUEDE volar).</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro - POO:</strong></p>
+                    <ul>
+                        <li>Usa nombres descriptivos: <code>CuentaBancaria</code>, no <code>CB</code> o <code>Clase1</code></li>
+                        <li>Una clase = un archivo .java (con el mismo nombre)</li>
+                        <li>Principio de Responsabilidad Única: cada clase debe hacer UNA cosa</li>
+                        <li>Prefiere composición sobre herencia: <code>class Coche { Motor motor; }</code> mejor que herencia múltiple</li>
+                        <li>Usa <code>@Override</code> siempre que sobrescribas métodos (detecta errores)</li>
+                        <li>toString(), equals(), hashCode() son métodos que deberías sobrescribir en tus clases</li>
+                    </ul>
+                </div>
+
+                <h3>Métodos Especiales de Object</h3>
+                <p>Todas las clases en Java heredan de <code>Object</code>. Hay métodos útiles que puedes sobrescribir:</p>
+
+                <div class="code-block">
+                    <code>public class Estudiante {
+    private String nombre;
+    private int edad;
+    private double notaMedia;
+
+    public Estudiante(String nombre, int edad, double notaMedia) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.notaMedia = notaMedia;
+    }
+
+    // toString(): Representación en String del objeto
+    @Override
+    public String toString() {
+        return "Estudiante{nombre='" + nombre + "', edad=" + edad + ", notaMedia=" + notaMedia + "}";
+    }
+
+    // equals(): Comparar si dos objetos son iguales (por contenido)
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;  // Misma referencia
+        if (obj == null || getClass() != obj.getClass()) return false;
+
+        Estudiante otro = (Estudiante) obj;
+        return edad == otro.edad &&
+               Double.compare(otro.notaMedia, notaMedia) == 0 &&
+               nombre.equals(otro.nombre);
+    }
+
+    // hashCode(): Código hash para usar en HashMap, HashSet
+    @Override
+    public int hashCode() {
+        int result = nombre.hashCode();
+        result = 31 * result + edad;
+        result = 31 * result + Double.hashCode(notaMedia);
+        return result;
+    }
+}
+
+// Uso:
+Estudiante e1 = new Estudiante("Ana", 20, 8.5);
+Estudiante e2 = new Estudiante("Ana", 20, 8.5);
+
+// toString()
+System.out.println(e1);  // Estudiante{nombre='Ana', edad=20, notaMedia=8.5}
+
+// equals()
+System.out.println(e1 == e2);       // false (diferentes objetos en memoria)
+System.out.println(e1.equals(e2));  // true (mismo contenido)</code>
+                </div>
+
+                <h3>Ejercicios Resueltos - POO</h3>
+
+                <h4>Ejercicio 1: Sistema de Biblioteca</h4>
+                <div class="code-block">
+                    <code>public class Libro {
+    private String titulo;
+    private String autor;
+    private int paginas;
+    private boolean prestado;
+
+    public Libro(String titulo, String autor, int paginas) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.paginas = paginas;
+        this.prestado = false;
+    }
+
+    public boolean prestar() {
+        if (!prestado) {
+            prestado = true;
+            System.out.println("Libro prestado: " + titulo);
+            return true;
+        } else {
+            System.out.println("El libro ya está prestado");
+            return false;
+        }
+    }
+
+    public void devolver() {
+        if (prestado) {
+            prestado = false;
+            System.out.println("Libro devuelto: " + titulo);
+        } else {
+            System.out.println("El libro no estaba prestado");
+        }
+    }
+
+    @Override
+    public String toString() {
+        String estado = prestado ? "Prestado" : "Disponible";
+        return titulo + " por " + autor + " (" + paginas + " pág.) - " + estado;
+    }
+}
+
+// Uso:
+Libro libro1 = new Libro("El Quijote", "Cervantes", 1200);
+libro1.prestar();   // Libro prestado: El Quijote
+libro1.prestar();   // El libro ya está prestado
+libro1.devolver();  // Libro devuelto: El Quijote</code>
+                </div>
+
+                <h4>Ejercicio 2: Jerarquía de Empleados</h4>
+                <div class="code-block">
+                    <code>public class Empleado {
+    protected String nombre;
+    protected double salarioBase;
+
+    public Empleado(String nombre, double salarioBase) {
+        this.nombre = nombre;
+        this.salarioBase = salarioBase;
+    }
+
+    public double calcularSalario() {
+        return salarioBase;
+    }
+
+    public void mostrarInfo() {
+        System.out.println("Empleado: " + nombre);
+        System.out.println("Salario: " + calcularSalario() + "€");
+    }
+}
+
+public class Programador extends Empleado {
+    private String lenguajePrincipal;
+    private double bonoProyectos;
+
+    public Programador(String nombre, double salarioBase, String lenguaje) {
+        super(nombre, salarioBase);
+        this.lenguajePrincipal = lenguaje;
+        this.bonoProyectos = 0;
+    }
+
+    public void asignarBono(double bono) {
+        this.bonoProyectos = bono;
+    }
+
+    @Override
+    public double calcularSalario() {
+        return salarioBase + bonoProyectos;
+    }
+
+    @Override
+    public void mostrarInfo() {
+        super.mostrarInfo();
+        System.out.println("Lenguaje: " + lenguajePrincipal);
+        System.out.println("Bono: " + bonoProyectos + "€");
+    }
+}
+
+public class Gerente extends Empleado {
+    private int empleadosACargo;
+    private double bonoGestion;
+
+    public Gerente(String nombre, double salarioBase, int empleadosACargo) {
+        super(nombre, salarioBase);
+        this.empleadosACargo = empleadosACargo;
+        this.bonoGestion = empleadosACargo * 100;  // 100€ por empleado
+    }
+
+    @Override
+    public double calcularSalario() {
+        return salarioBase + bonoGestion;
+    }
+}
+
+// Uso:
+Programador prog = new Programador("Ana García", 30000, "Java");
+prog.asignarBono(5000);
+prog.mostrarInfo();  // Salario: 35000€
+
+Gerente gerente = new Gerente("Carlos López", 50000, 10);
+gerente.mostrarInfo();  // Salario: 51000€ (50000 + 10*100)</code>
+                </div>
+            </section>
+
+            <!-- Excepciones -->
+            <section class="content-section">
+                <h2>Manejo de Excepciones</h2>
+                <p>Las excepciones son eventos que interrumpen el flujo normal de ejecución de un programa. Java proporciona un mecanismo robusto para detectarlas, manejarlas y recuperarse de ellas.</p>
+
+                <h3>¿Qué es una Excepción?</h3>
+                <p>Una <strong>excepción</strong> es un evento anormal que ocurre durante la ejecución de un programa y que interrumpe el flujo normal de instrucciones.</p>
+
+                <div class="code-block">
+                    <code>// Programa SIN manejo de excepciones
+int[] numeros = {1, 2, 3};
+System.out.println(numeros[10]);  // ERROR: ArrayIndexOutOfBoundsException
+// El programa se detiene aquí
+
+// Programa CON manejo de excepciones
+int[] numeros2 = {1, 2, 3};
+try {
+    System.out.println(numeros2[10]);
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Índice fuera de rango");
+}
+System.out.println("El programa continúa ejecutándose...");</code>
+                </div>
+
+                <h3>Estructura try-catch-finally</h3>
+
+                <h4>Try-Catch Básico</h4>
+                <div class="code-block">
+                    <code>// Sintaxis básica
+try {
+    // Código que PUEDE lanzar una excepción
+    int resultado = 10 / 0;
+} catch (ArithmeticException e) {
+    // Código que se ejecuta SI ocurre la excepción
+    System.out.println("Error: No se puede dividir por cero");
+}
+
+// Ejemplo práctico: Parsear String a entero
+String texto = "abc";
+try {
+    int numero = Integer.parseInt(texto);
+    System.out.println("Número: " + numero);
+} catch (NumberFormatException e) {
+    System.out.println("El texto no es un número válido");
+}
+
+// Acceder a información de la excepción
+try {
+    int[] array = new int[5];
+    array[10] = 100;
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Mensaje: " + e.getMessage());
+    System.out.println("Clase: " + e.getClass().getName());
+    e.printStackTrace();  // Imprime el stack trace completo
+}</code>
+                </div>
+
+                <h4>Múltiples Catch</h4>
+                <div class="code-block">
+                    <code>// Capturar diferentes tipos de excepciones
+Scanner scanner = new Scanner(System.in);
+
+try {
+    System.out.print("Introduce un número: ");
+    String input = scanner.nextLine();
+
+    int numero = Integer.parseInt(input);  // Puede lanzar NumberFormatException
+    int resultado = 100 / numero;          // Puede lanzar ArithmeticException
+
+    System.out.println("Resultado: " + resultado);
+
+} catch (NumberFormatException e) {
+    System.out.println("Error: Debes introducir un número válido");
+} catch (ArithmeticException e) {
+    System.out.println("Error: No se puede dividir por cero");
+} catch (Exception e) {
+    // Catch genérico (debe ir al final)
+    System.out.println("Error inesperado: " + e.getMessage());
+}
+
+// Multi-catch (Java 7+): Capturar varias excepciones a la vez
+try {
+    // ... código
+} catch (NumberFormatException | ArithmeticException e) {
+    System.out.println("Error numérico: " + e.getMessage());
+}</code>
+                </div>
+
+                <h4>Bloque Finally</h4>
+                <div class="code-block">
+                    <code>// finally: Se ejecuta SIEMPRE, haya o no excepción
+FileReader reader = null;
+
+try {
+    reader = new FileReader("datos.txt");
+    // Leer archivo...
+} catch (FileNotFoundException e) {
+    System.out.println("Archivo no encontrado");
+} finally {
+    // Cerrar recursos (se ejecuta SIEMPRE)
+    if (reader != null) {
+        try {
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("Error al cerrar archivo");
+        }
+    }
+}
+
+// Ejemplo: Conexión a base de datos
+Connection conexion = null;
+try {
+    conexion = DriverManager.getConnection("jdbc:mysql://localhost/db");
+    // Ejecutar consultas...
+} catch (SQLException e) {
+    System.out.println("Error de conexión");
+} finally {
+    if (conexion != null) {
+        try {
+            conexion.close();
+        } catch (SQLException e) {
+            // Manejar error al cerrar
+        }
+    }
+}</code>
+                </div>
+
+                <h3>Tipos de Excepciones</h3>
+                <p>Java tiene una jerarquía de excepciones:</p>
+
+                <div class="code-block">
+                    <code>// CHECKED EXCEPTIONS (verificadas en tiempo de compilación)
+// Debes manejarlas con try-catch o declararlas con throws
+
+// IOException
+try {
+    FileReader fr = new FileReader("archivo.txt");
+} catch (IOException e) {
+    System.out.println("Error de E/S");
+}
+
+// SQLException
+try {
+    Connection conn = DriverManager.getConnection("jdbc:...");
+} catch (SQLException e) {
+    System.out.println("Error de BD");
+}
+
+// UNCHECKED EXCEPTIONS (RuntimeException)
+// NO es obligatorio manejarlas (pero es recomendable)
+
+// NullPointerException
+String texto = null;
+System.out.println(texto.length());  // NullPointerException
+
+// ArrayIndexOutOfBoundsException
+int[] nums = {1, 2, 3};
+System.out.println(nums[10]);  // ArrayIndexOutOfBoundsException
+
+// ArithmeticException
+int division = 10 / 0;  // ArithmeticException
+
+// NumberFormatException
+int num = Integer.parseInt("abc");  // NumberFormatException
+
+// ClassCastException
+Object obj = "Hola";
+Integer num2 = (Integer) obj;  // ClassCastException</code>
+                </div>
+
+                <h3>Lanzar Excepciones (throw)</h3>
+                <div class="code-block">
+                    <code>// throw: Lanzar una excepción manualmente
+public void validarEdad(int edad) {
+    if (edad < 0) {
+        throw new IllegalArgumentException("La edad no puede ser negativa");
+    }
+    if (edad < 18) {
+        throw new IllegalArgumentException("Debe ser mayor de 18 años");
+    }
+    System.out.println("Edad válida: " + edad);
+}
+
+// Uso:
+try {
+    validarEdad(-5);
+} catch (IllegalArgumentException e) {
+    System.out.println("Error: " + e.getMessage());
+}
+
+// Ejemplo: Validar saldo bancario
+public void retirar(double cantidad) {
+    if (cantidad <= 0) {
+        throw new IllegalArgumentException("Cantidad debe ser positiva");
+    }
+    if (cantidad > saldo) {
+        throw new IllegalStateException("Saldo insuficiente");
+    }
+    saldo -= cantidad;
+}</code>
+                </div>
+
+                <h3>Declarar Excepciones (throws)</h3>
+                <div class="code-block">
+                    <code>// throws: Declara que un método PUEDE lanzar una excepción
+// El que llame al método debe manejarla
+
+public void leerArchivo(String ruta) throws IOException {
+    FileReader reader = new FileReader(ruta);
+    // ... leer archivo
+    reader.close();
+}
+
+// Quien llama DEBE manejar la excepción:
+try {
+    leerArchivo("datos.txt");
+} catch (IOException e) {
+    System.out.println("Error al leer archivo");
+}
+
+// O también declarar que lanza la excepción:
+public void procesarDatos() throws IOException {
+    leerArchivo("datos.txt");  // Propaga la excepción
+}
+
+// Múltiples excepciones
+public void metodoComplejo() throws IOException, SQLException, ParseException {
+    // Código que puede lanzar estas excepciones
+}</code>
+                </div>
+
+                <h3>Crear Excepciones Personalizadas</h3>
+                <div class="code-block">
+                    <code>// Excepción personalizada checked
+public class SaldoInsuficienteException extends Exception {
+    private double saldoActual;
+    private double cantidadSolicitada;
+
+    public SaldoInsuficienteException(double saldoActual, double cantidadSolicitada) {
+        super("Saldo insuficiente. Saldo: " + saldoActual + ", Solicitado: " + cantidadSolicitada);
+        this.saldoActual = saldoActual;
+        this.cantidadSolicitada = cantidadSolicitada;
+    }
+
+    public double getSaldoActual() {
+        return saldoActual;
+    }
+
+    public double getCantidadSolicitada() {
+        return cantidadSolicitada;
+    }
+}
+
+// Excepción personalizada unchecked
+public class EdadInvalidaException extends RuntimeException {
+    public EdadInvalidaException(String mensaje) {
+        super(mensaje);
+    }
+
+    public EdadInvalidaException(String mensaje, Throwable causa) {
+        super(mensaje, causa);
+    }
+}
+
+// Uso de excepción personalizada
+public class CuentaBancaria {
+    private double saldo;
+
+    public void retirar(double cantidad) throws SaldoInsuficienteException {
+        if (cantidad > saldo) {
+            throw new SaldoInsuficienteException(saldo, cantidad);
+        }
+        saldo -= cantidad;
+    }
+}
+
+// Uso:
+CuentaBancaria cuenta = new CuentaBancaria();
+try {
+    cuenta.retirar(500);
+} catch (SaldoInsuficienteException e) {
+    System.out.println(e.getMessage());
+    System.out.println("Te faltan: " + (e.getCantidadSolicitada() - e.getSaldoActual()) + "€");
+}</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes con Excepciones:</strong></p>
+                    <ul>
+                        <li><strong>Catch vacío:</strong> <code>catch (Exception e) {}</code> → Nunca ignores excepciones</li>
+                        <li><strong>Catch demasiado genérico:</strong> <code>catch (Exception e)</code> al principio → Pon excepciones específicas primero</li>
+                        <li><strong>No cerrar recursos:</strong> Usa try-with-resources para archivos, conexiones, etc.</li>
+                        <li><strong>Lanzar Exception genérico:</strong> <code>throw new Exception()</code> → Usa excepciones específicas</li>
+                        <li><strong>Hacer printStackTrace() en producción:</strong> Usa logging en su lugar</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro - Excepciones:</strong></p>
+                    <ul>
+                        <li>Usa try-with-resources para cerrar recursos automáticamente (Java 7+)</li>
+                        <li>Lanza excepciones en vez de retornar códigos de error (-1, null, etc.)</li>
+                        <li>Crea excepciones personalizadas para errores de dominio específico</li>
+                        <li>No uses excepciones para control de flujo normal (son costosas)</li>
+                        <li>Documenta con @throws en JavaDoc qué excepciones lanza tu método</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Colecciones -->
+            <section class="content-section">
+                <h2>Colecciones (Collections Framework)</h2>
+                <p>Las colecciones son estructuras de datos dinámicas que pueden crecer y reducir su tamaño. Son más flexibles que los arrays.</p>
+
+                <h3>ArrayList</h3>
+                <p><strong>ArrayList</strong> es una lista dinámica (como un array de tamaño variable). Es la colección más usada.</p>
+
+                <div class="code-block">
+                    <code>import java.util.ArrayList;
+
+// Crear ArrayList (genéricos: especifica el tipo entre &lt; &gt;)
+ArrayList&lt;String&gt; nombres = new ArrayList&lt;&gt;();
+ArrayList&lt;Integer&gt; numeros = new ArrayList&lt;&gt;();  // Usa Integer, no int
+
+// AÑADIR elementos
+nombres.add("Ana");
+nombres.add("Juan");
+nombres.add("María");
+nombres.add("Pedro");
+
+// Añadir en posición específica
+nombres.add(1, "Carlos");  // Añade en índice 1
+
+// ACCEDER a elementos
+String primero = nombres.get(0);    // "Ana"
+String segundo = nombres.get(1);    // "Carlos"
+
+// MODIFICAR elementos
+nombres.set(0, "Andrea");  // Cambia "Ana" por "Andrea"
+
+// ELIMINAR elementos
+nombres.remove(0);              // Elimina por índice
+nombres.remove("Juan");         // Elimina por valor
+// nombres.clear();             // Elimina todos
+
+// TAMAÑO
+int cantidad = nombres.size();  // Número de elementos
+
+// VERIFICAR si contiene
+boolean existe = nombres.contains("María");  // true
+
+// VERIFICAR si está vacío
+boolean vacio = nombres.isEmpty();  // false
+
+// RECORRER
+for (int i = 0; i < nombres.size(); i++) {
+    System.out.println(nombres.get(i));
+}
+
+// For-each (más común)
+for (String nombre : nombres) {
+    System.out.println(nombre);
+}</code>
+                </div>
+
+                <h4>ArrayList con Objetos</h4>
+                <div class="code-block">
+                    <code>// ArrayList de objetos personalizados
+class Estudiante {
+    String nombre;
+    double nota;
+
+    public Estudiante(String nombre, double nota) {
+        this.nombre = nombre;
+        this.nota = nota;
+    }
+}
+
+ArrayList&lt;Estudiante&gt; clase = new ArrayList&lt;&gt;();
+
+// Agregar estudiantes
+clase.add(new Estudiante("Ana", 8.5));
+clase.add(new Estudiante("Juan", 7.0));
+clase.add(new Estudiante("María", 9.2));
+
+// Recorrer y mostrar
+for (Estudiante est : clase) {
+    System.out.println(est.nombre + ": " + est.nota);
+}
+
+// Buscar estudiante con nota > 8
+for (Estudiante est : clase) {
+    if (est.nota > 8.0) {
+        System.out.println(est.nombre + " tiene nota excelente");
+    }
+}</code>
+                </div>
+
+                <h3>HashMap</h3>
+                <p><strong>HashMap</strong> almacena pares clave-valor. Ideal para búsquedas rápidas por clave.</p>
+
+                <div class="code-block">
+                    <code>import java.util.HashMap;
+
+// Crear HashMap&lt;TipoClave, TipoValor&gt;
+HashMap&lt;String, Integer&gt; edades = new HashMap&lt;&gt;();
+
+// AÑADIR pares clave-valor
+edades.put("Ana", 20);
+edades.put("Juan", 22);
+edades.put("María", 21);
+edades.put("Pedro", 19);
+
+// Si la clave ya existe, reemplaza el valor
+edades.put("Ana", 21);  // Ahora Ana tiene 21
+
+// OBTENER valor por clave
+int edadAna = edades.get("Ana");  // 21
+
+// OBTENER con valor por defecto si no existe
+int edadCarlos = edades.getOrDefault("Carlos", 0);  // 0 (no existe)
+
+// VERIFICAR si existe clave
+if (edades.containsKey("Juan")) {
+    System.out.println("Juan está en el mapa");
+}
+
+// VERIFICAR si existe valor
+if (edades.containsValue(20)) {
+    System.out.println("Alguien tiene 20 años");
+}
+
+// ELIMINAR
+edades.remove("Pedro");  // Elimina la entrada de Pedro
+
+// TAMAÑO
+int cantidad = edades.size();  // Número de pares clave-valor
+
+// RECORRER - Forma 1: Solo claves
+for (String nombre : edades.keySet()) {
+    System.out.println(nombre);
+}
+
+// RECORRER - Forma 2: Solo valores
+for (Integer edad : edades.values()) {
+    System.out.println(edad);
+}
+
+// RECORRER - Forma 3: Claves y valores (MÁS COMÚN)
+for (String nombre : edades.keySet()) {
+    int edad = edades.get(nombre);
+    System.out.println(nombre + " tiene " + edad + " años");
+}
+
+// RECORRER - Forma 4: Con Entry (más eficiente)
+for (Map.Entry&lt;String, Integer&gt; entrada : edades.entrySet()) {
+    System.out.println(entrada.getKey() + ": " + entrada.getValue());
+}</code>
+                </div>
+
+                <h4>HashMap con Objetos</h4>
+                <div class="code-block">
+                    <code>// HashMap para gestionar productos
+class Producto {
+    String nombre;
+    double precio;
+    int stock;
+
+    public Producto(String nombre, double precio, int stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+    }
+}
+
+// Clave: código del producto, Valor: objeto Producto
+HashMap&lt;String, Producto&gt; inventario = new HashMap&lt;&gt;();
+
+// Agregar productos
+inventario.put("P001", new Producto("Laptop", 899.99, 10));
+inventario.put("P002", new Producto("Mouse", 19.99, 50));
+inventario.put("P003", new Producto("Teclado", 49.99, 30));
+
+// Buscar producto por código
+Producto laptop = inventario.get("P001");
+System.out.println(laptop.nombre + ": " + laptop.precio + "€");
+
+// Actualizar stock
+Producto mouse = inventario.get("P002");
+mouse.stock -= 5;  // Vender 5 unidades
+
+// Mostrar todos los productos
+for (Map.Entry&lt;String, Producto&gt; entry : inventario.entrySet()) {
+    Producto p = entry.getValue();
+    System.out.println(entry.getKey() + " - " + p.nombre + ": " + p.stock + " unidades");
+}</code>
+                </div>
+
+                <h3>Otras Colecciones Útiles</h3>
+
+                <h4>HashSet (Conjunto sin duplicados)</h4>
+                <div class="code-block">
+                    <code>import java.util.HashSet;
+
+HashSet&lt;String&gt; frutas = new HashSet&lt;&gt;();
+
+frutas.add("Manzana");
+frutas.add("Pera");
+frutas.add("Plátano");
+frutas.add("Manzana");  // NO se añade (duplicado)
+
+System.out.println(frutas.size());  // 3 (no hay duplicados)
+
+// Verificar si contiene
+if (frutas.contains("Pera")) {
+    System.out.println("Tenemos peras");
+}
+
+// Recorrer
+for (String fruta : frutas) {
+    System.out.println(fruta);
+}</code>
+                </div>
+
+                <h4>LinkedList (Lista enlazada)</h4>
+                <div class="code-block">
+                    <code>import java.util.LinkedList;
+
+LinkedList&lt;String&gt; cola = new LinkedList&lt;&gt;();
+
+// Añadir al final
+cola.add("Primero");
+cola.add("Segundo");
+cola.add("Tercero");
+
+// Añadir al principio
+cola.addFirst("Nuevo Primero");
+
+// Añadir al final
+cola.addLast("Último");
+
+// Obtener y eliminar
+String primero = cola.removeFirst();  // Obtiene y elimina el primero
+String ultimo = cola.removeLast();    // Obtiene y elimina el último
+
+// Ver sin eliminar
+String siguiente = cola.peek();  // Ver el primero sin eliminar</code>
+                </div>
+
+                <div class="warning-box">
+                    <p><strong>Errores Comunes con Colecciones:</strong></p>
+                    <ul>
+                        <li><strong>Modificar mientras recorres:</strong> <code>for (String s : lista) { lista.remove(s); }</code> → ConcurrentModificationException</li>
+                        <li><strong>Usar tipos primitivos:</strong> <code>ArrayList&lt;int&gt;</code> → ERROR, usa <code>ArrayList&lt;Integer&gt;</code></li>
+                        <li><strong>No verificar null:</strong> <code>map.get("clave").toString()</code> → Si no existe, NullPointerException</li>
+                        <li><strong>Comparar con ==:</strong> Usa <code>.equals()</code> para comparar contenido</li>
+                        <li><strong>No inicializar:</strong> <code>ArrayList&lt;String&gt; lista; lista.add("x");</code> → NullPointerException</li>
+                    </ul>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Trucos Pro - Colecciones:</strong></p>
+                    <ul>
+                        <li><strong>ArrayList:</strong> Acceso rápido por índice, pero insertar/eliminar en medio es lento</li>
+                        <li><strong>LinkedList:</strong> Insertar/eliminar rápido, pero acceso por índice lento</li>
+                        <li><strong>HashMap:</strong> Búsquedas muy rápidas O(1), pero no mantiene orden</li>
+                        <li><strong>HashSet:</strong> Ideal para eliminar duplicados rápidamente</li>
+                        <li>Usa <code>Collections.sort(lista)</code> para ordenar ArrayList</li>
+                        <li>Usa <code>Collections.reverse(lista)</code> para invertir ArrayList</li>
+                    </ul>
+                </div>
+
+                <h3>Ejercicios Resueltos - Colecciones</h3>
+
+                <h4>Ejercicio 1: Agenda de Contactos</h4>
+                <div class="code-block">
+                    <code>HashMap&lt;String, String&gt; agenda = new HashMap&lt;&gt;();
+
+// Añadir contactos
+agenda.put("Ana García", "666123456");
+agenda.put("Juan López", "677234567");
+agenda.put("María Pérez", "688345678");
+
+// Buscar teléfono
+Scanner scanner = new Scanner(System.in);
+System.out.print("Introduce nombre: ");
+String nombre = scanner.nextLine();
+
+if (agenda.containsKey(nombre)) {
+    System.out.println("Teléfono: " + agenda.get(nombre));
+} else {
+    System.out.println("Contacto no encontrado");
+}
+
+// Mostrar todos los contactos
+System.out.println("\n=== AGENDA ===");
+for (Map.Entry&lt;String, String&gt; contacto : agenda.entrySet()) {
+    System.out.println(contacto.getKey() + ": " + contacto.getValue());
+}</code>
+                </div>
+
+                <h4>Ejercicio 2: Gestión de Tareas</h4>
+                <div class="code-block">
+                    <code>ArrayList&lt;String&gt; tareas = new ArrayList&lt;&gt;();
+Scanner scanner = new Scanner(System.in);
+
+while (true) {
+    System.out.println("\n=== GESTOR DE TAREAS ===");
+    System.out.println("1. Añadir tarea");
+    System.out.println("2. Ver tareas");
+    System.out.println("3. Completar tarea");
+    System.out.println("4. Salir");
+    System.out.print("Opción: ");
+    int opcion = scanner.nextInt();
+    scanner.nextLine();  // Limpiar buffer
+
+    switch (opcion) {
+        case 1:
+            System.out.print("Nueva tarea: ");
+            String tarea = scanner.nextLine();
+            tareas.add(tarea);
+            System.out.println("Tarea añadida!");
+            break;
+
+        case 2:
+            if (tareas.isEmpty()) {
+                System.out.println("No hay tareas");
+            } else {
+                System.out.println("\n=== MIS TAREAS ===");
+                for (int i = 0; i < tareas.size(); i++) {
+                    System.out.println((i+1) + ". " + tareas.get(i));
+                }
+            }
+            break;
+
+        case 3:
+            if (tareas.isEmpty()) {
+                System.out.println("No hay tareas");
+            } else {
+                System.out.print("Número de tarea completada: ");
+                int num = scanner.nextInt();
+                if (num > 0 && num <= tareas.size()) {
+                    String completada = tareas.remove(num - 1);
+                    System.out.println("¡Completada: " + completada + "!");
+                } else {
+                    System.out.println("Número inválido");
+                }
+            }
+            break;
+
+        case 4:
+            System.out.println("¡Hasta luego!");
+            return;
+
+        default:
+            System.out.println("Opción inválida");
+    }
+}</code>
+                </div>
+            </section>
+
+            <!-- Consejos y Recursos -->
+            <section class="content-section">
+                <h2>Consejos para Aprender Java</h2>
+
+                <div class="note-box">
+                    <p><strong>Práctica constante:</strong> La programación se aprende programando. Practica con ejercicios diarios y proyectos pequeños.</p>
+                </div>
+
+                <ul>
+                    <li>Empieza con proyectos simples (calculadora, gestor de tareas)</li>
+                    <li>Lee código de otros desarrolladores en GitHub</li>
+                    <li>Participa en desafíos de programación (HackerRank, LeetCode)</li>
+                    <li>Documenta tu código desde el principio</li>
+                    <li>Aprende a usar un IDE (IntelliJ IDEA, Eclipse, NetBeans)</li>
+                    <li>Estudia las convenciones de nomenclatura de Java</li>
+                </ul>
+
+                <div class="warning-box">
+                    <p><strong>Errores comunes:</strong> No gestionar excepciones, no cerrar recursos (archivos, conexiones), usar == para comparar Strings (usa .equals()).</p>
+                </div>
+
+                <h3>Recursos Adicionales</h3>
+                <ul>
+                    <li>Documentación oficial de Oracle Java</li>
+                    <li>Java Code Conventions</li>
+                    <li>Effective Java (libro de Joshua Bloch)</li>
+                    <li>Cursos en Udemy, Coursera, Platzi</li>
+                    <li>Canal de YouTube: Programación ATS, MoureDev</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p class="footer-description">Apuntes completos y gratuitos para estudiantes de DAM.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">1º DAM</h4>
+                    <ul class="footer-links">
+                        <li><a href="programacion.html">Programación</a></li>
+                        <li><a href="bases-datos.html">Bases de Datos</a></li>
+                        <li><a href="lenguajes-marcas.html">Lenguajes de Marcas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="../../index.html">Inicio</a></li>
+                        <li><a href="../buscar.html">Buscador</a></li>
+                        <li><a href="../ingles/index.html">Inglés Técnico</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Contenido educativo gratuito.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>

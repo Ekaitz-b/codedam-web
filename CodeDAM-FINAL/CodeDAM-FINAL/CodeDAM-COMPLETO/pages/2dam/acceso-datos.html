@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acceso a Datos 2º DAM - JDBC, Hibernate, MongoDB, XML, ficheros y persistencia de datos.">
+    <title>Acceso a Datos - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../1dam/programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="./desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Acceso a Datos</span></div>
+            <h1 class="page-title">Acceso a Datos</h1>
+            <p class="page-subtitle">JDBC, Hibernate, MongoDB, XML y Persistencia</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul>
+                    <li><a href="#introduccion">Introducción</a></li>
+                    <li><a href="#jdbc">JDBC - Acceso a BD Relacionales</a></li>
+                    <li><a href="#hibernate">Hibernate y JPA</a></li>
+                    <li><a href="#ficheros">Manejo de Ficheros</a></li>
+                    <li><a href="#xml">Procesamiento XML</a></li>
+                    <li><a href="#mongodb">MongoDB - NoSQL</a></li>
+                    <li><a href="#ejercicios">Ejercicios Resueltos</a></li>
+                </ul>
+            </nav>
+
+            <!-- INTRODUCCIÓN -->
+            <section id="introduccion" class="content-section">
+                <h2>Introducción al Acceso a Datos</h2>
+
+                <p>El módulo de <strong>Acceso a Datos</strong> enseña las técnicas y tecnologías para que las aplicaciones Java puedan almacenar, recuperar y manipular información de forma persistente. Abarca desde el acceso directo a bases de datos relacionales hasta el uso de frameworks ORM y bases de datos NoSQL.</p>
+
+                <div class="info-box">
+                    <h4>Tecnologías que aprenderás</h4>
+                    <ul>
+                        <li><strong>JDBC</strong>: API estándar para conexión directa a bases de datos relacionales</li>
+                        <li><strong>Hibernate/JPA</strong>: Frameworks ORM para mapeo objeto-relacional</li>
+                        <li><strong>Ficheros</strong>: Lectura/escritura de archivos de texto y binarios</li>
+                        <li><strong>XML</strong>: Procesamiento con DOM, SAX y JAXB</li>
+                        <li><strong>MongoDB</strong>: Base de datos NoSQL orientada a documentos</li>
+                    </ul>
+                </div>
+
+                <h3>Conceptos Fundamentales</h3>
+                <ul>
+                    <li><strong>Persistencia</strong>: Capacidad de almacenar datos más allá de la ejecución del programa</li>
+                    <li><strong>CRUD</strong>: Operaciones básicas - Create, Read, Update, Delete</li>
+                    <li><strong>ORM</strong>: Mapeo automático entre objetos Java y tablas de base de datos</li>
+                    <li><strong>Transacciones</strong>: Operaciones atómicas que garantizan la integridad de los datos</li>
+                    <li><strong>Connection Pool</strong>: Reutilización de conexiones para mejorar rendimiento</li>
+                </ul>
+            </section>
+
+            <!-- JDBC -->
+            <section id="jdbc" class="content-section">
+                <h2>JDBC - Java Database Connectivity</h2>
+
+                <p>JDBC es la API estándar de Java para conectarse y ejecutar operaciones en bases de datos relacionales. Proporciona una interfaz uniforme independientemente del motor de base de datos utilizado.</p>
+
+                <h3>Arquitectura JDBC</h3>
+                <div class="code-block"><code>// Componentes principales de JDBC:
+// 1. DriverManager - Gestiona los drivers de BD
+// 2. Connection - Representa una conexión a la BD
+// 3. Statement/PreparedStatement - Ejecuta consultas SQL
+// 4. ResultSet - Contiene los resultados de una consulta
+// 5. SQLException - Manejo de errores
+
+// Dependencia Maven para MySQL
+&lt;dependency&gt;
+    &lt;groupId&gt;mysql&lt;/groupId&gt;
+    &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+    &lt;version&gt;8.0.33&lt;/version&gt;
+&lt;/dependency&gt;</code></div>
+
+                <h3>1. Conexión Básica a Base de Datos</h3>
+                <div class="code-block"><code>import java.sql.*;
+
+public class ConexionJDBC {
+    // Constantes de conexión
+    private static final String URL = "jdbc:mysql://localhost:3306/tienda";
+    private static final String USER = "root";
+    private static final String PASSWORD = "password";
+
+    // Método para obtener conexión
+    public static Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, USER, PASSWORD);
+    }
+
+    // Probar conexión
+    public static void main(String[] args) {
+        try (Connection conn = getConnection()) {
+            if (conn != null) {
+                System.out.println("Conexión exitosa a la base de datos");
+                DatabaseMetaData meta = conn.getMetaData();
+                System.out.println("Driver: " + meta.getDriverName());
+                System.out.println("Versión BD: " + meta.getDatabaseProductVersion());
+            }
+        } catch (SQLException e) {
+            System.err.println("Error de conexión: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}
+
+// Clase singleton para gestión de conexiones
+public class DatabaseManager {
+    private static DatabaseManager instance;
+    private Connection connection;
+
+    private DatabaseManager() {
+        try {
+            connection = DriverManager.getConnection(
+                "jdbc:mysql://localhost:3306/tienda", "root", "password"
+            );
+        } catch (SQLException e) {
+            throw new RuntimeException("Error al conectar", e);
+        }
+    }
+
+    public static synchronized DatabaseManager getInstance() {
+        if (instance == null) {
+            instance = new DatabaseManager();
+        }
+        return instance;
+    }
+
+    public Connection getConnection() {
+        return connection;
+    }
+}</code></div>
+
+                <h3>2. Operaciones CRUD Completas</h3>
+                <div class="code-block"><code>import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ClienteDAO {
+
+    // CREATE - Insertar cliente
+    public int insertar(Cliente cliente) throws SQLException {
+        String sql = "INSERT INTO clientes (nombre, email, telefono, fecha_registro) VALUES (?, ?, ?, ?)";
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+
+            stmt.setString(1, cliente.getNombre());
+            stmt.setString(2, cliente.getEmail());
+            stmt.setString(3, cliente.getTelefono());
+            stmt.setDate(4, Date.valueOf(cliente.getFechaRegistro()));
+
+            int filasAfectadas = stmt.executeUpdate();
+
+            // Obtener ID generado
+            if (filasAfectadas > 0) {
+                try (ResultSet rs = stmt.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        cliente.setId(rs.getInt(1));
+                        return rs.getInt(1);
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+
+    // READ - Obtener por ID
+    public Cliente obtenerPorId(int id) throws SQLException {
+        String sql = "SELECT * FROM clientes WHERE id = ?";
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return mapearCliente(rs);
+                }
+            }
+        }
+        return null;
+    }
+
+    // READ - Obtener todos
+    public List&lt;Cliente&gt; obtenerTodos() throws SQLException {
+        List&lt;Cliente&gt; clientes = new ArrayList&lt;&gt;();
+        String sql = "SELECT * FROM clientes ORDER BY nombre";
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                clientes.add(mapearCliente(rs));
+            }
+        }
+        return clientes;
+    }
+
+    // UPDATE - Actualizar cliente
+    public boolean actualizar(Cliente cliente) throws SQLException {
+        String sql = "UPDATE clientes SET nombre = ?, email = ?, telefono = ? WHERE id = ?";
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, cliente.getNombre());
+            stmt.setString(2, cliente.getEmail());
+            stmt.setString(3, cliente.getTelefono());
+            stmt.setInt(4, cliente.getId());
+
+            return stmt.executeUpdate() > 0;
+        }
+    }
+
+    // DELETE - Eliminar cliente
+    public boolean eliminar(int id) throws SQLException {
+        String sql = "DELETE FROM clientes WHERE id = ?";
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, id);
+            return stmt.executeUpdate() > 0;
+        }
+    }
+
+    // Método auxiliar para mapear ResultSet a objeto
+    private Cliente mapearCliente(ResultSet rs) throws SQLException {
+        Cliente cliente = new Cliente();
+        cliente.setId(rs.getInt("id"));
+        cliente.setNombre(rs.getString("nombre"));
+        cliente.setEmail(rs.getString("email"));
+        cliente.setTelefono(rs.getString("telefono"));
+        cliente.setFechaRegistro(rs.getDate("fecha_registro").toLocalDate());
+        return cliente;
+    }
+}</code></div>
+
+                <h3>3. Transacciones en JDBC</h3>
+                <div class="code-block"><code>public class TransaccionExample {
+
+    // Transferencia bancaria con transacción
+    public boolean transferir(int cuentaOrigen, int cuentaDestino, double cantidad) {
+        Connection conn = null;
+
+        try {
+            conn = ConexionJDBC.getConnection();
+            conn.setAutoCommit(false); // Iniciar transacción
+
+            // Retirar de cuenta origen
+            String sqlRetirar = "UPDATE cuentas SET saldo = saldo - ? WHERE id = ? AND saldo >= ?";
+            try (PreparedStatement stmt = conn.prepareStatement(sqlRetirar)) {
+                stmt.setDouble(1, cantidad);
+                stmt.setInt(2, cuentaOrigen);
+                stmt.setDouble(3, cantidad);
+
+                if (stmt.executeUpdate() == 0) {
+                    conn.rollback();
+                    return false; // Saldo insuficiente
+                }
+            }
+
+            // Depositar en cuenta destino
+            String sqlDepositar = "UPDATE cuentas SET saldo = saldo + ? WHERE id = ?";
+            try (PreparedStatement stmt = conn.prepareStatement(sqlDepositar)) {
+                stmt.setDouble(1, cantidad);
+                stmt.setInt(2, cuentaDestino);
+                stmt.executeUpdate();
+            }
+
+            conn.commit(); // Confirmar transacción
+            return true;
+
+        } catch (SQLException e) {
+            try {
+                if (conn != null) conn.rollback(); // Revertir cambios
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            e.printStackTrace();
+            return false;
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.setAutoCommit(true);
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}</code></div>
+
+                <h3>4. Consultas Avanzadas y Búsquedas</h3>
+                <div class="code-block"><code>public class ConsultasAvanzadas {
+
+    // Búsqueda con filtros dinámicos
+    public List&lt;Producto&gt; buscarProductos(String nombre, Double precioMin,
+                                          Double precioMax, String categoria) throws SQLException {
+        List&lt;Producto&gt; productos = new ArrayList&lt;&gt;();
+        StringBuilder sql = new StringBuilder("SELECT * FROM productos WHERE 1=1");
+        List&lt;Object&gt; parametros = new ArrayList&lt;&gt;();
+
+        if (nombre != null && !nombre.isEmpty()) {
+            sql.append(" AND nombre LIKE ?");
+            parametros.add("%" + nombre + "%");
+        }
+        if (precioMin != null) {
+            sql.append(" AND precio >= ?");
+            parametros.add(precioMin);
+        }
+        if (precioMax != null) {
+            sql.append(" AND precio <= ?");
+            parametros.add(precioMax);
+        }
+        if (categoria != null) {
+            sql.append(" AND categoria = ?");
+            parametros.add(categoria);
+        }
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql.toString())) {
+
+            for (int i = 0; i < parametros.size(); i++) {
+                stmt.setObject(i + 1, parametros.get(i));
+            }
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    productos.add(mapearProducto(rs));
+                }
+            }
+        }
+        return productos;
+    }
+
+    // Consultas con JOIN
+    public List&lt;PedidoDetalle&gt; obtenerPedidosConCliente() throws SQLException {
+        String sql = """
+            SELECT p.id, p.fecha, p.total, c.nombre, c.email
+            FROM pedidos p
+            INNER JOIN clientes c ON p.cliente_id = c.id
+            ORDER BY p.fecha DESC
+            """;
+
+        List&lt;PedidoDetalle&gt; pedidos = new ArrayList&lt;&gt;();
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                PedidoDetalle pd = new PedidoDetalle();
+                pd.setId(rs.getInt("id"));
+                pd.setFecha(rs.getDate("fecha").toLocalDate());
+                pd.setTotal(rs.getDouble("total"));
+                pd.setNombreCliente(rs.getString("nombre"));
+                pd.setEmailCliente(rs.getString("email"));
+                pedidos.add(pd);
+            }
+        }
+        return pedidos;
+    }
+
+    // Paginación de resultados
+    public List&lt;Producto&gt; obtenerProductosPaginados(int pagina, int tamano) throws SQLException {
+        String sql = "SELECT * FROM productos ORDER BY id LIMIT ? OFFSET ?";
+        List&lt;Producto&gt; productos = new ArrayList&lt;&gt;();
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setInt(1, tamano);
+            stmt.setInt(2, (pagina - 1) * tamano);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    productos.add(mapearProducto(rs));
+                }
+            }
+        }
+        return productos;
+    }
+}</code></div>
+
+                <h3>5. Batch Operations y Rendimiento</h3>
+                <div class="code-block"><code>public class BatchOperations {
+
+    // Inserción masiva con batch
+    public void insertarProductosBatch(List&lt;Producto&gt; productos) throws SQLException {
+        String sql = "INSERT INTO productos (nombre, precio, stock) VALUES (?, ?, ?)";
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            conn.setAutoCommit(false);
+            int contador = 0;
+
+            for (Producto p : productos) {
+                stmt.setString(1, p.getNombre());
+                stmt.setDouble(2, p.getPrecio());
+                stmt.setInt(3, p.getStock());
+                stmt.addBatch();
+
+                // Ejecutar cada 1000 registros
+                if (++contador % 1000 == 0) {
+                    stmt.executeBatch();
+                    stmt.clearBatch();
+                }
+            }
+
+            stmt.executeBatch(); // Ejecutar restantes
+            conn.commit();
+
+            System.out.println("Insertados " + productos.size() + " productos");
+        }
+    }
+
+    // Llamada a procedimiento almacenado
+    public double calcularTotalVentas(int mes, int anio) throws SQLException {
+        String sql = "{call sp_calcular_ventas(?, ?, ?)}";
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             CallableStatement stmt = conn.prepareCall(sql)) {
+
+            stmt.setInt(1, mes);
+            stmt.setInt(2, anio);
+            stmt.registerOutParameter(3, Types.DOUBLE);
+
+            stmt.execute();
+
+            return stmt.getDouble(3);
+        }
+    }
+}</code></div>
+            </section>
+
+            <!-- HIBERNATE/JPA -->
+            <section id="hibernate" class="content-section">
+                <h2>Hibernate y JPA - ORM</h2>
+
+                <p>Hibernate es un framework ORM que mapea automáticamente objetos Java a tablas de base de datos. JPA (Java Persistence API) es la especificación estándar que Hibernate implementa.</p>
+
+                <h3>Configuración Básica</h3>
+                <div class="code-block"><code>&lt;!-- pom.xml - Dependencias Maven --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+    &lt;artifactId&gt;hibernate-core&lt;/artifactId&gt;
+    &lt;version&gt;5.6.15.Final&lt;/version&gt;
+&lt;/dependency&gt;
+
+&lt;!-- persistence.xml en src/main/resources/META-INF/ --&gt;
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.2"&gt;
+    &lt;persistence-unit name="tiendaPU"&gt;
+        &lt;properties&gt;
+            &lt;property name="javax.persistence.jdbc.url"
+                      value="jdbc:mysql://localhost:3306/tienda"/&gt;
+            &lt;property name="javax.persistence.jdbc.user" value="root"/&gt;
+            &lt;property name="javax.persistence.jdbc.password" value="password"/&gt;
+            &lt;property name="javax.persistence.jdbc.driver"
+                      value="com.mysql.cj.jdbc.Driver"/&gt;
+            &lt;property name="hibernate.dialect"
+                      value="org.hibernate.dialect.MySQL8Dialect"/&gt;
+            &lt;property name="hibernate.hbm2ddl.auto" value="update"/&gt;
+            &lt;property name="hibernate.show_sql" value="true"/&gt;
+        &lt;/properties&gt;
+    &lt;/persistence-unit&gt;
+&lt;/persistence&gt;</code></div>
+
+                <h3>1. Entidades JPA con Anotaciones</h3>
+                <div class="code-block"><code>import javax.persistence.*;
+import java.time.LocalDate;
+import java.util.List;
+
+@Entity
+@Table(name = "productos")
+public class Producto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nombre", nullable = false, length = 100)
+    private String nombre;
+
+    @Column(name = "precio", precision = 10, scale = 2)
+    private Double precio;
+
+    @Column(name = "stock")
+    private Integer stock;
+
+    @Column(name = "fecha_creacion")
+    private LocalDate fechaCreacion;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
+    // Constructor vacío requerido por JPA
+    public Producto() {}
+
+    public Producto(String nombre, Double precio, Integer stock) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+        this.fechaCreacion = LocalDate.now();
+    }
+
+    // Getters y Setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public Double getPrecio() { return precio; }
+    public void setPrecio(Double precio) { this.precio = precio; }
+    public Integer getStock() { return stock; }
+    public void setStock(Integer stock) { this.stock = stock; }
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
+}
+
+@Entity
+@Table(name = "categorias")
+public class Categoria {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String nombre;
+
+    @OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
+    private List&lt;Producto&gt; productos;
+
+    // Constructores, getters y setters...
+}</code></div>
+
+                <h3>2. CRUD con EntityManager</h3>
+                <div class="code-block"><code>import javax.persistence.*;
+import java.util.List;
+
+public class ProductoRepository {
+    private EntityManagerFactory emf;
+
+    public ProductoRepository() {
+        emf = Persistence.createEntityManagerFactory("tiendaPU");
+    }
+
+    // CREATE
+    public Producto guardar(Producto producto) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            em.persist(producto);
+            em.getTransaction().commit();
+            return producto;
+        } finally {
+            em.close();
+        }
+    }
+
+    // READ por ID
+    public Producto buscarPorId(Long id) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.find(Producto.class, id);
+        } finally {
+            em.close();
+        }
+    }
+
+    // READ todos
+    public List&lt;Producto&gt; buscarTodos() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery("SELECT p FROM Producto p", Producto.class)
+                     .getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    // UPDATE
+    public Producto actualizar(Producto producto) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            Producto updated = em.merge(producto);
+            em.getTransaction().commit();
+            return updated;
+        } finally {
+            em.close();
+        }
+    }
+
+    // DELETE
+    public void eliminar(Long id) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+            Producto p = em.find(Producto.class, id);
+            if (p != null) {
+                em.remove(p);
+            }
+            em.getTransaction().commit();
+        } finally {
+            em.close();
+        }
+    }
+
+    public void cerrar() {
+        emf.close();
+    }
+}</code></div>
+
+                <h3>3. Consultas JPQL y Criteria API</h3>
+                <div class="code-block"><code>public class ConsultasJPA {
+    private EntityManagerFactory emf;
+
+    // Consultas JPQL
+    public List&lt;Producto&gt; buscarPorNombre(String nombre) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery(
+                "SELECT p FROM Producto p WHERE p.nombre LIKE :nombre",
+                Producto.class)
+                .setParameter("nombre", "%" + nombre + "%")
+                .getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    public List&lt;Producto&gt; buscarPorRangoPrecio(double min, double max) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createQuery(
+                "SELECT p FROM Producto p WHERE p.precio BETWEEN :min AND :max ORDER BY p.precio",
+                Producto.class)
+                .setParameter("min", min)
+                .setParameter("max", max)
+                .getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    // Named Query (definida en la entidad con @NamedQuery)
+    public List&lt;Producto&gt; buscarConStock() {
+        EntityManager em = emf.createEntityManager();
+        try {
+            return em.createNamedQuery("Producto.conStock", Producto.class)
+                     .getResultList();
+        } finally {
+            em.close();
+        }
+    }
+
+    // Criteria API - Consultas programáticas
+    public List&lt;Producto&gt; buscarCriteria(String nombre, Double precioMax) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            CriteriaBuilder cb = em.getCriteriaBuilder();
+            CriteriaQuery&lt;Producto&gt; cq = cb.createQuery(Producto.class);
+            Root&lt;Producto&gt; root = cq.from(Producto.class);
+
+            List&lt;Predicate&gt; predicates = new ArrayList&lt;&gt;();
+
+            if (nombre != null) {
+                predicates.add(cb.like(root.get("nombre"), "%" + nombre + "%"));
+            }
+            if (precioMax != null) {
+                predicates.add(cb.lessThanOrEqualTo(root.get("precio"), precioMax));
+            }
+
+            cq.where(predicates.toArray(new Predicate[0]));
+
+            return em.createQuery(cq).getResultList();
+        } finally {
+            em.close();
+        }
+    }
+}</code></div>
+
+                <h3>4. Relaciones entre Entidades</h3>
+                <div class="code-block"><code>// Relación One-to-Many / Many-to-One
+@Entity
+public class Pedido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false)
+    private Cliente cliente;
+
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List&lt;LineaPedido&gt; lineas = new ArrayList&lt;&gt;();
+
+    private LocalDateTime fecha;
+
+    // Método helper para mantener sincronización bidireccional
+    public void addLinea(LineaPedido linea) {
+        lineas.add(linea);
+        linea.setPedido(this);
+    }
+}
+
+@Entity
+public class LineaPedido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "pedido_id")
+    private Pedido pedido;
+
+    @ManyToOne
+    @JoinColumn(name = "producto_id")
+    private Producto producto;
+
+    private Integer cantidad;
+    private Double precioUnitario;
+}
+
+// Relación Many-to-Many
+@Entity
+public class Estudiante {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+
+    @ManyToMany
+    @JoinTable(
+        name = "estudiante_curso",
+        joinColumns = @JoinColumn(name = "estudiante_id"),
+        inverseJoinColumns = @JoinColumn(name = "curso_id")
+    )
+    private Set&lt;Curso&gt; cursos = new HashSet&lt;&gt;();
+}</code></div>
+
+                <h3>5. Transacciones y Buenas Prácticas</h3>
+                <div class="code-block"><code>public class ServicioPedidos {
+    private EntityManagerFactory emf;
+
+    // Transacción completa para crear pedido
+    public Pedido crearPedido(Long clienteId, List&lt;ItemCarrito&gt; items) {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+
+        try {
+            tx.begin();
+
+            Cliente cliente = em.find(Cliente.class, clienteId);
+            if (cliente == null) {
+                throw new RuntimeException("Cliente no encontrado");
+            }
+
+            Pedido pedido = new Pedido();
+            pedido.setCliente(cliente);
+            pedido.setFecha(LocalDateTime.now());
+
+            for (ItemCarrito item : items) {
+                Producto producto = em.find(Producto.class, item.getProductoId());
+
+                // Verificar stock
+                if (producto.getStock() < item.getCantidad()) {
+                    throw new RuntimeException("Stock insuficiente: " + producto.getNombre());
+                }
+
+                // Crear línea de pedido
+                LineaPedido linea = new LineaPedido();
+                linea.setProducto(producto);
+                linea.setCantidad(item.getCantidad());
+                linea.setPrecioUnitario(producto.getPrecio());
+                pedido.addLinea(linea);
+
+                // Actualizar stock
+                producto.setStock(producto.getStock() - item.getCantidad());
+            }
+
+            em.persist(pedido);
+            tx.commit();
+
+            return pedido;
+
+        } catch (Exception e) {
+            if (tx.isActive()) {
+                tx.rollback();
+            }
+            throw e;
+        } finally {
+            em.close();
+        }
+    }
+}</code></div>
+            </section>
+
+            <!-- FICHEROS -->
+            <section id="ficheros" class="content-section">
+                <h2>Manejo de Ficheros en Java</h2>
+
+                <p>Java proporciona múltiples APIs para trabajar con ficheros: java.io (clásica), java.nio (moderna) y serialización de objetos.</p>
+
+                <h3>1. Lectura y Escritura con NIO</h3>
+                <div class="code-block"><code>import java.nio.file.*;
+import java.io.IOException;
+import java.util.List;
+
+public class FicherosNIO {
+
+    // Escribir texto a fichero
+    public void escribirTexto(String ruta, String contenido) throws IOException {
+        Path path = Paths.get(ruta);
+        Files.writeString(path, contenido);
+    }
+
+    // Leer todo el contenido
+    public String leerTexto(String ruta) throws IOException {
+        return Files.readString(Paths.get(ruta));
+    }
+
+    // Leer líneas
+    public List&lt;String&gt; leerLineas(String ruta) throws IOException {
+        return Files.readAllLines(Paths.get(ruta));
+    }
+
+    // Escribir líneas
+    public void escribirLineas(String ruta, List&lt;String&gt; lineas) throws IOException {
+        Files.write(Paths.get(ruta), lineas);
+    }
+
+    // Añadir al final del fichero
+    public void appendTexto(String ruta, String contenido) throws IOException {
+        Files.writeString(Paths.get(ruta), contenido,
+                         StandardOpenOption.APPEND, StandardOpenOption.CREATE);
+    }
+
+    // Copiar fichero
+    public void copiar(String origen, String destino) throws IOException {
+        Files.copy(Paths.get(origen), Paths.get(destino),
+                   StandardCopyOption.REPLACE_EXISTING);
+    }
+
+    // Listar directorio
+    public void listarDirectorio(String ruta) throws IOException {
+        try (DirectoryStream&lt;Path&gt; stream = Files.newDirectoryStream(Paths.get(ruta))) {
+            for (Path entry : stream) {
+                System.out.println(entry.getFileName());
+            }
+        }
+    }
+}</code></div>
+
+                <h3>2. Serialización de Objetos</h3>
+                <div class="code-block"><code>import java.io.*;
+
+// Clase serializable
+public class Empleado implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private int id;
+    private String nombre;
+    private double salario;
+    private transient String password; // No se serializa
+
+    // Constructor, getters y setters...
+}
+
+public class SerializacionDemo {
+
+    // Guardar objeto en fichero
+    public void guardarObjeto(Empleado emp, String archivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream(archivo))) {
+            oos.writeObject(emp);
+            System.out.println("Objeto guardado correctamente");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Leer objeto de fichero
+    public Empleado leerObjeto(String archivo) {
+        try (ObjectInputStream ois = new ObjectInputStream(
+                new FileInputStream(archivo))) {
+            return (Empleado) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Guardar lista de objetos
+    public void guardarLista(List&lt;Empleado&gt; empleados, String archivo) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream(archivo))) {
+            oos.writeObject(empleados);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+
+                <h3>3. Ficheros con Streams</h3>
+                <div class="code-block"><code>import java.io.*;
+import java.nio.file.*;
+import java.util.stream.Stream;
+
+public class FicherosStreams {
+
+    // Procesar fichero grande línea a línea
+    public void procesarFicheroGrande(String ruta) {
+        try (Stream&lt;String&gt; lineas = Files.lines(Paths.get(ruta))) {
+            lineas.filter(linea -> !linea.isEmpty())
+                  .map(String::trim)
+                  .forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Buscar ficheros recursivamente
+    public void buscarFicheros(String directorio, String extension) throws IOException {
+        try (Stream&lt;Path&gt; walk = Files.walk(Paths.get(directorio))) {
+            walk.filter(Files::isRegularFile)
+                .filter(p -> p.toString().endsWith(extension))
+                .forEach(System.out::println);
+        }
+    }
+
+    // BufferedReader/Writer para ficheros grandes
+    public void copiarConBuffer(String origen, String destino) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(origen));
+             BufferedWriter writer = new BufferedWriter(new FileWriter(destino))) {
+
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                writer.write(linea);
+                writer.newLine();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+            </section>
+
+            <!-- XML -->
+            <section id="xml" class="content-section">
+                <h2>Procesamiento XML en Java</h2>
+
+                <p>Java ofrece varias APIs para procesar XML: DOM (árbol en memoria), SAX (eventos) y JAXB (binding a objetos).</p>
+
+                <h3>1. DOM - Document Object Model</h3>
+                <div class="code-block"><code>import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import java.io.File;
+
+public class XMLDomExample {
+
+    // Leer XML con DOM
+    public void leerXML(String archivo) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.parse(new File(archivo));
+
+            doc.getDocumentElement().normalize();
+
+            NodeList productos = doc.getElementsByTagName("producto");
+
+            for (int i = 0; i < productos.getLength(); i++) {
+                Node node = productos.item(i);
+
+                if (node.getNodeType() == Node.ELEMENT_NODE) {
+                    Element elem = (Element) node;
+
+                    String id = elem.getAttribute("id");
+                    String nombre = elem.getElementsByTagName("nombre")
+                                       .item(0).getTextContent();
+                    String precio = elem.getElementsByTagName("precio")
+                                       .item(0).getTextContent();
+
+                    System.out.println("ID: " + id + ", Nombre: " + nombre +
+                                     ", Precio: " + precio);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Crear XML con DOM
+    public void crearXML(String archivo) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            Document doc = builder.newDocument();
+
+            // Elemento raíz
+            Element root = doc.createElement("catalogo");
+            doc.appendChild(root);
+
+            // Producto
+            Element producto = doc.createElement("producto");
+            producto.setAttribute("id", "1");
+            root.appendChild(producto);
+
+            Element nombre = doc.createElement("nombre");
+            nombre.setTextContent("Laptop HP");
+            producto.appendChild(nombre);
+
+            Element precio = doc.createElement("precio");
+            precio.setTextContent("899.99");
+            producto.appendChild(precio);
+
+            // Escribir a fichero
+            TransformerFactory tf = TransformerFactory.newInstance();
+            Transformer transformer = tf.newTransformer();
+            transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File(archivo));
+            transformer.transform(source, result);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+
+                <h3>2. JAXB - Binding XML a Objetos</h3>
+                <div class="code-block"><code>import javax.xml.bind.*;
+import javax.xml.bind.annotation.*;
+import java.io.File;
+import java.util.List;
+
+// Clase con anotaciones JAXB
+@XmlRootElement(name = "catalogo")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Catalogo {
+
+    @XmlElement(name = "producto")
+    private List&lt;ProductoXML&gt; productos;
+
+    // Getters y setters
+}
+
+@XmlAccessorType(XmlAccessType.FIELD)
+public class ProductoXML {
+
+    @XmlAttribute
+    private int id;
+
+    @XmlElement
+    private String nombre;
+
+    @XmlElement
+    private double precio;
+
+    // Getters y setters
+}
+
+public class JAXBExample {
+
+    // Leer XML a objetos (Unmarshalling)
+    public Catalogo leerCatalogo(String archivo) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(Catalogo.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            return (Catalogo) unmarshaller.unmarshal(new File(archivo));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Escribir objetos a XML (Marshalling)
+    public void escribirCatalogo(Catalogo catalogo, String archivo) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(Catalogo.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshaller.marshal(catalogo, new File(archivo));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></div>
+            </section>
+
+            <!-- MONGODB -->
+            <section id="mongodb" class="content-section">
+                <h2>MongoDB - Base de Datos NoSQL</h2>
+
+                <p>MongoDB es una base de datos NoSQL orientada a documentos JSON (BSON). Es ideal para datos no estructurados y aplicaciones con requisitos de escalabilidad.</p>
+
+                <h3>Configuración</h3>
+                <div class="code-block"><code>&lt;!-- Dependencia Maven --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.mongodb&lt;/groupId&gt;
+    &lt;artifactId&gt;mongodb-driver-sync&lt;/artifactId&gt;
+    &lt;version&gt;4.9.1&lt;/version&gt;
+&lt;/dependency&gt;</code></div>
+
+                <h3>1. Operaciones CRUD en MongoDB</h3>
+                <div class="code-block"><code>import com.mongodb.client.*;
+import com.mongodb.client.model.*;
+import org.bson.Document;
+import org.bson.types.ObjectId;
+import java.util.Arrays;
+
+public class MongoDBOperations {
+    private MongoClient mongoClient;
+    private MongoDatabase database;
+    private MongoCollection&lt;Document&gt; collection;
+
+    public MongoDBOperations() {
+        mongoClient = MongoClients.create("mongodb://localhost:27017");
+        database = mongoClient.getDatabase("tienda");
+        collection = database.getCollection("productos");
+    }
+
+    // CREATE - Insertar documento
+    public void insertar() {
+        Document producto = new Document("nombre", "Monitor 27\"")
+            .append("marca", "Samsung")
+            .append("precio", 299.99)
+            .append("stock", 25)
+            .append("caracteristicas", Arrays.asList("4K", "HDR", "144Hz"));
+
+        collection.insertOne(producto);
+        System.out.println("ID: " + producto.getObjectId("_id"));
+    }
+
+    // Insertar múltiples
+    public void insertarVarios() {
+        collection.insertMany(Arrays.asList(
+            new Document("nombre", "Teclado").append("precio", 49.99),
+            new Document("nombre", "Mouse").append("precio", 29.99)
+        ));
+    }
+
+    // READ - Buscar documentos
+    public void buscar() {
+        // Todos los documentos
+        for (Document doc : collection.find()) {
+            System.out.println(doc.toJson());
+        }
+
+        // Con filtro
+        Document filtro = new Document("precio", new Document("$lt", 100));
+        for (Document doc : collection.find(filtro)) {
+            System.out.println(doc.getString("nombre"));
+        }
+
+        // Con Filters helper
+        for (Document doc : collection.find(Filters.and(
+                Filters.eq("marca", "Samsung"),
+                Filters.gte("precio", 200)
+        ))) {
+            System.out.println(doc.toJson());
+        }
+    }
+
+    // UPDATE - Actualizar documento
+    public void actualizar() {
+        // Actualizar uno
+        collection.updateOne(
+            Filters.eq("nombre", "Monitor 27\""),
+            Updates.set("precio", 279.99)
+        );
+
+        // Actualizar varios campos
+        collection.updateOne(
+            Filters.eq("nombre", "Monitor 27\""),
+            Updates.combine(
+                Updates.set("precio", 269.99),
+                Updates.inc("stock", -1)
+            )
+        );
+
+        // Actualizar múltiples documentos
+        collection.updateMany(
+            Filters.lt("precio", 50),
+            Updates.mul("precio", 1.1) // Aumentar 10%
+        );
+    }
+
+    // DELETE - Eliminar documentos
+    public void eliminar() {
+        // Eliminar uno
+        collection.deleteOne(Filters.eq("nombre", "Mouse"));
+
+        // Eliminar varios
+        collection.deleteMany(Filters.eq("stock", 0));
+    }
+
+    public void cerrar() {
+        mongoClient.close();
+    }
+}</code></div>
+
+                <h3>2. Consultas Avanzadas y Agregaciones</h3>
+                <div class="code-block"><code>import com.mongodb.client.model.Aggregates;
+import com.mongodb.client.model.Accumulators;
+import com.mongodb.client.AggregateIterable;
+
+public class MongoDBConsultasAvanzadas {
+    private MongoCollection&lt;Document&gt; collection;
+
+    // Proyección - Seleccionar campos
+    public void proyeccion() {
+        collection.find()
+            .projection(Projections.fields(
+                Projections.include("nombre", "precio"),
+                Projections.excludeId()
+            ))
+            .forEach(doc -> System.out.println(doc.toJson()));
+    }
+
+    // Ordenación y límite
+    public void ordenarYLimitar() {
+        collection.find()
+            .sort(Sorts.descending("precio"))
+            .limit(5)
+            .forEach(doc -> System.out.println(doc.getString("nombre")));
+    }
+
+    // Agregación - Pipeline
+    public void agregacion() {
+        AggregateIterable&lt;Document&gt; resultado = collection.aggregate(Arrays.asList(
+            // Filtrar
+            Aggregates.match(Filters.gte("precio", 100)),
+
+            // Agrupar por marca y calcular totales
+            Aggregates.group("$marca",
+                Accumulators.sum("totalProductos", 1),
+                Accumulators.avg("precioPromedio", "$precio"),
+                Accumulators.sum("stockTotal", "$stock")
+            ),
+
+            // Ordenar por total
+            Aggregates.sort(Sorts.descending("totalProductos"))
+        ));
+
+        for (Document doc : resultado) {
+            System.out.println("Marca: " + doc.getString("_id") +
+                             ", Productos: " + doc.getInteger("totalProductos") +
+                             ", Precio promedio: " + doc.getDouble("precioPromedio"));
+        }
+    }
+
+    // Búsqueda en arrays
+    public void buscarEnArray() {
+        // Productos que tengan "4K" en características
+        collection.find(Filters.eq("caracteristicas", "4K"))
+            .forEach(doc -> System.out.println(doc.getString("nombre")));
+
+        // Productos con TODAS las características
+        collection.find(Filters.all("caracteristicas", "4K", "HDR"))
+            .forEach(doc -> System.out.println(doc.getString("nombre")));
+    }
+}</code></div>
+            </section>
+
+            <!-- EJERCICIOS -->
+            <section id="ejercicios" class="content-section">
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise">
+                    <h3>Ejercicio 1: CRUD Completo con JDBC</h3>
+                    <p>Implementa un sistema de gestión de empleados con JDBC.</p>
+
+                    <div class="code-block"><code>// Clase Empleado
+public class Empleado {
+    private int id;
+    private String nombre;
+    private String departamento;
+    private double salario;
+
+    // Constructor, getters y setters...
+}
+
+// DAO con patrón Singleton
+public class EmpleadoDAO {
+    private static EmpleadoDAO instance;
+    private static final String URL = "jdbc:mysql://localhost:3306/empresa";
+
+    private EmpleadoDAO() {}
+
+    public static EmpleadoDAO getInstance() {
+        if (instance == null) {
+            instance = new EmpleadoDAO();
+        }
+        return instance;
+    }
+
+    private Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(URL, "root", "password");
+    }
+
+    public void insertar(Empleado emp) throws SQLException {
+        String sql = "INSERT INTO empleados (nombre, departamento, salario) VALUES (?, ?, ?)";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+            stmt.setString(1, emp.getNombre());
+            stmt.setString(2, emp.getDepartamento());
+            stmt.setDouble(3, emp.getSalario());
+            stmt.executeUpdate();
+
+            try (ResultSet rs = stmt.getGeneratedKeys()) {
+                if (rs.next()) emp.setId(rs.getInt(1));
+            }
+        }
+    }
+
+    public List&lt;Empleado&gt; buscarPorDepartamento(String dept) throws SQLException {
+        String sql = "SELECT * FROM empleados WHERE departamento = ?";
+        List&lt;Empleado&gt; lista = new ArrayList&lt;&gt;();
+
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, dept);
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    Empleado e = new Empleado();
+                    e.setId(rs.getInt("id"));
+                    e.setNombre(rs.getString("nombre"));
+                    e.setDepartamento(rs.getString("departamento"));
+                    e.setSalario(rs.getDouble("salario"));
+                    lista.add(e);
+                }
+            }
+        }
+        return lista;
+    }
+
+    public double getSalarioPromedioPorDepartamento(String dept) throws SQLException {
+        String sql = "SELECT AVG(salario) FROM empleados WHERE departamento = ?";
+        try (Connection conn = getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, dept);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) return rs.getDouble(1);
+            }
+        }
+        return 0;
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 2: Sistema de Pedidos con Hibernate</h3>
+                    <p>Crea un sistema de pedidos con relaciones entre entidades.</p>
+
+                    <div class="code-block"><code>@Entity
+@Table(name = "pedidos")
+public class Pedido {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false)
+    private Cliente cliente;
+
+    @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List&lt;LineaPedido&gt; lineas = new ArrayList&lt;&gt;();
+
+    private LocalDateTime fecha;
+    private String estado;
+
+    public void addLinea(Producto producto, int cantidad) {
+        LineaPedido linea = new LineaPedido();
+        linea.setPedido(this);
+        linea.setProducto(producto);
+        linea.setCantidad(cantidad);
+        linea.setPrecioUnitario(producto.getPrecio());
+        lineas.add(linea);
+    }
+
+    public double getTotal() {
+        return lineas.stream()
+            .mapToDouble(l -> l.getCantidad() * l.getPrecioUnitario())
+            .sum();
+    }
+}
+
+// Servicio de pedidos
+public class PedidoService {
+    private EntityManagerFactory emf;
+
+    public Pedido crearPedido(Long clienteId, Map&lt;Long, Integer&gt; items) {
+        EntityManager em = emf.createEntityManager();
+        try {
+            em.getTransaction().begin();
+
+            Cliente cliente = em.find(Cliente.class, clienteId);
+            Pedido pedido = new Pedido();
+            pedido.setCliente(cliente);
+            pedido.setFecha(LocalDateTime.now());
+            pedido.setEstado("PENDIENTE");
+
+            for (Map.Entry&lt;Long, Integer&gt; item : items.entrySet()) {
+                Producto producto = em.find(Producto.class, item.getKey());
+                if (producto.getStock() >= item.getValue()) {
+                    pedido.addLinea(producto, item.getValue());
+                    producto.setStock(producto.getStock() - item.getValue());
+                }
+            }
+
+            em.persist(pedido);
+            em.getTransaction().commit();
+            return pedido;
+        } catch (Exception e) {
+            em.getTransaction().rollback();
+            throw e;
+        } finally {
+            em.close();
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 3: Exportar/Importar CSV</h3>
+                    <p>Sistema para exportar e importar datos en formato CSV.</p>
+
+                    <div class="code-block"><code>public class CSVManager {
+
+    // Exportar lista de productos a CSV
+    public void exportarCSV(List&lt;Producto&gt; productos, String archivo) throws IOException {
+        try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(archivo))) {
+            // Cabecera
+            writer.write("id,nombre,precio,stock");
+            writer.newLine();
+
+            // Datos
+            for (Producto p : productos) {
+                writer.write(String.format("%d,%s,%.2f,%d",
+                    p.getId(), p.getNombre(), p.getPrecio(), p.getStock()));
+                writer.newLine();
+            }
+        }
+    }
+
+    // Importar CSV a lista de productos
+    public List&lt;Producto&gt; importarCSV(String archivo) throws IOException {
+        List&lt;Producto&gt; productos = new ArrayList&lt;&gt;();
+
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(archivo))) {
+            reader.readLine(); // Saltar cabecera
+
+            String linea;
+            while ((linea = reader.readLine()) != null) {
+                String[] campos = linea.split(",");
+                Producto p = new Producto();
+                p.setId(Long.parseLong(campos[0]));
+                p.setNombre(campos[1]);
+                p.setPrecio(Double.parseDouble(campos[2]));
+                p.setStock(Integer.parseInt(campos[3]));
+                productos.add(p);
+            }
+        }
+        return productos;
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 4: Configuración XML con JAXB</h3>
+                    <p>Guardar y cargar configuración de aplicación en XML.</p>
+
+                    <div class="code-block"><code>@XmlRootElement(name = "configuracion")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Configuracion {
+    private String dbHost;
+    private int dbPort;
+    private String dbName;
+    private String dbUser;
+    private int maxConnections;
+    private boolean logEnabled;
+
+    // Getters y setters
+}
+
+public class ConfigManager {
+    private static final String CONFIG_FILE = "config.xml";
+
+    public void guardarConfig(Configuracion config) {
+        try {
+            JAXBContext context = JAXBContext.newInstance(Configuracion.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshaller.marshal(config, new File(CONFIG_FILE));
+        } catch (JAXBException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public Configuracion cargarConfig() {
+        try {
+            JAXBContext context = JAXBContext.newInstance(Configuracion.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            return (Configuracion) unmarshaller.unmarshal(new File(CONFIG_FILE));
+        } catch (JAXBException e) {
+            return new Configuracion(); // Config por defecto
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 5: CRUD MongoDB con POJOs</h3>
+                    <p>Operaciones MongoDB usando clases Java en lugar de Document.</p>
+
+                    <div class="code-block"><code>import org.bson.codecs.pojo.annotations.*;
+
+// POJO para MongoDB
+public class ProductoMongo {
+    @BsonId
+    private ObjectId id;
+    private String nombre;
+    private double precio;
+    private int stock;
+    private List&lt;String&gt; tags;
+
+    // Getters y setters
+}
+
+public class ProductoMongoRepository {
+    private MongoCollection&lt;ProductoMongo&gt; collection;
+
+    public ProductoMongoRepository() {
+        CodecRegistry pojoCodecRegistry = CodecRegistries.fromRegistries(
+            MongoClientSettings.getDefaultCodecRegistry(),
+            CodecRegistries.fromProviders(PojoCodecProvider.builder().automatic(true).build())
+        );
+
+        MongoClient client = MongoClients.create("mongodb://localhost:27017");
+        MongoDatabase db = client.getDatabase("tienda").withCodecRegistry(pojoCodecRegistry);
+        collection = db.getCollection("productos", ProductoMongo.class);
+    }
+
+    public void insertar(ProductoMongo producto) {
+        collection.insertOne(producto);
+    }
+
+    public ProductoMongo buscarPorId(ObjectId id) {
+        return collection.find(Filters.eq("_id", id)).first();
+    }
+
+    public List&lt;ProductoMongo&gt; buscarPorTag(String tag) {
+        List&lt;ProductoMongo&gt; lista = new ArrayList&lt;&gt;();
+        collection.find(Filters.eq("tags", tag)).into(lista);
+        return lista;
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 6: Pool de Conexiones con HikariCP</h3>
+                    <p>Implementa un pool de conexiones para mejorar el rendimiento.</p>
+
+                    <div class="code-block"><code>import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
+import java.sql.Connection;
+
+public class ConnectionPool {
+    private static HikariDataSource dataSource;
+
+    static {
+        HikariConfig config = new HikariConfig();
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/tienda");
+        config.setUsername("root");
+        config.setPassword("password");
+        config.setMaximumPoolSize(10);
+        config.setMinimumIdle(5);
+        config.setIdleTimeout(300000);
+        config.setConnectionTimeout(20000);
+
+        dataSource = new HikariDataSource(config);
+    }
+
+    public static Connection getConnection() throws SQLException {
+        return dataSource.getConnection();
+    }
+
+    public static void close() {
+        if (dataSource != null) {
+            dataSource.close();
+        }
+    }
+}
+
+// Uso del pool
+public class ProductoDAOPool {
+    public List&lt;Producto&gt; obtenerTodos() throws SQLException {
+        String sql = "SELECT * FROM productos";
+        List&lt;Producto&gt; productos = new ArrayList&lt;&gt;();
+
+        try (Connection conn = ConnectionPool.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            while (rs.next()) {
+                // Mapear...
+            }
+        }
+        return productos;
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 7: Backup de Base de Datos</h3>
+                    <p>Sistema para exportar tablas a ficheros JSON.</p>
+
+                    <div class="code-block"><code>import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class BackupService {
+    private Gson gson = new GsonBuilder().setPrettyPrinting().create();
+
+    // Exportar tabla a JSON
+    public void exportarTabla(String tabla, String archivoDestino) throws Exception {
+        List&lt;Map&lt;String, Object&gt;&gt; datos = new ArrayList&lt;&gt;();
+        String sql = "SELECT * FROM " + tabla;
+
+        try (Connection conn = ConexionJDBC.getConnection();
+             Statement stmt = conn.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            ResultSetMetaData meta = rs.getMetaData();
+            int columnas = meta.getColumnCount();
+
+            while (rs.next()) {
+                Map&lt;String, Object&gt; fila = new HashMap&lt;&gt;();
+                for (int i = 1; i <= columnas; i++) {
+                    fila.put(meta.getColumnName(i), rs.getObject(i));
+                }
+                datos.add(fila);
+            }
+        }
+
+        Files.writeString(Paths.get(archivoDestino), gson.toJson(datos));
+        System.out.println("Exportados " + datos.size() + " registros");
+    }
+
+    // Backup completo
+    public void backupCompleto(String directorio) throws Exception {
+        String[] tablas = {"clientes", "productos", "pedidos"};
+
+        for (String tabla : tablas) {
+            String archivo = directorio + "/" + tabla + "_backup.json";
+            exportarTabla(tabla, archivo);
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 8: Caché Simple con Ficheros</h3>
+                    <p>Implementa una caché que persiste datos en disco.</p>
+
+                    <div class="code-block"><code>public class FileCache&lt;T&gt; {
+    private Map&lt;String, T&gt; cache = new HashMap&lt;&gt;();
+    private String cacheDir;
+
+    public FileCache(String directorio) {
+        this.cacheDir = directorio;
+        new File(cacheDir).mkdirs();
+        cargarCache();
+    }
+
+    public void put(String key, T value) {
+        cache.put(key, value);
+        guardarEnDisco(key, value);
+    }
+
+    public T get(String key) {
+        return cache.get(key);
+    }
+
+    public boolean contains(String key) {
+        return cache.containsKey(key);
+    }
+
+    private void guardarEnDisco(String key, T value) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(
+                new FileOutputStream(cacheDir + "/" + key + ".cache"))) {
+            oos.writeObject(value);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void cargarCache() {
+        File dir = new File(cacheDir);
+        File[] archivos = dir.listFiles((d, name) -> name.endsWith(".cache"));
+
+        if (archivos != null) {
+            for (File archivo : archivos) {
+                String key = archivo.getName().replace(".cache", "");
+                try (ObjectInputStream ois = new ObjectInputStream(
+                        new FileInputStream(archivo))) {
+                    cache.put(key, (T) ois.readObject());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void clear() {
+        cache.clear();
+        File dir = new File(cacheDir);
+        for (File f : dir.listFiles()) {
+            f.delete();
+        }
+    }
+}</code></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p>Recursos completos para estudiantes de Desarrollo de Aplicaciones Multiplataforma.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Proyecto educativo de código abierto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>

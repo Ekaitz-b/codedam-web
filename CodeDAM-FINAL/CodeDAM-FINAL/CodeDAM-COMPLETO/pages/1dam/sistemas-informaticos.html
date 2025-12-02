@@ -1,0 +1,2440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistemas Informáticos 1º DAM - Linux, Windows, redes, arquitectura, virtualización y administración de sistemas.">
+    <title>Sistemas Informáticos - 1º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="./bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="./lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="./entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../2dam/acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="../2dam/sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#1dam">1º DAM</a><span>→</span><span>Sistemas Informáticos</span></div>
+            <h1 class="page-title">Sistemas Informáticos</h1>
+            <p class="page-subtitle">Arquitectura, Sistemas Operativos, Redes y Administración</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc"><h3>Índice de Contenidos</h3><ul></ul></nav>
+
+            <!-- ARQUITECTURA DE COMPUTADORES -->
+            <section class="content-section">
+                <h2>Arquitectura de Computadores</h2>
+
+                <h3>Componentes Principales del Hardware</h3>
+
+                <h4>CPU (Unidad Central de Procesamiento)</h4>
+                <p>El procesador es el cerebro del ordenador. Ejecuta las instrucciones de los programas realizando operaciones aritméticas, lógicas y de control.</p>
+                <ul>
+                    <li><strong>Unidad de Control (CU):</strong> Interpreta instrucciones y coordina la ejecución</li>
+                    <li><strong>Unidad Aritmético-Lógica (ALU):</strong> Realiza cálculos matemáticos y comparaciones</li>
+                    <li><strong>Registros:</strong> Memoria ultrarrápida dentro de la CPU para datos temporales</li>
+                    <li><strong>Caché:</strong> Memoria intermedia (L1, L2, L3) que acelera el acceso a datos frecuentes</li>
+                </ul>
+
+                <div class="code-block"><code># Especificaciones típicas de CPUs actuales
+Intel Core i5-13400:
+- 10 núcleos (6 Performance + 4 Efficiency)
+- 16 hilos de ejecución
+- Frecuencia base: 2.5 GHz, Turbo: 4.6 GHz
+- Caché L3: 20 MB
+- TDP: 65W
+
+AMD Ryzen 5 7600:
+- 6 núcleos, 12 hilos
+- Frecuencia base: 3.8 GHz, Turbo: 5.1 GHz
+- Caché L3: 32 MB
+- TDP: 65W</code></div>
+
+                <h4>RAM (Memoria de Acceso Aleatorio)</h4>
+                <p>Almacenamiento temporal volátil donde se cargan los programas y datos en uso. Características principales:</p>
+                <ul>
+                    <li><strong>Volátil:</strong> Se borra al apagar el equipo</li>
+                    <li><strong>Acceso aleatorio:</strong> Cualquier posición accesible en tiempo constante</li>
+                    <li><strong>Tipos actuales:</strong> DDR4 (3200 MHz típico) y DDR5 (4800-6400 MHz)</li>
+                    <li><strong>Latencia:</strong> CL16-CL18 para DDR4, CL30-CL40 para DDR5</li>
+                </ul>
+
+                <div class="code-block"><code># Configuraciones típicas de RAM
+Uso básico/ofimática: 8 GB DDR4-3200
+Desarrollo/Gaming: 16 GB DDR4-3600 (2x8 GB dual channel)
+Profesional/Workstation: 32-64 GB DDR5-5600
+Servidores: 128+ GB ECC DDR5</code></div>
+
+                <h4>Almacenamiento</h4>
+                <ul>
+                    <li><strong>SSD NVMe:</strong> Hasta 7000 MB/s lectura, conexión PCIe directa. Ideal para SO y aplicaciones</li>
+                    <li><strong>SSD SATA:</strong> Hasta 550 MB/s, más económicos, formato 2.5"</li>
+                    <li><strong>HDD:</strong> 100-200 MB/s, alta capacidad (hasta 20TB), ideal para almacenamiento masivo</li>
+                </ul>
+
+                <h3>Buses y Comunicación Interna</h3>
+                <p>Los buses son canales de comunicación que conectan los componentes del sistema:</p>
+                <ul>
+                    <li><strong>Bus de datos:</strong> Transporta datos entre componentes (64 bits en sistemas modernos)</li>
+                    <li><strong>Bus de direcciones:</strong> Indica la ubicación de memoria a acceder</li>
+                    <li><strong>Bus de control:</strong> Transmite señales de sincronización y control</li>
+                </ul>
+
+                <h4>Interfaces de Conexión Modernas</h4>
+                <div class="code-block"><code>PCIe 4.0 x16: ~32 GB/s (tarjetas gráficas)
+PCIe 4.0 x4:  ~8 GB/s (SSDs NVMe)
+PCIe 5.0 x4:  ~16 GB/s (SSDs de última generación)
+SATA III:    ~600 MB/s (discos SATA)
+USB 3.2 Gen2: ~1.25 GB/s (periféricos)
+USB4/TB4:    ~5 GB/s (docks, almacenamiento externo)</code></div>
+
+                <h3>Periféricos de Entrada/Salida</h3>
+                <ul>
+                    <li><strong>Entrada:</strong> Teclado, ratón, escáner, micrófono, webcam, lectores de tarjetas</li>
+                    <li><strong>Salida:</strong> Monitor, impresora, altavoces, auriculares</li>
+                    <li><strong>E/S:</strong> Pantallas táctiles, dispositivos de almacenamiento externo, modems</li>
+                </ul>
+
+                <h3>Ejemplo: Configuración para Desarrollo</h3>
+                <div class="code-block"><code># Equipo recomendado para desarrollo de software
+CPU: AMD Ryzen 7 7700X (8 núcleos, 16 hilos)
+RAM: 32 GB DDR5-5600 (2x16 GB)
+Almacenamiento:
+  - 1 TB NVMe PCIe 4.0 (SO + proyectos)
+  - 2 TB HDD (backups, archivos)
+GPU: Integrada o RTX 3060 (si usas Docker/VMs)
+Monitor: 27" 2560x1440 IPS
+
+# Equipo económico para estudiante DAM
+CPU: Intel Core i5-12400
+RAM: 16 GB DDR4-3200
+Almacenamiento: 512 GB NVMe
+Monitor: 24" 1920x1080 IPS</code></div>
+            </section>
+
+            <!-- SISTEMAS OPERATIVOS FUNDAMENTALES -->
+            <section class="content-section">
+                <h2>Sistemas Operativos Fundamentales</h2>
+
+                <h3>¿Qué es un Sistema Operativo?</h3>
+                <p>El Sistema Operativo (SO) es el software fundamental que gestiona el hardware y proporciona servicios a las aplicaciones. Actúa como intermediario entre el usuario y el hardware.</p>
+
+                <h4>Funciones Principales del SO</h4>
+                <ul>
+                    <li><strong>Gestión de procesos:</strong> Crear, planificar, ejecutar y terminar procesos</li>
+                    <li><strong>Gestión de memoria:</strong> Asignar y liberar memoria RAM a los procesos</li>
+                    <li><strong>Gestión de archivos:</strong> Organizar, almacenar y recuperar datos en disco</li>
+                    <li><strong>Gestión de E/S:</strong> Controlar dispositivos de entrada/salida</li>
+                    <li><strong>Seguridad:</strong> Control de acceso, permisos, autenticación</li>
+                    <li><strong>Interfaz de usuario:</strong> CLI (línea de comandos) o GUI (gráfica)</li>
+                </ul>
+
+                <h3>Gestión de Procesos</h3>
+                <p>Un proceso es un programa en ejecución con su propio espacio de memoria, contexto y recursos.</p>
+
+                <div class="code-block"><code># Estados de un proceso
+NUEVO:        Proceso recién creado
+LISTO:        Esperando CPU para ejecutarse
+EJECUTANDO:   Usando la CPU activamente
+BLOQUEADO:    Esperando un evento (E/S, recurso)
+TERMINADO:    Ejecución finalizada
+
+# Algoritmos de planificación comunes
+FCFS (First Come First Served): Cola simple, no prioritario
+Round Robin: Turnos con quantum de tiempo fijo
+Prioridades: Procesos con mayor prioridad primero
+Multinivel: Varias colas con diferentes políticas</code></div>
+
+                <h3>Gestión de Memoria</h3>
+                <ul>
+                    <li><strong>Memoria virtual:</strong> Usa disco como extensión de RAM (swap/paginación)</li>
+                    <li><strong>Paginación:</strong> Divide memoria en páginas de tamaño fijo (típico 4 KB)</li>
+                    <li><strong>Segmentación:</strong> Divide memoria en segmentos lógicos de tamaño variable</li>
+                    <li><strong>Protección:</strong> Aísla procesos para evitar accesos no autorizados</li>
+                </ul>
+
+                <h3>Gestión del Sistema de Archivos</h3>
+                <div class="code-block"><code># Sistemas de archivos comunes
+Windows:
+  NTFS:   Sistema principal de Windows (permisos, journaling, compresión)
+  FAT32:  Compatible pero limitado (máx 4GB por archivo)
+  exFAT:  Para unidades externas, sin límite de 4GB
+
+Linux:
+  ext4:   Sistema estándar de Linux (journaling, extensiones)
+  XFS:    Alto rendimiento para archivos grandes
+  Btrfs:  Moderno con snapshots y RAID integrado
+
+macOS:
+  APFS:   Sistema moderno de Apple (encriptación, snapshots)</code></div>
+
+                <h3>Comparativa: Windows vs Linux vs macOS</h3>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Windows 11</th>
+                                <th>Linux (Ubuntu)</th>
+                                <th>macOS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Licencia</td>
+                                <td>Propietaria (~150€)</td>
+                                <td>Libre y gratuita</td>
+                                <td>Incluida con hardware</td>
+                            </tr>
+                            <tr>
+                                <td>Kernel</td>
+                                <td>NT Kernel</td>
+                                <td>Linux Kernel</td>
+                                <td>XNU (derivado BSD)</td>
+                            </tr>
+                            <tr>
+                                <td>Terminal</td>
+                                <td>CMD, PowerShell</td>
+                                <td>Bash, Zsh</td>
+                                <td>Zsh (Bash disponible)</td>
+                            </tr>
+                            <tr>
+                                <td>Gestor paquetes</td>
+                                <td>winget, Chocolatey</td>
+                                <td>apt, dnf, pacman</td>
+                                <td>Homebrew</td>
+                            </tr>
+                            <tr>
+                                <td>Uso desarrollo</td>
+                                <td>Bueno (WSL2)</td>
+                                <td>Excelente nativo</td>
+                                <td>Excelente nativo</td>
+                            </tr>
+                            <tr>
+                                <td>Servidores</td>
+                                <td>Menor cuota</td>
+                                <td>Domina el mercado</td>
+                                <td>Poco común</td>
+                            </tr>
+                            <tr>
+                                <td>Gaming</td>
+                                <td>Mejor soporte</td>
+                                <td>Mejorando (Steam)</td>
+                                <td>Limitado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Virtualización Básica</h3>
+                <p>La virtualización permite ejecutar múltiples sistemas operativos en un mismo hardware físico.</p>
+                <ul>
+                    <li><strong>Tipo 1 (Bare-metal):</strong> Hipervisor sobre hardware (VMware ESXi, Hyper-V Server)</li>
+                    <li><strong>Tipo 2 (Hosted):</strong> Hipervisor sobre SO (VirtualBox, VMware Workstation)</li>
+                    <li><strong>Contenedores:</strong> Virtualización a nivel de SO (Docker, Podman)</li>
+                </ul>
+            </section>
+
+            <!-- LINUX PARA ADMINISTRADORES -->
+            <section class="content-section">
+                <h2>Linux para Administradores</h2>
+
+                <h3>Distribuciones Principales</h3>
+
+                <h4>Familia Debian</h4>
+                <ul>
+                    <li><strong>Debian:</strong> Estabilidad extrema, ciclos largos (2-3 años), base de muchas distros</li>
+                    <li><strong>Ubuntu:</strong> Fácil de usar, LTS cada 2 años con 5 años de soporte</li>
+                    <li><strong>Linux Mint:</strong> Basada en Ubuntu, ideal para usuarios de Windows</li>
+                </ul>
+
+                <h4>Familia Red Hat</h4>
+                <ul>
+                    <li><strong>RHEL:</strong> Enterprise, soporte comercial, certificaciones</li>
+                    <li><strong>CentOS Stream:</strong> Upstream de RHEL, rolling release</li>
+                    <li><strong>Rocky Linux/AlmaLinux:</strong> Compatibles con RHEL, gratuitas</li>
+                    <li><strong>Fedora:</strong> Tecnologías nuevas, ciclo rápido (6 meses)</li>
+                </ul>
+
+                <h4>Otras Familias</h4>
+                <ul>
+                    <li><strong>Arch Linux:</strong> Rolling release, totalmente personalizable, documentación excelente</li>
+                    <li><strong>openSUSE:</strong> YaST para administración, Tumbleweed (rolling) o Leap (estable)</li>
+                </ul>
+
+                <h3>Terminal y Shell</h3>
+                <p>El shell es el intérprete de comandos. Bash es el más común, aunque Zsh y Fish ganan popularidad.</p>
+
+                <div class="code-block"><code># Shells disponibles en el sistema
+cat /etc/shells
+
+# Shell actual del usuario
+echo $SHELL
+
+# Cambiar shell predeterminado
+chsh -s /bin/zsh
+
+# Archivos de configuración de Bash
+~/.bashrc      # Configuración para shells interactivos no-login
+~/.bash_profile # Configuración para shells de login
+~/.bash_history # Historial de comandos</code></div>
+
+                <h3>Comandos Esenciales de Linux</h3>
+
+                <h4>Navegación y Exploración</h4>
+                <div class="code-block"><code># Ver directorio actual
+pwd
+/home/usuario/proyectos
+
+# Listar archivos
+ls              # Listado simple
+ls -l           # Formato largo (permisos, tamaño, fecha)
+ls -la          # Incluir archivos ocultos (empiezan con .)
+ls -lh          # Tamaños legibles (KB, MB, GB)
+ls -lt          # Ordenar por fecha de modificación
+ls -lS          # Ordenar por tamaño
+
+# Cambiar directorio
+cd /var/log         # Ruta absoluta
+cd ../              # Directorio padre
+cd ~                # Home del usuario
+cd -                # Directorio anterior
+
+# Ver estructura de directorios
+tree -L 2           # Árbol con 2 niveles de profundidad
+tree -d             # Solo directorios</code></div>
+
+                <h4>Manipulación de Archivos y Directorios</h4>
+                <div class="code-block"><code># Crear directorios
+mkdir proyectos
+mkdir -p proyectos/java/src/main    # Crear estructura completa
+
+# Crear archivos
+touch archivo.txt                    # Archivo vacío
+touch file1.txt file2.txt file3.txt  # Múltiples archivos
+
+# Copiar
+cp archivo.txt backup.txt            # Copiar archivo
+cp -r carpeta/ backup/               # Copiar directorio recursivo
+cp -p archivo.txt copia.txt          # Preservar permisos y fechas
+
+# Mover/Renombrar
+mv archivo.txt documentos/           # Mover a directorio
+mv viejo.txt nuevo.txt               # Renombrar
+mv *.log /var/log/                   # Mover por patrón
+
+# Eliminar
+rm archivo.txt                       # Eliminar archivo
+rm -r carpeta/                       # Eliminar directorio y contenido
+rm -rf carpeta/                      # Forzar sin confirmación (CUIDADO)
+rm -i *.txt                          # Confirmar cada eliminación
+
+# Enlace simbólico (acceso directo)
+ln -s /ruta/original /ruta/enlace</code></div>
+
+                <h4>Visualización de Contenido</h4>
+                <div class="code-block"><code># Ver contenido completo
+cat archivo.txt
+cat -n archivo.txt                   # Con números de línea
+
+# Ver inicio/final
+head archivo.txt                     # Primeras 10 líneas
+head -n 20 archivo.txt               # Primeras 20 líneas
+tail archivo.txt                     # Últimas 10 líneas
+tail -n 50 archivo.txt               # Últimas 50 líneas
+tail -f /var/log/syslog              # Seguir en tiempo real (logs)
+
+# Paginador (navegación)
+less archivo.txt                     # Navegar con q para salir
+more archivo.txt                     # Similar, más básico
+
+# Contar líneas/palabras/caracteres
+wc archivo.txt                       # líneas palabras caracteres
+wc -l archivo.txt                    # Solo líneas</code></div>
+
+                <h4>Búsqueda con grep</h4>
+                <div class="code-block"><code># Buscar texto en archivos
+grep "error" /var/log/syslog         # Buscar "error"
+grep -i "error" archivo.txt          # Ignorar mayúsculas/minúsculas
+grep -r "TODO" /proyecto/            # Búsqueda recursiva
+grep -n "función" codigo.py          # Mostrar número de línea
+grep -c "warning" log.txt            # Contar coincidencias
+grep -v "debug" log.txt              # Líneas que NO contienen
+grep -l "import" *.py                # Solo nombres de archivo
+
+# Expresiones regulares
+grep -E "error|warning" log.txt      # OR (error o warning)
+grep "^#" config.txt                 # Líneas que empiezan con #
+grep "\.py$" listado.txt             # Líneas que terminan en .py
+
+# Ejemplo práctico: errores del día
+grep "$(date +%Y-%m-%d)" /var/log/syslog | grep -i error</code></div>
+
+                <h4>Búsqueda de Archivos con find</h4>
+                <div class="code-block"><code># Buscar por nombre
+find /home -name "*.txt"              # Archivos .txt en /home
+find . -name "config*"                # Empiezan por "config"
+find / -iname "readme*" 2>/dev/null   # Ignorar mayúsculas
+
+# Buscar por tipo
+find /var -type f -name "*.log"       # Solo archivos
+find /home -type d -name "backup"     # Solo directorios
+
+# Buscar por tamaño
+find /var/log -size +100M             # Mayor de 100 MB
+find . -size -1k                      # Menor de 1 KB
+
+# Buscar por tiempo
+find /home -mtime -7                  # Modificados últimos 7 días
+find /tmp -atime +30                  # Accedidos hace más de 30 días
+
+# Ejecutar acción en resultados
+find . -name "*.tmp" -delete          # Eliminar archivos .tmp
+find . -name "*.sh" -exec chmod +x {} \;  # Hacer ejecutables
+
+# Ejemplo práctico: archivos grandes antiguos
+find /var/log -type f -size +50M -mtime +30 -ls</code></div>
+
+                <h3>Sistema de Archivos de Linux</h3>
+                <div class="code-block"><code>Jerarquía estándar FHS (Filesystem Hierarchy Standard):
+
+/               Raíz del sistema
+├── bin/        Binarios esenciales (ls, cp, mv)
+├── boot/       Kernel y archivos de arranque
+├── dev/        Dispositivos (discos, terminales)
+├── etc/        Configuración del sistema
+│   ├── passwd      Usuarios del sistema
+│   ├── shadow      Contraseñas encriptadas
+│   ├── group       Grupos del sistema
+│   ├── fstab       Montaje de sistemas de archivos
+│   ├── hosts       Resolución DNS local
+│   └── ssh/        Configuración SSH
+├── home/       Directorios de usuarios
+│   └── usuario/
+│       ├── .bashrc     Configuración Bash
+│       ├── .ssh/       Claves SSH
+│       └── Documentos/
+├── lib/        Bibliotecas del sistema
+├── media/      Montaje de medios extraíbles
+├── mnt/        Montaje temporal
+├── opt/        Software opcional/terceros
+├── proc/       Sistema de archivos virtual (procesos)
+├── root/       Home del usuario root
+├── sbin/       Binarios de administración
+├── tmp/        Archivos temporales
+├── usr/        Programas y datos de usuario
+│   ├── bin/        Binarios de usuario
+│   ├── lib/        Bibliotecas
+│   ├── local/      Software local
+│   └── share/      Datos compartidos
+└── var/        Datos variables
+    ├── log/        Logs del sistema
+    ├── cache/      Cachés
+    └── www/        Servidor web (en algunos sistemas)</code></div>
+
+                <h3>Permisos en Linux</h3>
+                <p>Linux usa un sistema de permisos basado en usuario, grupo y otros, con permisos de lectura (r), escritura (w) y ejecución (x).</p>
+
+                <div class="code-block"><code># Interpretar permisos (ls -l)
+-rwxr-xr-- 1 usuario grupo 4096 mar 15 10:30 script.sh
+
+- = tipo (- archivo, d directorio, l enlace)
+rwx = propietario (read, write, execute)
+r-x = grupo (read, execute)
+r-- = otros (read only)
+
+# Notación octal
+r = 4, w = 2, x = 1
+
+755 = rwxr-xr-x (propietario todo, grupo y otros lectura+ejecución)
+644 = rw-r--r-- (propietario lectura+escritura, resto solo lectura)
+700 = rwx------ (solo propietario tiene acceso)
+777 = rwxrwxrwx (todos los permisos para todos - EVITAR)</code></div>
+
+                <h4>Comandos chmod y chown</h4>
+                <div class="code-block"><code># Cambiar permisos con notación octal
+chmod 755 script.sh          # Ejecutable para todos
+chmod 644 documento.txt      # Lectura para todos, escritura propietario
+chmod 600 clave_privada      # Solo propietario puede leer/escribir
+
+# Cambiar permisos con notación simbólica
+chmod +x script.sh           # Añadir ejecución para todos
+chmod u+w archivo.txt        # Añadir escritura al usuario (user)
+chmod g-w archivo.txt        # Quitar escritura al grupo
+chmod o-rwx secreto.txt      # Quitar todos los permisos a otros
+chmod a+r publico.txt        # Lectura para todos (all)
+
+# Recursivo en directorios
+chmod -R 755 /var/www/html/  # Aplicar a todo el contenido
+
+# Cambiar propietario
+chown usuario archivo.txt           # Cambiar usuario propietario
+chown usuario:grupo archivo.txt     # Cambiar usuario y grupo
+chown -R www-data:www-data /var/www # Recursivo
+
+# Cambiar solo grupo
+chgrp developers proyecto/
+
+# Ejemplo práctico: servidor web
+sudo chown -R www-data:www-data /var/www/html
+sudo chmod -R 755 /var/www/html
+sudo chmod -R 644 /var/www/html/*.html</code></div>
+
+                <h3>Gestión de Procesos</h3>
+                <div class="code-block"><code># Ver procesos
+ps                    # Procesos del terminal actual
+ps aux                # Todos los procesos del sistema
+ps aux | grep nginx   # Filtrar por nombre
+
+# Formato detallado de ps aux
+USER   PID %CPU %MEM    VSZ   RSS TTY  STAT START   TIME COMMAND
+root     1  0.0  0.1 169436 11200 ?    Ss   10:00   0:02 /sbin/init
+
+# Monitor interactivo
+top                   # Monitor básico (q para salir)
+htop                  # Monitor mejorado (instalar con apt)
+
+# Atajos en top/htop
+P = ordenar por CPU
+M = ordenar por memoria
+k = matar proceso
+q = salir
+
+# Terminar procesos
+kill 1234             # Enviar SIGTERM (terminar limpio)
+kill -9 1234          # Enviar SIGKILL (forzar terminación)
+killall firefox       # Matar por nombre
+pkill -f "python script"  # Matar por patrón en comando
+
+# Procesos en segundo plano
+./script.sh &         # Ejecutar en background
+jobs                  # Ver trabajos en background
+fg %1                 # Traer trabajo 1 a foreground
+bg %1                 # Enviar trabajo 1 a background
+nohup ./script.sh &   # Continuar tras cerrar terminal
+
+# Ver quién usa un archivo/puerto
+lsof /var/log/syslog  # Procesos usando el archivo
+lsof -i :80           # Procesos en puerto 80</code></div>
+
+                <h3>Gestión de Paquetes</h3>
+                <div class="code-block"><code># === APT (Debian/Ubuntu) ===
+sudo apt update                      # Actualizar lista de paquetes
+sudo apt upgrade                     # Actualizar paquetes instalados
+sudo apt full-upgrade                # Actualización completa
+sudo apt install nginx               # Instalar paquete
+sudo apt remove nginx                # Desinstalar (mantiene config)
+sudo apt purge nginx                 # Desinstalar con configuración
+sudo apt autoremove                  # Eliminar dependencias huérfanas
+apt search "web server"              # Buscar paquetes
+apt show nginx                       # Información del paquete
+dpkg -l | grep nginx                 # Listar paquetes instalados
+
+# === DNF (Fedora/RHEL 8+) ===
+sudo dnf check-update                # Ver actualizaciones disponibles
+sudo dnf upgrade                     # Actualizar sistema
+sudo dnf install httpd               # Instalar
+sudo dnf remove httpd                # Desinstalar
+dnf search "editor"                  # Buscar
+dnf info vim                         # Información
+
+# === Pacman (Arch Linux) ===
+sudo pacman -Syu                     # Actualizar sistema
+sudo pacman -S vim                   # Instalar
+sudo pacman -R vim                   # Desinstalar
+sudo pacman -Rs vim                  # Desinstalar con dependencias
+pacman -Ss "text editor"             # Buscar
+pacman -Qi vim                       # Información de instalado</code></div>
+
+                <h3>Información del Sistema</h3>
+                <div class="code-block"><code># Sistema y kernel
+uname -a                 # Info completa del kernel
+uname -r                 # Versión del kernel
+cat /etc/os-release      # Información de la distribución
+hostnamectl              # Hostname y sistema
+
+# Hardware
+lscpu                    # Información de CPU
+free -h                  # Memoria RAM y swap
+df -h                    # Espacio en disco
+lsblk                    # Dispositivos de bloques
+lsusb                    # Dispositivos USB
+lspci                    # Dispositivos PCI
+
+# Uso de recursos
+uptime                   # Tiempo encendido y carga
+who                      # Usuarios conectados
+last                     # Últimos inicios de sesión
+
+# Ejemplo de salida de free -h
+              total   used   free  shared  buff/cache  available
+Mem:           15Gi   4.2Gi   8.1Gi   312Mi      3.2Gi     10Gi
+Swap:          2.0Gi     0B   2.0Gi</code></div>
+
+                <h3>Ejemplos Prácticos de Comandos Linux</h3>
+
+                <h4>Ejemplo 1: Backup de un proyecto</h4>
+                <div class="code-block"><code># Crear backup comprimido con fecha
+tar -czvf backup_proyecto_$(date +%Y%m%d).tar.gz /home/usuario/proyecto/
+
+# Opciones explicadas:
+# c = crear archivo
+# z = comprimir con gzip
+# v = verbose (mostrar progreso)
+# f = nombre del archivo
+
+# Extraer backup
+tar -xzvf backup_proyecto_20240315.tar.gz -C /ruta/destino/</code></div>
+
+                <h4>Ejemplo 2: Encontrar archivos grandes</h4>
+                <div class="code-block"><code># Archivos mayores de 100MB, ordenados por tamaño
+find /home -type f -size +100M -exec ls -lh {} \; | sort -k5 -h
+
+# Uso de disco por directorio
+du -sh /home/*           # Tamaño de cada directorio en /home
+du -sh /var/log/*        # Tamaño de logs
+du -h --max-depth=1 /    # Primer nivel desde raíz</code></div>
+
+                <h4>Ejemplo 3: Monitorizar logs en tiempo real</h4>
+                <div class="code-block"><code># Seguir logs de Apache
+sudo tail -f /var/log/apache2/access.log
+
+# Filtrar errores en tiempo real
+sudo tail -f /var/log/syslog | grep --line-buffered -i error
+
+# Últimas 100 líneas con errores
+sudo tail -n 100 /var/log/syslog | grep -i error</code></div>
+
+                <h4>Ejemplo 4: Gestión de usuarios</h4>
+                <div class="code-block"><code># Crear usuario con home y shell
+sudo useradd -m -s /bin/bash desarrollador
+
+# Establecer contraseña
+sudo passwd desarrollador
+
+# Añadir a grupo sudo (permisos de administrador)
+sudo usermod -aG sudo desarrollador
+
+# Añadir a grupo adicional
+sudo usermod -aG docker desarrollador
+
+# Ver grupos de un usuario
+groups desarrollador
+
+# Eliminar usuario y su home
+sudo userdel -r desarrollador</code></div>
+
+                <h4>Ejemplo 5: Configurar SSH</h4>
+                <div class="code-block"><code># Generar par de claves SSH
+ssh-keygen -t ed25519 -C "email@ejemplo.com"
+
+# Copiar clave pública al servidor
+ssh-copy-id usuario@192.168.1.100
+
+# Conectar por SSH
+ssh usuario@192.168.1.100
+
+# Conectar con clave específica
+ssh -i ~/.ssh/mi_clave usuario@servidor.com
+
+# Transferir archivo con SCP
+scp archivo.txt usuario@192.168.1.100:/home/usuario/
+scp -r carpeta/ usuario@192.168.1.100:/home/usuario/</code></div>
+
+                <h4>Ejemplo 6: Servicios con systemd</h4>
+                <div class="code-block"><code># Ver estado de un servicio
+sudo systemctl status nginx
+
+# Iniciar/Detener/Reiniciar
+sudo systemctl start nginx
+sudo systemctl stop nginx
+sudo systemctl restart nginx
+sudo systemctl reload nginx    # Recargar configuración
+
+# Habilitar/Deshabilitar al arranque
+sudo systemctl enable nginx
+sudo systemctl disable nginx
+
+# Ver logs del servicio
+sudo journalctl -u nginx
+sudo journalctl -u nginx -f    # Seguir en tiempo real
+sudo journalctl -u nginx --since "1 hour ago"
+
+# Listar servicios activos
+systemctl list-units --type=service --state=running</code></div>
+
+                <h4>Ejemplo 7: Programar tareas con Cron</h4>
+                <div class="code-block"><code># Editar crontab del usuario
+crontab -e
+
+# Formato: minuto hora día mes día_semana comando
+# m     h    dom  mon dow   command
+
+# Ejemplos de programación:
+# Backup diario a las 2:00 AM
+0 2 * * * /home/usuario/scripts/backup.sh
+
+# Limpiar /tmp cada domingo a las 3:00 AM
+0 3 * * 0 rm -rf /tmp/*
+
+# Cada 5 minutos
+*/5 * * * * /scripts/check_status.sh
+
+# Lunes a viernes a las 9:00
+0 9 * * 1-5 /scripts/informe_diario.sh
+
+# Ver tareas programadas
+crontab -l
+
+# Logs de cron
+grep CRON /var/log/syslog</code></div>
+
+                <h4>Ejemplo 8: Comprimir y descomprimir</h4>
+                <div class="code-block"><code># TAR + GZIP (.tar.gz o .tgz)
+tar -czvf archivo.tar.gz directorio/
+tar -xzvf archivo.tar.gz
+
+# TAR + BZIP2 (.tar.bz2) - mejor compresión, más lento
+tar -cjvf archivo.tar.bz2 directorio/
+tar -xjvf archivo.tar.bz2
+
+# ZIP (compatible con Windows)
+zip -r archivo.zip directorio/
+unzip archivo.zip
+
+# Ver contenido sin extraer
+tar -tzvf archivo.tar.gz
+unzip -l archivo.zip</code></div>
+            </section>
+
+            <!-- WINDOWS ADMINISTRACIÓN BÁSICA -->
+            <section class="content-section">
+                <h2>Windows Administración Básica</h2>
+
+                <h3>CMD (Símbolo del Sistema)</h3>
+                <p>La interfaz de línea de comandos tradicional de Windows. Útil para tareas básicas y scripts .bat.</p>
+
+                <div class="code-block"><code># Navegación
+dir                          # Listar contenido (equivalente a ls)
+dir /a                       # Incluir archivos ocultos
+cd C:\Users\Usuario          # Cambiar directorio
+cd ..                        # Directorio padre
+cd                           # Mostrar directorio actual
+
+# Gestión de archivos
+mkdir proyectos              # Crear directorio
+copy archivo.txt backup.txt  # Copiar archivo
+xcopy /E /I origen destino   # Copiar directorio recursivo
+move archivo.txt destino\    # Mover archivo
+del archivo.txt              # Eliminar archivo
+rmdir /S /Q carpeta          # Eliminar directorio con contenido
+type archivo.txt             # Ver contenido de archivo
+more archivo.txt             # Ver con paginación
+
+# Información del sistema
+systeminfo                   # Información completa del sistema
+hostname                     # Nombre del equipo
+ver                          # Versión de Windows
+
+# Red
+ipconfig                     # Configuración IP
+ipconfig /all                # Configuración detallada
+ping google.com              # Probar conectividad
+tracert google.com           # Trazar ruta
+nslookup google.com          # Consulta DNS
+netstat -an                  # Conexiones activas
+
+# Gestión de procesos
+tasklist                     # Listar procesos
+taskkill /IM notepad.exe     # Matar proceso por nombre
+taskkill /PID 1234           # Matar proceso por PID</code></div>
+
+                <h3>PowerShell</h3>
+                <p>Shell moderno de Windows basado en .NET. Mucho más potente que CMD, usa cmdlets con formato Verbo-Sustantivo.</p>
+
+                <div class="code-block"><code># Navegación
+Get-Location                         # Directorio actual (alias: pwd)
+Set-Location C:\Users                # Cambiar directorio (alias: cd)
+Get-ChildItem                        # Listar (alias: ls, dir)
+Get-ChildItem -Recurse -Filter *.txt # Buscar archivos .txt
+
+# Gestión de archivos
+New-Item -ItemType Directory -Name "proyecto"   # Crear carpeta
+New-Item -ItemType File -Name "archivo.txt"     # Crear archivo
+Copy-Item origen.txt destino.txt                # Copiar
+Move-Item origen.txt destino\                   # Mover
+Remove-Item archivo.txt                         # Eliminar
+Remove-Item -Recurse -Force carpeta\            # Eliminar recursivo
+
+# Ver contenido
+Get-Content archivo.txt                         # Ver archivo
+Get-Content archivo.txt | Select-Object -First 10   # Primeras 10 líneas
+Get-Content archivo.txt | Select-Object -Last 10    # Últimas 10 líneas
+
+# Buscar texto
+Select-String -Path "*.log" -Pattern "error"
+Get-ChildItem -Recurse *.py | Select-String "import"
+
+# Procesos
+Get-Process                           # Listar procesos
+Get-Process | Where-Object {$_.CPU -gt 10}   # Filtrar por CPU
+Stop-Process -Name "notepad"          # Matar por nombre
+Stop-Process -Id 1234                 # Matar por PID
+
+# Servicios
+Get-Service                           # Listar servicios
+Get-Service | Where-Object {$_.Status -eq "Running"}
+Start-Service -Name "wuauserv"        # Iniciar servicio
+Stop-Service -Name "wuauserv"         # Detener servicio
+Restart-Service -Name "nginx"         # Reiniciar
+
+# Red
+Get-NetIPAddress                      # Direcciones IP
+Get-NetAdapter                        # Adaptadores de red
+Test-Connection google.com            # Ping
+Resolve-DnsName google.com            # Consulta DNS
+
+# Información del sistema
+Get-ComputerInfo                      # Info del sistema
+Get-WmiObject Win32_Processor         # Info del CPU
+Get-WmiObject Win32_OperatingSystem   # Info del SO</code></div>
+
+                <h3>Gestión de Usuarios en Windows</h3>
+                <div class="code-block"><code># CMD
+net user                              # Listar usuarios
+net user NuevoUsuario contraseña /add # Crear usuario
+net user Usuario /delete              # Eliminar usuario
+net localgroup Administrators Usuario /add  # Añadir a administradores
+
+# PowerShell
+Get-LocalUser                         # Listar usuarios
+New-LocalUser -Name "Usuario" -Password (ConvertTo-SecureString "contraseña" -AsPlainText -Force)
+Remove-LocalUser -Name "Usuario"
+Add-LocalGroupMember -Group "Administrators" -Member "Usuario"
+
+# Abrir gestión de usuarios (GUI)
+lusrmgr.msc</code></div>
+
+                <h3>Ejemplos Prácticos de Windows</h3>
+
+                <h4>Ejemplo 1: Diagnóstico de red</h4>
+                <div class="code-block"><code># Script de diagnóstico
+@echo off
+echo === Diagnostico de Red ===
+echo.
+echo Configuracion IP:
+ipconfig /all
+echo.
+echo Probando conectividad a Google:
+ping -n 4 8.8.8.8
+echo.
+echo Probando DNS:
+nslookup google.com
+echo.
+echo Ruta a Google:
+tracert -d -h 15 google.com</code></div>
+
+                <h4>Ejemplo 2: Limpiar archivos temporales</h4>
+                <div class="code-block"><code># PowerShell - Limpiar temporales
+$TempFolders = @(
+    $env:TEMP,
+    "C:\Windows\Temp",
+    "C:\Windows\Prefetch"
+)
+
+foreach ($folder in $TempFolders) {
+    if (Test-Path $folder) {
+        Get-ChildItem -Path $folder -Recurse -Force -ErrorAction SilentlyContinue |
+        Remove-Item -Force -Recurse -ErrorAction SilentlyContinue
+        Write-Host "Limpiado: $folder"
+    }
+}
+
+# También disponible
+cleanmgr                     # Herramienta gráfica de limpieza</code></div>
+
+                <h4>Ejemplo 3: Backup con Robocopy</h4>
+                <div class="code-block"><code># Robocopy - copia robusta de archivos
+robocopy C:\Origen D:\Backup /MIR /R:3 /W:5 /LOG:backup.log
+
+# Opciones:
+# /MIR     = Mirror (copia exacta, elimina extras en destino)
+# /R:3     = Reintentar 3 veces si falla
+# /W:5     = Esperar 5 segundos entre reintentos
+# /LOG     = Guardar log
+# /XD      = Excluir directorios (ej: /XD "node_modules" ".git")
+
+# Ejemplo: backup de proyecto excluyendo node_modules
+robocopy C:\Proyectos\MiApp D:\Backup\MiApp /MIR /XD node_modules .git</code></div>
+
+                <h4>Ejemplo 4: Información del sistema</h4>
+                <div class="code-block"><code># PowerShell - Informe del sistema
+$os = Get-WmiObject Win32_OperatingSystem
+$cpu = Get-WmiObject Win32_Processor
+$mem = Get-WmiObject Win32_PhysicalMemory
+
+Write-Host "=== Información del Sistema ===" -ForegroundColor Green
+Write-Host "OS: $($os.Caption) $($os.Version)"
+Write-Host "CPU: $($cpu.Name)"
+Write-Host "RAM: $([math]::Round(($mem | Measure-Object -Property Capacity -Sum).Sum/1GB, 2)) GB"
+Write-Host "Disco C: $([math]::Round((Get-WmiObject Win32_LogicalDisk -Filter "DeviceID='C:'").FreeSpace/1GB, 2)) GB libres"</code></div>
+
+                <h4>Ejemplo 5: Gestión de programas instalados</h4>
+                <div class="code-block"><code># Listar programas instalados
+Get-WmiObject Win32_Product | Select-Object Name, Version | Sort-Object Name
+
+# Usando winget (Windows Package Manager)
+winget list                          # Listar instalados
+winget search vscode                 # Buscar paquete
+winget install Microsoft.VisualStudioCode   # Instalar
+winget upgrade --all                 # Actualizar todo
+winget uninstall "Programa"          # Desinstalar</code></div>
+            </section>
+
+            <!-- REDES INFORMÁTICAS -->
+            <section class="content-section">
+                <h2>Redes Informáticas</h2>
+
+                <h3>Modelo OSI - Las 7 Capas</h3>
+                <p>El modelo OSI (Open Systems Interconnection) es un modelo de referencia para entender cómo se comunican los sistemas en red.</p>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Capa</th>
+                                <th>Nombre</th>
+                                <th>Función</th>
+                                <th>Protocolos/Dispositivos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>7</td>
+                                <td>Aplicación</td>
+                                <td>Interfaz con aplicaciones de usuario</td>
+                                <td>HTTP, HTTPS, FTP, SMTP, DNS, SSH</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Presentación</td>
+                                <td>Formato de datos, encriptación, compresión</td>
+                                <td>SSL/TLS, JPEG, ASCII, MPEG</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Sesión</td>
+                                <td>Establecer, gestionar y terminar sesiones</td>
+                                <td>NetBIOS, RPC, SQL sessions</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Transporte</td>
+                                <td>Transmisión fiable extremo a extremo</td>
+                                <td>TCP, UDP. Puertos</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Red</td>
+                                <td>Direccionamiento y enrutamiento</td>
+                                <td>IP, ICMP, Routers</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Enlace de Datos</td>
+                                <td>Transmisión entre nodos adyacentes</td>
+                                <td>Ethernet, WiFi, MAC, Switches</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Física</td>
+                                <td>Transmisión de bits por medio físico</td>
+                                <td>Cables, conectores, hubs, señales</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="note-box">
+                    <p><strong>Regla mnemotécnica:</strong> "Please Do Not Throw Sausage Pizza Away" (Physical, Data Link, Network, Transport, Session, Presentation, Application)</p>
+                </div>
+
+                <h3>Modelo TCP/IP en Profundidad</h3>
+                <p>El modelo TCP/IP es el modelo práctico usado en Internet, con 4 capas que engloban las funciones del modelo OSI.</p>
+
+                <div class="code-block"><code>Comparación OSI vs TCP/IP:
+
+OSI (7 capas)        TCP/IP (4 capas)
+─────────────        ────────────────
+7. Aplicación    ┐
+6. Presentación  ├─→ 4. Aplicación (HTTP, FTP, DNS, SMTP)
+5. Sesión        ┘
+4. Transporte    ──→ 3. Transporte (TCP, UDP)
+3. Red           ──→ 2. Internet (IP, ICMP, ARP)
+2. Enlace        ┐
+1. Física        ┴─→ 1. Acceso a Red (Ethernet, WiFi)</code></div>
+
+                <h4>TCP vs UDP</h4>
+                <div class="code-block"><code>TCP (Transmission Control Protocol):
+- Orientado a conexión (handshake de 3 vías)
+- Garantiza entrega ordenada y sin errores
+- Control de flujo y congestión
+- Más lento pero fiable
+- Usos: HTTP, HTTPS, FTP, SMTP, SSH
+
+UDP (User Datagram Protocol):
+- Sin conexión (connectionless)
+- No garantiza entrega ni orden
+- Sin control de flujo
+- Más rápido pero no fiable
+- Usos: DNS, DHCP, streaming, videollamadas, gaming
+
+# Puertos comunes
+TCP 20-21: FTP (datos y control)
+TCP 22:    SSH
+TCP 23:    Telnet
+TCP 25:    SMTP
+TCP 53:    DNS (también UDP)
+TCP 80:    HTTP
+TCP 443:   HTTPS
+TCP 3306:  MySQL
+TCP 5432:  PostgreSQL
+UDP 53:    DNS
+UDP 67-68: DHCP
+UDP 123:   NTP</code></div>
+
+                <h3>Direccionamiento IP</h3>
+
+                <h4>IPv4</h4>
+                <div class="code-block"><code># Formato: 4 octetos de 8 bits (32 bits total)
+# Rango por octeto: 0-255
+
+192.168.1.100
+│   │   │  │
+│   │   │  └── Host
+│   │   └───── Subred
+│   └───────── Red
+└───────────── Red
+
+# Clases de direcciones (histórico)
+Clase A: 1.0.0.0   - 126.255.255.255  (/8,  16 millones hosts)
+Clase B: 128.0.0.0 - 191.255.255.255  (/16, 65,534 hosts)
+Clase C: 192.0.0.0 - 223.255.255.255  (/24, 254 hosts)
+
+# Direcciones privadas (RFC 1918)
+10.0.0.0     - 10.255.255.255   (10.0.0.0/8)
+172.16.0.0   - 172.31.255.255   (172.16.0.0/12)
+192.168.0.0  - 192.168.255.255  (192.168.0.0/16)
+
+# Direcciones especiales
+127.0.0.1        Localhost (loopback)
+0.0.0.0          Todas las interfaces / ruta por defecto
+255.255.255.255  Broadcast limitado
+169.254.x.x      APIPA (sin DHCP)</code></div>
+
+                <h4>Máscara de Subred</h4>
+                <div class="code-block"><code># La máscara determina qué parte es red y qué parte es host
+
+255.255.255.0 = /24 (CIDR notation)
+11111111.11111111.11111111.00000000
+
+Red:  primeros 24 bits
+Host: últimos 8 bits = 256 direcciones (254 usables)
+
+# Ejemplos de subredes
+/24 = 255.255.255.0   = 254 hosts
+/25 = 255.255.255.128 = 126 hosts
+/26 = 255.255.255.192 = 62 hosts
+/27 = 255.255.255.224 = 30 hosts
+/28 = 255.255.255.240 = 14 hosts
+/29 = 255.255.255.248 = 6 hosts
+/30 = 255.255.255.252 = 2 hosts (punto a punto)
+
+# Calcular rango de una subred
+IP: 192.168.1.100/26
+Máscara: 255.255.255.192
+Tamaño bloque: 256 - 192 = 64
+
+Bloques: 0, 64, 128, 192
+100 está en bloque 64
+Red: 192.168.1.64
+Broadcast: 192.168.1.127
+Rango usable: 192.168.1.65 - 192.168.1.126
+Gateway típico: 192.168.1.65</code></div>
+
+                <h4>Gateway (Puerta de Enlace)</h4>
+                <p>El gateway es el router que conecta la red local con otras redes (típicamente Internet). Es la "puerta de salida" de la red.</p>
+                <div class="code-block"><code># Configuración típica de red doméstica
+IP del equipo:  192.168.1.100
+Máscara:        255.255.255.0
+Gateway:        192.168.1.1    (el router)
+DNS:            8.8.8.8        (Google DNS)
+
+# El gateway siempre está en la misma subred
+# Suele ser la primera (.1) o última (.254) IP usable</code></div>
+
+                <h3>DNS (Domain Name System)</h3>
+                <p>DNS traduce nombres de dominio legibles (google.com) a direcciones IP numéricas (142.250.184.14).</p>
+
+                <div class="code-block"><code># Jerarquía DNS
+.                    (raíz)
+├── com              (TLD - Top Level Domain)
+│   ├── google
+│   │   ├── www      (www.google.com)
+│   │   └── mail     (mail.google.com)
+│   └── ejemplo
+└── es
+    └── ejemplo
+        └── www      (www.ejemplo.es)
+
+# Tipos de registros DNS
+A      IPv4 address     google.com → 142.250.184.14
+AAAA   IPv6 address     google.com → 2607:f8b0:4004::200e
+CNAME  Canonical name   www → dominio.com (alias)
+MX     Mail exchange    dominio.com → mail.dominio.com
+NS     Name server      dominio.com → ns1.proveedor.com
+TXT    Text record      Verificación, SPF, DKIM
+PTR    Reverse lookup   IP → nombre (DNS inverso)
+
+# Servidores DNS públicos
+Google:      8.8.8.8 y 8.8.4.4
+Cloudflare:  1.1.1.1 y 1.0.0.1
+OpenDNS:     208.67.222.222
+Quad9:       9.9.9.9</code></div>
+
+                <h4>Proceso de Resolución DNS</h4>
+                <div class="code-block"><code>Usuario escribe www.google.com
+
+1. Caché local del navegador
+   └─ ¿Lo tiene? → Usar IP cacheada
+   └─ ¿No? → Siguiente paso
+
+2. Caché del sistema operativo
+   └─ Archivo hosts (/etc/hosts o C:\Windows\System32\drivers\etc\hosts)
+   └─ Caché DNS del SO
+
+3. Servidor DNS configurado (ISP o público)
+   └─ ¿En caché? → Devolver IP
+   └─ ¿No? → Consulta recursiva
+
+4. Consulta recursiva:
+   a) Servidor raíz → "Pregunta a servidores .com"
+   b) Servidor .com → "Pregunta a ns1.google.com"
+   c) ns1.google.com → "142.250.184.14"
+
+5. IP devuelta y cacheada en cada nivel</code></div>
+
+                <h3>DHCP (Dynamic Host Configuration Protocol)</h3>
+                <p>DHCP asigna automáticamente direcciones IP y configuración de red a los dispositivos.</p>
+
+                <div class="code-block"><code># Proceso DHCP (DORA)
+1. DISCOVER - Cliente envía broadcast buscando servidor DHCP
+2. OFFER    - Servidor ofrece IP y configuración
+3. REQUEST  - Cliente solicita la IP ofrecida
+4. ACK      - Servidor confirma la asignación
+
+# Información proporcionada por DHCP
+- Dirección IP
+- Máscara de subred
+- Gateway por defecto
+- Servidores DNS
+- Tiempo de concesión (lease time)
+
+# Renovar DHCP manualmente
+# Windows
+ipconfig /release
+ipconfig /renew
+
+# Linux
+sudo dhclient -r        # Liberar
+sudo dhclient           # Renovar</code></div>
+
+                <h3>Comandos de Red</h3>
+
+                <h4>ping - Probar Conectividad</h4>
+                <div class="code-block"><code># Comprobar si un host responde
+ping google.com
+ping 8.8.8.8
+ping -c 4 192.168.1.1          # Linux: 4 paquetes
+ping -n 4 192.168.1.1          # Windows: 4 paquetes
+
+# Salida típica
+PING google.com (142.250.184.14): 56 bytes
+64 bytes from 142.250.184.14: icmp_seq=0 ttl=117 time=12.3 ms
+64 bytes from 142.250.184.14: icmp_seq=1 ttl=117 time=11.8 ms
+
+# Interpretación
+- time: latencia (menor = mejor)
+- ttl: Time To Live (saltos restantes)
+- Packet loss 0% = conexión OK</code></div>
+
+                <h4>ipconfig / ip - Configuración IP</h4>
+                <div class="code-block"><code># Windows
+ipconfig                       # Configuración básica
+ipconfig /all                  # Configuración detallada
+ipconfig /flushdns             # Limpiar caché DNS
+ipconfig /displaydns           # Ver caché DNS
+
+# Linux
+ip addr                        # Ver direcciones IP
+ip addr show eth0              # Interfaz específica
+ip route                       # Ver tabla de rutas
+ip link                        # Ver interfaces
+
+# Configurar IP estática temporalmente (Linux)
+sudo ip addr add 192.168.1.100/24 dev eth0
+sudo ip route add default via 192.168.1.1</code></div>
+
+                <h4>tracert / traceroute - Trazar Ruta</h4>
+                <div class="code-block"><code># Mostrar la ruta que siguen los paquetes
+tracert google.com             # Windows
+traceroute google.com          # Linux
+
+# Salida
+ 1    1 ms   192.168.1.1       (router local)
+ 2    8 ms   10.0.0.1          (ISP)
+ 3   12 ms   72.14.215.85      (backbone)
+ 4   15 ms   142.250.184.14    (destino)
+
+# Útil para diagnosticar dónde falla la conexión</code></div>
+
+                <h4>nslookup / dig - Consultas DNS</h4>
+                <div class="code-block"><code># nslookup (Windows y Linux)
+nslookup google.com
+nslookup -type=MX google.com    # Registros de correo
+nslookup google.com 8.8.8.8     # Usar DNS específico
+
+# dig (Linux - más detallado)
+dig google.com
+dig google.com MX               # Registros MX
+dig google.com +short           # Solo la IP
+dig @8.8.8.8 google.com         # Usar DNS específico
+
+# Ejemplo de salida dig
+;; ANSWER SECTION:
+google.com.    300    IN    A    142.250.184.14</code></div>
+
+                <h4>netstat / ss - Conexiones de Red</h4>
+                <div class="code-block"><code># Ver conexiones activas y puertos
+netstat -an                     # Todas las conexiones
+netstat -tuln                   # Linux: TCP/UDP listening
+netstat -ano | findstr :80      # Windows: filtrar puerto 80
+
+# ss (reemplazo moderno en Linux)
+ss -tuln                        # Puertos en escucha
+ss -tp                          # Conexiones TCP con proceso
+
+# Ver qué proceso usa un puerto
+# Linux
+sudo lsof -i :80
+sudo netstat -tlnp | grep :80
+
+# Windows
+netstat -ano | findstr :80
+tasklist /FI "PID eq 1234"</code></div>
+
+                <h3>Ejemplos de Configuración de Red</h3>
+
+                <h4>Ejemplo 1: Configurar IP estática en Linux</h4>
+                <div class="code-block"><code># Ubuntu/Debian con Netplan (/etc/netplan/01-config.yaml)
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    eth0:
+      addresses:
+        - 192.168.1.100/24
+      gateway4: 192.168.1.1
+      nameservers:
+        addresses: [8.8.8.8, 8.8.4.4]
+
+# Aplicar configuración
+sudo netplan apply</code></div>
+
+                <h4>Ejemplo 2: Configurar IP estática en Windows</h4>
+                <div class="code-block"><code># PowerShell (ejecutar como administrador)
+New-NetIPAddress -InterfaceAlias "Ethernet" `
+    -IPAddress 192.168.1.100 `
+    -PrefixLength 24 `
+    -DefaultGateway 192.168.1.1
+
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" `
+    -ServerAddresses 8.8.8.8, 8.8.4.4
+
+# Volver a DHCP
+Set-NetIPInterface -InterfaceAlias "Ethernet" -Dhcp Enabled
+Set-DnsClientServerAddress -InterfaceAlias "Ethernet" -ResetServerAddresses</code></div>
+
+                <h4>Ejemplo 3: Diagnóstico de problemas de red</h4>
+                <div class="code-block"><code># Script de diagnóstico paso a paso
+
+# 1. Verificar configuración IP
+ip addr                    # ¿Tenemos IP válida?
+
+# 2. Ping al gateway
+ping -c 3 192.168.1.1      # ¿Llego al router?
+
+# 3. Ping a IP externa
+ping -c 3 8.8.8.8          # ¿Llego a Internet?
+
+# 4. Resolución DNS
+nslookup google.com        # ¿Funciona DNS?
+
+# 5. Ping a dominio
+ping -c 3 google.com       # Todo funciona
+
+# Problemas comunes:
+# - Sin IP → Problema DHCP o cable
+# - No ping a gateway → Cable, driver o router
+# - Ping a IP pero no DNS → Configuración DNS incorrecta</code></div>
+
+                <h4>Ejemplo 4: Modificar archivo hosts</h4>
+                <div class="code-block"><code># Linux: /etc/hosts
+# Windows: C:\Windows\System32\drivers\etc\hosts
+
+# Formato: IP    nombre    [alias]
+127.0.0.1       localhost
+192.168.1.100   mi-servidor    servidor
+192.168.1.50    base-datos     db
+
+# Útil para:
+# - Desarrollo local (api.local → 127.0.0.1)
+# - Bloquear sitios (0.0.0.0 facebook.com)
+# - Pruebas antes de cambio de DNS</code></div>
+
+                <h4>Ejemplo 5: Configurar firewall básico (Linux)</h4>
+                <div class="code-block"><code># UFW (Uncomplicated Firewall) - Ubuntu/Debian
+sudo ufw status                      # Ver estado
+sudo ufw enable                      # Activar firewall
+sudo ufw default deny incoming       # Denegar entrada por defecto
+sudo ufw default allow outgoing      # Permitir salida
+
+# Permitir servicios
+sudo ufw allow ssh                   # Puerto 22
+sudo ufw allow 80/tcp                # HTTP
+sudo ufw allow 443/tcp               # HTTPS
+sudo ufw allow from 192.168.1.0/24   # Red local
+
+# Eliminar regla
+sudo ufw delete allow 80/tcp
+
+# Ver reglas numeradas
+sudo ufw status numbered</code></div>
+
+                <h4>Ejemplo 6: Análisis de tráfico con tcpdump</h4>
+                <div class="code-block"><code># Capturar tráfico de red (requiere root)
+sudo tcpdump -i eth0                 # Todo el tráfico
+sudo tcpdump -i eth0 port 80         # Solo puerto 80
+sudo tcpdump -i eth0 host 192.168.1.50   # Host específico
+sudo tcpdump -i eth0 -c 100          # Solo 100 paquetes
+
+# Guardar captura para Wireshark
+sudo tcpdump -i eth0 -w captura.pcap
+
+# Filtros útiles
+sudo tcpdump -i eth0 'tcp port 80 and host 192.168.1.50'
+sudo tcpdump -i eth0 'icmp'          # Solo ping</code></div>
+            </section>
+
+            <!-- VIRTUALIZACIÓN -->
+            <section class="content-section">
+                <h2>Virtualización</h2>
+
+                <h3>Concepto y Beneficios</h3>
+                <p>La virtualización permite ejecutar múltiples sistemas operativos en una única máquina física, compartiendo recursos de hardware de forma aislada.</p>
+
+                <h4>Beneficios de la Virtualización</h4>
+                <ul>
+                    <li><strong>Consolidación:</strong> Múltiples servidores en un hardware físico</li>
+                    <li><strong>Aislamiento:</strong> Fallos en una VM no afectan a otras</li>
+                    <li><strong>Snapshots:</strong> Guardar y restaurar estados del sistema</li>
+                    <li><strong>Pruebas:</strong> Entornos de desarrollo y testing aislados</li>
+                    <li><strong>Portabilidad:</strong> Mover VMs entre hosts fácilmente</li>
+                    <li><strong>Recuperación:</strong> Restaurar rápidamente ante desastres</li>
+                </ul>
+
+                <h4>Tipos de Hipervisores</h4>
+                <div class="code-block"><code>Tipo 1 - Bare Metal (directamente sobre hardware):
+├── VMware ESXi
+├── Microsoft Hyper-V Server
+├── Citrix XenServer
+└── KVM/QEMU (Linux)
+
+Tipo 2 - Hosted (sobre sistema operativo):
+├── VirtualBox (gratuito, multiplataforma)
+├── VMware Workstation/Fusion
+├── Parallels Desktop (macOS)
+└── QEMU (emulación)</code></div>
+
+                <h3>VirtualBox - Guía Básica</h3>
+
+                <h4>Crear una Máquina Virtual</h4>
+                <div class="code-block"><code># Pasos para crear VM en VirtualBox
+
+1. Nueva máquina virtual
+   - Nombre: Ubuntu-Server
+   - Tipo: Linux
+   - Versión: Ubuntu (64-bit)
+
+2. Memoria RAM
+   - Mínimo: 1024 MB
+   - Recomendado: 2048-4096 MB
+
+3. Disco duro
+   - Crear disco virtual ahora
+   - VDI (VirtualBox Disk Image)
+   - Reservado dinámicamente
+   - Tamaño: 20-50 GB
+
+4. Configuración adicional (antes de iniciar)
+   - Sistema → Procesador: 2+ CPUs
+   - Pantalla → Memoria vídeo: 128 MB
+   - Red → Adaptador puente (para acceso desde host)
+   - Almacenamiento → Añadir ISO de instalación</code></div>
+
+                <h4>Configuración de Red en VirtualBox</h4>
+                <div class="code-block"><code># Modos de red disponibles
+
+NAT (por defecto):
+- VM accede a Internet a través del host
+- Host no puede acceder a VM directamente
+- Uso: navegación, actualizaciones
+
+Adaptador puente (Bridged):
+- VM en la misma red que el host
+- Obtiene IP del router/DHCP
+- Uso: servidores accesibles desde la red
+
+Red solo-anfitrión (Host-only):
+- Red privada entre host y VMs
+- Sin acceso a Internet
+- Uso: laboratorios aislados
+
+Red interna:
+- Solo comunicación entre VMs
+- Uso: clusters, pruebas de red</code></div>
+
+                <h4>Comandos VBoxManage (CLI)</h4>
+                <div class="code-block"><code># Listar VMs
+VBoxManage list vms
+VBoxManage list runningvms
+
+# Iniciar/Detener VM
+VBoxManage startvm "Ubuntu-Server" --type headless
+VBoxManage controlvm "Ubuntu-Server" poweroff
+VBoxManage controlvm "Ubuntu-Server" acpipowerbutton
+
+# Snapshots
+VBoxManage snapshot "Ubuntu-Server" take "Pre-instalacion"
+VBoxManage snapshot "Ubuntu-Server" restore "Pre-instalacion"
+VBoxManage snapshot "Ubuntu-Server" list
+
+# Información de VM
+VBoxManage showvminfo "Ubuntu-Server"
+
+# Clonar VM
+VBoxManage clonevm "Ubuntu-Server" --name "Ubuntu-Clon" --register</code></div>
+
+                <h3>Docker - Introducción</h3>
+                <p>Docker es una plataforma de contenedores que permite empaquetar aplicaciones con todas sus dependencias en unidades portables llamadas contenedores.</p>
+
+                <h4>Conceptos Básicos de Docker</h4>
+                <div class="code-block"><code># Terminología
+
+Imagen:
+- Plantilla de solo lectura con la aplicación y dependencias
+- Se construye desde un Dockerfile
+- Se almacena en registros (Docker Hub)
+
+Contenedor:
+- Instancia ejecutable de una imagen
+- Aislado pero comparte kernel con el host
+- Efímero por diseño (stateless)
+
+Dockerfile:
+- Script con instrucciones para construir una imagen
+
+Docker Compose:
+- Herramienta para definir aplicaciones multi-contenedor
+- Archivo YAML (docker-compose.yml)
+
+Volumen:
+- Persistencia de datos fuera del contenedor</code></div>
+
+                <h4>Comandos Docker Básicos</h4>
+                <div class="code-block"><code># Imágenes
+docker images                        # Listar imágenes locales
+docker pull nginx                    # Descargar imagen
+docker rmi nginx                     # Eliminar imagen
+
+# Contenedores
+docker ps                            # Contenedores en ejecución
+docker ps -a                         # Todos los contenedores
+docker run nginx                     # Ejecutar contenedor
+docker run -d nginx                  # Ejecutar en background
+docker run -d -p 8080:80 nginx       # Mapear puertos
+docker run -d --name mi-web nginx    # Con nombre
+docker stop mi-web                   # Detener
+docker start mi-web                  # Iniciar
+docker rm mi-web                     # Eliminar contenedor
+
+# Interactuar con contenedor
+docker exec -it mi-web bash          # Shell dentro del contenedor
+docker logs mi-web                   # Ver logs
+docker logs -f mi-web                # Seguir logs
+
+# Información
+docker inspect mi-web                # Detalles del contenedor</code></div>
+
+                <h3>Ejemplos Prácticos de Virtualización</h3>
+
+                <h4>Ejemplo 1: Servidor web en contenedor</h4>
+                <div class="code-block"><code># Ejecutar Nginx con página personalizada
+
+# Crear directorio para el sitio
+mkdir mi-sitio
+echo "&lt;h1&gt;Hola desde Docker&lt;/h1&gt;" > mi-sitio/index.html
+
+# Ejecutar contenedor con volumen
+docker run -d \
+  --name web-server \
+  -p 8080:80 \
+  -v $(pwd)/mi-sitio:/usr/share/nginx/html:ro \
+  nginx
+
+# Acceder en http://localhost:8080
+# Detener y eliminar
+docker stop web-server && docker rm web-server</code></div>
+
+                <h4>Ejemplo 2: Entorno de desarrollo con Docker Compose</h4>
+                <div class="code-block"><code># docker-compose.yml para aplicación web + base de datos
+
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: secreto
+      MYSQL_DATABASE: miapp
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+volumes:
+  mysql_data:
+
+# Comandos
+docker-compose up -d        # Iniciar servicios
+docker-compose ps           # Ver estado
+docker-compose logs -f      # Ver logs
+docker-compose down         # Detener y eliminar</code></div>
+
+                <h4>Ejemplo 3: Laboratorio de red con VirtualBox</h4>
+                <div class="code-block"><code># Crear red de laboratorio para prácticas
+
+1. Crear red interna en VirtualBox
+   - Archivo → Herramientas → Network Manager
+   - Crear red NAT: LabNetwork (10.0.2.0/24)
+
+2. Crear VMs:
+   - Router: Ubuntu Server (2 adaptadores)
+     * Adaptador 1: NAT (Internet)
+     * Adaptador 2: Red interna "LabNetwork"
+
+   - Cliente1: Ubuntu Desktop
+     * Adaptador 1: Red interna "LabNetwork"
+
+   - Cliente2: Windows 10
+     * Adaptador 1: Red interna "LabNetwork"
+
+3. Configurar el router Ubuntu:
+   # Habilitar IP forwarding
+   echo 1 | sudo tee /proc/sys/net/ipv4/ip_forward
+
+   # Configurar NAT con iptables
+   sudo iptables -t nat -A POSTROUTING -o enp0s3 -j MASQUERADE</code></div>
+            </section>
+
+            <!-- SEGURIDAD BÁSICA -->
+            <section class="content-section">
+                <h2>Seguridad Básica</h2>
+
+                <h3>Antivirus y Antimalware</h3>
+                <p>El software antimalware protege contra virus, troyanos, ransomware, spyware y otras amenazas.</p>
+
+                <h4>Tipos de Amenazas</h4>
+                <ul>
+                    <li><strong>Virus:</strong> Se adjunta a archivos y se propaga al ejecutarlos</li>
+                    <li><strong>Gusano:</strong> Se propaga automáticamente por la red</li>
+                    <li><strong>Troyano:</strong> Se disfraza de software legítimo</li>
+                    <li><strong>Ransomware:</strong> Cifra archivos y pide rescate</li>
+                    <li><strong>Spyware:</strong> Recopila información sin consentimiento</li>
+                    <li><strong>Adware:</strong> Muestra publicidad no deseada</li>
+                    <li><strong>Rootkit:</strong> Se oculta en el sistema para mantener acceso</li>
+                </ul>
+
+                <h4>Soluciones Antimalware</h4>
+                <div class="code-block"><code>Windows:
+- Windows Defender (integrado, suficiente para la mayoría)
+- Malwarebytes (complementario, escaneo bajo demanda)
+- Bitdefender, Kaspersky (soluciones premium)
+
+Linux:
+- ClamAV (código abierto)
+  sudo apt install clamav clamav-daemon
+  sudo freshclam                  # Actualizar firmas
+  clamscan -r /home/usuario       # Escanear directorio
+
+macOS:
+- XProtect (integrado)
+- Malwarebytes for Mac</code></div>
+
+                <h3>Firewall</h3>
+                <p>El firewall filtra el tráfico de red entrante y saliente según reglas definidas, protegiendo contra accesos no autorizados.</p>
+
+                <h4>Tipos de Firewall</h4>
+                <ul>
+                    <li><strong>Filtrado de paquetes:</strong> Analiza cabeceras IP/TCP/UDP</li>
+                    <li><strong>Stateful:</strong> Mantiene estado de conexiones</li>
+                    <li><strong>Aplicación (WAF):</strong> Analiza contenido de capa 7</li>
+                    <li><strong>Next-Gen (NGFW):</strong> Incluye IPS, análisis de malware</li>
+                </ul>
+
+                <h4>Configuración de Firewall en Windows</h4>
+                <div class="code-block"><code># PowerShell (administrador)
+
+# Ver estado
+Get-NetFirewallProfile
+
+# Habilitar/deshabilitar
+Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled True
+
+# Crear regla de entrada
+New-NetFirewallRule -DisplayName "Permitir Web" `
+    -Direction Inbound `
+    -Protocol TCP `
+    -LocalPort 80,443 `
+    -Action Allow
+
+# Bloquear aplicación
+New-NetFirewallRule -DisplayName "Bloquear App" `
+    -Direction Outbound `
+    -Program "C:\Program Files\App\app.exe" `
+    -Action Block
+
+# Ver reglas
+Get-NetFirewallRule | Where-Object {$_.Enabled -eq 'True'}
+
+# Eliminar regla
+Remove-NetFirewallRule -DisplayName "Permitir Web"</code></div>
+
+                <h4>UFW en Linux (Ubuntu)</h4>
+                <div class="code-block"><code># Instalación y activación
+sudo apt install ufw
+sudo ufw enable
+
+# Configuración básica
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Reglas comunes
+sudo ufw allow ssh           # 22/tcp
+sudo ufw allow http          # 80/tcp
+sudo ufw allow https         # 443/tcp
+sudo ufw allow 3000/tcp      # Puerto específico
+
+# Permitir desde IP/red específica
+sudo ufw allow from 192.168.1.0/24 to any port 22
+sudo ufw allow from 192.168.1.50 to any port 3306
+
+# Denegar
+sudo ufw deny from 10.0.0.5
+
+# Ver estado y reglas
+sudo ufw status verbose
+sudo ufw status numbered
+
+# Eliminar regla
+sudo ufw delete 3            # Por número
+sudo ufw delete allow http   # Por descripción</code></div>
+
+                <h3>Copias de Seguridad</h3>
+
+                <h4>Tipos de Backup</h4>
+                <div class="code-block"><code>Completo (Full):
+- Copia todos los datos
+- Más tiempo y espacio
+- Restauración más rápida
+- Ej: Domingo → Full
+
+Incremental:
+- Solo cambios desde último backup (cualquier tipo)
+- Rápido y poco espacio
+- Restauración más lenta (necesita toda la cadena)
+- Ej: Lunes-Sábado → Incrementales
+
+Diferencial:
+- Cambios desde último Full
+- Equilibrio tiempo/espacio
+- Restauración: Full + último diferencial
+- Ej: Lunes-Sábado → Diferenciales</code></div>
+
+                <h4>Estrategia 3-2-1</h4>
+                <div class="code-block"><code>La regla 3-2-1 es el estándar para backups:
+
+3 - Tres copias de los datos (original + 2 backups)
+2 - En dos tipos de medios diferentes (disco local + nube)
+1 - Una copia offsite (fuera del edificio)
+
+Ejemplo práctico:
+- Original: disco del equipo
+- Backup 1: NAS local (diario)
+- Backup 2: Cloud (semanal) → Offsite</code></div>
+
+                <h4>Herramientas de Backup</h4>
+                <div class="code-block"><code>Linux:
+- rsync (sincronización de archivos)
+  rsync -avz /origen/ /destino/
+  rsync -avz --delete /origen/ /destino/   # Mirror
+
+- tar + cron (backup programado)
+  tar -czvf backup_$(date +%Y%m%d).tar.gz /home/
+
+- Timeshift (snapshots del sistema)
+- BorgBackup (deduplicación, cifrado)
+- Restic (similar, en Go)
+
+Windows:
+- Historial de archivos (integrado)
+- Imagen del sistema (integrado)
+- Veeam Agent (gratuito)
+- Duplicati (cifrado, cloud)
+
+Cloud:
+- Backblaze B2
+- AWS S3 Glacier
+- Google Cloud Storage
+- Wasabi</code></div>
+
+                <h4>Script de Backup Automatizado</h4>
+                <div class="code-block"><code>#!/bin/bash
+# backup.sh - Backup incremental con rsync
+
+# Configuración
+ORIGEN="/home/usuario"
+DESTINO="/mnt/backup"
+FECHA=$(date +%Y%m%d_%H%M%S)
+LOG="/var/log/backup.log"
+
+# Exclusiones
+EXCLUIR="--exclude='.cache' --exclude='node_modules' --exclude='.npm'"
+
+# Ejecutar backup
+echo "$(date): Iniciando backup" >> $LOG
+rsync -avz --delete $EXCLUIR "$ORIGEN/" "$DESTINO/actual/" >> $LOG 2>&1
+
+# Crear snapshot con hardlinks (ahorra espacio)
+cp -al "$DESTINO/actual" "$DESTINO/snapshot_$FECHA"
+
+echo "$(date): Backup completado" >> $LOG
+
+# Programar en cron (crontab -e)
+# 0 2 * * * /home/usuario/scripts/backup.sh</code></div>
+
+                <h3>Buenas Prácticas de Seguridad</h3>
+
+                <h4>Contraseñas y Autenticación</h4>
+                <ul>
+                    <li>Usa contraseñas de al menos 12 caracteres con mayúsculas, minúsculas, números y símbolos</li>
+                    <li>No reutilices contraseñas entre servicios</li>
+                    <li>Usa un gestor de contraseñas (Bitwarden, KeePass, 1Password)</li>
+                    <li>Activa autenticación de dos factores (2FA) siempre que sea posible</li>
+                    <li>Prefiere TOTP (Google Authenticator) sobre SMS</li>
+                </ul>
+
+                <h4>Actualizaciones del Sistema</h4>
+                <div class="code-block"><code># Linux - Actualizaciones automáticas
+# Ubuntu: unattended-upgrades
+sudo apt install unattended-upgrades
+sudo dpkg-reconfigure unattended-upgrades
+
+# Actualización manual
+sudo apt update && sudo apt upgrade -y
+
+# Windows
+# Configuración → Windows Update → Opciones avanzadas
+# Activar actualizaciones automáticas
+
+# PowerShell - Forzar búsqueda de actualizaciones
+Install-Module PSWindowsUpdate
+Get-WindowsUpdate
+Install-WindowsUpdate -AcceptAll</code></div>
+
+                <h4>Principio de Mínimo Privilegio</h4>
+                <ul>
+                    <li>No usar cuenta de administrador para tareas diarias</li>
+                    <li>Usar sudo/UAC solo cuando sea necesario</li>
+                    <li>Revisar permisos de aplicaciones instaladas</li>
+                    <li>Eliminar servicios y programas no utilizados</li>
+                </ul>
+
+                <h4>Seguridad en Red</h4>
+                <ul>
+                    <li>Usar VPN en redes WiFi públicas</li>
+                    <li>Verificar HTTPS antes de introducir datos sensibles</li>
+                    <li>No abrir adjuntos de remitentes desconocidos</li>
+                    <li>Desconfiar de enlaces acortados o sospechosos</li>
+                    <li>Mantener el router actualizado y con contraseña fuerte</li>
+                </ul>
+
+                <h4>Lista de Verificación de Seguridad</h4>
+                <div class="code-block"><code>[ ] Sistema operativo actualizado
+[ ] Antivirus activo y actualizado
+[ ] Firewall activado
+[ ] Contraseñas únicas y fuertes
+[ ] 2FA activado en cuentas importantes
+[ ] Backups automáticos configurados
+[ ] Backup probado (restauración)
+[ ] Cifrado de disco activado (BitLocker/LUKS)
+[ ] Navegador actualizado
+[ ] Extensiones mínimas y de confianza
+[ ] Router con firmware actualizado
+[ ] WiFi con WPA3 o WPA2-AES</code></div>
+            </section>
+
+            <!-- EJERCICIOS PRÁCTICOS -->
+            <section class="content-section">
+                <h2>Ejercicios Prácticos Resueltos</h2>
+
+                <h3>Ejercicios de Comandos Linux</h3>
+
+                <h4>Ejercicio 1: Organización de archivos</h4>
+                <div class="code-block"><code># Enunciado: Crear estructura de proyecto y organizar archivos
+
+# Crear estructura
+mkdir -p ~/proyecto/{src,docs,tests,config}
+
+# Crear archivos de ejemplo
+touch ~/proyecto/src/{main.py,utils.py,__init__.py}
+touch ~/proyecto/docs/{README.md,API.md}
+touch ~/proyecto/tests/{test_main.py,test_utils.py}
+touch ~/proyecto/config/{dev.yaml,prod.yaml}
+
+# Verificar estructura
+tree ~/proyecto
+
+# Resultado:
+proyecto/
+├── config
+│   ├── dev.yaml
+│   └── prod.yaml
+├── docs
+│   ├── API.md
+│   └── README.md
+├── src
+│   ├── __init__.py
+│   ├── main.py
+│   └── utils.py
+└── tests
+    ├── test_main.py
+    └── test_utils.py</code></div>
+
+                <h4>Ejercicio 2: Búsqueda de archivos</h4>
+                <div class="code-block"><code># Enunciado: Encontrar todos los archivos Python modificados
+# en los últimos 7 días que contengan la palabra "import"
+
+find /home/usuario -name "*.py" -mtime -7 -exec grep -l "import" {} \;
+
+# Alternativa con find y xargs (más eficiente)
+find /home/usuario -name "*.py" -mtime -7 | xargs grep -l "import"
+
+# Explicación:
+# find: buscar archivos
+# -name "*.py": archivos Python
+# -mtime -7: modificados hace menos de 7 días
+# -exec: ejecutar comando en cada resultado
+# grep -l: mostrar solo nombres de archivo que coinciden</code></div>
+
+                <h4>Ejercicio 3: Análisis de logs</h4>
+                <div class="code-block"><code># Enunciado: Contar errores por tipo en un archivo de log
+
+# Ver los tipos de error más frecuentes
+grep -i "error" /var/log/syslog | awk '{print $5}' | sort | uniq -c | sort -rn | head -10
+
+# Errores de hoy con timestamp
+grep "$(date +%b\ %d)" /var/log/syslog | grep -i error
+
+# Crear resumen de errores
+echo "=== Resumen de Errores ===" > /tmp/error_report.txt
+echo "Fecha: $(date)" >> /tmp/error_report.txt
+echo "" >> /tmp/error_report.txt
+echo "Total errores: $(grep -c -i error /var/log/syslog)" >> /tmp/error_report.txt
+echo "" >> /tmp/error_report.txt
+echo "Top 5 servicios con errores:" >> /tmp/error_report.txt
+grep -i error /var/log/syslog | awk '{print $5}' | sort | uniq -c | sort -rn | head -5 >> /tmp/error_report.txt</code></div>
+
+                <h4>Ejercicio 4: Gestión de permisos</h4>
+                <div class="code-block"><code># Enunciado: Configurar permisos para un proyecto web
+
+# Crear estructura
+sudo mkdir -p /var/www/miapp/{public,logs,config}
+
+# Establecer propietario (usuario www-data para Apache/Nginx)
+sudo chown -R www-data:www-data /var/www/miapp
+
+# Permisos de directorios (755: lectura y ejecución para todos)
+sudo find /var/www/miapp -type d -exec chmod 755 {} \;
+
+# Permisos de archivos (644: lectura para todos)
+sudo find /var/www/miapp -type f -exec chmod 644 {} \;
+
+# Permisos especiales para logs (escritura para www-data)
+sudo chmod 775 /var/www/miapp/logs
+
+# Config sensible (solo propietario)
+sudo chmod 600 /var/www/miapp/config/*.yaml
+
+# Verificar
+ls -la /var/www/miapp</code></div>
+
+                <h4>Ejercicio 5: Monitorización de procesos</h4>
+                <div class="code-block"><code># Enunciado: Crear script que alerte si un proceso consume más del 80% CPU
+
+#!/bin/bash
+# check_cpu.sh
+
+PROCESO="$1"
+LIMITE=80
+
+if [ -z "$PROCESO" ]; then
+    echo "Uso: $0 <nombre_proceso>"
+    exit 1
+fi
+
+CPU=$(ps aux | grep "$PROCESO" | grep -v grep | awk '{sum += $3} END {print sum}')
+
+if [ -z "$CPU" ]; then
+    echo "Proceso '$PROCESO' no encontrado"
+    exit 1
+fi
+
+# Comparación con bc (soporta decimales)
+ALERTA=$(echo "$CPU > $LIMITE" | bc)
+
+if [ "$ALERTA" -eq 1 ]; then
+    echo "ALERTA: $PROCESO está usando ${CPU}% CPU (límite: ${LIMITE}%)"
+    # Aquí podrías enviar email, log, etc.
+else
+    echo "OK: $PROCESO usando ${CPU}% CPU"
+fi
+
+# Uso: ./check_cpu.sh firefox</code></div>
+
+                <h4>Ejercicio 6: Backup automatizado</h4>
+                <div class="code-block"><code># Enunciado: Script de backup con retención de 7 días
+
+#!/bin/bash
+# backup_rotativo.sh
+
+ORIGEN="/home/usuario/documentos"
+DESTINO="/mnt/backup/documentos"
+RETENCION=7
+FECHA=$(date +%Y%m%d)
+
+# Crear backup
+tar -czf "$DESTINO/backup_$FECHA.tar.gz" "$ORIGEN"
+
+# Verificar éxito
+if [ $? -eq 0 ]; then
+    echo "$(date): Backup completado: backup_$FECHA.tar.gz"
+else
+    echo "$(date): ERROR en backup"
+    exit 1
+fi
+
+# Eliminar backups antiguos
+find "$DESTINO" -name "backup_*.tar.gz" -mtime +$RETENCION -delete
+
+# Listar backups actuales
+echo "Backups disponibles:"
+ls -lh "$DESTINO"
+
+# Programar: 0 3 * * * /home/usuario/scripts/backup_rotativo.sh >> /var/log/backup.log 2>&1</code></div>
+
+                <h4>Ejercicio 7: Información del sistema</h4>
+                <div class="code-block"><code># Enunciado: Script que muestre informe del sistema
+
+#!/bin/bash
+# system_report.sh
+
+echo "================================"
+echo "  INFORME DEL SISTEMA"
+echo "  $(date)"
+echo "================================"
+echo ""
+
+echo "--- SISTEMA ---"
+echo "Hostname: $(hostname)"
+echo "SO: $(cat /etc/os-release | grep PRETTY_NAME | cut -d'"' -f2)"
+echo "Kernel: $(uname -r)"
+echo "Uptime: $(uptime -p)"
+echo ""
+
+echo "--- CPU ---"
+echo "Modelo: $(grep 'model name' /proc/cpuinfo | head -1 | cut -d':' -f2)"
+echo "Núcleos: $(nproc)"
+echo "Carga: $(uptime | awk -F'load average:' '{print $2}')"
+echo ""
+
+echo "--- MEMORIA ---"
+free -h | awk '/^Mem:/ {print "Total: " $2 ", Usada: " $3 ", Libre: " $4}'
+free -h | awk '/^Swap:/ {print "Swap - Total: " $2 ", Usada: " $3}'
+echo ""
+
+echo "--- DISCO ---"
+df -h | grep "^/dev" | awk '{print $1 ": " $3 "/" $2 " (" $5 " usado)"}'
+echo ""
+
+echo "--- RED ---"
+ip -4 addr show | grep inet | awk '{print $NF ": " $2}'
+echo ""
+
+echo "--- TOP 5 PROCESOS (CPU) ---"
+ps aux --sort=-%cpu | head -6 | tail -5 | awk '{print $11 ": " $3 "% CPU"}'</code></div>
+
+                <h4>Ejercicio 8: Gestión de usuarios</h4>
+                <div class="code-block"><code># Enunciado: Script para crear usuarios de desarrollo
+
+#!/bin/bash
+# crear_desarrollador.sh
+
+if [ "$EUID" -ne 0 ]; then
+    echo "Este script requiere permisos de root"
+    exit 1
+fi
+
+read -p "Nombre de usuario: " USERNAME
+read -p "Nombre completo: " FULLNAME
+
+# Crear usuario
+useradd -m -c "$FULLNAME" -s /bin/bash "$USERNAME"
+
+# Establecer contraseña
+echo "Establecer contraseña para $USERNAME:"
+passwd "$USERNAME"
+
+# Añadir a grupos de desarrollo
+usermod -aG sudo,docker,www-data "$USERNAME"
+
+# Crear estructura de directorios
+sudo -u "$USERNAME" mkdir -p /home/$USERNAME/{proyectos,scripts,.ssh}
+sudo -u "$USERNAME" chmod 700 /home/$USERNAME/.ssh
+
+# Configurar Git básico
+sudo -u "$USERNAME" git config --global user.name "$FULLNAME"
+echo "Introduce email para Git:"
+read EMAIL
+sudo -u "$USERNAME" git config --global user.email "$EMAIL"
+
+echo ""
+echo "Usuario $USERNAME creado correctamente"
+echo "Grupos: $(groups $USERNAME)"
+echo "Home: /home/$USERNAME"</code></div>
+
+                <h3>Ejercicios de Configuración de Red</h3>
+
+                <h4>Ejercicio 9: Diagnóstico completo de red</h4>
+                <div class="code-block"><code>#!/bin/bash
+# network_diag.sh - Diagnóstico de red completo
+
+echo "=== DIAGNÓSTICO DE RED ==="
+echo ""
+
+# 1. Configuración actual
+echo "[1] Configuración IP:"
+ip -4 addr show | grep -E "inet |state"
+echo ""
+
+# 2. Gateway
+GATEWAY=$(ip route | grep default | awk '{print $3}')
+echo "[2] Gateway: $GATEWAY"
+echo "Probando conectividad al gateway..."
+ping -c 2 $GATEWAY > /dev/null 2>&1 && echo "✓ Gateway accesible" || echo "✗ Gateway NO accesible"
+echo ""
+
+# 3. Conectividad externa
+echo "[3] Conectividad a Internet:"
+ping -c 2 8.8.8.8 > /dev/null 2>&1 && echo "✓ Conectividad IP OK" || echo "✗ Sin conectividad IP"
+echo ""
+
+# 4. Resolución DNS
+echo "[4] Resolución DNS:"
+nslookup google.com > /dev/null 2>&1 && echo "✓ DNS funcionando" || echo "✗ Problema con DNS"
+echo "Servidores DNS:"
+cat /etc/resolv.conf | grep nameserver
+echo ""
+
+# 5. Puertos en escucha
+echo "[5] Puertos en escucha:"
+ss -tuln | grep LISTEN
+echo ""
+
+# 6. Tabla de rutas
+echo "[6] Tabla de rutas:"
+ip route</code></div>
+
+                <h4>Ejercicio 10: Configurar red estática</h4>
+                <div class="code-block"><code># Enunciado: Configurar IP estática 192.168.1.100/24 en Ubuntu
+
+# 1. Identificar interfaz
+ip link show
+# Supongamos que es enp0s3
+
+# 2. Crear configuración Netplan
+sudo nano /etc/netplan/01-netcfg.yaml
+
+# Contenido:
+network:
+  version: 2
+  renderer: networkd
+  ethernets:
+    enp0s3:
+      dhcp4: no
+      addresses:
+        - 192.168.1.100/24
+      gateway4: 192.168.1.1
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 8.8.4.4
+
+# 3. Aplicar configuración
+sudo netplan apply
+
+# 4. Verificar
+ip addr show enp0s3
+ip route
+ping -c 3 google.com
+
+# Volver a DHCP:
+# Cambiar dhcp4: yes y eliminar addresses, gateway4, nameservers</code></div>
+
+                <h4>Ejercicio 11: Configurar servidor DNS local</h4>
+                <div class="code-block"><code># Enunciado: Configurar /etc/hosts para entorno de desarrollo
+
+# 1. Editar archivo hosts
+sudo nano /etc/hosts
+
+# 2. Añadir entradas para desarrollo local
+127.0.0.1       localhost
+127.0.0.1       api.local
+127.0.0.1       admin.local
+127.0.0.1       app.local
+192.168.1.50    database.local
+192.168.1.51    cache.local
+
+# 3. Verificar resolución
+ping -c 1 api.local
+ping -c 1 database.local
+
+# 4. Limpiar caché DNS (si es necesario)
+# Linux con systemd-resolved:
+sudo systemd-resolve --flush-caches
+
+# Windows:
+ipconfig /flushdns</code></div>
+
+                <h3>Casos de Troubleshooting</h3>
+
+                <h4>Caso 1: Servidor web no responde</h4>
+                <div class="code-block"><code># Síntoma: No se puede acceder a la web en el puerto 80
+
+# 1. Verificar que el servicio está corriendo
+sudo systemctl status nginx
+# Si está detenido:
+sudo systemctl start nginx
+sudo systemctl enable nginx   # Para que inicie con el sistema
+
+# 2. Verificar que escucha en el puerto correcto
+ss -tuln | grep :80
+# Debe mostrar LISTEN en 0.0.0.0:80 o :::80
+
+# 3. Verificar configuración de Nginx
+sudo nginx -t
+# Si hay errores de sintaxis, corregir en /etc/nginx/nginx.conf
+
+# 4. Verificar firewall
+sudo ufw status
+sudo ufw allow 80/tcp
+sudo ufw allow 443/tcp
+
+# 5. Verificar logs de errores
+sudo tail -50 /var/log/nginx/error.log
+
+# 6. Probar desde el servidor local
+curl -I http://localhost
+
+# 7. Probar desde otra máquina
+curl -I http://IP_SERVIDOR
+
+# Problemas comunes:
+# - Puerto ocupado: lsof -i :80
+# - Permisos de archivos: ls -la /var/www/html
+# - SELinux (en RHEL): getenforce, setenforce 0</code></div>
+
+                <h4>Caso 2: Sistema sin espacio en disco</h4>
+                <div class="code-block"><code># Síntoma: "No space left on device"
+
+# 1. Ver uso de disco
+df -h
+
+# 2. Encontrar directorios que ocupan más
+du -sh /* 2>/dev/null | sort -h | tail -10
+du -sh /var/* 2>/dev/null | sort -h | tail -10
+
+# 3. Limpiar logs antiguos
+sudo journalctl --vacuum-time=7d
+sudo find /var/log -type f -name "*.gz" -mtime +30 -delete
+
+# 4. Limpiar caché de paquetes
+# Ubuntu/Debian
+sudo apt clean
+sudo apt autoremove
+
+# 5. Encontrar archivos grandes
+sudo find / -type f -size +100M -exec ls -lh {} \; 2>/dev/null
+
+# 6. Limpiar temporales
+sudo rm -rf /tmp/*
+sudo rm -rf /var/tmp/*
+
+# 7. Si /var/log está lleno, identificar log problemático
+sudo ls -lhS /var/log | head -20
+
+# 8. Truncar log sin eliminar (mantiene el archivo)
+sudo truncate -s 0 /var/log/archivo.log
+
+# Prevención: configurar logrotate en /etc/logrotate.d/</code></div>
+            </section>
+
+            <div class="note-box">
+                <p><strong>Consejo Final:</strong> La práctica constante es fundamental en administración de sistemas. Crea máquinas virtuales para experimentar sin riesgo, documenta tus configuraciones, y mantén siempre backups actualizados antes de hacer cambios importantes en sistemas de producción.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                </div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2025 CodeDAM.</p></div>
+        </div>
+    </footer>
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>

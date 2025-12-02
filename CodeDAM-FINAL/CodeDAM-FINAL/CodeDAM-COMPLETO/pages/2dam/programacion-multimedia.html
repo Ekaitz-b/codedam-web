@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programación Multimedia 2º DAM - Android, Kotlin, Activities, Fragments, Room y desarrollo móvil nativo.">
+    <title>Programación Multimedia - 2º DAM | CodeDAM</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/dark-mode.css">
+    <link rel="stylesheet" href="../../css/content-pages.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="navbar-container">
+        <a href="../../index.html" class="logo">
+            <div class="logo-icon">
+                <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="5" width="30" height="30" rx="8" fill="url(#logoGradient)" />
+                    <path d="M15 12 L15 28 M20 12 L20 28 M25 12 L25 28" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+                    <defs>
+                        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+            <div class="logo-text">
+                <span class="logo-code">Code</span><span class="logo-dam">DAM</span>
+            </div>
+        </a>
+        
+        <ul class="navbar-menu">
+            <li><a href="../../index.html" class="nav-link">Inicio</a></li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">1º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../1dam/programacion.html">
+                        <span class="dropdown-icon">💻</span>
+                        <div>
+                            <div class="dropdown-title">Programación</div>
+                            <div class="dropdown-subtitle">Java & POO</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/bases-datos.html">
+                        <span class="dropdown-icon">🗄️</span>
+                        <div>
+                            <div class="dropdown-title">Bases de Datos</div>
+                            <div class="dropdown-subtitle">SQL & MySQL</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/lenguajes-marcas.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Lenguajes de Marcas</div>
+                            <div class="dropdown-subtitle">HTML, CSS, XML</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/entornos-desarrollo.html">
+                        <span class="dropdown-icon">⚙️</span>
+                        <div>
+                            <div class="dropdown-title">Entornos de Desarrollo</div>
+                            <div class="dropdown-subtitle">Git & IDEs</div>
+                        </div>
+                    </a>
+                    <a href="../1dam/sistemas-informaticos.html">
+                        <span class="dropdown-icon">💾</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas Informáticos</div>
+                            <div class="dropdown-subtitle">Windows & Linux</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">2º DAM <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="./acceso-datos.html">
+                        <span class="dropdown-icon">📊</span>
+                        <div>
+                            <div class="dropdown-title">Acceso a Datos</div>
+                            <div class="dropdown-subtitle">JDBC & Hibernate</div>
+                        </div>
+                    </a>
+                    <a href="./desarrollo-interfaces.html">
+                        <span class="dropdown-icon">🎨</span>
+                        <div>
+                            <div class="dropdown-title">Desarrollo de Interfaces</div>
+                            <div class="dropdown-subtitle">JavaFX & UI/UX</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-multimedia.html">
+                        <span class="dropdown-icon">📱</span>
+                        <div>
+                            <div class="dropdown-title">Programación Multimedia</div>
+                            <div class="dropdown-subtitle">Android & Kotlin</div>
+                        </div>
+                    </a>
+                    <a href="./programacion-servicios.html">
+                        <span class="dropdown-icon">🌐</span>
+                        <div>
+                            <div class="dropdown-title">Programación de Servicios</div>
+                            <div class="dropdown-subtitle">Spring Boot & APIs</div>
+                        </div>
+                    </a>
+                    <a href="./sistemas-gestion.html">
+                        <span class="dropdown-icon">🏢</span>
+                        <div>
+                            <div class="dropdown-title">Sistemas de Gestión</div>
+                            <div class="dropdown-subtitle">ERP & Odoo</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn nav-link">Cursos Especiales <span class="arrow">▼</span></button>
+                <div class="dropdown-content">
+                    <a href="../ingles/index.html">
+                        <span class="dropdown-icon">🌍</span>
+                        <div>
+                            <div class="dropdown-title">Inglés Técnico</div>
+                            <div class="dropdown-subtitle">Tech English</div>
+                        </div>
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- Dark Mode Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+            <svg class="sun-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="2"/>
+                <path d="M10 2V4M10 16V18M18 10H16M4 10H2M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <svg class="moon-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" style="display: none;">
+                <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+
+    <section class="page-header">
+        <div class="container">
+            <div class="breadcrumb"><a href="../../index.html">Inicio</a><span>→</span><a href="../../index.html#2dam">2º DAM</a><span>→</span><span>Programación Multimedia</span></div>
+            <h1 class="page-title">Programación Multimedia</h1>
+            <p class="page-subtitle">Android, Kotlin y Desarrollo Móvil Nativo</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="content-wrapper">
+            <nav class="toc">
+                <h3>Índice de Contenidos</h3>
+                <ul>
+                    <li><a href="#introduccion">Introducción a Android</a></li>
+                    <li><a href="#kotlin">Kotlin para Android</a></li>
+                    <li><a href="#activities">Activities y Ciclo de Vida</a></li>
+                    <li><a href="#layouts">Layouts y Views</a></li>
+                    <li><a href="#fragments">Fragments</a></li>
+                    <li><a href="#persistencia">Persistencia de Datos</a></li>
+                    <li><a href="#multimedia">Multimedia</a></li>
+                    <li><a href="#ejercicios">Ejercicios Resueltos</a></li>
+                </ul>
+            </nav>
+
+            <!-- INTRODUCCIÓN -->
+            <section id="introduccion" class="content-section">
+                <h2>Introducción a Android</h2>
+
+                <p><strong>Android</strong> es el sistema operativo móvil más utilizado en el mundo, desarrollado por Google. Permite crear aplicaciones nativas para smartphones, tablets, wearables y otros dispositivos.</p>
+
+                <div class="info-box">
+                    <h4>Características de Android</h4>
+                    <ul>
+                        <li><strong>Código abierto</strong>: Basado en Linux, permite personalización</li>
+                        <li><strong>Kotlin como lenguaje oficial</strong>: Moderno, seguro y conciso</li>
+                        <li><strong>Android Studio</strong>: IDE oficial basado en IntelliJ IDEA</li>
+                        <li><strong>Google Play</strong>: Distribución de apps a millones de usuarios</li>
+                    </ul>
+                </div>
+
+                <h3>Arquitectura de Android</h3>
+                <ul>
+                    <li><strong>Linux Kernel</strong>: Base del sistema, gestión de hardware</li>
+                    <li><strong>HAL (Hardware Abstraction Layer)</strong>: Interfaz con el hardware</li>
+                    <li><strong>Android Runtime (ART)</strong>: Ejecuta el código de la aplicación</li>
+                    <li><strong>Framework de APIs</strong>: APIs de Java/Kotlin para desarrolladores</li>
+                    <li><strong>Aplicaciones</strong>: Apps del sistema y de terceros</li>
+                </ul>
+
+                <h3>Estructura de un Proyecto Android</h3>
+                <div class="code-block"><code>MiApp/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/ejemplo/miapp/    // Código Kotlin/Java
+│   │   │   ├── res/
+│   │   │   │   ├── layout/                 // XMLs de interfaz
+│   │   │   │   ├── drawable/               // Imágenes
+│   │   │   │   ├── values/                 // Strings, colores, estilos
+│   │   │   │   └── mipmap/                 // Iconos de la app
+│   │   │   └── AndroidManifest.xml         // Configuración de la app
+│   │   └── test/                           // Tests unitarios
+│   └── build.gradle                        // Config del módulo
+├── gradle/
+└── build.gradle                            // Config del proyecto</code></div>
+
+                <h3>AndroidManifest.xml</h3>
+                <div class="code-block"><code>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ejemplo.miapp"&gt;
+
+    &lt;!-- Permisos --&gt;
+    &lt;uses-permission android:name="android.permission.INTERNET" /&gt;
+    &lt;uses-permission android:name="android.permission.CAMERA" /&gt;
+
+    &lt;application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.MiApp"&gt;
+
+        &lt;!-- Activity principal --&gt;
+        &lt;activity
+            android:name=".MainActivity"
+            android:exported="true"&gt;
+            &lt;intent-filter&gt;
+                &lt;action android:name="android.intent.action.MAIN" /&gt;
+                &lt;category android:name="android.intent.category.LAUNCHER" /&gt;
+            &lt;/intent-filter&gt;
+        &lt;/activity&gt;
+
+        &lt;!-- Otras activities --&gt;
+        &lt;activity android:name=".DetalleActivity" /&gt;
+
+    &lt;/application&gt;
+&lt;/manifest&gt;</code></div>
+            </section>
+
+            <!-- KOTLIN -->
+            <section id="kotlin" class="content-section">
+                <h2>Kotlin para Android</h2>
+
+                <p>Kotlin es el lenguaje oficial para Android desde 2019. Es más conciso y seguro que Java, con características modernas como null safety y coroutines.</p>
+
+                <h3>1. Variables y Tipos</h3>
+                <div class="code-block"><code>// Inmutable (val) vs Mutable (var)
+val nombre: String = "Android"  // No se puede reasignar
+var contador: Int = 0           // Se puede reasignar
+contador = 5
+
+// Inferencia de tipos
+val precio = 29.99              // Double inferido
+val activo = true               // Boolean inferido
+
+// Null Safety - evita NullPointerException
+var texto: String? = null       // Puede ser null
+var textoSeguro: String = "Hola" // No puede ser null
+
+// Acceso seguro a nullables
+val longitud = texto?.length    // null si texto es null
+val longitudODefecto = texto?.length ?: 0  // 0 si es null
+
+// Operador !! (solo si estás seguro)
+val long = texto!!.length       // Lanza excepción si es null</code></div>
+
+                <h3>2. Funciones</h3>
+                <div class="code-block"><code>// Función básica
+fun sumar(a: Int, b: Int): Int {
+    return a + b
+}
+
+// Función de una expresión
+fun multiplicar(a: Int, b: Int) = a * b
+
+// Parámetros por defecto
+fun saludar(nombre: String = "Usuario") = "Hola, $nombre"
+
+saludar()           // "Hola, Usuario"
+saludar("Ana")      // "Hola, Ana"
+
+// Parámetros nombrados
+fun crearUsuario(nombre: String, edad: Int, email: String) { }
+crearUsuario(nombre = "Juan", email = "juan@mail.com", edad = 25)
+
+// Funciones de extensión
+fun String.addExclamacion() = "$this!"
+"Hola".addExclamacion()  // "Hola!"
+
+// Lambdas
+val cuadrado: (Int) -> Int = { x -> x * x }
+val doble = { x: Int -> x * 2 }</code></div>
+
+                <h3>3. Clases y Objetos</h3>
+                <div class="code-block"><code>// Clase básica
+class Persona(val nombre: String, var edad: Int) {
+    fun presentarse() = "Soy $nombre, tengo $edad años"
+}
+
+val persona = Persona("Ana", 25)
+println(persona.presentarse())
+
+// Data class - genera equals, hashCode, toString, copy
+data class Producto(
+    val id: Int,
+    val nombre: String,
+    val precio: Double
+)
+
+val p1 = Producto(1, "Laptop", 899.99)
+val p2 = p1.copy(precio = 799.99)  // Copia con precio diferente
+
+// Object - Singleton
+object DatabaseManager {
+    fun connect() = println("Conectado")
+}
+DatabaseManager.connect()
+
+// Companion object - Métodos estáticos
+class Usuario(val nombre: String) {
+    companion object {
+        fun crear(nombre: String) = Usuario(nombre)
+    }
+}
+val user = Usuario.crear("Pedro")</code></div>
+
+                <h3>4. Colecciones</h3>
+                <div class="code-block"><code>// Listas inmutables
+val frutas = listOf("Manzana", "Pera", "Naranja")
+
+// Listas mutables
+val numeros = mutableListOf(1, 2, 3)
+numeros.add(4)
+numeros.removeAt(0)
+
+// Maps
+val edades = mapOf("Ana" to 25, "Juan" to 30)
+val edad = edades["Ana"]  // 25
+
+// Operaciones funcionales
+val productos = listOf(
+    Producto(1, "A", 10.0),
+    Producto(2, "B", 20.0),
+    Producto(3, "C", 15.0)
+)
+
+// Filter
+val caros = productos.filter { it.precio > 12 }
+
+// Map
+val nombres = productos.map { it.nombre }
+
+// Find
+val producto = productos.find { it.id == 2 }
+
+// Sort
+val ordenados = productos.sortedBy { it.precio }
+
+// Sum
+val total = productos.sumOf { it.precio }</code></div>
+
+                <h3>5. Control de Flujo</h3>
+                <div class="code-block"><code>// When (switch mejorado)
+fun describir(obj: Any): String = when (obj) {
+    1 -> "Uno"
+    "Hola" -> "Saludo"
+    is Long -> "Long"
+    !is String -> "No es String"
+    else -> "Desconocido"
+}
+
+// When con rangos
+fun clasificarEdad(edad: Int) = when (edad) {
+    in 0..12 -> "Niño"
+    in 13..17 -> "Adolescente"
+    in 18..65 -> "Adulto"
+    else -> "Mayor"
+}
+
+// If como expresión
+val max = if (a > b) a else b
+
+// Try como expresión
+val numero = try {
+    texto.toInt()
+} catch (e: NumberFormatException) {
+    0
+}</code></div>
+            </section>
+
+            <!-- ACTIVITIES -->
+            <section id="activities" class="content-section">
+                <h2>Activities y Ciclo de Vida</h2>
+
+                <p>Una <strong>Activity</strong> representa una pantalla con interfaz de usuario. Es el componente fundamental de una aplicación Android.</p>
+
+                <h3>Ciclo de Vida de una Activity</h3>
+                <div class="code-block"><code>class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        // Activity creada - inicializar UI y datos
+        Log.d("Ciclo", "onCreate")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Activity visible - preparar para interacción
+        Log.d("Ciclo", "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Activity en primer plano - usuario puede interactuar
+        Log.d("Ciclo", "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Otra activity en primer plano - guardar datos, pausar animaciones
+        Log.d("Ciclo", "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        // Activity no visible - liberar recursos
+        Log.d("Ciclo", "onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        // Activity destruida - limpiar todo
+        Log.d("Ciclo", "onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        // Activity volviendo de onStop
+        Log.d("Ciclo", "onRestart")
+    }
+}</code></div>
+
+                <h3>1. Activity Básica con ViewBinding</h3>
+                <div class="code-block"><code>// build.gradle (app) - Habilitar ViewBinding
+android {
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+// MainActivity.kt
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Acceder a vistas directamente
+        binding.textView.text = "Hola ViewBinding"
+
+        binding.button.setOnClickListener {
+            val nombre = binding.editText.text.toString()
+            binding.textView.text = "Hola, $nombre!"
+        }
+    }
+}</code></div>
+
+                <h3>2. Intent Explícito - Navegar entre Activities</h3>
+                <div class="code-block"><code>// MainActivity.kt - Enviar datos
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val btnDetalle = findViewById&lt;Button&gt;(R.id.btnDetalle)
+        btnDetalle.setOnClickListener {
+            val intent = Intent(this, DetalleActivity::class.java).apply {
+                putExtra("PRODUCTO_ID", 123)
+                putExtra("PRODUCTO_NOMBRE", "Laptop")
+                putExtra("PRODUCTO_PRECIO", 899.99)
+            }
+            startActivity(intent)
+        }
+    }
+}
+
+// DetalleActivity.kt - Recibir datos
+class DetalleActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_detalle)
+
+        // Recibir datos
+        val id = intent.getIntExtra("PRODUCTO_ID", 0)
+        val nombre = intent.getStringExtra("PRODUCTO_NOMBRE") ?: ""
+        val precio = intent.getDoubleExtra("PRODUCTO_PRECIO", 0.0)
+
+        findViewById&lt;TextView&gt;(R.id.tvDetalle).text =
+            "ID: $id\nNombre: $nombre\nPrecio: $precio€"
+    }
+}</code></div>
+
+                <h3>3. Intent Implícito - Abrir Apps Externas</h3>
+                <div class="code-block"><code>// Abrir navegador
+val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://google.com"))
+startActivity(webIntent)
+
+// Enviar email
+val emailIntent = Intent(Intent.ACTION_SENDTO).apply {
+    data = Uri.parse("mailto:")
+    putExtra(Intent.EXTRA_EMAIL, arrayOf("correo@ejemplo.com"))
+    putExtra(Intent.EXTRA_SUBJECT, "Asunto")
+}
+startActivity(emailIntent)
+
+// Llamar por teléfono
+val callIntent = Intent(Intent.ACTION_DIAL).apply {
+    data = Uri.parse("tel:+34600000000")
+}
+startActivity(callIntent)
+
+// Compartir texto
+val shareIntent = Intent(Intent.ACTION_SEND).apply {
+    type = "text/plain"
+    putExtra(Intent.EXTRA_TEXT, "¡Mira esta app!")
+}
+startActivity(Intent.createChooser(shareIntent, "Compartir vía"))</code></div>
+
+                <h3>4. Activity Result API (Moderno)</h3>
+                <div class="code-block"><code>class MainActivity : AppCompatActivity() {
+
+    // Registrar callback para resultado
+    private val selectImageLauncher = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ) { uri: Uri? ->
+        uri?.let {
+            imageView.setImageURI(it)
+        }
+    }
+
+    // Para iniciar activity y recibir resultado
+    private val detalleResultLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val data = result.data
+            val mensaje = data?.getStringExtra("RESULTADO")
+            Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Seleccionar imagen
+        btnSeleccionar.setOnClickListener {
+            selectImageLauncher.launch("image/*")
+        }
+
+        // Ir a detalle y esperar resultado
+        btnDetalle.setOnClickListener {
+            val intent = Intent(this, DetalleActivity::class.java)
+            detalleResultLauncher.launch(intent)
+        }
+    }
+}
+
+// En DetalleActivity - devolver resultado
+btnConfirmar.setOnClickListener {
+    val resultIntent = Intent().apply {
+        putExtra("RESULTADO", "Operación completada")
+    }
+    setResult(RESULT_OK, resultIntent)
+    finish()
+}</code></div>
+
+                <h3>5. Guardar Estado con onSaveInstanceState</h3>
+                <div class="code-block"><code>class ContadorActivity : AppCompatActivity() {
+
+    private var contador = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_contador)
+
+        // Restaurar estado si existe
+        savedInstanceState?.let {
+            contador = it.getInt("CONTADOR", 0)
+        }
+
+        actualizarUI()
+
+        findViewById&lt;Button&gt;(R.id.btnIncrementar).setOnClickListener {
+            contador++
+            actualizarUI()
+        }
+    }
+
+    // Guardar estado antes de destruir
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("CONTADOR", contador)
+    }
+
+    private fun actualizarUI() {
+        findViewById&lt;TextView&gt;(R.id.tvContador).text = "Contador: $contador"
+    }
+}</code></div>
+            </section>
+
+            <!-- LAYOUTS -->
+            <section id="layouts" class="content-section">
+                <h2>Layouts y Views</h2>
+
+                <p>Los layouts definen la estructura visual de la interfaz. Android ofrece varios tipos según las necesidades de diseño.</p>
+
+                <h3>1. LinearLayout</h3>
+                <div class="code-block"><code>&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"&gt;
+
+    &lt;TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Título"
+        android:textSize="24sp"
+        android:textStyle="bold"/&gt;
+
+    &lt;EditText
+        android:id="@+id/etNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:layout_marginTop="16dp"/&gt;
+
+    &lt;!-- weight para distribuir espacio --&gt;
+    &lt;LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"&gt;
+
+        &lt;Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancelar"/&gt;
+
+        &lt;Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Aceptar"/&gt;
+    &lt;/LinearLayout&gt;
+
+&lt;/LinearLayout&gt;</code></div>
+
+                <h3>2. ConstraintLayout</h3>
+                <div class="code-block"><code>&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"&gt;
+
+    &lt;ImageView
+        android:id="@+id/ivFoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/avatar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/&gt;
+
+    &lt;TextView
+        android:id="@+id/tvNombre"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre Usuario"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="@id/ivFoto"
+        app:layout_constraintStart_toEndOf="@id/ivFoto"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"/&gt;
+
+    &lt;TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="email@ejemplo.com"
+        app:layout_constraintTop_toBottomOf="@id/tvNombre"
+        app:layout_constraintStart_toStartOf="@id/tvNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="4dp"/&gt;
+
+    &lt;Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Editar Perfil"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/&gt;
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;</code></div>
+
+                <h3>3. Views Básicas</h3>
+                <div class="code-block"><code>&lt;!-- TextView --&gt;
+&lt;TextView
+    android:id="@+id/tvTitulo"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Texto"
+    android:textSize="18sp"
+    android:textColor="@color/black"
+    android:textStyle="bold"/&gt;
+
+&lt;!-- EditText --&gt;
+&lt;EditText
+    android:id="@+id/etEmail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Email"
+    android:inputType="textEmailAddress"/&gt;
+
+&lt;!-- Button --&gt;
+&lt;Button
+    android:id="@+id/btnEnviar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Enviar"/&gt;
+
+&lt;!-- ImageView --&gt;
+&lt;ImageView
+    android:id="@+id/ivLogo"
+    android:layout_width="100dp"
+    android:layout_height="100dp"
+    android:src="@drawable/logo"
+    android:contentDescription="Logo"/&gt;
+
+&lt;!-- CheckBox --&gt;
+&lt;CheckBox
+    android:id="@+id/cbAceptar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Acepto los términos"/&gt;
+
+&lt;!-- Switch --&gt;
+&lt;Switch
+    android:id="@+id/swNotificaciones"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Notificaciones"/&gt;</code></div>
+
+                <h3>4. RecyclerView - Lista Eficiente</h3>
+                <div class="code-block"><code>&lt;!-- activity_main.xml --&gt;
+&lt;androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recyclerView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/&gt;
+
+&lt;!-- item_producto.xml --&gt;
+&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="16dp"&gt;
+
+    &lt;ImageView
+        android:id="@+id/ivProducto"
+        android:layout_width="60dp"
+        android:layout_height="60dp"/&gt;
+
+    &lt;LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp"&gt;
+
+        &lt;TextView
+            android:id="@+id/tvNombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"/&gt;
+
+        &lt;TextView
+            android:id="@+id/tvPrecio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/&gt;
+    &lt;/LinearLayout&gt;
+&lt;/LinearLayout&gt;</code></div>
+
+                <div class="code-block"><code>// ProductoAdapter.kt
+class ProductoAdapter(
+    private val productos: List&lt;Producto&gt;,
+    private val onItemClick: (Producto) -> Unit
+) : RecyclerView.Adapter&lt;ProductoAdapter.ViewHolder&gt;() {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val ivProducto: ImageView = view.findViewById(R.id.ivProducto)
+        val tvNombre: TextView = view.findViewById(R.id.tvNombre)
+        val tvPrecio: TextView = view.findViewById(R.id.tvPrecio)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_producto, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val producto = productos[position]
+
+        holder.tvNombre.text = producto.nombre
+        holder.tvPrecio.text = "${producto.precio}€"
+
+        // Click en item
+        holder.itemView.setOnClickListener {
+            onItemClick(producto)
+        }
+    }
+
+    override fun getItemCount() = productos.size
+}
+
+// MainActivity.kt
+class MainActivity : AppCompatActivity() {
+
+    private val productos = listOf(
+        Producto(1, "Laptop", 899.99),
+        Producto(2, "Mouse", 29.99),
+        Producto(3, "Teclado", 79.99)
+    )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val recyclerView = findViewById&lt;RecyclerView&gt;(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = ProductoAdapter(productos) { producto ->
+            Toast.makeText(this, "Click: ${producto.nombre}", Toast.LENGTH_SHORT).show()
+        }
+    }
+}</code></div>
+
+                <h3>5. CardView y Material Components</h3>
+                <div class="code-block"><code>&lt;!-- item_producto_card.xml --&gt;
+&lt;com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"&gt;
+
+    &lt;LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"&gt;
+
+        &lt;ImageView
+            android:id="@+id/ivProducto"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"/&gt;
+
+        &lt;LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"&gt;
+
+            &lt;TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"/&gt;
+
+            &lt;TextView
+                android:id="@+id/tvPrecio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/precio"/&gt;
+
+        &lt;/LinearLayout&gt;
+    &lt;/LinearLayout&gt;
+&lt;/com.google.android.material.card.MaterialCardView&gt;</code></div>
+
+                <h3>6. ScrollView y NestedScrollView</h3>
+                <div class="code-block"><code>&lt;ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+
+    &lt;LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"&gt;
+
+        &lt;!-- Contenido largo --&gt;
+        &lt;TextView android:text="Párrafo 1..." /&gt;
+        &lt;TextView android:text="Párrafo 2..." /&gt;
+        &lt;!-- Más contenido --&gt;
+
+    &lt;/LinearLayout&gt;
+&lt;/ScrollView&gt;
+
+&lt;!-- NestedScrollView para usar con RecyclerView --&gt;
+&lt;androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"&gt;
+    &lt;!-- Contenido --&gt;
+&lt;/androidx.core.widget.NestedScrollView&gt;</code></div>
+            </section>
+
+            <!-- FRAGMENTS -->
+            <section id="fragments" class="content-section">
+                <h2>Fragments</h2>
+
+                <p>Un <strong>Fragment</strong> representa una porción reutilizable de la interfaz. Permite crear UIs modulares y adaptables a diferentes tamaños de pantalla.</p>
+
+                <h3>1. Fragment Básico</h3>
+                <div class="code-block"><code>// ListaFragment.kt
+class ListaFragment : Fragment() {
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_lista, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val tvTitulo = view.findViewById&lt;TextView&gt;(R.id.tvTitulo)
+        val btnAccion = view.findViewById&lt;Button&gt;(R.id.btnAccion)
+
+        btnAccion.setOnClickListener {
+            Toast.makeText(requireContext(), "Click!", Toast.LENGTH_SHORT).show()
+        }
+    }
+}
+
+&lt;!-- fragment_lista.xml --&gt;
+&lt;LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"&gt;
+
+    &lt;TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lista de Items"/&gt;
+
+    &lt;Button
+        android:id="@+id/btnAccion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Acción"/&gt;
+
+&lt;/LinearLayout&gt;</code></div>
+
+                <h3>2. Añadir Fragment a Activity</h3>
+                <div class="code-block"><code>&lt;!-- activity_main.xml --&gt;
+&lt;FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"/&gt;
+
+// MainActivity.kt
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Añadir fragment solo si no existe
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragmentContainer, ListaFragment())
+                .commit()
+        }
+    }
+
+    // Reemplazar fragment
+    fun mostrarDetalle(producto: Producto) {
+        val fragment = DetalleFragment.newInstance(producto.id)
+
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .addToBackStack(null)  // Permite volver atrás
+            .commit()
+    }
+}</code></div>
+
+                <h3>3. Pasar Datos a Fragment</h3>
+                <div class="code-block"><code>class DetalleFragment : Fragment() {
+
+    companion object {
+        private const val ARG_PRODUCTO_ID = "producto_id"
+
+        // Factory method para crear instancia con argumentos
+        fun newInstance(productoId: Int): DetalleFragment {
+            return DetalleFragment().apply {
+                arguments = Bundle().apply {
+                    putInt(ARG_PRODUCTO_ID, productoId)
+                }
+            }
+        }
+    }
+
+    private var productoId: Int = 0
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            productoId = it.getInt(ARG_PRODUCTO_ID)
+        }
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_detalle, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        // Cargar datos del producto con productoId
+        view.findViewById&lt;TextView&gt;(R.id.tvId).text = "ID: $productoId"
+    }
+}</code></div>
+            </section>
+
+            <!-- PERSISTENCIA -->
+            <section id="persistencia" class="content-section">
+                <h2>Persistencia de Datos</h2>
+
+                <h3>1. SharedPreferences - Datos Simples</h3>
+                <div class="code-block"><code>class PreferenciasManager(context: Context) {
+
+    private val prefs = context.getSharedPreferences("MisPrefs", Context.MODE_PRIVATE)
+
+    // Guardar datos
+    fun guardarUsuario(nombre: String, email: String) {
+        prefs.edit().apply {
+            putString("nombre", nombre)
+            putString("email", email)
+            putBoolean("logueado", true)
+            apply()  // Asíncrono (recomendado)
+        }
+    }
+
+    // Leer datos
+    fun getNombre() = prefs.getString("nombre", "") ?: ""
+    fun getEmail() = prefs.getString("email", "") ?: ""
+    fun isLogueado() = prefs.getBoolean("logueado", false)
+
+    // Eliminar datos
+    fun cerrarSesion() {
+        prefs.edit().clear().apply()
+    }
+}
+
+// Uso en Activity
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var prefsManager: PreferenciasManager
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        prefsManager = PreferenciasManager(this)
+
+        if (prefsManager.isLogueado()) {
+            tvBienvenida.text = "Hola, ${prefsManager.getNombre()}"
+        }
+
+        btnGuardar.setOnClickListener {
+            prefsManager.guardarUsuario(
+                etNombre.text.toString(),
+                etEmail.text.toString()
+            )
+        }
+    }
+}</code></div>
+
+                <h3>2. Room Database - Base de Datos Local</h3>
+                <div class="code-block"><code>// build.gradle (app)
+dependencies {
+    implementation "androidx.room:room-runtime:2.5.0"
+    kapt "androidx.room:room-compiler:2.5.0"
+    implementation "androidx.room:room-ktx:2.5.0"
+}
+
+// Entity - Tabla
+@Entity(tableName = "productos")
+data class Producto(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    @ColumnInfo(name = "nombre") val nombre: String,
+    @ColumnInfo(name = "precio") val precio: Double,
+    @ColumnInfo(name = "stock") val stock: Int = 0
+)
+
+// DAO - Operaciones
+@Dao
+interface ProductoDao {
+
+    @Query("SELECT * FROM productos ORDER BY nombre")
+    fun getAll(): List&lt;Producto&gt;
+
+    @Query("SELECT * FROM productos WHERE id = :id")
+    fun getById(id: Int): Producto?
+
+    @Query("SELECT * FROM productos WHERE nombre LIKE :busqueda")
+    fun buscar(busqueda: String): List&lt;Producto&gt;
+
+    @Insert
+    fun insert(producto: Producto): Long
+
+    @Insert
+    fun insertAll(productos: List&lt;Producto&gt;)
+
+    @Update
+    fun update(producto: Producto)
+
+    @Delete
+    fun delete(producto: Producto)
+
+    @Query("DELETE FROM productos")
+    fun deleteAll()
+}
+
+// Database
+@Database(entities = [Producto::class], version = 1)
+abstract class AppDatabase : RoomDatabase() {
+    abstract fun productoDao(): ProductoDao
+
+    companion object {
+        @Volatile
+        private var INSTANCE: AppDatabase? = null
+
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "app_database"
+                ).build()
+                INSTANCE = instance
+                instance
+            }
+        }
+    }
+}</code></div>
+
+                <h3>3. Uso de Room con Coroutines</h3>
+                <div class="code-block"><code>// DAO con suspend functions
+@Dao
+interface ProductoDao {
+    @Query("SELECT * FROM productos")
+    suspend fun getAll(): List&lt;Producto&gt;
+
+    @Insert
+    suspend fun insert(producto: Producto)
+}
+
+// Activity
+class ProductosActivity : AppCompatActivity() {
+
+    private lateinit var db: AppDatabase
+    private lateinit var adapter: ProductoAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_productos)
+
+        db = AppDatabase.getDatabase(this)
+
+        // Cargar productos en background
+        lifecycleScope.launch {
+            val productos = withContext(Dispatchers.IO) {
+                db.productoDao().getAll()
+            }
+            adapter = ProductoAdapter(productos)
+            recyclerView.adapter = adapter
+        }
+
+        // Insertar producto
+        btnAgregar.setOnClickListener {
+            lifecycleScope.launch(Dispatchers.IO) {
+                db.productoDao().insert(
+                    Producto(nombre = "Nuevo", precio = 10.0)
+                )
+                // Actualizar lista en UI thread
+                withContext(Dispatchers.Main) {
+                    cargarProductos()
+                }
+            }
+        }
+    }
+}</code></div>
+
+                <h3>4. Room con LiveData (MVVM)</h3>
+                <div class="code-block"><code>// DAO con LiveData
+@Dao
+interface ProductoDao {
+    @Query("SELECT * FROM productos")
+    fun getAllLive(): LiveData&lt;List&lt;Producto&gt;&gt;
+}
+
+// ViewModel
+class ProductoViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val db = AppDatabase.getDatabase(application)
+    val productos: LiveData&lt;List&lt;Producto&gt;&gt; = db.productoDao().getAllLive()
+
+    fun insertar(producto: Producto) {
+        viewModelScope.launch(Dispatchers.IO) {
+            db.productoDao().insert(producto)
+        }
+    }
+}
+
+// Activity
+class ProductosActivity : AppCompatActivity() {
+
+    private val viewModel: ProductoViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_productos)
+
+        // Observar cambios automáticamente
+        viewModel.productos.observe(this) { productos ->
+            adapter.updateData(productos)
+        }
+
+        btnAgregar.setOnClickListener {
+            viewModel.insertar(Producto(nombre = "Test", precio = 5.0))
+        }
+    }
+}</code></div>
+            </section>
+
+            <!-- MULTIMEDIA -->
+            <section id="multimedia" class="content-section">
+                <h2>Multimedia</h2>
+
+                <h3>1. Reproducir Audio</h3>
+                <div class="code-block"><code>class AudioActivity : AppCompatActivity() {
+
+    private var mediaPlayer: MediaPlayer? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_audio)
+
+        // Desde recursos raw
+        btnPlay.setOnClickListener {
+            mediaPlayer = MediaPlayer.create(this, R.raw.sonido)
+            mediaPlayer?.start()
+        }
+
+        btnPause.setOnClickListener {
+            mediaPlayer?.pause()
+        }
+
+        btnStop.setOnClickListener {
+            mediaPlayer?.stop()
+            mediaPlayer?.release()
+            mediaPlayer = null
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mediaPlayer?.release()
+    }
+}</code></div>
+
+                <h3>2. Reproducir Video</h3>
+                <div class="code-block"><code>&lt;!-- Layout --&gt;
+&lt;VideoView
+    android:id="@+id/videoView"
+    android:layout_width="match_parent"
+    android:layout_height="300dp"/&gt;
+
+// Activity
+class VideoActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_video)
+
+        val videoView = findViewById&lt;VideoView&gt;(R.id.videoView)
+
+        // Desde recursos raw
+        val uri = Uri.parse("android.resource://$packageName/${R.raw.video}")
+        videoView.setVideoURI(uri)
+
+        // Controles
+        val mediaController = MediaController(this)
+        mediaController.setAnchorView(videoView)
+        videoView.setMediaController(mediaController)
+
+        videoView.start()
+    }
+}</code></div>
+
+                <h3>3. Capturar Foto con Cámara</h3>
+                <div class="code-block"><code>class CamaraActivity : AppCompatActivity() {
+
+    private lateinit var photoUri: Uri
+
+    private val takePictureLauncher = registerForActivityResult(
+        ActivityResultContracts.TakePicture()
+    ) { success ->
+        if (success) {
+            imageView.setImageURI(photoUri)
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_camara)
+
+        btnCapturar.setOnClickListener {
+            // Crear archivo para guardar foto
+            val photoFile = File(
+                getExternalFilesDir(Environment.DIRECTORY_PICTURES),
+                "foto_${System.currentTimeMillis()}.jpg"
+            )
+
+            photoUri = FileProvider.getUriForFile(
+                this,
+                "${packageName}.fileprovider",
+                photoFile
+            )
+
+            takePictureLauncher.launch(photoUri)
+        }
+    }
+}
+
+&lt;!-- AndroidManifest.xml --&gt;
+&lt;provider
+    android:name="androidx.core.content.FileProvider"
+    android:authorities="${applicationId}.fileprovider"
+    android:exported="false"
+    android:grantUriPermissions="true"&gt;
+    &lt;meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths"/&gt;
+&lt;/provider&gt;
+
+&lt;!-- res/xml/file_paths.xml --&gt;
+&lt;paths&gt;
+    &lt;external-files-path name="pictures" path="Pictures"/&gt;
+&lt;/paths&gt;</code></div>
+            </section>
+
+            <!-- EJERCICIOS -->
+            <section id="ejercicios" class="content-section">
+                <h2>Ejercicios Resueltos</h2>
+
+                <div class="exercise">
+                    <h3>Ejercicio 1: Contador con ViewModel</h3>
+                    <p>App de contador que mantiene el estado al rotar.</p>
+
+                    <div class="code-block"><code>// ContadorViewModel.kt
+class ContadorViewModel : ViewModel() {
+    private val _contador = MutableLiveData(0)
+    val contador: LiveData&lt;Int&gt; = _contador
+
+    fun incrementar() {
+        _contador.value = (_contador.value ?: 0) + 1
+    }
+
+    fun decrementar() {
+        _contador.value = (_contador.value ?: 0) - 1
+    }
+
+    fun reset() {
+        _contador.value = 0
+    }
+}
+
+// ContadorActivity.kt
+class ContadorActivity : AppCompatActivity() {
+
+    private val viewModel: ContadorViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_contador)
+
+        val tvContador = findViewById&lt;TextView&gt;(R.id.tvContador)
+
+        viewModel.contador.observe(this) { valor ->
+            tvContador.text = valor.toString()
+        }
+
+        findViewById&lt;Button&gt;(R.id.btnMas).setOnClickListener {
+            viewModel.incrementar()
+        }
+
+        findViewById&lt;Button&gt;(R.id.btnMenos).setOnClickListener {
+            viewModel.decrementar()
+        }
+
+        findViewById&lt;Button&gt;(R.id.btnReset).setOnClickListener {
+            viewModel.reset()
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 2: Lista de Tareas</h3>
+                    <p>App de tareas con RecyclerView.</p>
+
+                    <div class="code-block"><code>// TareaAdapter.kt
+class TareaAdapter(
+    private val tareas: MutableList&lt;Tarea&gt;,
+    private val onDelete: (Int) -> Unit,
+    private val onToggle: (Int) -> Unit
+) : RecyclerView.Adapter&lt;TareaAdapter.ViewHolder&gt;() {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val cbCompletada: CheckBox = view.findViewById(R.id.cbCompletada)
+        val tvTarea: TextView = view.findViewById(R.id.tvTarea)
+        val btnEliminar: ImageButton = view.findViewById(R.id.btnEliminar)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_tarea, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val tarea = tareas[position]
+
+        holder.tvTarea.text = tarea.texto
+        holder.cbCompletada.isChecked = tarea.completada
+
+        // Tachar texto si completada
+        holder.tvTarea.paintFlags = if (tarea.completada) {
+            holder.tvTarea.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+        } else {
+            holder.tvTarea.paintFlags and Paint.STRIKE_THRU_TEXT_FLAG.inv()
+        }
+
+        holder.cbCompletada.setOnClickListener { onToggle(position) }
+        holder.btnEliminar.setOnClickListener { onDelete(position) }
+    }
+
+    override fun getItemCount() = tareas.size
+}
+
+// TareasActivity.kt
+class TareasActivity : AppCompatActivity() {
+
+    private val tareas = mutableListOf&lt;Tarea&gt;()
+    private lateinit var adapter: TareaAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tareas)
+
+        adapter = TareaAdapter(
+            tareas,
+            onDelete = { position ->
+                tareas.removeAt(position)
+                adapter.notifyItemRemoved(position)
+            },
+            onToggle = { position ->
+                tareas[position] = tareas[position].copy(
+                    completada = !tareas[position].completada
+                )
+                adapter.notifyItemChanged(position)
+            }
+        )
+
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
+
+        btnAgregar.setOnClickListener {
+            val texto = etTarea.text.toString()
+            if (texto.isNotEmpty()) {
+                tareas.add(Tarea(texto = texto))
+                adapter.notifyItemInserted(tareas.size - 1)
+                etTarea.text.clear()
+            }
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 3: Calculadora IMC</h3>
+                    <p>Calculadora de Índice de Masa Corporal.</p>
+
+                    <div class="code-block"><code>class IMCActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_imc)
+
+        val etPeso = findViewById&lt;EditText&gt;(R.id.etPeso)
+        val etAltura = findViewById&lt;EditText&gt;(R.id.etAltura)
+        val tvResultado = findViewById&lt;TextView&gt;(R.id.tvResultado)
+        val tvCategoria = findViewById&lt;TextView&gt;(R.id.tvCategoria)
+
+        findViewById&lt;Button&gt;(R.id.btnCalcular).setOnClickListener {
+            val peso = etPeso.text.toString().toDoubleOrNull()
+            val altura = etAltura.text.toString().toDoubleOrNull()
+
+            if (peso != null && altura != null && altura > 0) {
+                val alturaMetros = altura / 100
+                val imc = peso / (alturaMetros * alturaMetros)
+
+                tvResultado.text = "IMC: %.2f".format(imc)
+                tvCategoria.text = when {
+                    imc < 18.5 -> "Bajo peso"
+                    imc < 25 -> "Normal"
+                    imc < 30 -> "Sobrepeso"
+                    else -> "Obesidad"
+                }
+
+                // Cambiar color según categoría
+                val color = when {
+                    imc < 18.5 || imc >= 30 -> Color.RED
+                    imc < 25 -> Color.GREEN
+                    else -> Color.parseColor("#FFA500")
+                }
+                tvCategoria.setTextColor(color)
+            } else {
+                Toast.makeText(this, "Datos inválidos", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 4: Login con SharedPreferences</h3>
+                    <p>Sistema de login que recuerda al usuario.</p>
+
+                    <div class="code-block"><code>class LoginActivity : AppCompatActivity() {
+
+    private lateinit var prefs: SharedPreferences
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        prefs = getSharedPreferences("LoginPrefs", MODE_PRIVATE)
+
+        // Si ya está logueado, ir a Home
+        if (prefs.getBoolean("logged_in", false)) {
+            goToHome()
+            return
+        }
+
+        setContentView(R.layout.activity_login)
+
+        val etEmail = findViewById&lt;EditText&gt;(R.id.etEmail)
+        val etPassword = findViewById&lt;EditText&gt;(R.id.etPassword)
+        val cbRecordar = findViewById&lt;CheckBox&gt;(R.id.cbRecordar)
+
+        // Cargar email guardado
+        etEmail.setText(prefs.getString("email", ""))
+
+        findViewById&lt;Button&gt;(R.id.btnLogin).setOnClickListener {
+            val email = etEmail.text.toString()
+            val password = etPassword.text.toString()
+
+            if (validarCredenciales(email, password)) {
+                prefs.edit().apply {
+                    if (cbRecordar.isChecked) {
+                        putString("email", email)
+                    }
+                    putBoolean("logged_in", true)
+                    apply()
+                }
+                goToHome()
+            } else {
+                Toast.makeText(this, "Credenciales inválidas",
+                    Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun validarCredenciales(email: String, password: String): Boolean {
+        return email.isNotEmpty() && password.length >= 6
+    }
+
+    private fun goToHome() {
+        startActivity(Intent(this, HomeActivity::class.java))
+        finish()
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 5: Notas con Room</h3>
+                    <p>App de notas con base de datos local.</p>
+
+                    <div class="code-block"><code>// Nota.kt
+@Entity(tableName = "notas")
+data class Nota(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val titulo: String,
+    val contenido: String,
+    val fecha: Long = System.currentTimeMillis()
+)
+
+// NotaDao.kt
+@Dao
+interface NotaDao {
+    @Query("SELECT * FROM notas ORDER BY fecha DESC")
+    fun getAll(): LiveData&lt;List&lt;Nota&gt;&gt;
+
+    @Insert
+    suspend fun insert(nota: Nota)
+
+    @Delete
+    suspend fun delete(nota: Nota)
+}
+
+// NotasViewModel.kt
+class NotasViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val db = AppDatabase.getDatabase(application)
+    val notas = db.notaDao().getAll()
+
+    fun agregar(titulo: String, contenido: String) {
+        viewModelScope.launch(Dispatchers.IO) {
+            db.notaDao().insert(Nota(titulo = titulo, contenido = contenido))
+        }
+    }
+
+    fun eliminar(nota: Nota) {
+        viewModelScope.launch(Dispatchers.IO) {
+            db.notaDao().delete(nota)
+        }
+    }
+}
+
+// NotasActivity.kt
+class NotasActivity : AppCompatActivity() {
+
+    private val viewModel: NotasViewModel by viewModels()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_notas)
+
+        val adapter = NotaAdapter { nota ->
+            viewModel.eliminar(nota)
+        }
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        viewModel.notas.observe(this) { notas ->
+            adapter.submitList(notas)
+        }
+
+        fab.setOnClickListener {
+            mostrarDialogoNuevaNota()
+        }
+    }
+
+    private fun mostrarDialogoNuevaNota() {
+        val dialog = AlertDialog.Builder(this)
+        val view = layoutInflater.inflate(R.layout.dialog_nota, null)
+
+        dialog.setView(view)
+            .setTitle("Nueva Nota")
+            .setPositiveButton("Guardar") { _, _ ->
+                val titulo = view.findViewById&lt;EditText&gt;(R.id.etTitulo).text.toString()
+                val contenido = view.findViewById&lt;EditText&gt;(R.id.etContenido).text.toString()
+                viewModel.agregar(titulo, contenido)
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 6: Navegación con BottomNavigation</h3>
+                    <p>App con navegación inferior entre fragments.</p>
+
+                    <div class="code-block"><code>&lt;!-- activity_main.xml --&gt;
+&lt;LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"&gt;
+
+    &lt;FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/&gt;
+
+    &lt;com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav_menu"/&gt;
+
+&lt;/LinearLayout&gt;
+
+&lt;!-- res/menu/bottom_nav_menu.xml --&gt;
+&lt;menu xmlns:android="http://schemas.android.com/apk/res/android"&gt;
+    &lt;item android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="Inicio"/&gt;
+    &lt;item android:id="@+id/nav_search"
+        android:icon="@drawable/ic_search"
+        android:title="Buscar"/&gt;
+    &lt;item android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_person"
+        android:title="Perfil"/&gt;
+&lt;/menu&gt;
+
+// MainActivity.kt
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        val bottomNav = findViewById&lt;BottomNavigationView&gt;(R.id.bottomNav)
+
+        // Fragment inicial
+        if (savedInstanceState == null) {
+            loadFragment(HomeFragment())
+        }
+
+        bottomNav.setOnItemSelectedListener { item ->
+            val fragment = when (item.itemId) {
+                R.id.nav_home -> HomeFragment()
+                R.id.nav_search -> SearchFragment()
+                R.id.nav_profile -> ProfileFragment()
+                else -> return@setOnItemSelectedListener false
+            }
+            loadFragment(fragment)
+            true
+        }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, fragment)
+            .commit()
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 7: Galería de Imágenes</h3>
+                    <p>Grid de imágenes con opción de ver en grande.</p>
+
+                    <div class="code-block"><code>// ImagenAdapter.kt con GridLayoutManager
+class ImagenAdapter(
+    private val imagenes: List&lt;Int&gt;,
+    private val onClick: (Int) -> Unit
+) : RecyclerView.Adapter&lt;ImagenAdapter.ViewHolder&gt;() {
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val imageView: ImageView = view.findViewById(R.id.ivImagen)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_imagen, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.imageView.setImageResource(imagenes[position])
+        holder.itemView.setOnClickListener { onClick(imagenes[position]) }
+    }
+
+    override fun getItemCount() = imagenes.size
+}
+
+// GaleriaActivity.kt
+class GaleriaActivity : AppCompatActivity() {
+
+    private val imagenes = listOf(
+        R.drawable.img1, R.drawable.img2, R.drawable.img3,
+        R.drawable.img4, R.drawable.img5, R.drawable.img6
+    )
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_galeria)
+
+        val recyclerView = findViewById&lt;RecyclerView&gt;(R.id.rvGaleria)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.adapter = ImagenAdapter(imagenes) { resId ->
+            // Mostrar imagen en pantalla completa
+            val intent = Intent(this, FullscreenActivity::class.java)
+            intent.putExtra("IMAGE_RES", resId)
+            startActivity(intent)
+        }
+    }
+}</code></div>
+                </div>
+
+                <div class="exercise">
+                    <h3>Ejercicio 8: App Completa - Gestor de Contactos</h3>
+                    <p>CRUD completo con Room, ViewModel y RecyclerView.</p>
+
+                    <div class="code-block"><code>// Contacto.kt
+@Entity(tableName = "contactos")
+data class Contacto(
+    @PrimaryKey(autoGenerate = true) val id: Int = 0,
+    val nombre: String,
+    val telefono: String,
+    val email: String
+)
+
+// ContactoDao.kt
+@Dao
+interface ContactoDao {
+    @Query("SELECT * FROM contactos ORDER BY nombre")
+    fun getAll(): LiveData&lt;List&lt;Contacto&gt;&gt;
+
+    @Query("SELECT * FROM contactos WHERE id = :id")
+    suspend fun getById(id: Int): Contacto?
+
+    @Insert
+    suspend fun insert(contacto: Contacto)
+
+    @Update
+    suspend fun update(contacto: Contacto)
+
+    @Delete
+    suspend fun delete(contacto: Contacto)
+}
+
+// ContactoViewModel.kt
+class ContactoViewModel(application: Application) : AndroidViewModel(application) {
+
+    private val dao = AppDatabase.getDatabase(application).contactoDao()
+    val contactos = dao.getAll()
+
+    fun insertar(contacto: Contacto) {
+        viewModelScope.launch(Dispatchers.IO) { dao.insert(contacto) }
+    }
+
+    fun actualizar(contacto: Contacto) {
+        viewModelScope.launch(Dispatchers.IO) { dao.update(contacto) }
+    }
+
+    fun eliminar(contacto: Contacto) {
+        viewModelScope.launch(Dispatchers.IO) { dao.delete(contacto) }
+    }
+}
+
+// ContactosActivity.kt
+class ContactosActivity : AppCompatActivity() {
+
+    private val viewModel: ContactoViewModel by viewModels()
+    private lateinit var adapter: ContactoAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_contactos)
+
+        adapter = ContactoAdapter(
+            onEdit = { contacto -> mostrarDialogoEditar(contacto) },
+            onDelete = { contacto ->
+                AlertDialog.Builder(this)
+                    .setMessage("¿Eliminar ${contacto.nombre}?")
+                    .setPositiveButton("Sí") { _, _ ->
+                        viewModel.eliminar(contacto)
+                    }
+                    .setNegativeButton("No", null)
+                    .show()
+            },
+            onCall = { contacto ->
+                val intent = Intent(Intent.ACTION_DIAL,
+                    Uri.parse("tel:${contacto.telefono}"))
+                startActivity(intent)
+            }
+        )
+
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        viewModel.contactos.observe(this) { lista ->
+            adapter.submitList(lista)
+        }
+
+        fab.setOnClickListener {
+            mostrarDialogoNuevo()
+        }
+    }
+
+    private fun mostrarDialogoNuevo() {
+        val view = layoutInflater.inflate(R.layout.dialog_contacto, null)
+
+        AlertDialog.Builder(this)
+            .setTitle("Nuevo Contacto")
+            .setView(view)
+            .setPositiveButton("Guardar") { _, _ ->
+                val contacto = Contacto(
+                    nombre = view.findViewById&lt;EditText&gt;(R.id.etNombre).text.toString(),
+                    telefono = view.findViewById&lt;EditText&gt;(R.id.etTelefono).text.toString(),
+                    email = view.findViewById&lt;EditText&gt;(R.id.etEmail).text.toString()
+                )
+                viewModel.insertar(contacto)
+            }
+            .setNegativeButton("Cancelar", null)
+            .show()
+    }
+}</code></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title"><span class="logo-code">Code</span><span class="logo-dam">DAM</span></h3>
+                    <p>Recursos completos para estudiantes de Desarrollo de Aplicaciones Multiplataforma.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CodeDAM. Proyecto educativo de código abierto.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/main.js"></script>
+
+    <!-- Scripts -->
+    <script src="../../js/main.js"></script>
+    <script src="../../js/features.js"></script>
+    <script src="../../js/astro-bot.js"></script>
+    <script>
+    // Auto-generate TOC
+    document.addEventListener('DOMContentLoaded', () => {
+        const toc = document.querySelector('.toc ul');
+        const sections = document.querySelectorAll('.content-section h2');
+        
+        sections.forEach((section, index) => {
+            const id = `section-${index}`;
+            section.id = id;
+            
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = `#${id}`;
+            a.textContent = section.textContent;
+            li.appendChild(a);
+            toc.appendChild(li);
+        });
+
+        // Reading progress
+        const progressBar = document.createElement('div');
+        progressBar.className = 'reading-progress';
+        document.body.prepend(progressBar);
+
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight - windowHeight;
+            const scrolled = window.scrollY;
+            const progress = (scrolled / documentHeight) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Back to top button
+        const backToTop = document.createElement('div');
+        backToTop.className = 'back-to-top';
+        backToTop.innerHTML = '↑';
+        document.body.appendChild(backToTop);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    });
+    </script>
+</body>
+</html>
