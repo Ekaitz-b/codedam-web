@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Prism.js - CodeDAM</title>
+
+    <!-- Prism.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+
+    <style>
+        body {
+            background: #1a1a1a;
+            color: #e0e0e0;
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: #3b82f6;
+        }
+        .code-block {
+            background: #1e1e1e;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            overflow: hidden;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .code-block pre {
+            margin: 0;
+            padding: 1.5rem;
+        }
+        .code-block code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 Test de Syntax Highlighting</h1>
+    <p>Si ves colores en el código de abajo, <strong>Prism.js funciona correctamente</strong>:</p>
+
+    <div class="code-block">
+        <pre><code class="language-java">// HolaMundo.java - Ejemplo de Java
+public class HolaMundo {
+    public static void main(String[] args) {
+        // Imprime un mensaje en consola
+        System.out.println("¡Hola, CodeDAM!");
+
+        int numero = 42;
+        String texto = "Programación Java";
+        boolean esEstudiante = true;
+    }
+}</code></pre>
+    </div>
+
+    <h2>✅ ¿Qué deberías ver?</h2>
+    <ul>
+        <li><strong style="color: #c586c0;">public, class, static, void</strong> → Morado/Rosa</li>
+        <li><strong style="color: #ce9178;">"¡Hola, CodeDAM!" y "Programación Java"</strong> → Naranja</li>
+        <li><strong style="color: #6a9955;">// comentarios</strong> → Verde</li>
+        <li><strong style="color: #dcdcaa;">HolaMundo, main</strong> → Amarillo</li>
+        <li><strong style="color: #b5cea8;">42, true</strong> → Verde claro</li>
+    </ul>
+
+    <p><strong>Si NO ves colores</strong> → El problema es la conexión a Prism.js CDN</p>
+    <p><strong>Si SÍ ves colores</strong> → Prism funciona, solo hay que aplicarlo al resto</p>
+
+    <!-- Prism.js Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</body>
+</html>
