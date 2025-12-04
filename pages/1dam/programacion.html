@@ -226,11 +226,13 @@
                 <p>La máquina virtual que ejecuta el bytecode. Es la clave de la portabilidad de Java: existe una JVM para cada sistema operativo.</p>
 
                 <div class="code-block">
-                    <code>// Proceso de ejecución de un programa Java:
+
+                    <pre><code class="language-java">// Proceso de ejecución de un programa Java:
 // 1. Escribes código: HolaMundo.java
 // 2. Compilas: javac HolaMundo.java → HolaMundo.class (bytecode)
 // 3. Ejecutas: java HolaMundo → La JVM interpreta el bytecode
-// 4. El mismo .class funciona en Windows, Linux, Mac...</code>
+// 4. El mismo .class funciona en Windows, Linux, Mac...</code></pre>
+
                 </div>
 
                 <h3>Características Principales de Java</h3>
@@ -267,7 +269,8 @@
                 <p>Vamos a crear el clásico "Hola Mundo" y entender cada línea:</p>
 
                 <div class="code-block">
-                    <code>// HolaMundo.java
+
+                    <pre><code class="language-java">// HolaMundo.java
 
 // Definición de una clase pública llamada HolaMundo
 // IMPORTANTE: El nombre del archivo DEBE coincidir con el nombre de la clase pública
@@ -298,7 +301,8 @@ public class HolaMundo {
         // Formateo con printf (como en C)
         System.out.printf("Me llamo %s y tengo %d años%n", nombre, edad);
     }
-}</code>
+}</code></pre>
+
                 </div>
 
                 <div class="note-box">
@@ -309,7 +313,7 @@ public class HolaMundo {
 
                 <h3>Estructura de un Programa Java</h3>
                 <div class="code-block">
-                    <code>// 1. PAQUETE (opcional, pero recomendado)
+                    <pre><code class="language-java">// 1. PAQUETE (opcional, pero recomendado)
 package com.codedam.ejemplos;
 
 // 2. IMPORTS (opcional)
@@ -343,7 +347,7 @@ public class MiPrograma {
         MiPrograma persona = new MiPrograma("Carlos", 25);
         persona.saludar();
     }
-}</code>
+}</code></pre>
                 </div>
 
                 <div class="warning-box">
@@ -379,7 +383,8 @@ public class MiPrograma {
                 <p>Java tiene 8 tipos primitivos (no son objetos):</p>
 
                 <div class="code-block">
-                    <code>// ENTEROS (números sin decimales)
+
+                    <pre><code class="language-java">// ENTEROS (números sin decimales)
 
 // byte: 8 bits, rango -128 a 127
 byte edad = 25;
@@ -422,7 +427,8 @@ char emoji = '😊';  // Unicode funciona!
 // boolean: true o false (verdadero o falso)
 boolean esEstudiante = true;
 boolean mayorDeEdad = false;
-boolean aprobado = true;</code>
+boolean aprobado = true;</code></pre>
+
                 </div>
 
                 <div class="note-box">
@@ -431,7 +437,7 @@ boolean aprobado = true;</code>
 
                 <h4>Tipos de Referencia (Objetos)</h4>
                 <div class="code-block">
-                    <code>// String: cadena de texto (secuencia de caracteres)
+                    <pre><code class="language-java">// String: cadena de texto (secuencia de caracteres)
 // Se escribe entre comillas dobles ""
 String nombre = "Ana García";
 String mensaje = "Hola, ¿qué tal?";
@@ -443,12 +449,12 @@ String[] nombres = {"Ana", "Juan", "María"};
 
 // Clases: cualquier objeto que crees o uses
 Scanner scanner = new Scanner(System.in);
-ArrayList&lt;String&gt; lista = new ArrayList&lt;&gt;();</code>
+ArrayList&lt;String&gt; lista = new ArrayList&lt;&gt;();</code></pre>
                 </div>
 
                 <h4>Declaración e Inicialización de Variables</h4>
                 <div class="code-block">
-                    <code>// DECLARACIÓN: reservas espacio en memoria
+                    <pre><code class="language-java">// DECLARACIÓN: reservas espacio en memoria
 int numero;
 String texto;
 
@@ -470,12 +476,12 @@ final int DIAS_SEMANA = 7;
 final double PI = 3.14159265359;
 final String UNIVERSIDAD = "UAM";
 
-// DIAS_SEMANA = 8;  // ERROR: no puedes cambiar una constante</code>
+// DIAS_SEMANA = 8;  // ERROR: no puedes cambiar una constante</code></pre>
                 </div>
 
                 <h4>Conversión de Tipos (Casting)</h4>
                 <div class="code-block">
-                    <code>// CONVERSIÓN IMPLÍCITA (automática, de menor a mayor)
+                    <pre><code class="language-java">// CONVERSIÓN IMPLÍCITA (automática, de menor a mayor)
 int entero = 100;
 long largo = entero;        // int → long (OK)
 float decimal = entero;      // int → float (OK)
@@ -500,7 +506,7 @@ double decimal2 = Double.parseDouble(textoDecimal);  // String → double
 int edad = 25;
 String edadTexto = String.valueOf(edad);  // int → String
 // O más fácil:
-String edadTexto2 = "" + edad;  // Concatenar con String vacío</code>
+String edadTexto2 = "" + edad;  // Concatenar con String vacío</code></pre>
                 </div>
 
                 <div class="warning-box">
@@ -517,7 +523,7 @@ String edadTexto2 = "" + edad;  // Concatenar con String vacío</code>
 
                 <h4>Operadores Aritméticos</h4>
                 <div class="code-block">
-                    <code>int a = 10, b = 3;
+                    <pre><code class="language-java">int a = 10, b = 3;
 
 // Suma
 int suma = a + b;           // 13
@@ -555,12 +561,12 @@ int y = 5;
 int z = y++;  // z = 5, y = 6 (primero asigna, luego incrementa)
 
 int w = 5;
-int v = ++w;  // v = 6, w = 6 (primero incrementa, luego asigna)</code>
+int v = ++w;  // v = 6, w = 6 (primero incrementa, luego asigna)</code></pre>
                 </div>
 
                 <h4>Operadores de Asignación</h4>
                 <div class="code-block">
-                    <code>int x = 10;
+                    <pre><code class="language-java">int x = 10;
 
 // Asignación compuesta (abreviada)
 x += 5;   // x = x + 5  → 15
@@ -572,12 +578,12 @@ x %= 4;   // x = x % 4  → 2
 // Son equivalentes pero más cortos
 int puntos = 100;
 puntos = puntos + 50;  // Forma larga
-puntos += 50;          // Forma corta (recomendada)</code>
+puntos += 50;          // Forma corta (recomendada)</code></pre>
                 </div>
 
                 <h4>Operadores de Comparación</h4>
                 <div class="code-block">
-                    <code>int a = 10, b = 20;
+                    <pre><code class="language-java">int a = 10, b = 20;
 
 // Igual a
 boolean igual = (a == b);           // false
@@ -608,12 +614,12 @@ System.out.println(texto1 == texto3);   // false (diferente objeto)
 
 // CORRECTO: .equals() compara contenido
 System.out.println(texto1.equals(texto2));   // true
-System.out.println(texto1.equals(texto3));   // true</code>
+System.out.println(texto1.equals(texto3));   // true</code></pre>
                 </div>
 
                 <h4>Operadores Lógicos</h4>
                 <div class="code-block">
-                    <code>boolean a = true, b = false;
+                    <pre><code class="language-java">boolean a = true, b = false;
 
 // AND lógico (&&): true solo si AMBOS son true
 boolean and = a && b;           // false
@@ -645,12 +651,12 @@ boolean resultado = !false && true || false;
 // Se evalúa como: (!false) && true || false
 //                  true && true || false
 //                  true || false
-//                  true</code>
+//                  true</code></pre>
                 </div>
 
                 <h4>Operador Ternario</h4>
                 <div class="code-block">
-                    <code>// Forma compacta de if-else
+                    <pre><code class="language-java">// Forma compacta de if-else
 // Sintaxis: condicion ? valorSiTrue : valorSiFalse
 
 int edad = 17;
@@ -676,7 +682,7 @@ int puntos = 85;
 String calificacion = (puntos >= 90) ? "Sobresaliente" :
                       (puntos >= 70) ? "Notable" :
                       (puntos >= 50) ? "Aprobado" : "Suspendido";
-// "Notable"</code>
+// "Notable"</code></pre>
                 </div>
 
                 <div class="note-box">
@@ -701,7 +707,7 @@ String calificacion = (puntos >= 90) ? "Sobresaliente" :
 
                 <h4>if básico</h4>
                 <div class="code-block">
-                    <code>// Sintaxis básica
+                    <pre><code class="language-java">// Sintaxis básica
 int edad = 18;
 
 if (edad >= 18) {
@@ -735,12 +741,12 @@ if (edad2 >= 18 && tieneCarnet) {
 char letra = 'a';
 if (letra == 'a' || letra == 'e' || letra == 'i' || letra == 'o' || letra == 'u') {
     System.out.println("Es una vocal");
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>if-else</h4>
                 <div class="code-block">
-                    <code>// Ejecuta un bloque si la condición es true, otro si es false
+                    <pre><code class="language-java">// Ejecuta un bloque si la condición es true, otro si es false
 int edad = 15;
 
 if (edad >= 18) {
@@ -765,12 +771,12 @@ if (usuario.equals("admin") && password.equals("1234")) {
     System.out.println("Login exitoso");
 } else {
     System.out.println("Credenciales incorrectas");
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>if-else if-else (Cascada)</h4>
                 <div class="code-block">
-                    <code>// Para múltiples condiciones
+                    <pre><code class="language-java">// Para múltiples condiciones
 int nota = 7;
 
 if (nota >= 9) {
@@ -811,12 +817,12 @@ if (imc < 18.5) {
     System.out.println("Sobrepeso");
 } else {
     System.out.println("Obesidad");
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>if anidados</h4>
                 <div class="code-block">
-                    <code>// Un if dentro de otro if
+                    <pre><code class="language-java">// Un if dentro de otro if
 int edad = 20;
 boolean tieneEntrada = true;
 
@@ -846,7 +852,7 @@ if (esEstudiante) {
     }
 }
 
-System.out.println("Precio final: " + precioFinal + "€");</code>
+System.out.println("Precio final: " + precioFinal + "€");</code></pre>
                 </div>
 
                 <div class="warning-box">
@@ -863,7 +869,8 @@ System.out.println("Precio final: " + precioFinal + "€");</code>
                 <p>Alternativa al if-else if cuando comparas una variable con múltiples valores concretos.</p>
 
                 <div class="code-block">
-                    <code>// Sintaxis básica
+
+                    <pre><code class="language-java">// Sintaxis básica
 int dia = 3;
 
 switch (dia) {
@@ -956,7 +963,8 @@ switch (diaSemana) {
         break;
     default:
         System.out.println("Día inválido");
-}</code>
+}</code></pre>
+
                 </div>
 
                 <div class="note-box">
@@ -974,7 +982,8 @@ String nombreDia = switch (dia) {<br>
                 <p>Repite un bloque de código mientras una condición sea verdadera. Evalúa la condición ANTES de ejecutar.</p>
 
                 <div class="code-block">
-                    <code>// Sintaxis básica
+
+                    <pre><code class="language-java">// Sintaxis básica
 int contador = 1;
 
 while (contador <= 5) {
@@ -1022,14 +1031,16 @@ while (intento != numeroSecreto) {
     } else {
         System.out.println("¡Correcto!");
     }
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h3>Bucle do-while</h3>
                 <p>Similar a while, pero evalúa la condición DESPUÉS de ejecutar. Se ejecuta al menos UNA vez.</p>
 
                 <div class="code-block">
-                    <code>// Sintaxis básica
+
+                    <pre><code class="language-java">// Sintaxis básica
 int contador = 1;
 
 do {
@@ -1075,14 +1086,16 @@ do {
         default:
             System.out.println("Opción inválida");
     }
-} while (opcion != 3);  // Repetir hasta que elija "Salir"</code>
+} while (opcion != 3);  // Repetir hasta que elija "Salir"</code></pre>
+
                 </div>
 
                 <h3>Bucle for</h3>
                 <p>Ideal cuando sabes cuántas veces quieres repetir algo. Tiene inicialización, condición e incremento en una sola línea.</p>
 
                 <div class="code-block">
-                    <code>// Sintaxis: for (inicialización; condición; incremento)
+
+                    <pre><code class="language-java">// Sintaxis: for (inicialización; condición; incremento)
 for (int i = 1; i <= 5; i++) {
     System.out.println("Iteración: " + i);
 }
@@ -1128,14 +1141,16 @@ System.out.println("Suma: " + suma);  // 5050
 // For con múltiples variables
 for (int i = 0, j = 10; i < j; i++, j--) {
     System.out.println("i=" + i + ", j=" + j);
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h4>For-each (Enhanced for)</h4>
                 <p>Forma simplificada para recorrer arrays y colecciones.</p>
 
                 <div class="code-block">
-                    <code>// Sintaxis: for (TipoDato elemento : coleccion)
+
+                    <pre><code class="language-java">// Sintaxis: for (TipoDato elemento : coleccion)
 String[] nombres = {"Ana", "Juan", "María", "Pedro"};
 
 // For-each: más simple y legible
@@ -1173,14 +1188,15 @@ if (encontrado) {
     System.out.println("Fruta encontrada!");
 } else {
     System.out.println("Fruta no encontrada");
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h3>Control de Bucles: break y continue</h3>
 
                 <h4>break: Sale del bucle completamente</h4>
                 <div class="code-block">
-                    <code>// Ejemplo: Buscar número y salir
+                    <pre><code class="language-java">// Ejemplo: Buscar número y salir
 int[] numeros = {5, 12, 8, 20, 15, 30};
 
 for (int num : numeros) {
@@ -1217,12 +1233,12 @@ while (intentos < maxIntentos) {
 
 if (intentos == maxIntentos) {
     System.out.println("Cuenta bloqueada");
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>continue: Salta a la siguiente iteración</h4>
                 <div class="code-block">
-                    <code>// Ejemplo: Imprimir solo números impares
+                    <pre><code class="language-java">// Ejemplo: Imprimir solo números impares
 for (int i = 1; i <= 10; i++) {
     if (i % 2 == 0) {
         continue;  // Salta los números pares
@@ -1253,14 +1269,15 @@ for (String palabra : palabras) {
     }
     System.out.println(palabra.toUpperCase());
 }
-// Salida: HOLA, MUNDO, JAVA</code>
+// Salida: HOLA, MUNDO, JAVA</code></pre>
                 </div>
 
                 <h3>Bucles Anidados</h3>
                 <p>Un bucle dentro de otro. Útil para trabajar con matrices, tablas, etc.</p>
 
                 <div class="code-block">
-                    <code>// Ejemplo básico: Tabla de multiplicar completa (1-10)
+
+                    <pre><code class="language-java">// Ejemplo básico: Tabla de multiplicar completa (1-10)
 for (int i = 1; i <= 10; i++) {
     for (int j = 1; j <= 10; j++) {
         System.out.print((i * j) + "\t");  // \t = tabulación
@@ -1317,7 +1334,8 @@ for (int i = 0; i < matriz.length; i++) {
     if (encontrado) {
         break;  // Sale del bucle externo
     }
-}</code>
+}</code></pre>
+
                 </div>
 
                 <div class="warning-box">
@@ -1348,7 +1366,7 @@ for (int i = 0; i < matriz.length; i++) {
 
                 <h4>Ejercicio 1: Calculadora de Notas</h4>
                 <div class="code-block">
-                    <code>// Pedir 5 notas, calcular media y mostrar si aprueba
+                    <pre><code class="language-java">// Pedir 5 notas, calcular media y mostrar si aprueba
 Scanner scanner = new Scanner(System.in);
 double suma = 0;
 
@@ -1365,12 +1383,12 @@ if (media >= 5) {
     System.out.println("APROBADO");
 } else {
     System.out.println("SUSPENDIDO");
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Ejercicio 2: Números Primos</h4>
                 <div class="code-block">
-                    <code>// Verificar si un número es primo
+                    <pre><code class="language-java">// Verificar si un número es primo
 Scanner scanner = new Scanner(System.in);
 System.out.print("Introduce un número: ");
 int numero = scanner.nextInt();
@@ -1392,12 +1410,12 @@ if (esPrimo) {
     System.out.println(numero + " es primo");
 } else {
     System.out.println(numero + " NO es primo");
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Ejercicio 3: Factorial de un Número</h4>
                 <div class="code-block">
-                    <code>// Calcular factorial (5! = 5 * 4 * 3 * 2 * 1 = 120)
+                    <pre><code class="language-java">// Calcular factorial (5! = 5 * 4 * 3 * 2 * 1 = 120)
 Scanner scanner = new Scanner(System.in);
 System.out.print("Introduce un número: ");
 int n = scanner.nextInt();
@@ -1410,12 +1428,12 @@ for (int i = 1; i <= n; i++) {
 
 System.out.println(n + "! = " + factorial);
 
-// Ejemplo: 5! = 1*2*3*4*5 = 120</code>
+// Ejemplo: 5! = 1*2*3*4*5 = 120</code></pre>
                 </div>
 
                 <h4>Ejercicio 4: Pirámide de Números</h4>
                 <div class="code-block">
-                    <code>// Crear una pirámide como esta:
+                    <pre><code class="language-java">// Crear una pirámide como esta:
 // 1
 // 1 2
 // 1 2 3
@@ -1429,12 +1447,12 @@ for (int i = 1; i <= filas; i++) {
         System.out.print(j + " ");
     }
     System.out.println();  // Nueva línea
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Ejercicio 5: FizzBuzz (Clásico de Entrevistas)</h4>
                 <div class="code-block">
-                    <code>// Imprime números del 1 al 100, pero:
+                    <pre><code class="language-java">// Imprime números del 1 al 100, pero:
 // - Si es múltiplo de 3: imprime "Fizz"
 // - Si es múltiplo de 5: imprime "Buzz"
 // - Si es múltiplo de ambos: imprime "FizzBuzz"
@@ -1449,7 +1467,7 @@ for (int i = 1; i <= 100; i++) {
     } else {
         System.out.println(i);
     }
-}</code>
+}</code></pre>
                 </div>
             </section>
 
@@ -1461,7 +1479,8 @@ for (int i = 1; i <= 100; i++) {
                 <h3>Declaración e Inicialización</h3>
 
                 <div class="code-block">
-                    <code>// FORMA 1: Declarar y crear array vacío
+
+                    <pre><code class="language-java">// FORMA 1: Declarar y crear array vacío
 int[] numeros = new int[5];  // Array de 5 enteros (inicializados a 0)
 String[] nombres = new String[3];  // Array de 3 Strings (inicializados a null)
 
@@ -1487,12 +1506,13 @@ long[] longs = new long[10];
 float[] floats = new float[10];
 double[] doubles = new double[10];
 boolean[] flags = new boolean[10];
-char[] caracteres = new char[10];</code>
+char[] caracteres = new char[10];</code></pre>
+
                 </div>
 
                 <h3>Acceso a Elementos</h3>
                 <div class="code-block">
-                    <code>String[] dias = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"};
+                    <pre><code class="language-java">String[] dias = {"Lunes", "Martes", "Miércoles", "Jueves", "Viernes"};
 
 // Acceder a elementos (índice empieza en 0)
 String primerDia = dias[0];     // "Lunes"
@@ -1510,14 +1530,14 @@ int tamaño = dias.length;  // 5 (IMPORTANTE: length SIN paréntesis)
 String ultimo = dias[dias.length - 1];  // "Viernes"
 
 // CUIDADO: Acceso fuera de rango
-// String dia = dias[10];  // ERROR: ArrayIndexOutOfBoundsException</code>
+// String dia = dias[10];  // ERROR: ArrayIndexOutOfBoundsException</code></pre>
                 </div>
 
                 <h3>Recorrer Arrays</h3>
 
                 <h4>Con bucle for tradicional</h4>
                 <div class="code-block">
-                    <code>int[] numeros = {10, 20, 30, 40, 50};
+                    <pre><code class="language-java">int[] numeros = {10, 20, 30, 40, 50};
 
 // Imprimir todos los elementos
 for (int i = 0; i < numeros.length; i++) {
@@ -1532,12 +1552,12 @@ for (int i = numeros.length - 1; i >= 0; i--) {
 // Modificar todos los elementos
 for (int i = 0; i < numeros.length; i++) {
     numeros[i] = numeros[i] * 2;  // Duplicar cada número
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Con bucle for-each (enhanced for)</h4>
                 <div class="code-block">
-                    <code>String[] nombres = {"Ana", "Juan", "María", "Pedro"};
+                    <pre><code class="language-java">String[] nombres = {"Ana", "Juan", "María", "Pedro"};
 
 // For-each: más simple y legible
 for (String nombre : nombres) {
@@ -1550,14 +1570,14 @@ int[] numeros = {1, 2, 3, 4, 5};
 for (int num : numeros) {
     num = num * 2;  // Esto NO modifica el array original
 }
-// numeros sigue siendo {1, 2, 3, 4, 5}</code>
+// numeros sigue siendo {1, 2, 3, 4, 5}</code></pre>
                 </div>
 
                 <h3>Operaciones Comunes con Arrays</h3>
 
                 <h4>Buscar un elemento</h4>
                 <div class="code-block">
-                    <code>String[] frutas = {"manzana", "pera", "plátano", "naranja"};
+                    <pre><code class="language-java">String[] frutas = {"manzana", "pera", "plátano", "naranja"};
 String buscar = "pera";
 int posicion = -1;  // -1 significa "no encontrado"
 
@@ -1572,12 +1592,12 @@ if (posicion != -1) {
     System.out.println(buscar + " encontrado en posición " + posicion);
 } else {
     System.out.println(buscar + " no encontrado");
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Encontrar el máximo y mínimo</h4>
                 <div class="code-block">
-                    <code>int[] numeros = {45, 12, 78, 23, 90, 34};
+                    <pre><code class="language-java">int[] numeros = {45, 12, 78, 23, 90, 34};
 
 // Encontrar el máximo
 int maximo = numeros[0];  // Asumir que el primero es el máximo
@@ -1595,12 +1615,12 @@ for (int i = 1; i < numeros.length; i++) {
         minimo = numeros[i];
     }
 }
-System.out.println("Mínimo: " + minimo);  // 12</code>
+System.out.println("Mínimo: " + minimo);  // 12</code></pre>
                 </div>
 
                 <h4>Calcular suma y media</h4>
                 <div class="code-block">
-                    <code>double[] notas = {7.5, 8.0, 6.5, 9.0, 7.0};
+                    <pre><code class="language-java">double[] notas = {7.5, 8.0, 6.5, 9.0, 7.0};
 
 double suma = 0;
 for (double nota : notas) {
@@ -1609,12 +1629,12 @@ for (double nota : notas) {
 
 double media = suma / notas.length;
 System.out.println("Suma: " + suma);      // 38.0
-System.out.println("Media: " + media);    // 7.6</code>
+System.out.println("Media: " + media);    // 7.6</code></pre>
                 </div>
 
                 <h4>Copiar arrays</h4>
                 <div class="code-block">
-                    <code>int[] original = {1, 2, 3, 4, 5};
+                    <pre><code class="language-java">int[] original = {1, 2, 3, 4, 5};
 
 // MAL: Esto NO copia el array, copia la referencia
 int[] copia1 = original;
@@ -1631,12 +1651,12 @@ import java.util.Arrays;
 int[] copia3 = Arrays.copyOf(original, original.length);
 
 // Copiar parte del array
-int[] parcial = Arrays.copyOfRange(original, 1, 4);  // Copia índices 1, 2, 3</code>
+int[] parcial = Arrays.copyOfRange(original, 1, 4);  // Copia índices 1, 2, 3</code></pre>
                 </div>
 
                 <h4>Ordenar arrays</h4>
                 <div class="code-block">
-                    <code>import java.util.Arrays;
+                    <pre><code class="language-java">import java.util.Arrays;
 
 int[] numeros = {45, 12, 78, 23, 90, 34};
 
@@ -1646,12 +1666,12 @@ System.out.println(Arrays.toString(numeros));  // [12, 23, 34, 45, 78, 90]
 
 String[] nombres = {"Carlos", "Ana", "Beatriz", "David"};
 Arrays.sort(nombres);
-System.out.println(Arrays.toString(nombres));  // [Ana, Beatriz, Carlos, David]</code>
+System.out.println(Arrays.toString(nombres));  // [Ana, Beatriz, Carlos, David]</code></pre>
                 </div>
 
                 <h4>Comparar arrays</h4>
                 <div class="code-block">
-                    <code>import java.util.Arrays;
+                    <pre><code class="language-java">import java.util.Arrays;
 
 int[] array1 = {1, 2, 3};
 int[] array2 = {1, 2, 3};
@@ -1662,7 +1682,7 @@ System.out.println(array1 == array2);  // false (diferentes objetos)
 
 // BIEN: Arrays.equals() compara contenido
 System.out.println(Arrays.equals(array1, array2));  // true
-System.out.println(Arrays.equals(array1, array3));  // false</code>
+System.out.println(Arrays.equals(array1, array3));  // false</code></pre>
                 </div>
 
                 <h3>Arrays Multidimensionales (Matrices)</h3>
@@ -1670,7 +1690,7 @@ System.out.println(Arrays.equals(array1, array3));  // false</code>
 
                 <h4>Arrays 2D (Matrices)</h4>
                 <div class="code-block">
-                    <code>// Declarar e inicializar matriz 3x4 (3 filas, 4 columnas)
+                    <pre><code class="language-java">// Declarar e inicializar matriz 3x4 (3 filas, 4 columnas)
 int[][] matriz = new int[3][4];
 
 // Inicializar con valores
@@ -1706,12 +1726,12 @@ for (int[] fila : tabla) {
         System.out.print(valor + "\t");
     }
     System.out.println();
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Ejemplos prácticos con matrices</h4>
                 <div class="code-block">
-                    <code>// Matriz de calificaciones (estudiantes x asignaturas)
+                    <pre><code class="language-java">// Matriz de calificaciones (estudiantes x asignaturas)
 double[][] notas = {
     {7.5, 8.0, 6.5},  // Estudiante 1
     {9.0, 8.5, 9.5},  // Estudiante 2
@@ -1733,7 +1753,7 @@ int[][] identidad = {
     {1, 0, 0},
     {0, 1, 0},
     {0, 0, 1}
-};</code>
+};</code></pre>
                 </div>
 
                 <div class="warning-box">
@@ -1762,7 +1782,7 @@ int[][] identidad = {
 
                 <h4>Ejercicio 1: Invertir un Array</h4>
                 <div class="code-block">
-                    <code>// Invertir el orden de los elementos
+                    <pre><code class="language-java">// Invertir el orden de los elementos
 int[] numeros = {1, 2, 3, 4, 5};
 int[] invertido = new int[numeros.length];
 
@@ -1778,12 +1798,12 @@ for (int i = 0; i < numeros.length / 2; i++) {
     numeros[i] = numeros[numeros.length - 1 - i];
     numeros[numeros.length - 1 - i] = temp;
 }
-System.out.println(Arrays.toString(numeros));  // [5, 4, 3, 2, 1]</code>
+System.out.println(Arrays.toString(numeros));  // [5, 4, 3, 2, 1]</code></pre>
                 </div>
 
                 <h4>Ejercicio 2: Eliminar Duplicados</h4>
                 <div class="code-block">
-                    <code>// Encontrar elementos únicos en un array
+                    <pre><code class="language-java">// Encontrar elementos únicos en un array
 int[] numeros = {1, 2, 3, 2, 4, 1, 5, 3};
 int[] unicos = new int[numeros.length];
 int contador = 0;
@@ -1811,12 +1831,12 @@ System.out.print("Únicos: ");
 for (int i = 0; i < contador; i++) {
     System.out.print(unicos[i] + " ");
 }
-// Salida: 1 2 3 4 5</code>
+// Salida: 1 2 3 4 5</code></pre>
                 </div>
 
                 <h4>Ejercicio 3: Rotar Array</h4>
                 <div class="code-block">
-                    <code>// Rotar array n posiciones a la derecha
+                    <pre><code class="language-java">// Rotar array n posiciones a la derecha
 int[] numeros = {1, 2, 3, 4, 5};
 int rotaciones = 2;
 
@@ -1831,12 +1851,12 @@ for (int r = 0; r < rotaciones; r++) {
     numeros[0] = ultimo;
 }
 
-System.out.println(Arrays.toString(numeros));  // [4, 5, 1, 2, 3]</code>
+System.out.println(Arrays.toString(numeros));  // [4, 5, 1, 2, 3]</code></pre>
                 </div>
 
                 <h4>Ejercicio 4: Fusionar Dos Arrays Ordenados</h4>
                 <div class="code-block">
-                    <code>// Fusionar dos arrays ordenados en uno solo ordenado
+                    <pre><code class="language-java">// Fusionar dos arrays ordenados en uno solo ordenado
 int[] array1 = {1, 3, 5, 7};
 int[] array2 = {2, 4, 6, 8};
 int[] fusionado = new int[array1.length + array2.length];
@@ -1861,12 +1881,12 @@ while (j < array2.length) {
     fusionado[k++] = array2[j++];
 }
 
-System.out.println(Arrays.toString(fusionado));  // [1, 2, 3, 4, 5, 6, 7, 8]</code>
+System.out.println(Arrays.toString(fusionado));  // [1, 2, 3, 4, 5, 6, 7, 8]</code></pre>
                 </div>
 
                 <h4>Ejercicio 5: Matriz Transpuesta</h4>
                 <div class="code-block">
-                    <code>// Transponer una matriz (intercambiar filas por columnas)
+                    <pre><code class="language-java">// Transponer una matriz (intercambiar filas por columnas)
 int[][] matriz = {
     {1, 2, 3},
     {4, 5, 6},
@@ -1890,7 +1910,7 @@ for (int[] fila : transpuesta) {
 // Salida:
 // [1, 4, 7]
 // [2, 5, 8]
-// [3, 6, 9]</code>
+// [3, 6, 9]</code></pre>
                 </div>
             </section>
 
@@ -1901,7 +1921,7 @@ for (int[] fila : transpuesta) {
 
                 <h3>Estructura de un Método</h3>
                 <div class="code-block">
-                    <code>// Sintaxis completa:
+                    <pre><code class="language-java">// Sintaxis completa:
 // modificadorAcceso tipoRetorno nombreMetodo(parametros) {
 //     // Cuerpo del método
 //     return valor;  // Si retorna algo
@@ -1918,12 +1938,12 @@ public static int sumar(int a, int b) {
 // - int: tipo de dato que retorna
 // - sumar: nombre del método (camelCase)
 // - (int a, int b): parámetros que recibe
-// - return: devuelve el resultado</code>
+// - return: devuelve el resultado</code></pre>
                 </div>
 
                 <h3>Métodos sin Retorno (void)</h3>
                 <div class="code-block">
-                    <code>// void significa que el método NO retorna nada
+                    <pre><code class="language-java">// void significa que el método NO retorna nada
 public static void saludar() {
     System.out.println("¡Hola!");
     // No tiene return
@@ -1942,12 +1962,12 @@ public static void imprimirTabla(int numero) {
 // Uso:
 saludar();                    // ¡Hola!
 saludarPersona("Ana");        // ¡Hola, Ana!
-imprimirTabla(5);             // Tabla del 5</code>
+imprimirTabla(5);             // Tabla del 5</code></pre>
                 </div>
 
                 <h3>Métodos con Retorno</h3>
                 <div class="code-block">
-                    <code>// Método que retorna un valor
+                    <pre><code class="language-java">// Método que retorna un valor
 public static int sumar(int a, int b) {
     return a + b;
 }
@@ -1981,36 +2001,36 @@ public static String obtenerDia(int numero) {
 int resultado = sumar(5, 3);           // 8
 double media = calcularMedia(new double[]{7.5, 8.0, 9.0});  // 8.166...
 boolean par = esPar(10);               // true
-String dia = obtenerDia(3);            // "Miércoles"</code>
+String dia = obtenerDia(3);            // "Miércoles"</code></pre>
                 </div>
 
                 <h3>Parámetros de Métodos</h3>
 
                 <h4>Sin parámetros</h4>
                 <div class="code-block">
-                    <code>public static void saludar() {
+                    <pre><code class="language-java">public static void saludar() {
     System.out.println("¡Hola!");
 }
 
 public static int obtenerNumeroAleatorio() {
     return (int) (Math.random() * 100);
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Con un parámetro</h4>
                 <div class="code-block">
-                    <code>public static void imprimir(String mensaje) {
+                    <pre><code class="language-java">public static void imprimir(String mensaje) {
     System.out.println(mensaje);
 }
 
 public static int cuadrado(int numero) {
     return numero * numero;
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Con múltiples parámetros</h4>
                 <div class="code-block">
-                    <code>public static int sumar(int a, int b) {
+                    <pre><code class="language-java">public static int sumar(int a, int b) {
     return a + b;
 }
 
@@ -2025,12 +2045,12 @@ public static String crearNombreCompleto(String nombre, String apellido1, String
 // Uso:
 int suma = sumar(10, 5);                           // 15
 double area = calcularAreaRectangulo(5.0, 3.0);   // 15.0
-String nombreCompleto = crearNombreCompleto("Ana", "García", "López");  // "Ana García López"</code>
+String nombreCompleto = crearNombreCompleto("Ana", "García", "López");  // "Ana García López"</code></pre>
                 </div>
 
                 <h4>Arrays como parámetros</h4>
                 <div class="code-block">
-                    <code>public static void imprimirArray(int[] array) {
+                    <pre><code class="language-java">public static void imprimirArray(int[] array) {
     for (int num : array) {
         System.out.print(num + " ");
     }
@@ -2059,14 +2079,15 @@ public static int encontrarMaximo(int[] numeros) {
 int[] datos = {5, 10, 15, 20};
 imprimirArray(datos);           // 5 10 15 20
 int total = sumarArray(datos);  // 50
-int maximo = encontrarMaximo(datos);  // 20</code>
+int maximo = encontrarMaximo(datos);  // 20</code></pre>
                 </div>
 
                 <h3>Sobrecarga de Métodos (Overloading)</h3>
                 <p>Varios métodos con el MISMO NOMBRE pero diferentes parámetros (cantidad o tipo).</p>
 
                 <div class="code-block">
-                    <code>// Diferentes números de parámetros
+
+                    <pre><code class="language-java">// Diferentes números de parámetros
 public static int sumar(int a, int b) {
     return a + b;
 }
@@ -2107,14 +2128,16 @@ public static double calcularArea(double lado1, double lado2, double lado3) {
     // Triángulo (fórmula de Herón)
     double s = (lado1 + lado2 + lado3) / 2;
     return Math.sqrt(s * (s - lado1) * (s - lado2) * (s - lado3));
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h3>Paso por Valor vs Paso por Referencia</h3>
                 <p>En Java, TODO se pasa por valor, pero con objetos se pasa el valor de la referencia.</p>
 
                 <div class="code-block">
-                    <code>// TIPOS PRIMITIVOS: Paso por valor (se copia el valor)
+
+                    <pre><code class="language-java">// TIPOS PRIMITIVOS: Paso por valor (se copia el valor)
 public static void modificarNumero(int x) {
     x = 100;  // Modifica la copia, NO el original
 }
@@ -2139,14 +2162,16 @@ public static void reasignarArray(int[] array) {
 
 int[] datos = {1, 2, 3};
 reasignarArray(datos);
-System.out.println(Arrays.toString(datos));  // [1, 2, 3] (sin cambios)</code>
+System.out.println(Arrays.toString(datos));  // [1, 2, 3] (sin cambios)</code></pre>
+
                 </div>
 
                 <h3>Recursividad</h3>
                 <p>Un método que se llama a sí mismo. Útil para problemas que se pueden dividir en subproblemas similares.</p>
 
                 <div class="code-block">
-                    <code>// Factorial recursivo
+
+                    <pre><code class="language-java">// Factorial recursivo
 public static int factorial(int n) {
     // Caso base: detener la recursión
     if (n == 0 || n == 1) {
@@ -2185,7 +2210,8 @@ public static int potencia(int base, int exponente) {
         return 1;
     }
     return base * potencia(base, exponente - 1);
-}</code>
+}</code></pre>
+
                 </div>
 
                 <div class="warning-box">
@@ -2214,7 +2240,7 @@ public static int potencia(int base, int exponente) {
 
                 <h4>Ejercicio 1: Validador de Email</h4>
                 <div class="code-block">
-                    <code>public static boolean esEmailValido(String email) {
+                    <pre><code class="language-java">public static boolean esEmailValido(String email) {
     // Validar que contenga @ y .
     if (!email.contains("@") || !email.contains(".")) {
         return false;
@@ -2239,12 +2265,12 @@ public static int potencia(int base, int exponente) {
 // Uso:
 System.out.println(esEmailValido("ana@gmail.com"));     // true
 System.out.println(esEmailValido("invalido.com"));      // false
-System.out.println(esEmailValido("@gmail.com"));        // false</code>
+System.out.println(esEmailValido("@gmail.com"));        // false</code></pre>
                 </div>
 
                 <h4>Ejercicio 2: Convertidor de Temperatura</h4>
                 <div class="code-block">
-                    <code>public static double celsiusAFahrenheit(double celsius) {
+                    <pre><code class="language-java">public static double celsiusAFahrenheit(double celsius) {
     return (celsius * 9/5) + 32;
 }
 
@@ -2259,12 +2285,12 @@ public static double celsiusAKelvin(double celsius) {
 // Uso:
 double tempC = 25;
 double tempF = celsiusAFahrenheit(tempC);
-System.out.println(tempC + "°C = " + tempF + "°F");  // 25°C = 77°F</code>
+System.out.println(tempC + "°C = " + tempF + "°F");  // 25°C = 77°F</code></pre>
                 </div>
 
                 <h4>Ejercicio 3: Calculadora de Números Primos</h4>
                 <div class="code-block">
-                    <code>public static boolean esPrimo(int numero) {
+                    <pre><code class="language-java">public static boolean esPrimo(int numero) {
     if (numero <= 1) {
         return false;
     }
@@ -2289,12 +2315,12 @@ public static void imprimirPrimosHasta(int limite) {
 }
 
 // Uso:
-imprimirPrimosHasta(50);  // 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47</code>
+imprimirPrimosHasta(50);  // 2 3 5 7 11 13 17 19 23 29 31 37 41 43 47</code></pre>
                 </div>
 
                 <h4>Ejercicio 4: Generador de Contraseñas</h4>
                 <div class="code-block">
-                    <code>public static String generarPassword(int longitud) {
+                    <pre><code class="language-java">public static String generarPassword(int longitud) {
     String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
     String password = "";
 
@@ -2327,12 +2353,12 @@ public static boolean esPasswordSegura(String password) {
 // Uso:
 String pass = generarPassword(12);
 System.out.println("Password generada: " + pass);
-System.out.println("¿Es segura? " + esPasswordSegura(pass));</code>
+System.out.println("¿Es segura? " + esPasswordSegura(pass));</code></pre>
                 </div>
 
                 <h4>Ejercicio 5: Analizador de Texto</h4>
                 <div class="code-block">
-                    <code>public static int contarPalabras(String texto) {
+                    <pre><code class="language-java">public static int contarPalabras(String texto) {
     if (texto == null || texto.trim().isEmpty()) {
         return 0;
     }
@@ -2364,7 +2390,7 @@ public static String invertirTexto(String texto) {
 String texto = "Hola Mundo desde Java";
 System.out.println("Palabras: " + contarPalabras(texto));     // 4
 System.out.println("Vocales: " + contarVocales(texto));        // 8
-System.out.println("Invertido: " + invertirTexto(texto));      // avaJ edsedomuM aloH</code>
+System.out.println("Invertido: " + invertirTexto(texto));      // avaJ edsedomuM aloH</code></pre>
                 </div>
             </section>
 
@@ -2378,7 +2404,8 @@ System.out.println("Invertido: " + invertirTexto(texto));      // avaJ edsedomuM
                 <p>Una <strong>clase</strong> es una plantilla o molde que define las características (atributos) y comportamientos (métodos) que tendrán los objetos creados a partir de ella.</p>
 
                 <div class="code-block">
-                    <code>// Ejemplo simple de clase
+
+                    <pre><code class="language-java">// Ejemplo simple de clase
 public class Coche {
     // ATRIBUTOS (características del coche)
     String marca;
@@ -2401,14 +2428,16 @@ public class Coche {
         System.out.println("Año: " + año);
         System.out.println("Color: " + color);
     }
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h3>¿Qué es un Objeto?</h3>
                 <p>Un <strong>objeto</strong> es una instancia concreta de una clase. Mientras la clase es la plantilla, el objeto es la "cosa real" creada a partir de esa plantilla.</p>
 
                 <div class="code-block">
-                    <code>// Crear objetos (instanciar la clase)
+
+                    <pre><code class="language-java">// Crear objetos (instanciar la clase)
 Coche miCoche = new Coche();  // Objeto 1
 Coche tuCoche = new Coche();  // Objeto 2
 
@@ -2428,14 +2457,16 @@ miCoche.arrancar();     // El coche está arrancando...
 miCoche.mostrarInfo();  // Muestra: Toyota Corolla 2022 Rojo
 
 tuCoche.arrancar();     // El coche está arrancando...
-tuCoche.mostrarInfo();  // Muestra: Honda Civic 2023 Azul</code>
+tuCoche.mostrarInfo();  // Muestra: Honda Civic 2023 Azul</code></pre>
+
                 </div>
 
                 <h3>Constructores</h3>
                 <p>Un <strong>constructor</strong> es un método especial que se ejecuta automáticamente al crear un objeto. Se usa para inicializar atributos.</p>
 
                 <div class="code-block">
-                    <code>public class Persona {
+
+                    <pre><code class="language-java">public class Persona {
     String nombre;
     int edad;
     String ciudad;
@@ -2474,14 +2505,16 @@ Persona p2 = new Persona("Ana", 25);  // Usa constructor con 2 parámetros
 p2.presentarse();  // Hola, soy Ana, tengo 25 años y vivo en Madrid
 
 Persona p3 = new Persona("Carlos", 30, "Barcelona");  // Usa constructor completo
-p3.presentarse();  // Hola, soy Carlos, tengo 30 años y vivo en Barcelona</code>
+p3.presentarse();  // Hola, soy Carlos, tengo 30 años y vivo en Barcelona</code></pre>
+
                 </div>
 
                 <h3>Encapsulación: Getters y Setters</h3>
                 <p>La <strong>encapsulación</strong> es ocultar los detalles internos de una clase. Hacemos los atributos <code>private</code> y proporcionamos métodos <code>public</code> (getters/setters) para acceder a ellos.</p>
 
                 <div class="code-block">
-                    <code>public class CuentaBancaria {
+
+                    <pre><code class="language-java">public class CuentaBancaria {
     // Atributos PRIVATE (no accesibles desde fuera)
     private String titular;
     private double saldo;
@@ -2551,7 +2584,8 @@ cuenta.mostrarInfo();
 // NO puedes acceder directamente a saldo:
 // cuenta.saldo = 99999;  // ERROR: saldo is private
 // Pero sí con el getter:
-double miSaldo = cuenta.getSaldo();  // OK</code>
+double miSaldo = cuenta.getSaldo();  // OK</code></pre>
+
                 </div>
 
                 <h3>Los 4 Pilares de la POO</h3>
@@ -2560,7 +2594,8 @@ double miSaldo = cuenta.getSaldo();  // OK</code>
                 <p>Ocultar los detalles internos y exponer solo lo necesario mediante modificadores de acceso.</p>
 
                 <div class="code-block">
-                    <code>// Modificadores de acceso
+
+                    <pre><code class="language-java">// Modificadores de acceso
 public class Ejemplo {
     // PRIVATE: Solo accesible dentro de esta clase
     private String secreto = "Solo yo lo veo";
@@ -2584,7 +2619,8 @@ public class Ejemplo {
         metodoPrivado();  // Puedo llamar a métodos privados desde aquí
         System.out.println("Accesible para todos");
     }
-}</code>
+}</code></pre>
+
                 </div>
 
                 <div class="note-box">
@@ -2595,7 +2631,8 @@ public class Ejemplo {
                 <p>Permite crear clases nuevas basadas en clases existentes, heredando sus atributos y métodos.</p>
 
                 <div class="code-block">
-                    <code>// CLASE BASE (Padre/Superclase)
+
+                    <pre><code class="language-java">// CLASE BASE (Padre/Superclase)
 public class Animal {
     protected String nombre;
     protected int edad;
@@ -2667,14 +2704,16 @@ miPerro.traerPelota();   // Propio de Perro
 Gato miGato = new Gato("Luna", 2, true);
 miGato.dormir();         // Heredado de Animal
 miGato.hacerSonido();    // Sobrescrito en Gato: "Luna dice: Miau!"
-miGato.arañar();         // Propio de Gato</code>
+miGato.arañar();         // Propio de Gato</code></pre>
+
                 </div>
 
                 <h4>3. Polimorfismo</h4>
                 <p>Un objeto puede tomar muchas formas. Permite tratar objetos de diferentes clases de manera uniforme.</p>
 
                 <div class="code-block">
-                    <code>// Polimorfismo: Variable de tipo padre, objeto de tipo hijo
+
+                    <pre><code class="language-java">// Polimorfismo: Variable de tipo padre, objeto de tipo hijo
 Animal animal1 = new Perro("Rex", 4, "Labrador");
 Animal animal2 = new Gato("Michi", 1, true);
 
@@ -2701,7 +2740,8 @@ Animal a = new Perro("Lassie", 7, "Collie");
 if (a instanceof Perro) {  // Verificar primero
     Perro p = (Perro) a;  // Casting
     p.traerPelota();  // Ahora sí funciona
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h4>4. Abstracción</h4>
@@ -2709,7 +2749,7 @@ if (a instanceof Perro) {  // Verificar primero
 
                 <h5>Clases Abstractas</h5>
                 <div class="code-block">
-                    <code>// Clase abstracta: NO se puede instanciar directamente
+                    <pre><code class="language-java">// Clase abstracta: NO se puede instanciar directamente
 public abstract class FiguraGeometrica {
     protected String color;
 
@@ -2776,12 +2816,12 @@ System.out.println("Perímetro: " + rect.calcularPerimetro());  // 16.0
 
 Circulo circ = new Circulo("verde", 4);
 System.out.println("Área: " + circ.calcularArea());         // 50.26...
-System.out.println("Perímetro: " + circ.calcularPerimetro());  // 25.13...</code>
+System.out.println("Perímetro: " + circ.calcularPerimetro());  // 25.13...</code></pre>
                 </div>
 
                 <h5>Interfaces</h5>
                 <div class="code-block">
-                    <code>// Interface: Contrato que define QUÉ debe hacer una clase (no CÓMO)
+                    <pre><code class="language-java">// Interface: Contrato que define QUÉ debe hacer una clase (no CÓMO)
 public interface Volador {
     // Métodos abstractos (por defecto public abstract)
     void despegar();
@@ -2857,7 +2897,7 @@ Volador v1 = new Avion("Boeing 747", 400);
 Volador v2 = new Pajaro("Águila");
 
 v1.despegar();  // El avión Boeing 747 está despegando...
-v2.despegar();  // El pájaro Águila abre sus alas</code>
+v2.despegar();  // El pájaro Águila abre sus alas</code></pre>
                 </div>
 
                 <div class="warning-box">
@@ -2885,7 +2925,8 @@ v2.despegar();  // El pájaro Águila abre sus alas</code>
                 <p>Todas las clases en Java heredan de <code>Object</code>. Hay métodos útiles que puedes sobrescribir:</p>
 
                 <div class="code-block">
-                    <code>public class Estudiante {
+
+                    <pre><code class="language-java">public class Estudiante {
     private String nombre;
     private int edad;
     private double notaMedia;
@@ -2933,14 +2974,15 @@ System.out.println(e1);  // Estudiante{nombre='Ana', edad=20, notaMedia=8.5}
 
 // equals()
 System.out.println(e1 == e2);       // false (diferentes objetos en memoria)
-System.out.println(e1.equals(e2));  // true (mismo contenido)</code>
+System.out.println(e1.equals(e2));  // true (mismo contenido)</code></pre>
+
                 </div>
 
                 <h3>Ejercicios Resueltos - POO</h3>
 
                 <h4>Ejercicio 1: Sistema de Biblioteca</h4>
                 <div class="code-block">
-                    <code>public class Libro {
+                    <pre><code class="language-java">public class Libro {
     private String titulo;
     private String autor;
     private int paginas;
@@ -2984,12 +3026,12 @@ System.out.println(e1.equals(e2));  // true (mismo contenido)</code>
 Libro libro1 = new Libro("El Quijote", "Cervantes", 1200);
 libro1.prestar();   // Libro prestado: El Quijote
 libro1.prestar();   // El libro ya está prestado
-libro1.devolver();  // Libro devuelto: El Quijote</code>
+libro1.devolver();  // Libro devuelto: El Quijote</code></pre>
                 </div>
 
                 <h4>Ejercicio 2: Jerarquía de Empleados</h4>
                 <div class="code-block">
-                    <code>public class Empleado {
+                    <pre><code class="language-java">public class Empleado {
     protected String nombre;
     protected double salarioBase;
 
@@ -3057,7 +3099,7 @@ prog.asignarBono(5000);
 prog.mostrarInfo();  // Salario: 35000€
 
 Gerente gerente = new Gerente("Carlos López", 50000, 10);
-gerente.mostrarInfo();  // Salario: 51000€ (50000 + 10*100)</code>
+gerente.mostrarInfo();  // Salario: 51000€ (50000 + 10*100)</code></pre>
                 </div>
             </section>
 
@@ -3070,7 +3112,8 @@ gerente.mostrarInfo();  // Salario: 51000€ (50000 + 10*100)</code>
                 <p>Una <strong>excepción</strong> es un evento anormal que ocurre durante la ejecución de un programa y que interrumpe el flujo normal de instrucciones.</p>
 
                 <div class="code-block">
-                    <code>// Programa SIN manejo de excepciones
+
+                    <pre><code class="language-java">// Programa SIN manejo de excepciones
 int[] numeros = {1, 2, 3};
 System.out.println(numeros[10]);  // ERROR: ArrayIndexOutOfBoundsException
 // El programa se detiene aquí
@@ -3082,14 +3125,15 @@ try {
 } catch (ArrayIndexOutOfBoundsException e) {
     System.out.println("Índice fuera de rango");
 }
-System.out.println("El programa continúa ejecutándose...");</code>
+System.out.println("El programa continúa ejecutándose...");</code></pre>
+
                 </div>
 
                 <h3>Estructura try-catch-finally</h3>
 
                 <h4>Try-Catch Básico</h4>
                 <div class="code-block">
-                    <code>// Sintaxis básica
+                    <pre><code class="language-java">// Sintaxis básica
 try {
     // Código que PUEDE lanzar una excepción
     int resultado = 10 / 0;
@@ -3115,12 +3159,12 @@ try {
     System.out.println("Mensaje: " + e.getMessage());
     System.out.println("Clase: " + e.getClass().getName());
     e.printStackTrace();  // Imprime el stack trace completo
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Múltiples Catch</h4>
                 <div class="code-block">
-                    <code>// Capturar diferentes tipos de excepciones
+                    <pre><code class="language-java">// Capturar diferentes tipos de excepciones
 Scanner scanner = new Scanner(System.in);
 
 try {
@@ -3146,12 +3190,12 @@ try {
     // ... código
 } catch (NumberFormatException | ArithmeticException e) {
     System.out.println("Error numérico: " + e.getMessage());
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Bloque Finally</h4>
                 <div class="code-block">
-                    <code>// finally: Se ejecuta SIEMPRE, haya o no excepción
+                    <pre><code class="language-java">// finally: Se ejecuta SIEMPRE, haya o no excepción
 FileReader reader = null;
 
 try {
@@ -3185,14 +3229,15 @@ try {
             // Manejar error al cerrar
         }
     }
-}</code>
+}</code></pre>
                 </div>
 
                 <h3>Tipos de Excepciones</h3>
                 <p>Java tiene una jerarquía de excepciones:</p>
 
                 <div class="code-block">
-                    <code>// CHECKED EXCEPTIONS (verificadas en tiempo de compilación)
+
+                    <pre><code class="language-java">// CHECKED EXCEPTIONS (verificadas en tiempo de compilación)
 // Debes manejarlas con try-catch o declararlas con throws
 
 // IOException
@@ -3228,12 +3273,13 @@ int num = Integer.parseInt("abc");  // NumberFormatException
 
 // ClassCastException
 Object obj = "Hola";
-Integer num2 = (Integer) obj;  // ClassCastException</code>
+Integer num2 = (Integer) obj;  // ClassCastException</code></pre>
+
                 </div>
 
                 <h3>Lanzar Excepciones (throw)</h3>
                 <div class="code-block">
-                    <code>// throw: Lanzar una excepción manualmente
+                    <pre><code class="language-java">// throw: Lanzar una excepción manualmente
 public void validarEdad(int edad) {
     if (edad < 0) {
         throw new IllegalArgumentException("La edad no puede ser negativa");
@@ -3260,12 +3306,12 @@ public void retirar(double cantidad) {
         throw new IllegalStateException("Saldo insuficiente");
     }
     saldo -= cantidad;
-}</code>
+}</code></pre>
                 </div>
 
                 <h3>Declarar Excepciones (throws)</h3>
                 <div class="code-block">
-                    <code>// throws: Declara que un método PUEDE lanzar una excepción
+                    <pre><code class="language-java">// throws: Declara que un método PUEDE lanzar una excepción
 // El que llame al método debe manejarla
 
 public void leerArchivo(String ruta) throws IOException {
@@ -3289,12 +3335,12 @@ public void procesarDatos() throws IOException {
 // Múltiples excepciones
 public void metodoComplejo() throws IOException, SQLException, ParseException {
     // Código que puede lanzar estas excepciones
-}</code>
+}</code></pre>
                 </div>
 
                 <h3>Crear Excepciones Personalizadas</h3>
                 <div class="code-block">
-                    <code>// Excepción personalizada checked
+                    <pre><code class="language-java">// Excepción personalizada checked
 public class SaldoInsuficienteException extends Exception {
     private double saldoActual;
     private double cantidadSolicitada;
@@ -3344,7 +3390,7 @@ try {
 } catch (SaldoInsuficienteException e) {
     System.out.println(e.getMessage());
     System.out.println("Te faltan: " + (e.getCantidadSolicitada() - e.getSaldoActual()) + "€");
-}</code>
+}</code></pre>
                 </div>
 
                 <div class="warning-box">
@@ -3379,7 +3425,8 @@ try {
                 <p><strong>ArrayList</strong> es una lista dinámica (como un array de tamaño variable). Es la colección más usada.</p>
 
                 <div class="code-block">
-                    <code>import java.util.ArrayList;
+
+                    <pre><code class="language-java">import java.util.ArrayList;
 
 // Crear ArrayList (genéricos: especifica el tipo entre &lt; &gt;)
 ArrayList&lt;String&gt; nombres = new ArrayList&lt;&gt;();
@@ -3423,12 +3470,13 @@ for (int i = 0; i < nombres.size(); i++) {
 // For-each (más común)
 for (String nombre : nombres) {
     System.out.println(nombre);
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h4>ArrayList con Objetos</h4>
                 <div class="code-block">
-                    <code>// ArrayList de objetos personalizados
+                    <pre><code class="language-java">// ArrayList de objetos personalizados
 class Estudiante {
     String nombre;
     double nota;
@@ -3456,14 +3504,15 @@ for (Estudiante est : clase) {
     if (est.nota > 8.0) {
         System.out.println(est.nombre + " tiene nota excelente");
     }
-}</code>
+}</code></pre>
                 </div>
 
                 <h3>HashMap</h3>
                 <p><strong>HashMap</strong> almacena pares clave-valor. Ideal para búsquedas rápidas por clave.</p>
 
                 <div class="code-block">
-                    <code>import java.util.HashMap;
+
+                    <pre><code class="language-java">import java.util.HashMap;
 
 // Crear HashMap&lt;TipoClave, TipoValor&gt;
 HashMap&lt;String, Integer&gt; edades = new HashMap&lt;&gt;();
@@ -3518,12 +3567,13 @@ for (String nombre : edades.keySet()) {
 // RECORRER - Forma 4: Con Entry (más eficiente)
 for (Map.Entry&lt;String, Integer&gt; entrada : edades.entrySet()) {
     System.out.println(entrada.getKey() + ": " + entrada.getValue());
-}</code>
+}</code></pre>
+
                 </div>
 
                 <h4>HashMap con Objetos</h4>
                 <div class="code-block">
-                    <code>// HashMap para gestionar productos
+                    <pre><code class="language-java">// HashMap para gestionar productos
 class Producto {
     String nombre;
     double precio;
@@ -3556,14 +3606,14 @@ mouse.stock -= 5;  // Vender 5 unidades
 for (Map.Entry&lt;String, Producto&gt; entry : inventario.entrySet()) {
     Producto p = entry.getValue();
     System.out.println(entry.getKey() + " - " + p.nombre + ": " + p.stock + " unidades");
-}</code>
+}</code></pre>
                 </div>
 
                 <h3>Otras Colecciones Útiles</h3>
 
                 <h4>HashSet (Conjunto sin duplicados)</h4>
                 <div class="code-block">
-                    <code>import java.util.HashSet;
+                    <pre><code class="language-java">import java.util.HashSet;
 
 HashSet&lt;String&gt; frutas = new HashSet&lt;&gt;();
 
@@ -3582,12 +3632,12 @@ if (frutas.contains("Pera")) {
 // Recorrer
 for (String fruta : frutas) {
     System.out.println(fruta);
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>LinkedList (Lista enlazada)</h4>
                 <div class="code-block">
-                    <code>import java.util.LinkedList;
+                    <pre><code class="language-java">import java.util.LinkedList;
 
 LinkedList&lt;String&gt; cola = new LinkedList&lt;&gt;();
 
@@ -3607,7 +3657,7 @@ String primero = cola.removeFirst();  // Obtiene y elimina el primero
 String ultimo = cola.removeLast();    // Obtiene y elimina el último
 
 // Ver sin eliminar
-String siguiente = cola.peek();  // Ver el primero sin eliminar</code>
+String siguiente = cola.peek();  // Ver el primero sin eliminar</code></pre>
                 </div>
 
                 <div class="warning-box">
@@ -3637,7 +3687,7 @@ String siguiente = cola.peek();  // Ver el primero sin eliminar</code>
 
                 <h4>Ejercicio 1: Agenda de Contactos</h4>
                 <div class="code-block">
-                    <code>HashMap&lt;String, String&gt; agenda = new HashMap&lt;&gt;();
+                    <pre><code class="language-java">HashMap&lt;String, String&gt; agenda = new HashMap&lt;&gt;();
 
 // Añadir contactos
 agenda.put("Ana García", "666123456");
@@ -3659,12 +3709,12 @@ if (agenda.containsKey(nombre)) {
 System.out.println("\n=== AGENDA ===");
 for (Map.Entry&lt;String, String&gt; contacto : agenda.entrySet()) {
     System.out.println(contacto.getKey() + ": " + contacto.getValue());
-}</code>
+}</code></pre>
                 </div>
 
                 <h4>Ejercicio 2: Gestión de Tareas</h4>
                 <div class="code-block">
-                    <code>ArrayList&lt;String&gt; tareas = new ArrayList&lt;&gt;();
+                    <pre><code class="language-java">ArrayList&lt;String&gt; tareas = new ArrayList&lt;&gt;();
 Scanner scanner = new Scanner(System.in);
 
 while (true) {
@@ -3718,7 +3768,7 @@ while (true) {
         default:
             System.out.println("Opción inválida");
     }
-}</code>
+}</code></pre>
                 </div>
             </section>
 
